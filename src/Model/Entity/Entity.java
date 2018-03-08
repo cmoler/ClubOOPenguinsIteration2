@@ -1,5 +1,6 @@
 package Model.Entity;
 
+import Model.Entity.Role.Role;
 import Model.Map.Direction;
 import Model.Map.Location;
 import View.Viewport;
@@ -13,8 +14,9 @@ public class Entity{
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
+    private Role role;
     private int maxHealth = 100;
-    private int health = maxHealth; // default health?
+    private int health = maxHealth;
     private int mana;
     private int gold;
     private Direction directionFacing;
@@ -25,12 +27,6 @@ public class Entity{
     private EntityType entityType;
     private Location location;
     // map is in World
-
-    //Entity for testing purposes
-    public Entity(){
-        entityType = EntityType.ICE;
-        location = null;
-    }
 
     public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
@@ -73,14 +69,19 @@ public class Entity{
 
     public void modifyMaxHealth(int health){
         maxHealth += health;
-        if (this.health > maxHealth)
-        {
+        if (this.health > maxHealth) {
             this.health = maxHealth;
         }
-
     }
 
-    // don't think this needs to be public
+    public void addGold(int gold){
+        this.gold += gold;
+    }
+
+    public void addMana(int mana){
+        this.mana += mana;
+    }
+
     private boolean canLevelUp(){
         if (level < finalLevel) {
             if (experience > ExperienceForLevel.get(level + 1))
@@ -93,23 +94,12 @@ public class Entity{
     }
 
     public void move(Direction direction){
-        if (isAlive()){
-            if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
-                return;
-            Location nextLocation = location.getAdjacentAt(direction);
-            if (nextLocation.moveAllowed(this)){
-                this.location = nextLocation;
-                if (this.location.getAreaEffect() != null){
-                    this.location.getAreaEffect().activate(this);
-                }
-                Location.LocationItemIterator locationItemIterator = location.getLocationItemIterator();
-                for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
-                    locationItemIterator.touchCurrent(this);
-                    if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
-                }
-                notifyView(direction);
-            }
-        }
+        directionFacing = direction;
+        this.location.moveTo(this, direction);
+    }
+
+    public void setLocation(Location location){
+        this.location = location;
     }
 
     public void teleport(Location location){
@@ -130,6 +120,14 @@ public class Entity{
 
     public int getLevel(){
         return level;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public int getMana() {
+        return mana;
     }
 
     public int getExperienceForNextLevel(){
@@ -158,17 +156,7 @@ public class Entity{
         observers.remove(viewport);
     }
 
-    public void notifyView(){
-        for (Viewport viewport : observers){
-            viewport.update();
-        }
-    }
-
-    public void notifyView(Direction direction){
-        for (Viewport viewport : observers){
-            viewport.moveUpdate(direction);
-        }
-        notifyView();
+    public void notifyView() {
     }
 
     private static final int finalLevel = 100;
