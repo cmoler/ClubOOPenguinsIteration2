@@ -15,22 +15,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.util.function.Consumer;
-
-// needed key bindings:
-/*
-move n, NE, E, etc
-attack
-open inventory
-open equipment
-open skills
-use item 1
-use item 2
-... for however many we want
- */
 
 public class EntityState implements ControllerState {
 
@@ -53,7 +40,7 @@ public class EntityState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/Keybindings/entity");
+        File entityKeyBindings = new File("resources/KeyBindings/entity");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
@@ -72,10 +59,106 @@ public class EntityState implements ControllerState {
                     switch (eElement.getAttribute("Bind")){
                         case "moveN":
                             keyBinding.put(Integer.parseInt(eElement.
-                                                            getElementsByTagName("Key").
-                                                            item(0).
-                                                            getTextContent()), (Entity entity) -> moveN(entity));
-
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveN(entity));
+                            break;
+                        case "moveNE":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveNE(entity));
+                            break;
+                        case "moveE":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveE(entity));
+                            break;
+                        case "moveSE":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveSE(entity));
+                            break;
+                        case "moveS":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveS(entity));
+                            break;
+                        case "moveSW":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveSW(entity));
+                            break;
+                        case "moveW":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveW(entity));
+                            break;
+                        case "moveNW":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> moveNW(entity));
+                            break;
+                        case "openMenu":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> openMenu(entity));
+                            break;
+                        case "openInventory":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> openInventory(entity));
+                            break;
+                        case "openEquipment":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> openEquipment(entity));
+                            break;
+                        case "openSkills":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> openSkills(entity));
+                            break;
+                        case "slot1":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> slot1(entity));
+                            break;
+                        case "slot2":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> slot2(entity));
+                            break;
+                        case "slot3":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> slot3(entity));
+                            break;
+                        case "slot4":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> slot4(entity));
+                            break;
+                        case "slot5":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("Key").
+                                    item(0).
+                                    getTextContent()), (Entity entity) -> slot5(entity));
+                            break;
                     }
                 }
 
@@ -92,7 +175,73 @@ public class EntityState implements ControllerState {
 
     }
 
+
+
     private void moveN(Entity entity) {
+
+    }
+
+    private void moveNE(Entity entity) {
+
+    }
+
+    private void moveE(Entity entity) {
+
+    }
+
+    private void moveSE(Entity entity) {
+
+    }
+
+    private void moveS(Entity entity) {
+
+    }
+
+    private void moveSW(Entity entity) {
+
+    }
+
+    private void moveW(Entity entity) {
+
+    }
+
+    private void moveNW(Entity entity) {
+
+    }
+
+    private void openMenu(Entity entity) {
+
+    }
+
+    private void openInventory(Entity entity) {
+
+    }
+
+    private void openEquipment(Entity entity) {
+
+    }
+
+    private void openSkills(Entity entity) {
+
+    }
+
+    private void slot1(Entity entity) {
+
+    }
+
+    private void slot2(Entity entity) {
+
+    }
+
+    private void slot3(Entity entity) {
+
+    }
+
+    private void slot4(Entity entity) {
+
+    }
+
+    private void slot5(Entity entity) {
 
     }
 }

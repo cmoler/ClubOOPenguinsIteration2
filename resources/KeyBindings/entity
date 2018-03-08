@@ -1,0 +1,54 @@
+<?xml version = "1.0"?>
+<class>
+   <Bind  = "moveN">
+      <key>1</key>
+   </Bind>
+   <Bind  = "moveNE>
+       <key>2</key>
+   </Bind>
+   <Bind  = "moveE">
+      <key>3</key>
+   </Bind>
+   <Bind  = "moveSE">
+       <key>4</key>
+   </Bind>
+   <Bind  = "moveS">
+      <key>5</key>
+   </Bind>
+   <Bind  = "moveSW">
+       <key>6</key>
+   </Bind>
+   <Bind  = "moveW">
+      <key>7</key>
+   </Bind>
+   <Bind  = "moveNW">
+       <key>8</key>
+   </Bind>
+    <Bind  = "openMenu">
+       <key>12</key>
+   </Bind>
+   <Bind  = "openInventory">
+       <key>9</key>
+   </Bind>
+   <Bind  = "openEquipment">
+       <key>10</key>
+   </Bind>
+   <Bind  = "openSkills">
+       <key>11</key>
+   </Bind>
+   <Bind  = "slot1">
+       <key>11</key>
+   </Bind>
+   <Bind  = "slot2">
+       <key>11</key>
+   </Bind>
+   <Bind  = "slot3">
+       <key>11</key>
+   </Bind>
+   <Bind  = "slot4">
+       <key>11</key>
+   </Bind>
+   <Bind  = "slot5">
+       <key>11</key>
+   </Bind>
+</class>
