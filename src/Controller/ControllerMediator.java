@@ -40,31 +40,38 @@ public class ControllerMediator {
         gameLoader = new GameLoader();
         gameSaver = new GameSaver();
 
-        areaViewport = new AreaViewPort();
+        getViewsFromLoader();
+        loadStates();
+        attachInputToViews();
+        changeToMenuState();
 
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+    }
+
+    private void getViewsFromLoader(){
         menuViewPort = gameLoader.getMenuViewport();
         gameFrame = gameLoader.getGameFrame();
+    }
 
+    private void loadStates(){
         menuState = new MenuState(gameLoader,this);
-        changeToMenuState();
-        input = new Input(activeState);
-        gameFrame.addKeyListener(input);
-        menuViewPort.addKeyListener(input);
-
-
+        activeState = menuState;
         entityState = new EntityState(gameLoader, this);
         inventoryState = new InventoryState(gameLoader, this);
         equipmentState = new EquipmentState(gameLoader, this);
         skillsState = new SkillsState(gameLoader, this);
+    }
 
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
-
+    private void attachInputToViews(){
+        input = new Input(activeState);
+        gameFrame.addKeyListener(input);
+        menuViewPort.addKeyListener(input);
     }
 
     // when loading a save game/new game
-    public ControllerMediator(String fileName){
-
+    public void loadGame(String fileName){
+        gameLoader.loadGame(fileName);
     }
 
     private class ScheduleTask extends TimerTask {
@@ -99,10 +106,6 @@ public class ControllerMediator {
     public void changeToSkillsState(){
         skillsState.setActive();
         activeState = skillsState;
-    }
-
-    public void loadGame(){
-
     }
 
 }

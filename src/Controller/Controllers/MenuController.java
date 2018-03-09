@@ -14,7 +14,6 @@ public class MenuController implements Controller{
     public MenuController(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.menuViewPort = gameLoader.getMenuViewport();
         this.controllerMediator = controllerMediator;
-        this.controllerMediator.changeToMenuState();
     }
 
     @Override
@@ -29,7 +28,14 @@ public class MenuController implements Controller{
     }
 
     public void select() {
+        switch (currentlySelected){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
 
+        }
     }
 
 }

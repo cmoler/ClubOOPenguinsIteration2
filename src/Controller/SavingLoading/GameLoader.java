@@ -34,7 +34,7 @@ public class GameLoader {
 
     }
 
-    public OOPenguinGameFrame getGameFrame() { return null; }
+    public OOPenguinGameFrame getGameFrame() { return gameFrame; }
 
     public AreaViewPort getAreaViewport(){
         return null;
@@ -44,7 +44,7 @@ public class GameLoader {
 
     public InventoryView getInventoryView() { return null; }
 
-    public MenuViewPort getMenuViewport() { return null; }
+    public MenuViewPort getMenuViewport() { return menuViewPort; }
 
     public SkillsView getSkillsView() { return null; }
 
