@@ -22,29 +22,15 @@ public class MenuViewPort extends Viewport {
         add(new NewGameView());
         add(new SaveGameView());
         add(new LoadGameView());
+        add(new OptionsView());
         add(new ExitGameView());
         add(new AvatarSelectionView(0, 0));
     }
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        switch (currentSubMenu){
-            case -1:
-                drawMainMenu(graphics2D);
-                break;
-            case 0:
-                children.get(0).draw(graphics2D);
-                break;
-            case 1:
-                children.get(1).draw(graphics2D);
-                break;
-            case 2:
-                children.get(2).draw(graphics2D);
-                break;
-            case 3:
-                children.get(3).draw(graphics2D);
-            break;
-        }
+        if(currentSubMenu == -1) drawMainMenu(graphics2D);
+        else children.get(currentSubMenu).draw(graphics2D);
 
     }
 
@@ -62,14 +48,17 @@ public class MenuViewPort extends Viewport {
         graphics2D.drawString("Load Game", (startX), (startY + 2*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
         graphics2D.drawRect(startX, startY + 3*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Exit Game", (startX), (startY + 3*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        graphics2D.drawString("Options", (startX), (startY + 3*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+
+        graphics2D.drawRect(startX, startY + 4*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        graphics2D.drawString("Exit Game", (startX), (startY + 4*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
         graphics2D.drawImage(selected, selectedX, selectedY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
         graphics2D.drawImage(selected, selectedXz, selectedYz, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
     }
 
     public void setSelectedMenuView(int selectedMenuView){
-        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 3*TextBoxInfo.TEXTBOX_HEIGHT)
+        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 4*TextBoxInfo.TEXTBOX_HEIGHT)
             this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
         else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
                 this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
@@ -91,8 +80,12 @@ public class MenuViewPort extends Viewport {
         currentSubMenu = 2;
     }
 
-    public void enterExitGameView(){
+    public void enterOptionsView(){
         currentSubMenu = 3;
+    }
+
+    public void enterExitGameView(){
+        currentSubMenu = 4;
     }
 
     public void setSelectedAvatarView(int selectedAvatarView){

@@ -17,6 +17,7 @@ public class MenuController implements Controller{
     private NewGameController newGameController;
     private SaveGameController saveGameController;
     private LoadGameController loadGameController;
+    private OptionsController optionsController;
     private ExitGameController exitGameController;
 
     public MenuController(){
@@ -30,6 +31,7 @@ public class MenuController implements Controller{
         newGameController = new NewGameController(gameLoader, this);
         saveGameController = new SaveGameController(gameLoader, this);
         loadGameController = new LoadGameController(gameLoader, this);
+        optionsController = new OptionsController();
         exitGameController = new ExitGameController(gameLoader, this);
     }
 
@@ -74,6 +76,9 @@ public class MenuController implements Controller{
                 menuViewPort.enterLoadGameView();
                 activeController = loadGameController;
             case 3:
+                menuViewPort.enterOptionsView();
+                activeController = optionsController;
+            case 4:
                 menuViewPort.enterExitGameView();
                 activeController = exitGameController;
                 break;
