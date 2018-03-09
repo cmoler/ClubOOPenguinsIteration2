@@ -94,8 +94,13 @@ public class Entity{
     }
 
     public void move(Direction direction){
-        directionFacing = direction;
-        this.location.moveTo(this, direction);
+        if (directionFacing == direction){
+            this.location.moveTo(this, direction);
+        }
+        else {
+            directionFacing = direction;
+        }
+
     }
 
     public void setLocation(Location location){
