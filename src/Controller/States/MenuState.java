@@ -1,9 +1,8 @@
 package Controller.States;
 
 import Controller.ControllerMediator;
-import Controller.Controllers.MenuController;
+import Controller.Controllers.MenuController.MenuController;
 import Controller.SavingLoading.GameLoader;
-import Model.Entity.Inventory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,7 +17,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
 public class MenuState implements ControllerState {
 
