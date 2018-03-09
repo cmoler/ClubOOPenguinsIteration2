@@ -15,12 +15,14 @@ public class Input implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        controllerState.process(e);
+        //System.out.println("Typed " + e.getKeyCode());
+        //controllerState.process(e);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        System.out.println("Pressed " + e.getKeyCode());
+        controllerState.process(e);
     }
 
     @Override

@@ -1,18 +1,18 @@
 <?xml version = "1.0"?>
 <class>
-   <Bind  = "exitMenu">
+   <Bind  type= "exitMenu">
       <key>1</key>
    </Bind>
-   <Bind  = "scrollLeft">
+   <Bind  type= "scrollLeft">
       <key>6</key>
    </Bind>
-   <Bind  = "scrollRight">
+   <Bind  type= "scrollRight">
        <key>7</key>
    </Bind>
-   <Bind  = "scrollUp">
-      <key>8</key>
+   <Bind  type= "scrollUp">
+      <key>56</key>
    </Bind>
-   <Bind  = "scrollDown">
+   <Bind  type= "scrollDown">
        <key>9</key>
    </Bind>
 </class>

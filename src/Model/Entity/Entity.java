@@ -107,7 +107,6 @@ public class Entity{
                     locationItemIterator.touchCurrent(this);
                     if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
                 }
-                notifyView(direction);
             }
         }
     }
@@ -162,13 +161,6 @@ public class Entity{
         for (Viewport viewport : observers){
             viewport.update();
         }
-    }
-
-    public void notifyView(Direction direction){
-        for (Viewport viewport : observers){
-            viewport.moveUpdate(direction);
-        }
-        notifyView();
     }
 
     private static final int finalLevel = 100;
