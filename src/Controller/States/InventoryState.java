@@ -26,9 +26,7 @@ public class InventoryState implements ControllerState {
     ControllerMediator controllerMediator;
     InventoryController inventoryController;
 
-    Inventory inventory;
-
-    Map<Integer, Consumer<Inventory>> keyBinding = new HashMap();
+    Map<Integer, Runnable> keyBinding = new HashMap();
 
     public InventoryState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
@@ -38,7 +36,7 @@ public class InventoryState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        keyBinding.get(keyEvent).accept(this.inventory);
+        if(keyBinding.get(keyEvent) != null) keyBinding.get(keyEvent).run();
     }
 
     @Override
@@ -64,55 +62,55 @@ public class InventoryState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> openMenu(inventory));
+                                    getTextContent()), () -> openMenu());
                             break;
                         case "openEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> openEquipment(inventory));
+                                    getTextContent()), () -> openEquipment());
                             break;
                         case "exitInventory":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> exitInventory(inventory));
+                                    getTextContent()), () -> exitInventory());
                             break;
                         case "openSkills":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> openSkills(inventory));
+                                    getTextContent()), () -> openSkills());
                             break;
                         case "equipItem":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> equipItem(inventory));
+                                    getTextContent()), () -> equipItem());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> scrollLeft(inventory));
+                                    getTextContent()), () -> scrollLeft());
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> scrollRight(inventory));
+                                    getTextContent()), () -> scrollRight());
                             break;
                         case "scrollUp":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> scrollUp(inventory));
+                                    getTextContent()), () -> scrollUp());
                             break;
                         case "scrollDown":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Inventory inventory) -> scrollDown(inventory));
+                                    getTextContent()), () -> scrollDown());
                             break;
                     }
                 }
@@ -129,39 +127,39 @@ public class InventoryState implements ControllerState {
 
     }
 
-    private void openMenu(Inventory inventory) {
+    private void openMenu() {
 
     }
 
-    private void openEquipment(Inventory inventory) {
+    private void openEquipment() {
 
     }
 
-    private void exitInventory(Inventory inventory) {
+    private void exitInventory() {
 
     }
 
-    private void openSkills(Inventory inventory) {
+    private void openSkills() {
 
     }
 
-    private void equipItem(Inventory inventory) {
+    private void equipItem() {
 
     }
 
-    private void scrollLeft(Inventory inventory) {
+    private void scrollLeft() {
 
     }
 
-    private void scrollRight(Inventory inventory) {
+    private void scrollRight() {
 
     }
 
-    private void scrollUp(Inventory inventory) {
+    private void scrollUp() {
 
     }
 
-    private void scrollDown(Inventory inventory) {
+    private void scrollDown() {
 
     }
 }

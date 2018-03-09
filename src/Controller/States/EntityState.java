@@ -24,9 +24,7 @@ public class EntityState implements ControllerState {
     ControllerMediator controllerMediator;
     EntityController entityController;
 
-    Entity entity;
-
-    Map<Integer, Consumer<Entity>> keyBinding = new HashMap();
+    Map<Integer, Runnable> keyBinding = new HashMap();
 
     public EntityState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
@@ -35,7 +33,7 @@ public class EntityState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        keyBinding.get(keyEvent).accept(this.entity);
+        if(keyBinding.get(keyEvent) != null) keyBinding.get(keyEvent).run();
     }
 
     @Override
@@ -61,103 +59,103 @@ public class EntityState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveN(entity));
+                                    getTextContent()), () -> moveN());
                             break;
                         case "moveNE":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveNE(entity));
+                                    getTextContent()), () -> moveNE());
                             break;
                         case "moveE":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveE(entity));
+                                    getTextContent()), () -> moveE());
                             break;
                         case "moveSE":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveSE(entity));
+                                    getTextContent()), () -> moveSE());
                             break;
                         case "moveS":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveS(entity));
+                                    getTextContent()), () -> moveS());
                             break;
                         case "moveSW":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveSW(entity));
+                                    getTextContent()), () -> moveSW());
                             break;
                         case "moveW":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveW(entity));
+                                    getTextContent()), () -> moveW());
                             break;
                         case "moveNW":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> moveNW(entity));
+                                    getTextContent()), () -> moveNW());
                             break;
                         case "openMenu":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> openMenu(entity));
+                                    getTextContent()), () -> openMenu());
                             break;
                         case "openInventory":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> openInventory(entity));
+                                    getTextContent()), () -> openInventory());
                             break;
                         case "openEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> openEquipment(entity));
+                                    getTextContent()), () -> openEquipment());
                             break;
                         case "openSkills":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> openSkills(entity));
+                                    getTextContent()), () -> openSkills());
                             break;
                         case "slot1":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> slot1(entity));
+                                    getTextContent()), () -> slot1());
                             break;
                         case "slot2":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> slot2(entity));
+                                    getTextContent()), () -> slot2());
                             break;
                         case "slot3":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> slot3(entity));
+                                    getTextContent()), () -> slot3());
                             break;
                         case "slot4":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> slot4(entity));
+                                    getTextContent()), () -> slot4());
                             break;
                         case "slot5":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Entity entity) -> slot5(entity));
+                                    getTextContent()), () -> slot5());
                             break;
                     }
                 }
@@ -177,71 +175,71 @@ public class EntityState implements ControllerState {
 
 
 
-    private void moveN(Entity entity) {
+    private void moveN() {
 
     }
 
-    private void moveNE(Entity entity) {
+    private void moveNE() {
 
     }
 
-    private void moveE(Entity entity) {
+    private void moveE() {
 
     }
 
-    private void moveSE(Entity entity) {
+    private void moveSE() {
 
     }
 
-    private void moveS(Entity entity) {
+    private void moveS() {
 
     }
 
-    private void moveSW(Entity entity) {
+    private void moveSW() {
 
     }
 
-    private void moveW(Entity entity) {
+    private void moveW() {
 
     }
 
-    private void moveNW(Entity entity) {
+    private void moveNW() {
 
     }
 
-    private void openMenu(Entity entity) {
+    private void openMenu() {
 
     }
 
-    private void openInventory(Entity entity) {
+    private void openInventory() {
 
     }
 
-    private void openEquipment(Entity entity) {
+    private void openEquipment() {
 
     }
 
-    private void openSkills(Entity entity) {
+    private void openSkills() {
 
     }
 
-    private void slot1(Entity entity) {
+    private void slot1() {
 
     }
 
-    private void slot2(Entity entity) {
+    private void slot2() {
 
     }
 
-    private void slot3(Entity entity) {
+    private void slot3() {
 
     }
 
-    private void slot4(Entity entity) {
+    private void slot4() {
 
     }
 
-    private void slot5(Entity entity) {
+    private void slot5() {
 
     }
 }

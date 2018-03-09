@@ -24,16 +24,12 @@ public class MenuState implements ControllerState {
     ControllerMediator controllerMediator;
     MenuController menuController;
 
-    //... idk i needed something for the lambdas
-    Integer selected;
-
-    Map<Integer, Consumer<Integer>> keyBinding = new HashMap();
+    Map<Integer, Runnable> keyBinding = new HashMap();
 
     public MenuState(ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         menuController = new MenuController(controllerMediator);
         loadKeyBindings();
-        selected = 56;
     }
 
     @Override
@@ -41,7 +37,7 @@ public class MenuState implements ControllerState {
 
         System.out.println("SIZE OF KEYBINDING:" + keyBinding.size());
 
-        keyBinding.get(keyEvent.getKeyCode()).accept(this.selected);
+        keyBinding.get(keyEvent.getKeyCode()).run();
     }
 
     @Override
@@ -69,31 +65,31 @@ public class MenuState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Integer selected) -> exitMenu(selected));
+                                    getTextContent()), () -> exitMenu());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Integer selected) -> scrollLeft(selected));
+                                    getTextContent()), () -> scrollLeft());
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Integer selected) -> scrollRight(selected));
+                                    getTextContent()), () -> scrollRight());
                             break;
                         case "scrollUp":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Integer selected) -> scrollUp(selected));
+                                    getTextContent()), () -> scrollUp());
                             break;
                         case "scrollDown":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Integer selected) -> scrollDown(selected));
+                                    getTextContent()), () -> scrollDown());
                             break;
                     }
                 }
@@ -109,23 +105,23 @@ public class MenuState implements ControllerState {
 
     }
 
-    private void exitMenu(Integer selected) {
+    private void exitMenu() {
     }
 
-    private void scrollLeft(Integer selected) {
-
-    }
-
-    private void scrollRight(Integer selected) {
+    private void scrollLeft() {
 
     }
 
-    private void scrollUp(Integer selected) {
+    private void scrollRight() {
+
+    }
+
+    private void scrollUp() {
         System.out.println("calling scrollUP in menustate");
         menuController.scrollUp();
     }
 
-    private void scrollDown(Integer selected) {
+    private void scrollDown() {
 
     }
 

@@ -26,9 +26,7 @@ public class SkillsState implements ControllerState {
     ControllerMediator controllerMediator;
     SkillsController skillsController;
 
-    Role role;
-
-    Map<Integer, Consumer<Role>> keyBinding = new HashMap();
+    Map<Integer, Runnable> keyBinding = new HashMap();
 
     public SkillsState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
@@ -37,7 +35,7 @@ public class SkillsState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        keyBinding.get(keyEvent).accept(this.role);
+        keyBinding.get(keyEvent).run();
     }
 
 
@@ -64,55 +62,55 @@ public class SkillsState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> openMenu(role));
+                                    getTextContent()), () -> openMenu());
                             break;
                         case "openEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> openEquipment(role));
+                                    getTextContent()), () -> openEquipment());
                             break;
                         case "openInventory":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> exitInventory(role));
+                                    getTextContent()), () -> exitInventory());
                             break;
                         case "exitSkills":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> openSkills(role));
+                                    getTextContent()), () -> openSkills());
                             break;
                         case "increaseCurrent":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> increaseCurrent(role));
+                                    getTextContent()), () -> increaseCurrent());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> scrollLeft(role));
+                                    getTextContent()), () -> scrollLeft());
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> scrollRight(role));
+                                    getTextContent()), () -> scrollRight());
                             break;
                         case "scrollUp":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> scrollUp(role));
+                                    getTextContent()), () -> scrollUp());
                             break;
                         case "scrollDown":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Role role) -> scrollDown(role));
+                                    getTextContent()), () -> scrollDown());
                             break;
                     }
                 }
@@ -129,39 +127,39 @@ public class SkillsState implements ControllerState {
 
     }
 
-    private void openMenu(Role role) {
+    private void openMenu() {
 
     }
 
-    private void openEquipment(Role role) {
+    private void openEquipment() {
 
     }
 
-    private void exitInventory(Role role) {
+    private void exitInventory() {
 
     }
 
-    private void openSkills(Role role) {
+    private void openSkills() {
 
     }
 
-    private void increaseCurrent(Role role) {
+    private void increaseCurrent() {
 
     }
 
-    private void scrollLeft(Role role) {
+    private void scrollLeft() {
 
     }
 
-    private void scrollRight(Role role) {
+    private void scrollRight() {
 
     }
 
-    private void scrollUp(Role role) {
+    private void scrollUp() {
 
     }
 
-    private void scrollDown(Role selected) {
+    private void scrollDown() {
 
     }
 

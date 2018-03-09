@@ -26,9 +26,7 @@ public class EquipmentState implements ControllerState {
     ControllerMediator controllerMediator;
     EquipmentController equipmentController;
 
-    Equipment equipment;
-
-    Map<Integer, Consumer<Equipment>> keyBinding = new HashMap();
+    Map<Integer, Runnable> keyBinding = new HashMap();
 
     public EquipmentState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
@@ -37,7 +35,7 @@ public class EquipmentState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        keyBinding.get(keyEvent).accept(this.equipment);
+        if(keyBinding.get(keyEvent) != null) keyBinding.get(keyEvent).run();
     }
 
     @Override
@@ -63,43 +61,43 @@ public class EquipmentState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> openMenu(equipment));
+                                    getTextContent()), () -> openMenu());
                             break;
                         case "openInventory":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> openInventory(equipment));
+                                    getTextContent()), () -> openInventory());
                             break;
                         case "exitEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> exitEquipment(equipment));
+                                    getTextContent()), () -> exitEquipment());
                             break;
                         case "openSkills":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> openSkills(equipment));
+                                    getTextContent()), () -> openSkills());
                             break;
                         case "unEquipItem":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> unEquipItem(equipment));
+                                    getTextContent()), () -> unEquipItem());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> scrollLeft(equipment));
+                                    getTextContent()), () -> scrollLeft());
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), (Equipment equipment) -> scrollRight(equipment));
+                                    getTextContent()), () -> scrollRight());
                             break;
                     }
                 }
@@ -119,31 +117,31 @@ public class EquipmentState implements ControllerState {
 
 
 
-    private void openMenu(Equipment equipment) {
+    private void openMenu() {
     }
 
 
-    private void openInventory(Equipment equipment) {
+    private void openInventory() {
 
     }
 
-    private void exitEquipment(Equipment equipment) {
+    private void exitEquipment() {
 
     }
 
-    private void openSkills(Equipment equipment) {
+    private void openSkills() {
 
     }
 
-    private void unEquipItem(Equipment equipment) {
+    private void unEquipItem() {
 
     }
 
-    private void scrollLeft(Equipment equipment) {
+    private void scrollLeft() {
 
     }
 
-    private void scrollRight(Equipment equipment) {
+    private void scrollRight() {
 
     }
 
