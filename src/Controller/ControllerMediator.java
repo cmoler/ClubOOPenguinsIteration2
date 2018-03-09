@@ -40,14 +40,12 @@ public class ControllerMediator {
         gameLoader = new GameLoader();
         gameSaver = new GameSaver();
 
-
-        menuViewPort = new MenuViewPort();
         areaViewport = new AreaViewPort();
 
-        gameFrame = new OOPenguinGameFrame();
-        gameFrame.add(menuViewPort);
-        menuViewPort.setVisible(true);
-        menuState = new MenuState(this);
+        menuViewPort = gameLoader.getMenuViewport();
+        gameFrame = gameLoader.getGameFrame();
+
+        menuState = new MenuState(gameLoader,this);
         changeToMenuState();
         input = new Input(activeState);
         gameFrame.addKeyListener(input);
@@ -58,10 +56,6 @@ public class ControllerMediator {
         inventoryState = new InventoryState(gameLoader, this);
         equipmentState = new EquipmentState(gameLoader, this);
         skillsState = new SkillsState(gameLoader, this);
-
-
-
-        menuViewPort.requestFocus();
 
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
@@ -83,26 +77,32 @@ public class ControllerMediator {
     }
 
     public void changeToEntityState(){
+        entityState.setActive();
         activeState = entityState;
     }
 
     public void changeToMenuState(){
+        menuState.setActive();
         activeState = menuState;
     }
 
     public void changeToInventoryState(){
+        inventoryState.setActive();
         activeState = inventoryState;
     }
 
     public void changeToEquipmentState(){
+        equipmentState.setActive();
         activeState = equipmentState;
     }
 
     public void changeToSkillsState(){
+        skillsState.setActive();
         activeState = skillsState;
     }
 
-    public void setSelectedMenuView(int i) {
-        menuViewPort.setSelectedMenuView(i);
+    public void loadGame(){
+
     }
+
 }

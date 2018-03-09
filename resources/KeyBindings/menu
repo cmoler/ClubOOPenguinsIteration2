@@ -15,4 +15,7 @@
    <Bind type = "scrollDown">
        <key>9</key>
    </Bind>
+   <Bind type = "select">
+       <key>10</key>
+   </Bind>
 </class>

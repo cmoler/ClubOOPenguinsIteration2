@@ -2,6 +2,7 @@ package Controller.States;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.MenuController;
+import Controller.SavingLoading.GameLoader;
 import Model.Entity.Inventory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -26,9 +27,9 @@ public class MenuState implements ControllerState {
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public MenuState(ControllerMediator controllerMediator){
+    public MenuState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        menuController = new MenuController(controllerMediator);
+        menuController = new MenuController(gameLoader, controllerMediator);
         loadKeyBindings();
     }
 
@@ -37,7 +38,7 @@ public class MenuState implements ControllerState {
 
         System.out.println("SIZE OF KEYBINDING:" + keyBinding.size());
 
-        keyBinding.get(keyEvent.getKeyCode()).run();
+        if(keyBinding.get(keyEvent.getKeyCode()) != null) keyBinding.get(keyEvent.getKeyCode()).run();
     }
 
     @Override
@@ -91,6 +92,12 @@ public class MenuState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> scrollDown());
                             break;
+                        case "select":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> select());
+                            break;
                     }
                 }
             }
@@ -103,6 +110,11 @@ public class MenuState implements ControllerState {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void setActive() {
+        menuController.setActive();
     }
 
     private void exitMenu() {
@@ -123,6 +135,10 @@ public class MenuState implements ControllerState {
 
     private void scrollDown() {
 
+    }
+
+    private void select() {
+        menuController.select();
     }
 
 }

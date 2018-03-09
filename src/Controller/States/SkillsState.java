@@ -35,7 +35,7 @@ public class SkillsState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        keyBinding.get(keyEvent).run();
+        if(keyBinding.get(keyEvent.getKeyCode()) != null) keyBinding.get(keyEvent.getKeyCode()).run();
     }
 
 
@@ -74,13 +74,13 @@ public class SkillsState implements ControllerState {
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), () -> exitInventory());
+                                    getTextContent()), () -> openInventory());
                             break;
                         case "exitSkills":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
                                     item(0).
-                                    getTextContent()), () -> openSkills());
+                                    getTextContent()), () -> exitSkills());
                             break;
                         case "increaseCurrent":
                             keyBinding.put(Integer.parseInt(eElement.
@@ -127,6 +127,11 @@ public class SkillsState implements ControllerState {
 
     }
 
+    @Override
+    public void setActive() {
+        skillsController.setActive();
+    }
+
     private void openMenu() {
 
     }
@@ -135,11 +140,11 @@ public class SkillsState implements ControllerState {
 
     }
 
-    private void exitInventory() {
+    private void openInventory() {
 
     }
 
-    private void openSkills() {
+    private void exitSkills() {
 
     }
 

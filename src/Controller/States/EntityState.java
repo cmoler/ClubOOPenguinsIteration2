@@ -33,7 +33,7 @@ public class EntityState implements ControllerState {
 
     @Override
     public void process(KeyEvent keyEvent) {
-        if(keyBinding.get(keyEvent) != null) keyBinding.get(keyEvent).run();
+        if(keyBinding.get(keyEvent.getKeyCode()) != null) keyBinding.get(keyEvent.getKeyCode()).run();
     }
 
     @Override
@@ -173,6 +173,10 @@ public class EntityState implements ControllerState {
 
     }
 
+    @Override
+    public void setActive() {
+        entityController.setActive();
+    }
 
 
     private void moveN() {
