@@ -59,58 +59,58 @@ public class SkillsState implements ControllerState {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
-                    switch (eElement.getAttribute("Bind")){
+                    switch (eElement.getAttribute("type")){
                         case "openMenu":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> openMenu(role));
                             break;
                         case "openEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> openEquipment(role));
                             break;
                         case "openInventory":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> exitInventory(role));
                             break;
                         case "exitSkills":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> openSkills(role));
                             break;
                         case "increaseCurrent":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> increaseCurrent(role));
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> scrollLeft(role));
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> scrollRight(role));
                             break;
                         case "scrollUp":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> scrollUp(role));
                             break;
                         case "scrollDown":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Role role) -> scrollDown(role));
                             break;

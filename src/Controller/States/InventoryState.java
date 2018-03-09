@@ -59,58 +59,58 @@ public class InventoryState implements ControllerState {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
-                    switch (eElement.getAttribute("Bind")){
+                    switch (eElement.getAttribute("type")){
                         case "openMenu":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> openMenu(inventory));
                             break;
                         case "openEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> openEquipment(inventory));
                             break;
                         case "exitInventory":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> exitInventory(inventory));
                             break;
                         case "openSkills":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> openSkills(inventory));
                             break;
                         case "equipItem":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> equipItem(inventory));
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> scrollLeft(inventory));
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> scrollRight(inventory));
                             break;
                         case "scrollUp":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> scrollUp(inventory));
                             break;
                         case "scrollDown":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Inventory inventory) -> scrollDown(inventory));
                             break;

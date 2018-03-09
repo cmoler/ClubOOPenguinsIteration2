@@ -58,46 +58,46 @@ public class EquipmentState implements ControllerState {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
-                    switch (eElement.getAttribute("Bind")){
+                    switch (eElement.getAttribute("type")){
                         case "openMenu":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> openMenu(equipment));
                             break;
                         case "openInventory":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> openInventory(equipment));
                             break;
                         case "exitEquipment":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> exitEquipment(equipment));
                             break;
                         case "openSkills":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> openSkills(equipment));
                             break;
                         case "unEquipItem":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> unEquipItem(equipment));
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> scrollLeft(equipment));
                             break;
                         case "scrollRight":
                             keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("Key").
+                                    getElementsByTagName("key").
                                     item(0).
                                     getTextContent()), (Equipment equipment) -> scrollRight(equipment));
                             break;

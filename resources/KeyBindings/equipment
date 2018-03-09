@@ -1,24 +1,24 @@
 <?xml version = "1.0"?>
 <class>
-   <Bind  = "openMenu">
+   <Bind type = "openMenu">
       <key>1</key>
    </Bind>
-   <Bind  = "openInventory>
+   <Bind type = "openInventory>
        <key>2</key>
    </Bind>
-   <Bind  = "exitEquipment">
+   <Bind type = "exitEquipment">
       <key>3</key>
    </Bind>
-   <Bind  = "openSkills">
+   <Bind type = "openSkills">
       <key>4</key>
    </Bind>
-   <Bind  = "unEquipItem">
+   <Bind type = "unEquipItem">
        <key>5</key>
    </Bind>
-   <Bind  = "scrollLeft">
+   <Bind type = "scrollLeft">
       <key>6</key>
    </Bind>
-   <Bind  = "scrollRight">
+   <Bind type = "scrollRight">
        <key>7</key>
    </Bind>
 </class>
