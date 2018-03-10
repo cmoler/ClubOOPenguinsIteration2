@@ -14,6 +14,7 @@ import static Model.Map.Direction.*;
 public class Map {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
+    private EntityLocation entityLocationList = new EntityLocation();
 
     private Location[][] locations;
     private Location defaultLocation;
@@ -66,6 +67,12 @@ public class Map {
         this.defaultLocation = locations[x/2][y/2];
         setAdjacencyList();
     }
+
+    //Update entity location if they are flagged to move
+    public void updateEntityLocations(){
+        entityLocationList.updateEntityLocations();
+    }
+
 
     public void setAdjacencyList() {
         for (int i = 0; i < numRows; i++) {

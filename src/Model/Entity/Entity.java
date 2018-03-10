@@ -27,6 +27,8 @@ public class Entity {
     private Inventory inventory = new Inventory(this);
     private Equipment equipment = new Equipment(this);
     private Location location;
+    private boolean intentToMove = false;
+    // map is in World
 
     public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
@@ -95,12 +97,23 @@ public class Entity {
 
     public void move(Direction direction){
         if (directionFacing == direction){
-            this.location.moveTo(this, direction);
+            intentToMove = true;
         }
         else {
             directionFacing = direction;
         }
+    }
 
+    public boolean getIntentToMove(){
+        return intentToMove;
+    }
+
+    public void setIntentToMove(boolean intentToMove) {
+        this.intentToMove = intentToMove;
+    }
+
+    public Direction getDirectionFacing() {
+        return directionFacing;
     }
 
     public void setLocation(Location location){
