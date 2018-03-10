@@ -26,6 +26,7 @@ public class Entity{
     private Equipment equipment = new Equipment(this);
     private EntityType entityType;
     private Location location;
+    private boolean intentToMove = false;
     // map is in World
 
     public Entity(Location initialLocation) {
@@ -95,12 +96,23 @@ public class Entity{
 
     public void move(Direction direction){
         if (directionFacing == direction){
-            this.location.moveTo(this, direction);
+            intentToMove = true;
         }
         else {
             directionFacing = direction;
         }
+    }
 
+    public boolean getIntentToMove(){
+        return intentToMove;
+    }
+
+    public void setIntentToMove(boolean intentToMove) {
+        this.intentToMove = intentToMove;
+    }
+
+    public Direction getDirectionFacing() {
+        return directionFacing;
     }
 
     public void setLocation(Location location){

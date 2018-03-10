@@ -46,15 +46,6 @@ public class Location {
         return terrain;
     }
 
-    public boolean moveTo(Entity e, Direction d){
-        Location next = adjacentLocations.get(d);
-        if (next.moveAllowed(e)){
-            e.setLocation(next);
-            return true;
-        }
-        else
-            return false;
-    }
 
     public boolean moveAllowed(Entity entity){
         if (!obstacle && terrain.enter(entity.getEntityType()))
