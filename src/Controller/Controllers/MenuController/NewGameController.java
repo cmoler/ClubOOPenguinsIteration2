@@ -15,8 +15,13 @@ public class NewGameController extends MenuController {
         newGameView = gameLoader.getMenuViewport().getNewGameView();
     }
 
+    public void scrollUp(){
+        if(currentlySelected > 0) currentlySelected -= 1;
+        newGameView.setSelectedMenuView(1);
+    }
+
     public void scrollDown(){
-        currentlySelected = -1;
-        newGameView.setSelectedMenuView(currentlySelected);
+        if(currentlySelected < 4) currentlySelected += 1;
+        newGameView.setSelectedMenuView(-1);
     }
 }

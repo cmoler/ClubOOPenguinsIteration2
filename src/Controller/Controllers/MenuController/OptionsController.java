@@ -14,9 +14,14 @@ public class OptionsController extends MenuController {
         optionsView = gameLoader.getMenuViewport().getOptionsView();
     }
 
+    public void scrollUp(){
+        if(currentlySelected > 0) currentlySelected -= 1;
+        optionsView.setSelectedMenuView(1);
+    }
+
     public void scrollDown(){
-        currentlySelected = -1;
-        optionsView.setSelectedMenuView(currentlySelected);
+        if(currentlySelected < 4) currentlySelected += 1;
+        optionsView.setSelectedMenuView(-1);
     }
 
 }

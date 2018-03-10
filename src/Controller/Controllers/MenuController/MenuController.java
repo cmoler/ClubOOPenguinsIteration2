@@ -56,7 +56,7 @@ public class MenuController implements Controller{
             activeController.scrollDown();
             return;
         }
-        currentlySelected += 1;
+        if(currentlySelected < 4) currentlySelected += 1;
         menuViewPort.setSelectedMenuView(-1);
     }
 
@@ -65,7 +65,7 @@ public class MenuController implements Controller{
             activeController.scrollUp();
             return;
         }
-        currentlySelected -= 1;
+        if(currentlySelected > 0) currentlySelected -= 1;
         menuViewPort.setSelectedMenuView(1);
     }
 
@@ -86,6 +86,7 @@ public class MenuController implements Controller{
             case 2:
                 menuViewPort.enterLoadGameView();
                 activeController = loadGameController;
+                break;
             case 3:
                 menuViewPort.enterOptionsView();
                 activeController = optionsController;
