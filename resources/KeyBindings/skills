@@ -1,0 +1,30 @@
+<?xml version = "1.0"?>
+<class>
+   <Bind type = "openMenu">
+      <key>1</key>
+   </Bind>
+   <Bind type = "openEquipment>
+       <key>2</key>
+   </Bind>
+   <Bind type = "openInventory">
+      <key>3</key>
+   </Bind>
+   <Bind type = "exitSkills">
+      <key>4</key>
+   </Bind>
+   <Bind type = "increaseCurrent">
+       <key>5</key>
+   </Bind>
+   <Bind type = "scrollLeft">
+      <key>6</key>
+   </Bind>
+   <Bind type = "scrollRight">
+       <key>7</key>
+   </Bind>
+   <Bind type = "scrollUp">
+      <key>8</key>
+   </Bind>
+   <Bind type = "scrollDown">
+       <key>9</key>
+   </Bind>
+</class>

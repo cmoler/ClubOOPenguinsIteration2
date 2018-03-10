@@ -1,0 +1,7 @@
+0001
+ENTITY
+	ICE
+	2,1
+	100
+	1
+	INVENTORY

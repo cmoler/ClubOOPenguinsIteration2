@@ -63,12 +63,6 @@ public class Viewport extends JPanel {
         }
     }
 
-    public void setSelectedMenuView(int selectedMenuView){
-        for(Viewport child: children){
-            child.setSelectedMenuView(selectedMenuView);
-        }
-    }
-
     public void addToFront(Viewport viewport){
         viewport.parent = this;
         children.add(0, viewport);
