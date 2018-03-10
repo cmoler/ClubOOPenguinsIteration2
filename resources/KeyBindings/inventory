@@ -3,7 +3,7 @@
    <Bind type = "openMenu">
       <key>1</key>
    </Bind>
-   <Bind type = "openEquipment>
+   <Bind type = "openEquipment">
        <key>2</key>
    </Bind>
    <Bind type = "exitInventory">
