@@ -31,7 +31,7 @@ public class MenuController implements Controller{
         newGameController = new NewGameController(gameLoader, this);
         saveGameController = new SaveGameController(gameLoader, this);
         loadGameController = new LoadGameController(gameLoader, this);
-        optionsController = new OptionsController();
+        optionsController = new OptionsController(gameLoader, this);
         exitGameController = new ExitGameController(gameLoader, this);
     }
 
@@ -39,7 +39,9 @@ public class MenuController implements Controller{
         this.parent = menuController;
     }
 
-    protected void exitSubMenu(){
+    public void exitSubMenu(){
+        System.out.println("Exit menu");
+        menuViewPort.returnToMenu();
         this.activeController = null;
     }
 
@@ -49,13 +51,22 @@ public class MenuController implements Controller{
         menuViewPort.requestFocus();
     }
 
+    public void scrollDown(){
+        if(activeController != null) {
+            activeController.scrollDown();
+            return;
+        }
+        currentlySelected += 1;
+        menuViewPort.setSelectedMenuView(-1);
+    }
+
     public void scrollUp(){
         if(activeController != null) {
             activeController.scrollUp();
             return;
         }
-        currentlySelected += 1;
-        menuViewPort.setSelectedMenuView(-1);
+        currentlySelected -= 1;
+        menuViewPort.setSelectedMenuView(1);
     }
 
     public void select() {

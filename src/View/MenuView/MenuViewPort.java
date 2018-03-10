@@ -12,9 +12,7 @@ public class MenuViewPort extends Viewport {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
     private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
-    private int selectedXz = 0;
     private int selectedY = Commons.SCREEN_HEIGHT/4;
-    private int selectedYz = 0;
 
     int currentSubMenu = -1;
 
@@ -24,7 +22,6 @@ public class MenuViewPort extends Viewport {
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
-        add(new AvatarSelectionView(0, 0));
     }
 
     @Override
@@ -54,7 +51,6 @@ public class MenuViewPort extends Viewport {
         graphics2D.drawString("Exit Game", (startX), (startY + 4*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
         graphics2D.drawImage(selected, selectedX, selectedY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
-        graphics2D.drawImage(selected, selectedXz, selectedYz, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
     }
 
     public void setSelectedMenuView(int selectedMenuView){
@@ -64,9 +60,18 @@ public class MenuViewPort extends Viewport {
                 this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
     }
 
+    public void returnToMenu(){
+        currentSubMenu = -1;
+    }
+
+    public NewGameView getNewGameView(){
+        return (NewGameView)children.get(0);
+    }
+
     public void enterNewGameView(){
         currentSubMenu = 0;
     }
+
 
     public SaveGameView getSaveGameView(){
         return (SaveGameView)children.get(1);
@@ -76,24 +81,31 @@ public class MenuViewPort extends Viewport {
         currentSubMenu = 1;
     }
 
+
+    public LoadGameView getLoadGameView(){
+        return (LoadGameView)children.get(2);
+
+    }
+
     public void enterLoadGameView(){
         currentSubMenu = 2;
+    }
+
+
+    public OptionsView getOptionsView(){
+        return (OptionsView)children.get(3);
     }
 
     public void enterOptionsView(){
         currentSubMenu = 3;
     }
 
-    public void enterExitGameView(){
-        currentSubMenu = 4;
+
+    public ExitGameView getExitGameView(){
+        return (ExitGameView)children.get(4);
     }
 
-    public void setSelectedAvatarView(int selectedAvatarView){
-        if(selectedAvatarView == 1){
-            this.selectedXz = TextBoxInfo.TEXTBOX_WIDTH;
-        }
-        else {
-            this.selectedXz = 0;
-        }
+    public void enterExitGameView(){
+        currentSubMenu = 4;
     }
 }

@@ -1,5 +1,6 @@
 package View.MenuView;
 
+import Configs.Commons;
 import Configs.TextBoxInfo;
 import View.Viewport;
 
@@ -20,5 +21,9 @@ public class ExitGameView extends Viewport {
     @Override
     public List<Viewport> getChildren(){
         return null;
+    }
+
+    public void setSelectedMenuView(int selectedMenuView){
+
     }
 }

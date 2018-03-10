@@ -116,6 +116,7 @@ public class MenuState implements ControllerState {
     }
 
     private void exitMenu() {
+        menuController.exitSubMenu();
     }
 
     private void scrollLeft() {
@@ -127,12 +128,13 @@ public class MenuState implements ControllerState {
     }
 
     private void scrollUp() {
-        System.out.println("calling scrollUP in menustate");
+        System.out.println("calling scrollUp in menustate");
         menuController.scrollUp();
     }
 
     private void scrollDown() {
-
+        System.out.println("calling scrollDown in menustate");
+        menuController.scrollDown();
     }
 
     private void select() {

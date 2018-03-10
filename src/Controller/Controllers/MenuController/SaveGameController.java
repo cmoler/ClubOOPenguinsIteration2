@@ -15,7 +15,7 @@ public class SaveGameController extends MenuController {
         saveGameView = gameLoader.getMenuViewport().getSaveGameView();
     }
 
-    public void scrollUp(){
+    public void scrollDown(){
         currentlySelected = -1;
         saveGameView.setSelectedMenuView(currentlySelected);
     }

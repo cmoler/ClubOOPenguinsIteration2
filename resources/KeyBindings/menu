@@ -1,7 +1,7 @@
 <?xml version = "1.0"?>
 <class>
    <Bind type = "exitMenu">
-      <key>1</key>
+      <key>27</key>
    </Bind>
    <Bind type = "scrollLeft">
       <key>6</key>
@@ -10,10 +10,10 @@
        <key>7</key>
    </Bind>
    <Bind type = "scrollUp">
-      <key>56</key>
+      <key>38</key>
    </Bind>
    <Bind type = "scrollDown">
-       <key>9</key>
+       <key>40</key>
    </Bind>
    <Bind type = "select">
        <key>10</key>

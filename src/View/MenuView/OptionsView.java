@@ -21,4 +21,8 @@ public class OptionsView extends Viewport {
         return null;
     }
 
+    public void setSelectedMenuView(int selectedMenuView){
+
+    }
+
 }
