@@ -114,6 +114,5 @@ public class MenuController implements Controller{
     protected void changeKeyBindings(String bindingToChange, String keyToChange){
         controllerMediator.primeKeyBindingState(bindingToChange, keyToChange);
         controllerMediator.changeToKeyBindingState();
-        controllerMediator.reloadKeyBindings();
     }
 }
