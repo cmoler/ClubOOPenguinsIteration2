@@ -3,6 +3,7 @@ package Model.Entity;
 import Model.Entity.Role.Role;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -10,11 +11,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class Entity{
+public class Entity {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
     private Role role;
+    private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
     private int mana;
@@ -24,9 +26,7 @@ public class Entity{
     private int level = 1; // default level
     private Inventory inventory = new Inventory(this);
     private Equipment equipment = new Equipment(this);
-    private EntityType entityType;
     private Location location;
-    // map is in World
 
     public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
@@ -151,6 +151,10 @@ public class Entity{
 
     public Location getLocation() {
         return location;
+    }
+
+    public void accept(Visitor v){
+        v.visitEntity(this);
     }
 
     public void attach(Viewport viewport){

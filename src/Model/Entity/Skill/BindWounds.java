@@ -10,7 +10,7 @@ public class BindWounds extends Skill {
 
     public void use(Entity e){
 
-        // ... heal entity
+        // TODO: heal entity
     }
 
 }

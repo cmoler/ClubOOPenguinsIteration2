@@ -2,6 +2,7 @@ package Model.Map;
 
 import Model.Item.Item;
 import Model.Map.Terrain.Ice;
+import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -156,6 +157,10 @@ public class Map {
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
+
+    public void accept(Visitor v){
+        v.visitMap(this);
+    }
 
     public void attach(Viewport viewport) {
         observers.add(viewport);

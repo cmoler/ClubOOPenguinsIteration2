@@ -8,7 +8,7 @@ import javafx.beans.Observable;
 
 public class Role {
 
-    private Entity entity;
+    protected Entity entity;
     private BindWounds bindWounds;
     private Bargain bargain;
     private Observation observation;
@@ -17,8 +17,8 @@ public class Role {
         this.entity = e;
     }
 
-    public void bindWounds(){
-        bindWounds.use(this.entity);
+    public int getBindWounds(){
+        return bindWounds.getPoints();
     }
 
     public int getBargain(){
@@ -27,5 +27,21 @@ public class Role {
 
     public int getObservation(){
         return observation.getPoints();
+    }
+
+    public void addBindWounds(int points){
+        bindWounds.addPoints(points);
+    }
+
+    public void addBargain(int points){
+        bargain.addPoints(points);
+    }
+
+    public void addObservation(int points){
+        observation.addPoints(points);
+    }
+
+    public void bindWounds(){
+        bindWounds.use(this.entity);
     }
 }
