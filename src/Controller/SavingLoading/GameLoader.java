@@ -36,6 +36,8 @@ public class GameLoader {
 
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
 
+
+
     public AreaViewPort getAreaViewport(){
         return null;
     }
