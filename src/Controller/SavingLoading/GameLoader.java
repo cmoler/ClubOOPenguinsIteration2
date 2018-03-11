@@ -13,6 +13,10 @@ import View.StatusView.InventoryView;
 import View.StatusView.SkillsView;
 import View.Viewport;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class GameLoader {
 
     private String saveGameDirectory;
@@ -23,7 +27,6 @@ public class GameLoader {
 
     public GameLoader(){
         menuViewPort = new MenuViewPort();
-
         gameFrame = new OOPenguinGameFrame();
         gameFrame.add(menuViewPort);
         menuViewPort.setVisible(true);
@@ -31,6 +34,15 @@ public class GameLoader {
     }
 
     public void loadGame(String fileName){
+        String source = "";
+        try {
+            FileReader fileReader = new FileReader(fileName);
+            source = fileReader.getEncoding();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("file = " + source);
 
     }
 
