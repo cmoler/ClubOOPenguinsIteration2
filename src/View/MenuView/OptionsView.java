@@ -5,7 +5,7 @@ import View.Viewport;
 import java.awt.*;
 import java.util.List;
 
-public class OptionsView extends Viewport {
+public class OptionsView extends MenuViewPort {
 
     public OptionsView(){
 
@@ -29,4 +29,23 @@ public class OptionsView extends Viewport {
 
     }
 
+    @Override
+    public void scrollUp() {
+
+    }
+
+    @Override
+    public void scrollDown() {
+
+    }
+
+    @Override
+    public void scrollLeft() {
+
+    }
+
+    @Override
+    public void scrollRight() {
+
+    }
 }

@@ -8,7 +8,7 @@ import View.Viewport;
 import java.awt.*;
 import java.util.List;
 
-public class SaveGameView extends Viewport {
+public class SaveGameView extends MenuViewPort {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
     private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
@@ -48,5 +48,25 @@ public class SaveGameView extends Viewport {
     @Override
     public List<Viewport> getChildren(){
         return null;
+    }
+
+    @Override
+    public void scrollUp() {
+
+    }
+
+    @Override
+    public void scrollDown() {
+
+    }
+
+    @Override
+    public void scrollLeft() {
+
+    }
+
+    @Override
+    public void scrollRight() {
+
     }
 }

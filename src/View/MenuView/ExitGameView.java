@@ -1,13 +1,11 @@
 package View.MenuView;
 
-import Configs.Commons;
-import Configs.TextBoxInfo;
 import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class ExitGameView extends Viewport {
+public class ExitGameView extends MenuViewPort {
 
     public ExitGameView(){
 
@@ -24,6 +22,26 @@ public class ExitGameView extends Viewport {
     }
 
     public void setSelectedMenuView(int selectedMenuView){
+
+    }
+
+    @Override
+    public void scrollUp() {
+
+    }
+
+    @Override
+    public void scrollDown() {
+
+    }
+
+    @Override
+    public void scrollLeft() {
+
+    }
+
+    @Override
+    public void scrollRight() {
 
     }
 }

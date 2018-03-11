@@ -8,7 +8,7 @@ import View.Viewport;
 import java.awt.*;
 import java.util.List;
 
-public class NewGameView extends Viewport{
+public class NewGameView extends MenuViewPort {
 
     private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
     private int selectedY = Commons.SCREEN_HEIGHT/4;
@@ -58,5 +58,25 @@ public class NewGameView extends Viewport{
             this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
         else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
             this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
+    }
+
+    @Override
+    public void scrollUp() {
+
+    }
+
+    @Override
+    public void scrollDown() {
+
+    }
+
+    @Override
+    public void scrollLeft() {
+
+    }
+
+    @Override
+    public void scrollRight() {
+
     }
 }

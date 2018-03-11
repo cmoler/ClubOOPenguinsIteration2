@@ -1,7 +1,6 @@
 package Controller.Controllers.MenuController;
 
 import Configs.Commons;
-import Controller.ControllerMediator;
 import Controller.SavingLoading.GameLoader;
 import View.MenuView.LoadGameView;
 
@@ -12,10 +11,10 @@ public class LoadGameController extends MenuController {
     private LoadGameView loadGameView;
     GameLoader gameLoader;
 
-    public LoadGameController(GameLoader gameLoader, MenuController parent) {
-        setParent(parent);
+    public LoadGameController(GameLoader gameLoader, MainMenuController parent) {
         this.gameLoader = gameLoader;
-        loadGameView = gameLoader.getMenuViewport().getLoadGameView();
+        loadGameView = gameLoader.getMainMenuViewport().getLoadGameView();
+        setMenuViewPort(loadGameView);
     }
 
     public void select(){
@@ -23,13 +22,14 @@ public class LoadGameController extends MenuController {
         gameLoader.loadGame(fileName);
     }
 
-    public void scrollUp(){
-        if(currentlySelected > 0) currentlySelected -= 1;
-        loadGameView.setSelectedMenuView(1);
+    @Override
+    protected void correctUpDownParameters() {
+
     }
 
-    public void scrollDown(){
-        if(currentlySelected < 3) currentlySelected += 1;
-        loadGameView.setSelectedMenuView(-1);
+    @Override
+    protected void correctLeftRightParameters() {
+
     }
+
 }

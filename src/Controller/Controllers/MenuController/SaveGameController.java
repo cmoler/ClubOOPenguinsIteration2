@@ -1,22 +1,20 @@
 package Controller.Controllers.MenuController;
 
 import Configs.Commons;
-import Controller.ControllerMediator;
 import Controller.SavingLoading.GameLoader;
-import Controller.SavingLoading.GameSaver;
 import View.MenuView.SaveGameView;
 
-public class SaveGameController extends MenuController {
+public class SaveGameController extends MainMenuController {
 
     private int currentlySelected = 1;
 
     private SaveGameView saveGameView;
     private GameLoader gameLoader;
 
-    public SaveGameController(GameLoader gameLoader, MenuController parent) {
-        setParent(parent);
-        saveGameView = gameLoader.getMenuViewport().getSaveGameView();
+    public SaveGameController(GameLoader gameLoader, MainMenuController parent) {
+        saveGameView = gameLoader.getMainMenuViewport().getSaveGameView();
         this.gameLoader = gameLoader;
+        setMenuViewPort(saveGameView);
     }
 
     public void select(){

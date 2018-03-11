@@ -1,13 +1,11 @@
 package View.MenuView;
 
-import Configs.SpriteParser;
-import Configs.TextBoxInfo;
 import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class AvatarSelectionView extends Viewport {
+public class AvatarSelectionView extends MenuViewPort {
     private int x;
     private int y;
 
@@ -25,5 +23,25 @@ public class AvatarSelectionView extends Viewport {
     @Override
     public List<Viewport> getChildren(){
         return null;
+    }
+
+    @Override
+    public void scrollUp() {
+
+    }
+
+    @Override
+    public void scrollDown() {
+
+    }
+
+    @Override
+    public void scrollLeft() {
+
+    }
+
+    @Override
+    public void scrollRight() {
+
     }
 }

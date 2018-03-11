@@ -3,8 +3,7 @@ package Controller;
 import Controller.SavingLoading.GameLoader;
 import Controller.SavingLoading.GameSaver;
 import Controller.States.*;
-import View.AreaView.AreaEffectView;
-import View.AreaView.AreaViewPort;
+import View.MenuView.MainMenuView;
 import View.MenuView.MenuViewPort;
 import View.Viewport;
 import Controller.Input.Input;
@@ -52,7 +51,7 @@ public class ControllerMediator {
     }
 
     private void getViewsFromLoader(){
-        menuViewPort = gameLoader.getMenuViewport();
+        menuViewPort = gameLoader.getMainMenuViewport();
         gameFrame = gameLoader.getGameFrame();
     }
 

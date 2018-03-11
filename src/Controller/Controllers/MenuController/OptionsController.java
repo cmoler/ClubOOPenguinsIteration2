@@ -1,71 +1,23 @@
 package Controller.Controllers.MenuController;
 
+import Controller.ControllerMediator;
 import Controller.SavingLoading.GameLoader;
 import View.MenuView.OptionsView;
 
 public class OptionsController extends MenuController {
 
-    private int currentlySelectedBinding = 0;
-    private int currentlySelectedKey = 0;
-
     private OptionsView optionsView;
 
-    public OptionsController(GameLoader gameLoader, MenuController parent) {
-        setParent(parent);
-        optionsView = gameLoader.getMenuViewport().getOptionsView();
-    }
+    private ControllerMediator controllerMediator;
 
-    public void scrollRight(){
-        if(currentlySelectedBinding < 4) currentlySelectedBinding++;
-        correctKeySelectionParameters();
-        optionsView.setSelectedBindingView(1);
-    }
-
-    public void scrollLeft(){
-        if(currentlySelectedBinding > 0) currentlySelectedBinding--;
-        correctKeySelectionParameters();
-        optionsView.setSelectedBindingView(-1);
-    }
-
-    public void scrollUp(){
-        currentlySelectedKey -= 1;
-        correctKeySelectionParameters();
-        optionsView.setSelectedKeyView(1);
-    }
-
-    public void scrollDown(){
-        currentlySelectedKey += 1;
-        correctKeySelectionParameters();
-        optionsView.setSelectedKeyView(-1);
-    }
-
-    private void correctKeySelectionParameters(){
-        switch (currentlySelectedBinding){
-            case 0:
-                if(currentlySelectedKey > 16) currentlySelectedKey = 16;
-                if(currentlySelectedKey < 0) currentlySelectedKey = 0;
-                break;
-            case 1:
-                if(currentlySelectedKey > 6) currentlySelectedKey = 6;
-                if(currentlySelectedKey < 0) currentlySelectedKey = 0;
-                break;
-            case 2:
-                if(currentlySelectedKey > 8) currentlySelectedKey = 8;
-                if(currentlySelectedKey < 0) currentlySelectedKey = 0;
-                break;
-            case 3:
-                if(currentlySelectedKey > 5) currentlySelectedKey = 5;
-                if(currentlySelectedKey < 0) currentlySelectedKey = 0;
-                break;
-            case 4:
-                if(currentlySelectedKey > 8) currentlySelectedKey = 8;
-                if(currentlySelectedKey < 0) currentlySelectedKey = 0;
-                break;
-        }
+    public OptionsController(GameLoader gameLoader, ControllerMediator controllerMediator) {
+        optionsView = gameLoader.getMainMenuViewport().getOptionsView();
+        setMenuViewPort(optionsView);
+        this.controllerMediator = controllerMediator;
     }
 
     public void select(){
-        switch (currentlySelectedBinding){
+        switch (selectedRightLeft){
             case 0:
                 changeEntityBindings();
                 break;
@@ -84,8 +36,41 @@ public class OptionsController extends MenuController {
         }
     }
 
+    @Override
+    protected void correctUpDownParameters() {
+        switch (selectedRightLeft){
+            case 0:
+                if(selectedUpDown > 16) selectedUpDown = 16;
+                if(selectedUpDown < 0) selectedUpDown = 0;
+                break;
+            case 1:
+                if(selectedUpDown > 6) selectedUpDown = 6;
+                if(selectedUpDown < 0) selectedUpDown = 0;
+                break;
+            case 2:
+                if(selectedUpDown > 8) selectedUpDown = 8;
+                if(selectedUpDown < 0) selectedUpDown = 0;
+                break;
+            case 3:
+                if(selectedUpDown > 5) selectedUpDown = 5;
+                if(selectedUpDown < 0) selectedUpDown = 0;
+                break;
+            case 4:
+                if(selectedUpDown > 8) selectedUpDown = 8;
+                if(selectedUpDown < 0) selectedUpDown = 0;
+                break;
+        }
+    }
+
+    @Override
+    protected void correctLeftRightParameters() {
+        if(selectedRightLeft > 4) selectedRightLeft = 4;
+        if(selectedRightLeft < 0) selectedRightLeft = 0;
+
+    }
+
     private void changeEntityBindings(){
-        switch (currentlySelectedKey){
+        switch (selectedUpDown){
             case 0:
                 changeKeyBindings("entity", "moveN");
                 break;
@@ -141,7 +126,7 @@ public class OptionsController extends MenuController {
     }
 
     private void changeEquipmentBindings(){
-        switch (currentlySelectedKey){
+        switch (selectedUpDown){
             case 0:
                 changeKeyBindings("equipment", "openMenu");
                 break;
@@ -167,7 +152,7 @@ public class OptionsController extends MenuController {
     }
 
     private void changeInventoryBindings(){
-        switch (currentlySelectedKey){
+        switch (selectedUpDown){
             case 0:
                 changeKeyBindings("inventory", "openMenu");
                 break;
@@ -199,7 +184,7 @@ public class OptionsController extends MenuController {
     }
 
     private void changeMenuBindings(){
-        switch (currentlySelectedKey){
+        switch (selectedUpDown){
             case 0:
                 changeKeyBindings("menu", "exitMenu");
                 break;
@@ -222,7 +207,7 @@ public class OptionsController extends MenuController {
     }
 
     private void changeSkillsBindings(){
-        switch (currentlySelectedKey){
+        switch (selectedUpDown){
             case 0:
                 changeKeyBindings("skills", "openMenu");
                 break;
@@ -251,5 +236,10 @@ public class OptionsController extends MenuController {
                 changeKeyBindings("skills", "scrollDown");
                 break;
         }
+    }
+
+    private void changeKeyBindings(String bindingToChange, String keyToChange){
+        controllerMediator.primeKeyBindingState(bindingToChange, keyToChange);
+        controllerMediator.changeToKeyBindingState();
     }
 }
