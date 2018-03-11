@@ -69,6 +69,20 @@ public class MenuController implements Controller{
         menuViewPort.setSelectedMenuView(1);
     }
 
+    public void scrollRight(){
+        if(activeController != null) {
+            activeController.scrollRight();
+            return;
+        }
+    }
+
+    public void scrollLeft(){
+        if(activeController != null) {
+            activeController.scrollLeft();
+            return;
+        }
+    }
+
     public void select() {
         if(activeController != null) {
             activeController.select();
@@ -97,4 +111,8 @@ public class MenuController implements Controller{
         }
     }
 
+    protected void changeKeyBindings(String bindingToChange, String keyToChange){
+        controllerMediator.primeKeyBindingState(bindingToChange, keyToChange);
+        controllerMediator.changeToKeyBindingState();
+    }
 }

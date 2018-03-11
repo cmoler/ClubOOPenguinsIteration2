@@ -29,6 +29,7 @@ public class EntityState implements ControllerState {
     public EntityState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         this.entityController = new EntityController(gameLoader);
+        loadKeyBindings();
     }
 
     @Override

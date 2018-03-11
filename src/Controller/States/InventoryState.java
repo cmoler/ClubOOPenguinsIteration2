@@ -31,6 +31,7 @@ public class InventoryState implements ControllerState {
     public InventoryState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         this.inventoryController = new InventoryController(gameLoader);
+        loadKeyBindings();
     }
 
 

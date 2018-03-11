@@ -21,7 +21,11 @@ public class OptionsView extends Viewport {
         return null;
     }
 
-    public void setSelectedMenuView(int selectedMenuView){
+    public void setSelectedKeyView(int selectedKeyView){
+
+    }
+
+    public void setSelectedBindingView(int selectedBindingView){
 
     }
 

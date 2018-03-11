@@ -24,6 +24,8 @@ public class ControllerMediator {
     private EquipmentState equipmentState;
     private SkillsState skillsState;
 
+    private KeyBindingState keyBindingState;
+
     private GameLoader gameLoader;
     private GameSaver gameSaver;
 
@@ -55,6 +57,7 @@ public class ControllerMediator {
     }
 
     private void loadStates(){
+        keyBindingState = new KeyBindingState(this);
         menuState = new MenuState(gameLoader,this);
         activeState = menuState;
         entityState = new EntityState(gameLoader, this);
@@ -106,6 +109,23 @@ public class ControllerMediator {
     public void changeToSkillsState(){
         skillsState.setActive();
         activeState = skillsState;
+    }
+
+    public void primeKeyBindingState(String bindingToChange, String keyToChange){
+        keyBindingState.setBindingToChange(bindingToChange);
+        keyBindingState.setKeyToChange(keyToChange);
+    }
+
+    public void changeToKeyBindingState(){
+        activeState = keyBindingState;
+    }
+
+    public void reloadKeyBindings(){
+        entityState.loadKeyBindings();
+        menuState.loadKeyBindings();
+        inventoryState.loadKeyBindings();
+        equipmentState.loadKeyBindings();
+        skillsState.loadKeyBindings();
     }
 
 }

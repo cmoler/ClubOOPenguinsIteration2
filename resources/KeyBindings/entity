@@ -3,7 +3,7 @@
    <Bind type = "moveN">
       <key>1</key>
    </Bind>
-   <Bind type = "moveNE>
+   <Bind type = "moveNE">
        <key>2</key>
    </Bind>
    <Bind type = "moveE">
