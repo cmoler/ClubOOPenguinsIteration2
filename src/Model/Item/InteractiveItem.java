@@ -13,8 +13,4 @@ public class InteractiveItem extends Item{
     }
 
 
-    public ItemType getItemType() {
-        return ItemType.INTERACTIVE;
-    }
-
 }

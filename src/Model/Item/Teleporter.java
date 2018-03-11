@@ -42,9 +42,5 @@ public class Teleporter extends InteractiveItem{
         return false;
     }
 
-    public ItemType getItemType() {
-        return ItemType.TELEPORTER;
-    }
-
 
 }

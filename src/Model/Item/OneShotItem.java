@@ -14,8 +14,4 @@ public class OneShotItem extends Item{
         return true;
     }
 
-    public ItemType getItemType() {
-        return ItemType.ONESHOT;
-    }
-
 }

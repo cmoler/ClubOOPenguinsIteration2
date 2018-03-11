@@ -12,8 +12,13 @@ public class TakeableItem extends Item{
     public boolean shouldBeRemoved(){
         return true; // always true?
     }
-    public ItemType getItemType() {
-        return ItemType.TAKEABLE;
+
+    public boolean canEquip(Entity entity) {
+        return false;
+    }
+
+    public void use() {
+
     }
 
 }
