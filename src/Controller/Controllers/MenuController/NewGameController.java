@@ -31,14 +31,4 @@ public class NewGameController extends MenuController {
     protected void correctLeftRightParameters() {
 
     }
-
-    public void scrollUp(){
-        if(currentlySelected > 0) currentlySelected -= 1;
-        newGameView.setSelectedMenuView(1);
-    }
-
-    public void scrollDown(){
-        if(currentlySelected < 4) currentlySelected += 1;
-        newGameView.setSelectedMenuView(-1);
-    }
 }

@@ -44,22 +44,6 @@ public class NewGameView extends MenuViewPort {
         return null;
     }
 
-    public void setSelectedMenuView(int selectedAvatarView){
-        if(selectedAvatarView == 1){
-            this.selectedXz = TextBoxInfo.TEXTBOX_WIDTH;
-        }
-        else {
-            this.selectedXz = 0;
-        }
-    }
-
-    public void setSelectedClassView(int selectedMenuView){
-        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 3*TextBoxInfo.TEXTBOX_HEIGHT)
-            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
-        else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
-            this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
-    }
-
     @Override
     public void scrollUp() {
 

@@ -38,13 +38,6 @@ public class LoadGameView extends MenuViewPort {
         graphics2D.drawImage(selected, selectedX, selectedY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
     }
 
-    public void setSelectedMenuView(int selectedMenuView){
-        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 3*TextBoxInfo.TEXTBOX_HEIGHT)
-            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
-        else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
-            this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
-    }
-
     @Override
     public List<Viewport> getChildren(){
         return null;

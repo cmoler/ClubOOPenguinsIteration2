@@ -21,14 +21,6 @@ public class OptionsView extends MenuViewPort {
         return null;
     }
 
-    public void setSelectedKeyView(int selectedKeyView){
-
-    }
-
-    public void setSelectedBindingView(int selectedBindingView){
-
-    }
-
     @Override
     public void scrollUp() {
 

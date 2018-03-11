@@ -21,14 +21,4 @@ public class SaveGameController extends MainMenuController {
         String fileName = Commons.saveFolder + Commons.saveName + currentlySelected;
         gameLoader.saveGame(fileName);
     }
-
-    public void scrollUp(){
-        if(currentlySelected > 0) currentlySelected -= 1;
-        saveGameView.setSelectedMenuView(1);
-    }
-
-    public void scrollDown(){
-        if(currentlySelected < 3) currentlySelected += 1;
-        saveGameView.setSelectedMenuView(-1);
-    }
 }
