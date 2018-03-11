@@ -16,6 +16,7 @@ import View.Viewport;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class GameLoader {
 
@@ -43,8 +44,18 @@ public class GameLoader {
         }
 
         System.out.println("file = " + source);
-
     }
+
+    public void saveGame(String fileName){
+        String source = "";
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);
+            //Todo: go through model and use saver
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
 

@@ -18,9 +18,9 @@ public class NewGameController extends MenuController {
         this.gameLoader = gameLoader;
     }
 
-    public void newGame(){
-        String fileName = Commons.saveFolder + Commons.saveName + currentlySelected;
-        gameLoader.loadGame("defualt");
+    public void select(){
+        String fileName = Commons.saveFolder + Commons.saveName + Commons.defaultSave;
+        gameLoader.loadGame(fileName);
     }
 
     public void scrollUp(){

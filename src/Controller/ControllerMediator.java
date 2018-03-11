@@ -69,7 +69,7 @@ public class ControllerMediator {
         menuViewPort.addKeyListener(input);
     }
 
-    // when loading a save game/new game
+    // when loading a save game/new game: <- I (JAD) dont think this should be here; should be in GameLoader
     public void loadGame(String fileName){
         gameLoader.loadGame(fileName);
     }

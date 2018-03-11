@@ -18,7 +18,7 @@ public class LoadGameController extends MenuController {
         loadGameView = gameLoader.getMenuViewport().getLoadGameView();
     }
 
-    public void loadGame(){
+    public void select(){
         String fileName = Commons.saveFolder + Commons.saveName + currentlySelected;
         gameLoader.loadGame(fileName);
     }
