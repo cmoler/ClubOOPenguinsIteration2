@@ -40,6 +40,31 @@ public class MainMenuController extends MenuController{
     }
 
     @Override
+    public void scrollUp(){
+        if(activeSubMenu == null) super.scrollUp();
+        else activeSubMenu.scrollUp();
+    }
+
+    @Override
+    public void scrollDown(){
+        if(activeSubMenu == null) super.scrollDown();
+        else activeSubMenu.scrollDown();
+    }
+
+    @Override
+    public void scrollLeft(){
+        if(activeSubMenu == null) super.scrollLeft();
+        else activeSubMenu.scrollLeft();
+    }
+
+    @Override
+    public void scrollRight(){
+        if(activeSubMenu == null) super.scrollRight();
+        else activeSubMenu.scrollRight();
+    }
+
+
+    @Override
     public void select() {
         if(activeSubMenu != null) {
             activeSubMenu.select();
