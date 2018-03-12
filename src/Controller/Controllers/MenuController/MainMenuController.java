@@ -1,6 +1,7 @@
 package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
+import Controller.Controllers.MenuController.KeyBindings.OptionsController;
 import Controller.SavingLoading.GameLoader;
 import View.MenuView.MainMenuView;
 
