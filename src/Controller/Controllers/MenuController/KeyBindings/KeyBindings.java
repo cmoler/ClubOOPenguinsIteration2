@@ -66,30 +66,24 @@ public class KeyBindings {
     }
 
     public int getNumberOfKeysForBinding(int i){
-        Iterator it = bindings.entrySet().iterator();
 
         int entry = 0;
 
-        while(it.hasNext()){
-            if (entry == i) {
-                Map.Entry pair = (Map.Entry)it.next();
-                return bindings.get(pair.getValue().toString()).size();
-            }
+        for(String key: bindings.keySet()){
+            if(entry == i) return bindings.get(key).size();
+            entry++;
         }
 
         return -1;
     }
 
     public String getBinding(int i){
-        Iterator it = bindings.entrySet().iterator();
 
         int entry = 0;
 
-        while(it.hasNext()){
-            if (entry == i) {
-                Map.Entry pair = (Map.Entry)it.next();
-                return pair.getKey().toString();
-            }
+        for(String key: bindings.keySet()){
+            if(entry == i) return key;
+            entry++;
         }
 
         return null;
