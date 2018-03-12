@@ -100,7 +100,7 @@ public class KeyBindings {
         return null;
     }
 
-    public String getKey(String binding,  int i){
-        return bindings.get(binding).get(i).getKey();
+    public Pair<String, Integer> getKey(String binding,  int i){
+        return bindings.get(binding).get(i);
     }
 }

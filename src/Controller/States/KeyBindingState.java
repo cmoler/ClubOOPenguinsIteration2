@@ -10,6 +10,12 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
@@ -42,19 +48,31 @@ public class KeyBindingState implements ControllerState {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
-                    if(eElement.getAttribute("type") == keyToChange){
-
+                    if(eElement.getAttribute("type").equals(keyToChange)){
+                        eElement.getElementsByTagName("key").item(0).setTextContent(Integer.toString(keyEvent.getKeyCode()));
                     }
                 }
             }
 
+
+            // write the content into xml file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("resources/KeyBindings/"+bindingToChange));
+            transformer.transform(source, result);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
         }
+
 
         controllerMediator.reloadKeyBindings();
         controllerMediator.changeToMenuState();

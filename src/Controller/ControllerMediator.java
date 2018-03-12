@@ -86,26 +86,31 @@ public class ControllerMediator {
     }
 
     public void changeToEntityState(){
+        input.setActiveState(entityState);
         entityState.setActive();
         activeState = entityState;
     }
 
     public void changeToMenuState(){
+        input.setActiveState(menuState);
         menuState.setActive();
         activeState = menuState;
     }
 
     public void changeToInventoryState(){
+        input.setActiveState(inventoryState);
         inventoryState.setActive();
         activeState = inventoryState;
     }
 
     public void changeToEquipmentState(){
+        input.setActiveState(equipmentState);
         equipmentState.setActive();
         activeState = equipmentState;
     }
 
     public void changeToSkillsState(){
+        input.setActiveState(skillsState);
         skillsState.setActive();
         activeState = skillsState;
     }
@@ -116,6 +121,7 @@ public class ControllerMediator {
     }
 
     public void changeToKeyBindingState(){
+        input.setActiveState(keyBindingState);
         activeState = keyBindingState;
     }
 

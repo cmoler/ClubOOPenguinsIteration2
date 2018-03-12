@@ -37,7 +37,7 @@ public class OptionsView extends MenuViewPort {
         int numberOfBindings = keyBindings.getNumberOfBindings();
 
         int sizeOfBindingHeaderBox = (Commons.SCREEN_WIDTH/2)/numberOfBindings;
-        int sizeOfBindingHeaderBoxY = (Commons.SCREEN_HEIGHT/3)/numberOfBindings;
+        int sizeOfBindingHeaderBoxY = (Commons.SCREEN_HEIGHT/16);
 
         for(int i = 0; i < numberOfBindings; ++i){
             graphics2D.drawRect(startX + sizeOfBindingHeaderBox * i, startY, sizeOfBindingHeaderBox, sizeOfBindingHeaderBoxY);
@@ -46,13 +46,28 @@ public class OptionsView extends MenuViewPort {
 
 
         int selectionBoxX = startX + selectedX * sizeOfBindingHeaderBox;
-        int selectionBoxY = startY + selectedY * sizeOfBindingHeaderBox;
 
-        graphics2D.drawImage(selected, selectionBoxX, selectionBoxY, sizeOfBindingHeaderBox, sizeOfBindingHeaderBoxY, this);
+        graphics2D.drawImage(selected, selectionBoxX, startY, sizeOfBindingHeaderBox, sizeOfBindingHeaderBoxY, this);
     }
 
     private void drawBody(Graphics2D graphics2D){
+        int startX = Configs.Commons.SCREEN_WIDTH/4;
+        int startY = Commons.SCREEN_HEIGHT/4;
 
+        int numberOfKeys = keyBindings.getNumberOfKeysForBinding(selectedX);
+
+        int sizeOfKeyBoxX = (Commons.SCREEN_WIDTH/2);
+        int sizeOfKeyBoxY = (Commons.SCREEN_HEIGHT/2)/numberOfKeys;
+
+        for(int i = 0; i < numberOfKeys; ++i){
+            graphics2D.drawRect(startX , startY + sizeOfKeyBoxY * i, sizeOfKeyBoxX, sizeOfKeyBoxY);
+            graphics2D.drawString(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getKey(), startX, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
+            graphics2D.drawString(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getValue().toString(), startX + sizeOfKeyBoxX / 2, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
+        }
+
+        int selectionBoxY = startY + selectedY * sizeOfKeyBoxY;
+
+        graphics2D.drawImage(selected, startX, selectionBoxY, sizeOfKeyBoxX, sizeOfKeyBoxY, this);
     }
 
     @Override
@@ -62,12 +77,12 @@ public class OptionsView extends MenuViewPort {
 
     @Override
     public void scrollUp() {
-
+        this.selectedY--;
     }
 
     @Override
     public void scrollDown() {
-
+        this.selectedY++;
     }
 
     @Override

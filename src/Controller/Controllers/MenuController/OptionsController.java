@@ -25,7 +25,7 @@ public class OptionsController extends MenuController {
 
     public void select(){
         changeKeyBindings(keyBindings.getBinding(selectedRightLeft),
-                keyBindings.getKey(keyBindings.getBinding(selectedRightLeft), selectedUpDown));
+                keyBindings.getKey(keyBindings.getBinding(selectedRightLeft), selectedUpDown).getKey());
 
     }
 
