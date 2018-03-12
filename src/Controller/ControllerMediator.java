@@ -120,6 +120,7 @@ public class ControllerMediator {
     }
 
     public void reloadKeyBindings(){
+        gameLoader.getKeyBindings().loadKeyBindings();
         entityState.loadKeyBindings();
         menuState.loadKeyBindings();
         inventoryState.loadKeyBindings();

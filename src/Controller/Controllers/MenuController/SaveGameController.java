@@ -6,8 +6,6 @@ import View.MenuView.SaveGameView;
 
 public class SaveGameController extends MainMenuController {
 
-    private int currentlySelected = 1;
-
     private SaveGameView saveGameView;
     private GameLoader gameLoader;
 
@@ -18,7 +16,7 @@ public class SaveGameController extends MainMenuController {
     }
 
     public void select(){
-        String fileName = Commons.saveFolder + Commons.saveName + currentlySelected;
+        String fileName = Commons.saveFolder + Commons.saveName;
         gameLoader.saveGame(fileName);
     }
 }

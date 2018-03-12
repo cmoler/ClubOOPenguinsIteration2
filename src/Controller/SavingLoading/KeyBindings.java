@@ -1,6 +1,7 @@
-package Controller.Controllers.MenuController.KeyBindings;
+package Controller.SavingLoading;
 
 import Configs.Commons;
+import javafx.util.Pair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -16,9 +17,14 @@ import java.util.*;
 
 public class KeyBindings {
 
-    private LinkedHashMap<String, List<String>> bindings;
+    private LinkedHashMap<String, List<Pair<String, Integer>>> bindings;
 
     public KeyBindings() {
+        loadKeyBindings();
+    }
+
+    public void loadKeyBindings() {
+        bindings = new LinkedHashMap<>();
 
         File keyBindingsDirectory = new File(Commons.KEYBINDINGS_FOLDER);
 
@@ -30,7 +36,7 @@ public class KeyBindings {
             if (listOfKeyBindingFiles[i].isFile()) {
                 String binding = listOfKeyBindingFiles[i].getName();
 
-                if(bindings.containsKey(binding)) bindings.put(binding, new ArrayList<>());
+                if(!bindings.containsKey(binding)) bindings.put(binding, new ArrayList<>());
 
                 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder dBuilder = null;
@@ -47,7 +53,12 @@ public class KeyBindings {
                             Element eElement = (Element) nNode;
 
                             String function = eElement.getAttribute("type");
-                            bindings.get(binding).add(function);
+                            bindings.get(binding).add(
+                                    new Pair<String, Integer>
+                                            (function, Integer.parseInt(eElement.
+                                                    getElementsByTagName("key").
+                                                    item(0).
+                                                    getTextContent())));
                         }
                     }
                 } catch (ParserConfigurationException e) {
@@ -90,6 +101,6 @@ public class KeyBindings {
     }
 
     public String getKey(String binding,  int i){
-        return bindings.get(binding).get(i);
+        return bindings.get(binding).get(i).getKey();
     }
 }

@@ -1,8 +1,9 @@
-package Controller.Controllers.MenuController.KeyBindings;
+package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.MenuController.MenuController;
 import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.KeyBindings;
 import View.MenuView.OptionsView;
 
 public class OptionsController extends MenuController {
@@ -18,7 +19,8 @@ public class OptionsController extends MenuController {
         setMenuViewPort(optionsView);
         this.controllerMediator = controllerMediator;
 
-        this.keyBindings = new KeyBindings();
+        this.keyBindings = gameLoader.getKeyBindings();
+        optionsView.setKeyBindings(keyBindings);
     }
 
     public void select(){

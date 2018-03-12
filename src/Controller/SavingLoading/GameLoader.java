@@ -24,12 +24,14 @@ public class GameLoader {
     private Viewport areaViewport;
     private MainMenuView menuViewPort;
 
+    private KeyBindings keyBindings;
+
     public GameLoader(){
         menuViewPort = new MainMenuView();
         gameFrame = new OOPenguinGameFrame();
         gameFrame.add(menuViewPort);
         menuViewPort.setVisible(true);
-
+        keyBindings = new KeyBindings();
     }
 
     public void loadGame(String fileName){
@@ -84,4 +86,8 @@ public class GameLoader {
     }
 
     public Role getSkills() { return null; }
+
+    public KeyBindings getKeyBindings() {
+        return keyBindings;
+    }
 }

@@ -1,7 +1,6 @@
 package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
-import Controller.Controllers.MenuController.KeyBindings.OptionsController;
 import Controller.SavingLoading.GameLoader;
 import View.MenuView.MainMenuView;
 
@@ -87,6 +86,7 @@ public class MainMenuController extends MenuController{
             case 3:
                 mainMenuView.enterOptionsView();
                 activeSubMenu = optionsController;
+                break;
             case 4:
                 mainMenuView.enterExitGameView();
                 activeSubMenu = exitGameController;
