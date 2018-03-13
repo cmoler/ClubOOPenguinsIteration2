@@ -3,8 +3,15 @@ package Model.Item.TakeableItem.OneHandedWeaponItem;
 import Model.Entity.Entity;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Map.Direction;
+import Model.Map.Location;
+import Model.Utilites.Time;
 
 public class Mjolnir extends TakeableItem{
+
+    private int damageAmount = 25;
+    private double secondsPerUse = 1.25;
+    private double lastUse;
 
     public boolean canEquip(Entity entity) {
         // ok under OCP
@@ -14,7 +21,16 @@ public class Mjolnir extends TakeableItem{
             return false;
     }
 
-    public void use() {
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+        if(Time.currentInSeconds() > lastUse + secondsPerUse) {
 
+            Direction directionFacing = entityUsingItem.getDirectionFacing();
+            Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
+            // TODO: if Entity on locationOfTarget: decrement Entity's health based on skill level
+            Smasher role = (Smasher) entityUsingItem.getRole();
+            int oneHandedWeaponSkillLevel = role.getOneHandedWeapon();
+
+            lastUse = Time.currentInSeconds();
+        }
     }
 }

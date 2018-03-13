@@ -1,15 +1,14 @@
-package Model.Item.TakeableItem.BoonItem;
+package Model.Item.TakeableItem.EnchantmentItem;
 
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Map.Direction;
 import Model.Map.Location;
 
 import java.util.Random;
 
-public class Heal extends TakeableItem{
-
-    private int healingIncrement = 40;
+public class Charm extends TakeableItem{
 
     public boolean canEquip(Entity entity) {
         // ok under OCP
@@ -23,8 +22,15 @@ public class Heal extends TakeableItem{
         Summoner role = (Summoner) entityUsingItem.getRole();
         int enchantmentSkillLevel = role.getEnchantment();
         Random rand = new Random();
+        Direction directionFacing = entityUsingItem.getDirectionFacing();
+        Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
+        // TODO: if NPC on locationOfTarget:
         if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
-            entityUsingItem.heal(healingIncrement);
+            // TODO: make NPC give you an item
         }
+        else{
+            // TODO: piss off NPC
+        }
+        entityUsingItem.getInventory().removeItem(this);
     }
 }
