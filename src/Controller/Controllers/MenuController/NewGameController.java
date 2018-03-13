@@ -20,4 +20,12 @@ public class NewGameController extends MenuController {
         gameLoader.loadGame(fileName);
     }
 
+    protected void correctUpDownParameters() {
+
+    }
+
+    protected void correctLeftRightParameters() {
+
+    }
+
 }

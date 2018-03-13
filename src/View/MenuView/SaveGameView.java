@@ -11,8 +11,7 @@ import java.util.List;
 public class SaveGameView extends MenuViewPort {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
-    private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
-    private int selectedY = Commons.SCREEN_HEIGHT/4;
+    private MemorySlots memorySlots;
 
     public SaveGameView(){
 
@@ -23,19 +22,25 @@ public class SaveGameView extends MenuViewPort {
         int startX = Configs.Commons.SCREEN_WIDTH/2;
         int startY = Commons.SCREEN_HEIGHT/4;
 
-        graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Save 1", (startX), (startY+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        int selectedY = memorySlots.getSelectedSlot();
 
-        graphics2D.drawRect(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Save 2", (startX), (startY + TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        int numberOfSaves = Commons.MAX_SAVE_SLOTS
 
-        graphics2D.drawRect(startX, startY + 2*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Save 3", (startX), (startY + 2*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        int sizeOfSaveSlotX = (Commons.SCREEN_HEIGHT/16);
+        int sizeOfSaveSlotY = (Commons.SCREEN_WIDTH/2)/numberOfBindings;
 
-        graphics2D.drawRect(startX, startY + 3*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Save 4", (startX), (startY + 3*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        for(int i = 0; i < numberOfSaves; ++i){
+            graphics2D.drawRect(startX, startY + sizeOfSaveSlotY * i, sizeOfSaveSlotX, sizeOfSaveSlotY);
+            graphics2D.drawString("Save "+i+1, (startX), ( startY + sizeOfSaveSlotY * i+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        }
 
-        graphics2D.drawImage(selected, selectedX, selectedY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
+        int selectionBoxY = startY + selectedY * sizeOfSaveSlotY;
+
+        graphics2D.drawImage(selected, startX, selectionBoxY, sizeOfSaveSlotX, sizeOfSaveSlotY, this);
+    }
+
+    public void setSlots(MemorySlots memorySlots){
+        this.memorySlots = memorySlots;
     }
 
     @Override
@@ -45,14 +50,12 @@ public class SaveGameView extends MenuViewPort {
 
     @Override
     public void scrollUp(){
-        if(selectedY > Commons.SCREEN_HEIGHT/4)
-            this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
+
     }
 
     @Override
     public void scrollDown(){
-        if(selectedY < Commons.SCREEN_HEIGHT/4 + 4*TextBoxInfo.TEXTBOX_HEIGHT)
-            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
+
     }
 
     @Override

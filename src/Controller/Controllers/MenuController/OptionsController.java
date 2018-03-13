@@ -38,7 +38,6 @@ public class OptionsController extends MenuController {
     protected void correctLeftRightParameters() {
         if(selectedRightLeft > keyBindings.getNumberOfBindings()) selectedRightLeft = 4;
         if(selectedRightLeft < 0) selectedRightLeft = 0;
-
     }
 
     private void changeKeyBindings(String bindingToChange, String keyToChange){

@@ -30,6 +30,10 @@ public class MemorySlots {
         if(selectedSlot > Commons.maxSaveSlots - 1) selectedSlot = 0;
     }
 
+    public int getSelectedSlot(){
+        return selectedSlot;
+    }
+
     public void loadOnSelected(){
         slots.get(selectedSlot).loadTo(gameLoader);
     }

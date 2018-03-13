@@ -39,6 +39,15 @@ public class MainMenuController extends MenuController{
         this.activeSubMenu = null;
     }
 
+    protected void correctUpDownParameters() {
+        if(selectedUpDown < 0) selectedUpDown = 0;
+        else if(selectedUpDown > 4) selectedUpDown = 4;
+    }
+
+    protected void correctLeftRightParameters() {
+        if(selectedRightLeft != 0) selectedRightLeft = 0;
+    }
+
     @Override
     public void scrollUp(){
         if(activeSubMenu == null) super.scrollUp();
