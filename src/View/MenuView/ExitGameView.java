@@ -53,11 +53,11 @@ public class ExitGameView extends MenuViewPort {
 
     @Override
     public void scrollLeft() {
-        selectedX--;
+        if(selectedX > 0)selectedX--;
     }
 
     @Override
     public void scrollRight() {
-        selectedX++;
+        if(selectedX < 1) selectedX++;
     }
 }
