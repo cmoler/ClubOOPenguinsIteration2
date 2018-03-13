@@ -68,14 +68,4 @@ public class MainMenuController extends MenuController{
         }
     }
 
-    @Override
-    protected void correctUpDownParameters() {
-
-    }
-
-    @Override
-    protected void correctLeftRightParameters() {
-
-    }
-
 }

@@ -13,6 +13,9 @@ public class GameSaver implements Saver{
 
     @Override
     public String saveEntity(Entity entity) {
+        String saveString = "";
+        saveString += entity.getHealth();
+        //...
         return entity.toString();
     }
 

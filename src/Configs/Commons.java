@@ -6,5 +6,6 @@ public interface Commons {
     public static final String saveFolder = "resources/saves/";
     public static final String saveName = "save_";
     public static final String defaultSave = "0";
+    public static final int maxSaveSlots = 4;
 
 }

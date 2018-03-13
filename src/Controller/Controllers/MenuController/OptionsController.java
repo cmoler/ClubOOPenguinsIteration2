@@ -36,7 +36,6 @@ public class OptionsController extends MenuController {
         }
     }
 
-    @Override
     protected void correctUpDownParameters() {
         switch (selectedRightLeft){
             case 0:
@@ -62,7 +61,7 @@ public class OptionsController extends MenuController {
         }
     }
 
-    @Override
+
     protected void correctLeftRightParameters() {
         if(selectedRightLeft > 4) selectedRightLeft = 4;
         if(selectedRightLeft < 0) selectedRightLeft = 0;

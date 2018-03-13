@@ -23,12 +23,14 @@ public class GameLoader {
     private OOPenguinGameFrame gameFrame;
     private Viewport areaViewport;
     private MainMenuView menuViewPort;
+    private MemorySlots memorySlots;
 
     public GameLoader(){
         menuViewPort = new MainMenuView();
         gameFrame = new OOPenguinGameFrame();
         gameFrame.add(menuViewPort);
         menuViewPort.setVisible(true);
+        memorySlots = new MemorySlots(this);
 
     }
 
@@ -53,6 +55,8 @@ public class GameLoader {
             e.printStackTrace();
         }
     }
+
+    public MemorySlots getMemorySlots(){return memorySlots;}
 
 
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
