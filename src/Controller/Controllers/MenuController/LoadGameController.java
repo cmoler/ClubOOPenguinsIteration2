@@ -6,7 +6,6 @@ import View.MenuView.LoadGameView;
 
 public class LoadGameController extends MenuController {
 
-    private int currentlySelected = 1;
 
     private LoadGameView loadGameView;
     GameLoader gameLoader;
@@ -18,7 +17,7 @@ public class LoadGameController extends MenuController {
     }
 
     public void select(){
-        String fileName = Commons.saveFolder + Commons.saveName + currentlySelected;
+        String fileName = Commons.saveFolder + Commons.saveName;
         gameLoader.loadGame(fileName);
     }
 

@@ -5,9 +5,6 @@ import View.MenuView.ExitGameView;
 
 public class ExitGameController extends MenuController {
 
-    private int currentlySelected = 1;
-
-    private ExitGameView exitGameView;
     private MainMenuController mainMenuController;
 
     public ExitGameController(GameLoader gameLoader, MainMenuController mainMenuController) {
@@ -17,17 +14,19 @@ public class ExitGameController extends MenuController {
 
     @Override
     public void select() {
-
+        if(selectedRightLeft == 0) mainMenuController.exitSubMenu();
+        else if(selectedRightLeft == 1) System.exit(0);
     }
 
     @Override
     protected void correctUpDownParameters() {
-
+        if(selectedUpDown != 0) selectedUpDown = 0;
     }
 
     @Override
     protected void correctLeftRightParameters() {
-
+        if(selectedRightLeft < 0) selectedRightLeft = 0;
+        else if(selectedRightLeft > 1) selectedRightLeft = 1;
     }
 
 }
