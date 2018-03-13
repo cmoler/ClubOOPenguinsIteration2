@@ -3,6 +3,7 @@ package View.MenuView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
+import Controller.SavingLoading.MemorySlots;
 import View.Viewport;
 
 import java.awt.*;
@@ -19,19 +20,19 @@ public class LoadGameView extends MenuViewPort {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        int startX = Configs.Commons.SCREEN_WIDTH/2;
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - Commons.SCREEN_HEIGHT/8;
         int startY = Commons.SCREEN_HEIGHT/4;
 
         int selectedY = memorySlots.getSelectedSlot();
 
-        int numberOfSaves = Commons.MAX_SAVE_SLOTS
+        int numberOfSaves = Commons.MAX_SAVE_SLOTS;
 
-        int sizeOfSaveSlotX = (Commons.SCREEN_HEIGHT/16);
-        int sizeOfSaveSlotY = (Commons.SCREEN_WIDTH/2)/numberOfBindings;
+        int sizeOfSaveSlotX = (TextBoxInfo.TEXTBOX_WIDTH);
+        int sizeOfSaveSlotY = (Commons.SCREEN_WIDTH/3)/numberOfSaves;
 
         for(int i = 0; i < numberOfSaves; ++i){
             graphics2D.drawRect(startX, startY + sizeOfSaveSlotY * i, sizeOfSaveSlotX, sizeOfSaveSlotY);
-            graphics2D.drawString("Load "+i+1, (startX), ( startY + sizeOfSaveSlotY * i+TextBoxInfo.TEXTBOX_HEIGHT/4));
+            graphics2D.drawString("Load "+(i+1), (startX), ( startY + sizeOfSaveSlotY * i+TextBoxInfo.TEXTBOX_HEIGHT/4));
         }
 
         int selectionBoxY = startY + selectedY * sizeOfSaveSlotY;

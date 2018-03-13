@@ -18,12 +18,10 @@ public class ExitGameController extends MenuController {
         else if(selectedRightLeft == 1) System.exit(0);
     }
 
-    @Override
     protected void correctUpDownParameters() {
         if(selectedUpDown != 0) selectedUpDown = 0;
     }
 
-    @Override
     protected void correctLeftRightParameters() {
         if(selectedRightLeft < 0) selectedRightLeft = 0;
         else if(selectedRightLeft > 1) selectedRightLeft = 1;

@@ -16,6 +16,7 @@ public class SaveGameController extends MainMenuController {
         this.gameLoader = gameLoader;
         this.memorySlots = gameLoader.getMemorySlots();
         setMenuViewPort(saveGameView);
+        saveGameView.setSlots(memorySlots);
     }
 
     @Override

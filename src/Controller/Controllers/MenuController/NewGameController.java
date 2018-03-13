@@ -16,7 +16,7 @@ public class NewGameController extends MenuController {
     }
 
     public void select(){
-        String fileName = Commons.saveFolder + Commons.saveName + Commons.defaultSave;
+        String fileName = Commons.SAVE_FOLDER + Commons.SAVE_NAME + Commons.DEFAULT_SAVE;
         gameLoader.loadGame(fileName);
     }
 

@@ -13,6 +13,9 @@ public abstract class MenuController implements Controller {
 
     public abstract void select();
 
+    protected abstract void correctUpDownParameters();
+    protected abstract void correctLeftRightParameters();
+
     protected void setMenuViewPort(MenuViewPort menuViewPort){
         this.menuViewPort = menuViewPort;
     }
