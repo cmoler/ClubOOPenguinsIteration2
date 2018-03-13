@@ -19,6 +19,8 @@ public class Location {
     private AreaEffect areaEffect;
     private List<Item> items = new ArrayList<>();
     private List<Viewport> observers = new ArrayList<Viewport>();
+    int xCoordinate;
+    int yCoordinate;
 
     public Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
         this.terrain = terrain;
@@ -38,8 +40,33 @@ public class Location {
         return adjacentLocations.get(direction);
     }
 
+
+    //May be needed
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getyCoordinate() {
+        return yCoordinate;
+    }
+
+    public void setxCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public void setyCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+    //
+
     public AreaEffect getAreaEffect() {
         return areaEffect;
+    }
+
+    public void activateAreaEffect(Entity entity){
+        if (areaEffect != null){
+            areaEffect.activate(entity);
+        }
     }
 
     public Terrain getTerrain() {
@@ -53,6 +80,15 @@ public class Location {
             return true;
         }
         return false;
+    }
+
+    public void itemsTouchedBy(Entity entity){
+        LocationItemIterator locationItemIterator = getLocationItemIterator();
+        for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
+            locationItemIterator.touchCurrent(entity);
+            //if(locationItemIterator.getCurrent().shouldBeRemoved())
+            locationItemIterator.removeCurrent();
+        }
     }
 
     public List<Item> getItems(){

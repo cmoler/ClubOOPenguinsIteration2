@@ -32,28 +32,33 @@ public class EntityLocation {
         while (occupiedLocations.hasNext()) {
             Location currentLocation = occupiedLocations.next();
             Entity currentEntity = entityLocations.get(currentLocation);
-            Location nextLocation = currentLocation.getAdjacentAt(currentEntity.getDirectionFacing());
 
             //Check if Entity has intent to move
             if (currentEntity.getIntentToMove()) {
-                //Move entity if there is no other entity on nextLocation
-                if (!entityLocations.containsKey(nextLocation)) {
-                    moveEntity(currentLocation, nextLocation, currentEntity);
+                Location nextLocation = currentLocation.getAdjacentAt(currentEntity.getDirectionFacing());
+                if (nextLocation != null){
+                    //Move entity if there is no other entity on nextLocation
+                    if (!entityLocations.containsKey(nextLocation)) {
+                        moveEntity(currentLocation, nextLocation, currentEntity);
+                    }
+                    //If there is an entity on nextLocation, interact
+                    else {
+                        interactEntity();
+                    }
                 }
-                //If there is an entity on nextLocation, interact
-                else {
-                    interactEntity();
-                }
+                currentEntity.setIntentToMove(false);
             }
         }
     }
 
     public void moveEntity(Location currentLocation, Location nextLocation, Entity currentEntity) {
-        if (currentLocation.moveAllowed(currentEntity)) {
+        if (nextLocation.moveAllowed(currentEntity)) {
             entityLocations.remove(currentLocation, currentEntity);
             entityLocations.put(nextLocation, currentEntity);
+            currentEntity.setLocation(nextLocation);
+            nextLocation.activateAreaEffect(currentEntity);
+            currentEntity.touchItems();
         }
-        currentEntity.setIntentToMove(false);
     }
 
     public void interactEntity() {
