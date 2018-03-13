@@ -43,7 +43,6 @@ public class OptionsView extends MenuViewPort {
         }
 
         int selectionBoxX = startX + selectedX * sizeOfBindingHeaderBox;
-
         graphics2D.drawImage(selected, selectionBoxX, startY, sizeOfBindingHeaderBox, sizeOfBindingHeaderBoxY, this);
     }
 

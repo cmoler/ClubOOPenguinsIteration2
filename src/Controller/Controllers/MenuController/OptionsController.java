@@ -30,13 +30,13 @@ public class OptionsController extends MenuController {
     }
 
     protected void correctUpDownParameters() {
-        if(selectedUpDown > keyBindings.getNumberOfKeysForBinding(selectedRightLeft)) selectedUpDown = 0;
-        if(selectedUpDown < 0) selectedUpDown = keyBindings.getNumberOfKeysForBinding(selectedRightLeft);
+        if(selectedUpDown > keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1) selectedUpDown = 0;
+        if(selectedUpDown < 0) selectedUpDown = keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1;
     }
 
 
     protected void correctLeftRightParameters() {
-        if(selectedRightLeft > keyBindings.getNumberOfBindings()) selectedRightLeft = 0;
+        if(selectedRightLeft > keyBindings.getNumberOfBindings() - 1) selectedRightLeft = 0;
         if(selectedRightLeft < 0) selectedRightLeft = keyBindings.getNumberOfBindings() - 1;
     }
 
