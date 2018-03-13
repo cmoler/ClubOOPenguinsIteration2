@@ -1,6 +1,6 @@
 package Model.Entity;
 
-import Model.Item.TakeableItem;
+import Model.Item.TakeableItem.TakeableItem;
 import View.Viewport;
 
 import java.util.ArrayList;

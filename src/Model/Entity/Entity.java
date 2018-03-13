@@ -30,12 +30,14 @@ public class Entity {
     private boolean intentToMove = false;
     // map is in World
 
-    public Entity(Location initialLocation) {
+    public Entity(Role role, Location initialLocation) {
+        this.role = role;
         entityType = EntityType.ICE; // default EntityType
         location = initialLocation;
     }
 
-    public Entity(EntityType type, Location initialLocation){
+    public Entity(Role role, EntityType type, Location initialLocation){
+        this.role = role;
         entityType = type;
         location = initialLocation;
     }
@@ -146,6 +148,10 @@ public class Entity {
 
     public int getMana() {
         return mana;
+    }
+
+    public Role getRole(){
+        return role;
     }
 
     public int getExperienceForNextLevel(){

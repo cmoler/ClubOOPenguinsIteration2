@@ -1,23 +1,21 @@
-package Model.Item;
+package Model.Item.TakeableItem;
 
 import Model.Entity.Entity;
+import Model.Item.Item;
+import Model.Map.Location;
 
-public class TakeableItem extends Item{
+public class TakeableItem extends Item {
 
     @Override
     public void touch(Entity entity) {
         entity.getInventory().addItem(this);
     }
 
-    public boolean shouldBeRemoved(){
-        return true; // always true?
-    }
-
     public boolean canEquip(Entity entity) {
         return false;
     }
 
-    public void use() {
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
 
     }
 

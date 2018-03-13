@@ -1,11 +1,12 @@
-package Model.Item;
+package Model.Item.InteractiveItem;
 
 import Model.Entity.Entity;
+import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
-public class Teleporter extends InteractiveItem{
+public class Teleporter extends InteractiveItem {
 
     private String mapID;
     private int locationI;
@@ -37,10 +38,5 @@ public class Teleporter extends InteractiveItem{
         World.getWorld().changeCurrentMapTo(nextMap);
         System.out.println("Changing to map: " + mapID);
     }
-
-    public boolean shouldBeRemoved(){
-        return false;
-    }
-
 
 }
