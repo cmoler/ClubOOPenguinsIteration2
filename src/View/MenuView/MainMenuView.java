@@ -10,8 +10,6 @@ import java.awt.*;
 public class MainMenuView extends MenuViewPort {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
-    private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
-    private int selectedY = Commons.SCREEN_HEIGHT/4;
 
     int currentSubMenu = -1;
 
@@ -49,29 +47,10 @@ public class MainMenuView extends MenuViewPort {
         graphics2D.drawRect(startX, startY + 4*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("Exit Game", (startX), (startY + 4*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
-        graphics2D.drawImage(selected, selectedX, selectedY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
-    }
+        int selectionBoxX = startX;
+        int selectionBoxY = startY + selectedY*TextBoxInfo.TEXTBOX_HEIGHT;
 
-    @Override
-    public void scrollUp(){
-        if(selectedY > Commons.SCREEN_HEIGHT/4)
-            this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
-    }
-
-    @Override
-    public void scrollDown(){
-        if(selectedY < Commons.SCREEN_HEIGHT/4 + 4*TextBoxInfo.TEXTBOX_HEIGHT)
-            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
-    }
-
-    @Override
-    public void scrollRight(){
-
-    }
-
-    @Override
-    public void scrollLeft(){
-
+        graphics2D.drawImage(selected, selectionBoxX, selectionBoxY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
     }
 
     public void returnToMenu(){

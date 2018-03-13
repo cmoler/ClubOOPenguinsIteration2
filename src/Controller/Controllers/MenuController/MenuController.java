@@ -23,25 +23,25 @@ public abstract class MenuController implements Controller {
     public void scrollUp(){
         selectedUpDown -= 1;
         correctUpDownParameters();
-        menuViewPort.scrollUp();
+        menuViewPort.setSelectedY(selectedUpDown);
     }
 
     public void scrollDown(){
         selectedUpDown += 1;
         correctUpDownParameters();
-        menuViewPort.scrollDown();
+        menuViewPort.setSelectedY(selectedUpDown);
     }
 
     public void scrollLeft(){
         selectedRightLeft -= 1;
         correctLeftRightParameters();
-        menuViewPort.scrollLeft();
+        menuViewPort.setSelectedX(selectedUpDown);
     }
 
     public void scrollRight(){
         selectedRightLeft += 1;
         correctLeftRightParameters();
-        menuViewPort.scrollRight();
+        menuViewPort.setSelectedX(selectedUpDown);
     }
 
     @Override

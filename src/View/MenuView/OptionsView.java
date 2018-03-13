@@ -13,8 +13,6 @@ public class OptionsView extends MenuViewPort {
 
     private KeyBindings keyBindings;
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
-    private int selectedX = 0;
-    private int selectedY = 0;
 
     public OptionsView(){
 
@@ -44,8 +42,6 @@ public class OptionsView extends MenuViewPort {
             graphics2D.drawString(keyBindings.getBinding(i), (startX + sizeOfBindingHeaderBox * i), (startY + sizeOfBindingHeaderBoxY / 2));
         }
 
-        if(selectedX < 0) selectedX = 0;
-        if(selectedX > numberOfBindings - 1) selectedX = numberOfBindings - 1;
         int selectionBoxX = startX + selectedX * sizeOfBindingHeaderBox;
 
         graphics2D.drawImage(selected, selectionBoxX, startY, sizeOfBindingHeaderBox, sizeOfBindingHeaderBoxY, this);
@@ -66,8 +62,6 @@ public class OptionsView extends MenuViewPort {
             graphics2D.drawString(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getValue().toString(), startX + sizeOfKeyBoxX / 2, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
         }
 
-        if(selectedY < 0) selectedY = 0;
-        if(selectedY > numberOfKeys - 1) selectedY = numberOfKeys - 1;
         int selectionBoxY = startY + selectedY * sizeOfKeyBoxY;
 
         graphics2D.drawImage(selected, startX, selectionBoxY, sizeOfKeyBoxX, sizeOfKeyBoxY, this);
@@ -78,23 +72,4 @@ public class OptionsView extends MenuViewPort {
         return null;
     }
 
-    @Override
-    public void scrollUp() {
-        this.selectedY--;
-    }
-
-    @Override
-    public void scrollDown() {
-        this.selectedY++;
-    }
-
-    @Override
-    public void scrollLeft() {
-        this.selectedX--;
-    }
-
-    @Override
-    public void scrollRight() {
-        this.selectedX++;
-    }
 }

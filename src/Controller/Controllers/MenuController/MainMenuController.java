@@ -40,8 +40,8 @@ public class MainMenuController extends MenuController{
     }
 
     protected void correctUpDownParameters() {
-        if(selectedUpDown < 0) selectedUpDown = 0;
-        else if(selectedUpDown > 4) selectedUpDown = 4;
+        if(selectedUpDown < 0) selectedUpDown = 4;
+        else if(selectedUpDown > 4) selectedUpDown = 0;
     }
 
     protected void correctLeftRightParameters() {

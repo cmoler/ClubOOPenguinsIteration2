@@ -10,11 +10,6 @@ import java.util.List;
 
 public class NewGameView extends MenuViewPort {
 
-    private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
-    private int selectedY = Commons.SCREEN_HEIGHT/4;
-    private int selectedXz = 0;
-    private int selectedYz = 0;
-
 
     public NewGameView(){
 
@@ -44,23 +39,4 @@ public class NewGameView extends MenuViewPort {
         return null;
     }
 
-    @Override
-    public void scrollUp() {
-
-    }
-
-    @Override
-    public void scrollDown() {
-
-    }
-
-    @Override
-    public void scrollLeft() {
-
-    }
-
-    @Override
-    public void scrollRight() {
-
-    }
 }

@@ -11,7 +11,6 @@ import java.util.List;
 public class ExitGameView extends MenuViewPort {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
-    private int selectedX = 0;
 
     public ExitGameView(){
 
@@ -41,23 +40,4 @@ public class ExitGameView extends MenuViewPort {
         return null;
     }
 
-    @Override
-    public void scrollUp() {
-
-    }
-
-    @Override
-    public void scrollDown() {
-
-    }
-
-    @Override
-    public void scrollLeft() {
-        if(selectedX > 0)selectedX--;
-    }
-
-    @Override
-    public void scrollRight() {
-        if(selectedX < 1) selectedX++;
-    }
 }

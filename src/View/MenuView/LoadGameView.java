@@ -49,23 +49,4 @@ public class LoadGameView extends MenuViewPort {
         return null;
     }
 
-    @Override
-    public void scrollUp() {
-
-    }
-
-    @Override
-    public void scrollDown() {
-
-    }
-
-    @Override
-    public void scrollLeft() {
-
-    }
-
-    @Override
-    public void scrollRight() {
-
-    }
 }

@@ -23,8 +23,8 @@ public class ExitGameController extends MenuController {
     }
 
     protected void correctLeftRightParameters() {
-        if(selectedRightLeft < 0) selectedRightLeft = 0;
-        else if(selectedRightLeft > 1) selectedRightLeft = 1;
+        if(selectedRightLeft < 0) selectedRightLeft = 1;
+        else if(selectedRightLeft > 1) selectedRightLeft = 0;
     }
 
 }
