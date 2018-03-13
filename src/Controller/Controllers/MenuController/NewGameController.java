@@ -21,11 +21,13 @@ public class NewGameController extends MenuController {
     }
 
     protected void correctUpDownParameters() {
-
+        if(selectedUpDown < 0) selectedUpDown = 2;
+        else if(selectedUpDown > 2) selectedUpDown = 0;
     }
 
     protected void correctLeftRightParameters() {
-
+        if(selectedRightLeft < 0) selectedRightLeft = 1;
+        else if(selectedRightLeft > 1) selectedRightLeft = 0;
     }
 
 }

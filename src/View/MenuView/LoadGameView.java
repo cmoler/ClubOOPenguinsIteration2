@@ -20,7 +20,7 @@ public class LoadGameView extends MenuViewPort {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        int startX = Configs.Commons.SCREEN_WIDTH/2 - Commons.SCREEN_HEIGHT/8;
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
         int startY = Commons.SCREEN_HEIGHT/4;
 
         int selectedY = memorySlots.getSelectedSlot();
@@ -28,7 +28,7 @@ public class LoadGameView extends MenuViewPort {
         int numberOfSaves = Commons.MAX_SAVE_SLOTS;
 
         int sizeOfSaveSlotX = (TextBoxInfo.TEXTBOX_WIDTH);
-        int sizeOfSaveSlotY = (Commons.SCREEN_WIDTH/3)/numberOfSaves;
+        int sizeOfSaveSlotY = (Commons.SCREEN_WIDTH/4)/numberOfSaves;
 
         for(int i = 0; i < numberOfSaves; ++i){
             graphics2D.drawRect(startX, startY + sizeOfSaveSlotY * i, sizeOfSaveSlotX, sizeOfSaveSlotY);

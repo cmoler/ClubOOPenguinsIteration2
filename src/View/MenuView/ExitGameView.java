@@ -18,7 +18,7 @@ public class ExitGameView extends MenuViewPort {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        int startX = Configs.Commons.SCREEN_WIDTH/2;
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
         int startY = Commons.SCREEN_HEIGHT/4;
 
         graphics2D.drawString("Are you Sure, unsaved changes wont be saved", (startX), (startY));
