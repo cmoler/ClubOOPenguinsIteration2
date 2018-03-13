@@ -120,11 +120,11 @@ public class MenuState implements ControllerState {
     }
 
     private void scrollLeft() {
-
+        menuController.scrollLeft();
     }
 
     private void scrollRight() {
-
+        menuController.scrollRight();
     }
 
     private void scrollUp() {

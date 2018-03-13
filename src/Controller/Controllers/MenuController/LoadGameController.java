@@ -7,7 +7,6 @@ import View.MenuView.LoadGameView;
 
 public class LoadGameController extends MenuController {
 
-    private int currentlySelected = 1;
 
     private LoadGameView loadGameView;
     GameLoader gameLoader;

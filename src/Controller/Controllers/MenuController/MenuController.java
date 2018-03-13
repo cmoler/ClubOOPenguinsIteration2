@@ -6,8 +6,8 @@ import View.MenuView.MenuViewPort;
 
 public abstract class MenuController implements Controller {
 
-    protected int selectedUpDown;
-    protected int selectedRightLeft;
+    protected int selectedUpDown = 0;
+    protected int selectedRightLeft = 0;
 
     protected MenuViewPort menuViewPort;
 
@@ -19,21 +19,25 @@ public abstract class MenuController implements Controller {
 
     public void scrollUp(){
         selectedUpDown -= 1;
+        correctUpDownParameters();
         menuViewPort.scrollUp();
     }
 
     public void scrollDown(){
         selectedUpDown += 1;
+        correctUpDownParameters();
         menuViewPort.scrollDown();
     }
 
     public void scrollLeft(){
         selectedRightLeft -= 1;
+        correctLeftRightParameters();
         menuViewPort.scrollLeft();
     }
 
     public void scrollRight(){
         selectedRightLeft += 1;
+        correctLeftRightParameters();
         menuViewPort.scrollRight();
     }
 

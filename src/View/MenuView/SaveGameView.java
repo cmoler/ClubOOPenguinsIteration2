@@ -44,13 +44,15 @@ public class SaveGameView extends MenuViewPort {
     }
 
     @Override
-    public void scrollUp() {
-
+    public void scrollUp(){
+        if(selectedY > Commons.SCREEN_HEIGHT/4)
+            this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
     }
 
     @Override
-    public void scrollDown() {
-
+    public void scrollDown(){
+        if(selectedY < Commons.SCREEN_HEIGHT/4 + 4*TextBoxInfo.TEXTBOX_HEIGHT)
+            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
     }
 
     @Override

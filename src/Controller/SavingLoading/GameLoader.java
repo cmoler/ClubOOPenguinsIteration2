@@ -25,6 +25,8 @@ public class GameLoader {
     private MainMenuView menuViewPort;
     private MemorySlots memorySlots;
 
+    private KeyBindings keyBindings;
+
     public GameLoader(){
         menuViewPort = new MainMenuView();
         gameFrame = new OOPenguinGameFrame();
@@ -32,6 +34,7 @@ public class GameLoader {
         menuViewPort.setVisible(true);
         memorySlots = new MemorySlots(this);
 
+        keyBindings = new KeyBindings();
     }
 
     public void loadGame(String fileName){
@@ -88,4 +91,8 @@ public class GameLoader {
     }
 
     public Role getSkills() { return null; }
+
+    public KeyBindings getKeyBindings() {
+        return keyBindings;
+    }
 }
