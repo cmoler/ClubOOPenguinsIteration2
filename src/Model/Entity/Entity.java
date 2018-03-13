@@ -118,10 +118,6 @@ public class Entity {
         return directionFacing;
     }
 
-    public void setLocation(Location location){
-        this.location = location;
-    }
-
     public void teleport(Location location){
         this.location = location;
         notifyView();
@@ -170,6 +166,14 @@ public class Entity {
 
     public Location getLocation() {
         return location;
+    }
+
+    public void setLocation(Location location){
+        this.location = location;
+    }
+
+    public void touchItems(){
+        location.itemsTouchedBy(this);
     }
 
     public void accept(Visitor v){

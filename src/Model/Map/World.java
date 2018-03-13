@@ -1,5 +1,6 @@
 package Model.Map;
 
+import Model.Entity.Entity;
 import View.AreaView.MapView;
 import View.Viewport;
 
@@ -37,6 +38,11 @@ public class World {
         if(viewport!=null)viewport.addToFront(mapViews.get(map));
         if(currentMap!=null)viewport.remove(mapViews.get(currentMap));
         currentMap = map;
+    }
+
+    public void teleportEntity(Entity entity, Map nextMap, Location nextLocation){
+        currentMap.removeEntityLocation(entity.getLocation());
+        nextMap.setEntityLocation(nextLocation, entity);
     }
 
     public Map getCurrentMap(){
