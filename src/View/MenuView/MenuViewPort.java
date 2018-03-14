@@ -5,6 +5,7 @@ import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 import View.Viewport;
 
+import javax.swing.*;
 import java.awt.*;
 
 
@@ -22,7 +23,44 @@ public class MenuViewPort extends Viewport {
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
-    }
+
+        //Display numbers for testing
+        JButton ngBtn = new JButton("1");
+        JButton sgBtn = new JButton("2");
+        JButton lgBtn = new JButton("3");
+        JButton opBtn = new JButton("4");
+        JButton egBtn = new JButton("5");
+
+        //Styling to make button invisible
+        ngBtn.setBorderPainted(false);
+        ngBtn.setContentAreaFilled(false);
+        ngBtn.setToolTipText("Click");
+
+        sgBtn.setBorderPainted(false);
+        sgBtn.setContentAreaFilled(false);
+        sgBtn.setToolTipText("Click");
+
+        lgBtn.setBorderPainted(false);
+        lgBtn.setContentAreaFilled(false);
+        lgBtn.setToolTipText("Click");
+
+        opBtn.setBorderPainted(false);
+        opBtn.setContentAreaFilled(false);
+        opBtn.setToolTipText("Click");
+
+        egBtn.setBorderPainted(false);
+        egBtn.setContentAreaFilled(false);
+        egBtn.setToolTipText("Click");
+
+        add(ngBtn);
+        add(sgBtn);
+        add(lgBtn);
+        add(opBtn);
+        add(egBtn);
+
+        setVisible(true);
+
+}
 
     @Override
     public void draw(Graphics2D graphics2D) {
