@@ -23,25 +23,30 @@ public abstract class EnchantmentItem extends TakeableItem {
 
     public void use(Entity entityUsingItem, Location locationOfEntity) {
 
-        Summoner role = (Summoner) entityUsingItem.getRole();
-        int enchantmentSkillLevel = role.getEnchantment();
+        if(entityUsingItem.getMana() > getManaNeeded()) {
 
-        Direction directionFacing = entityUsingItem.getDirectionFacing();
-        Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-        Map currentMap = World.getWorld().getCurrentMap();
-        if(currentMap.entityAtLocation(locationOfTarget) != null){
-            Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-            Random rand = new Random();
-            if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
-                apply(entityAtTarget); // template method
+            Summoner role = (Summoner) entityUsingItem.getRole();
+            int enchantmentSkillLevel = role.getEnchantment();
+
+            Direction directionFacing = entityUsingItem.getDirectionFacing();
+            Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
+            Map currentMap = World.getWorld().getCurrentMap();
+            if (currentMap.entityAtLocation(locationOfTarget) != null) {
+                Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
+                Random rand = new Random();
+                if (rand.nextInt(100) + 1 <= enchantmentSkillLevel) {
+                    apply(entityAtTarget); // template method
+                } else {
+                    ((NPC) entityAtTarget).pissOff();
+                }
             }
-            else{
-                ((NPC) entityAtTarget).pissOff();
-            }
+
+            entityUsingItem.addMana(-getManaNeeded());
         }
 
-        entityUsingItem.getInventory().removeItem(this);
     }
 
     protected abstract void apply(Entity entityAtTarget);
+
+    protected abstract int getManaNeeded();
 }

@@ -13,7 +13,13 @@ import java.util.Random;
 
 public class Seppuku extends EnchantmentItem {
 
+    private int manaNeeded = 20;
+
     protected void apply(Entity entityAtTarget){
         ((NPC) entityAtTarget).takeDamage(100);
+    }
+
+    protected int getManaNeeded(){
+        return manaNeeded;
     }
 }

@@ -14,7 +14,13 @@ import java.util.Random;
 
 public class Charm extends EnchantmentItem {
 
+    private int manaNeeded = 5;
+
     protected void apply(Entity entityAtTarget){
         ((NPC) entityAtTarget).beFriends();
+    }
+
+    protected int getManaNeeded() {
+        return manaNeeded;
     }
 }

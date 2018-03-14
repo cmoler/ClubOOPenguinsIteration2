@@ -10,7 +10,7 @@ import Model.Map.World;
 
 public class Staff extends TakeableItem{
 
-    private int manaIncrement = 30;
+    private int damage = 15;
 
     public boolean canEquip(Entity entity) {
         // ok under OCP
@@ -25,7 +25,8 @@ public class Staff extends TakeableItem{
         Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
         Map currentMap = World.getWorld().getCurrentMap();
         if(currentMap.entityAtLocation(locationOfTarget) != null){
-            entityUsingItem.addMana(manaIncrement);
+            Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
+            entityAtTarget.takeDamage(damage);
         }
     }
 }

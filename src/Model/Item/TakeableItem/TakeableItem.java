@@ -7,7 +7,7 @@ import Model.Map.Location;
 public class TakeableItem extends Item {
 
     @Override
-    public void touch(Entity entity) {
+    public final void touch(Entity entity) {
         entity.getInventory().addItem(this);
     }
 

@@ -13,7 +13,13 @@ import java.util.Random;
 
 public class Insomnia extends EnchantmentItem {
 
+    private int manaNeeded = 10;
+
     protected void apply(Entity entityAtTarget){
         ((NPC) entityAtTarget).fallAsleep();
+    }
+
+    protected int getManaNeeded(){
+        return manaNeeded;
     }
 }
