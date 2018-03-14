@@ -9,35 +9,18 @@ import Model.Map.Map;
 import Model.Map.World;
 import Model.Utilites.Time;
 
-public class JeweledCutlass extends TakeableItem{
+public class JeweledCutlass extends TwoHandedWeaponItem{
 
     private double damageAmount = 2.0; // gets multiplied by skill level
     private double secondsPerUse = 2.0;
-    private double lastUse;
 
-    public boolean canEquip(Entity entity) {
-        // ok under OCP
-        if(entity.getRole().getClass() == Smasher.class)
-            return true;
-        else
-            return false;
+    @Override
+    protected double getSecondsPerUse() {
+        return secondsPerUse;
     }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-        if(Time.currentInSeconds() > lastUse + secondsPerUse) {
-
-            Smasher role = (Smasher) entityUsingItem.getRole();
-            double twoHandedWeaponSkillLevel = (double) role.getTwoHandedWeapon();
-
-            Direction directionFacing = entityUsingItem.getDirectionFacing();
-            Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-            Map currentMap = World.getWorld().getCurrentMap();
-            if(currentMap.entityAtLocation(locationOfTarget) != null){
-                Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-                entityAtTarget.takeDamage( (int)(damageAmount*twoHandedWeaponSkillLevel) );
-            }
-
-            lastUse = Time.currentInSeconds();
-        }
+    @Override
+    protected double getDamageAmount() {
+        return damageAmount;
     }
 }

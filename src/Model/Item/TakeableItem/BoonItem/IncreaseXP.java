@@ -7,26 +7,12 @@ import Model.Map.Location;
 
 import java.util.Random;
 
-public class IncreaseXP extends TakeableItem{
+public class IncreaseXP extends BoonItem {
 
     private int XPIncrement = 40;
 
-    public boolean canEquip(Entity entity) {
-        // ok under OCP
-        if(entity.getRole().getClass() == Summoner.class)
-            return true;
-        else
-            return false;
-    }
-
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-        Summoner role = (Summoner) entityUsingItem.getRole();
-        int enchantmentSkillLevel = role.getEnchantment();
-        Random rand = new Random();
-        if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
-            entityUsingItem.gainExperience(XPIncrement);
-        }
-
-        entityUsingItem.getInventory().removeItem(this);
+    @Override
+    protected void apply(Entity entityUsingItem) {
+        entityUsingItem.gainExperience(XPIncrement);
     }
 }

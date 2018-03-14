@@ -11,35 +11,18 @@ import Model.Utilites.Time;
 
 import java.util.concurrent.TimeUnit;
 
-public class BlueLightsaber extends TakeableItem{
+public class BlueLightsaber extends OneHandedWeaponItem{
 
     private double damageAmount = 1.0; // gets multiplied by skill level
     private double secondsPerUse = 1.25;
-    private double lastUse;
 
-    public boolean canEquip(Entity entity) {
-        // ok under OCP
-        if(entity.getRole().getClass() == Smasher.class)
-            return true;
-        else
-            return false;
+    @Override
+    protected double getSecondsPerUse() {
+        return secondsPerUse;
     }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-        if(Time.currentInSeconds() > lastUse + secondsPerUse) {
-
-            Smasher role = (Smasher) entityUsingItem.getRole();
-            double oneHandedWeaponSkillLevel = (double) role.getOneHandedWeapon();
-
-            Direction directionFacing = entityUsingItem.getDirectionFacing();
-            Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-            Map currentMap = World.getWorld().getCurrentMap();
-            if(currentMap.entityAtLocation(locationOfTarget) != null){
-                Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-                entityAtTarget.takeDamage( (int)(damageAmount*oneHandedWeaponSkillLevel) );
-            }
-
-            lastUse = Time.currentInSeconds();
-        }
+    @Override
+    protected double getDamageAmount() {
+        return damageAmount;
     }
 }

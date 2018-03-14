@@ -2,31 +2,18 @@ package Model.Item.TakeableItem.BoonItem;
 
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
+import Model.Entity.Skill.Boon;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Location;
 
 import java.util.Random;
 
-public class Heal extends TakeableItem{
+public class Heal extends BoonItem {
 
     private int healingIncrement = 40;
 
-    public boolean canEquip(Entity entity) {
-        // ok under OCP
-        if(entity.getRole().getClass() == Summoner.class)
-            return true;
-        else
-            return false;
-    }
-
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-        Summoner role = (Summoner) entityUsingItem.getRole();
-        int enchantmentSkillLevel = role.getEnchantment();
-        Random rand = new Random();
-        if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
-            entityUsingItem.heal(healingIncrement);
-        }
-
-        entityUsingItem.getInventory().removeItem(this);
+    @Override
+    protected void apply(Entity entityUsingItem) {
+        entityUsingItem.heal(healingIncrement);
     }
 }
