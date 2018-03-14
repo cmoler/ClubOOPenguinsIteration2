@@ -31,6 +31,7 @@ public class SkillsState implements ControllerState {
     public SkillsState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         this.skillsController = new SkillsController(gameLoader);
+        loadKeyBindings();
     }
 
     @Override

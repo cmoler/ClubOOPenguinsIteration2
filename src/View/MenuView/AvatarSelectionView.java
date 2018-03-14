@@ -1,13 +1,11 @@
 package View.MenuView;
 
-import Configs.SpriteParser;
-import Configs.TextBoxInfo;
 import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class AvatarSelectionView extends Viewport {
+public class AvatarSelectionView extends MenuViewPort {
     private int x;
     private int y;
 
@@ -26,4 +24,5 @@ public class AvatarSelectionView extends Viewport {
     public List<Viewport> getChildren(){
         return null;
     }
+
 }

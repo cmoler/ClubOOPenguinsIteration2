@@ -1,54 +1,53 @@
-<?xml version = "1.0"?>
-<class>
-   <Bind type = "moveN">
-      <key>1</key>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><class>
+   <Bind type="moveN">
+      <key>87</key>
    </Bind>
-   <Bind type = "moveNE>
-       <key>2</key>
+   <Bind type="moveNE">
+       <key>69</key>
    </Bind>
-   <Bind type = "moveE">
-      <key>3</key>
+   <Bind type="moveE">
+      <key>68</key>
    </Bind>
-   <Bind type = "moveSE">
-       <key>4</key>
+   <Bind type="moveSE">
+       <key>67</key>
    </Bind>
-   <Bind type = "moveS">
-      <key>5</key>
+   <Bind type="moveS">
+      <key>88</key>
    </Bind>
-   <Bind type = "moveSW">
-       <key>6</key>
+   <Bind type="moveSW">
+       <key>90</key>
    </Bind>
-   <Bind type = "moveW">
-      <key>7</key>
+   <Bind type="moveW">
+      <key>65</key>
    </Bind>
-   <Bind type = "moveNW">
-       <key>8</key>
+   <Bind type="moveNW">
+       <key>81</key>
    </Bind>
-    <Bind type = "openMenu">
-       <key>12</key>
+    <Bind type="openMenu">
+       <key>27</key>
    </Bind>
-   <Bind type = "openInventory">
-       <key>9</key>
+   <Bind type="openInventory">
+       <key>73</key>
    </Bind>
-   <Bind type = "openEquipment">
-       <key>10</key>
+   <Bind type="openEquipment">
+       <key>85</key>
    </Bind>
-   <Bind type = "openSkills">
-       <key>11</key>
+   <Bind type="openSkills">
+       <key>74</key>
    </Bind>
-   <Bind type = "slot1">
-       <key>11</key>
+   <Bind type="slot1">
+       <key>49</key>
    </Bind>
-   <Bind type = "slot2">
-       <key>11</key>
+   <Bind type="slot2">
+       <key>50</key>
    </Bind>
-   <Bind type = "slot3">
-       <key>11</key>
+   <Bind type="slot3">
+       <key>51</key>
    </Bind>
-   <Bind type = "slot4">
-       <key>11</key>
+   <Bind type="slot4">
+       <key>52</key>
    </Bind>
-   <Bind type = "slot5">
-       <key>11</key>
+   <Bind type="slot5">
+       <key>53</key>
    </Bind>
 </class>

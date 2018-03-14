@@ -7,10 +7,14 @@ import java.awt.event.KeyListener;
 
 public class Input implements KeyListener {
 
-    private ControllerState controllerState;
+    private ControllerState activeState;
 
     public Input(ControllerState controllerState){
-        this.controllerState = controllerState;
+        this.activeState = controllerState;
+    }
+
+    public void setActiveState(ControllerState controllerState){
+        this.activeState = controllerState;
     }
 
     @Override
@@ -22,7 +26,7 @@ public class Input implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         System.out.println("Pressed " + e.getKeyCode());
-        controllerState.process(e);
+        activeState.process(e);
     }
 
     @Override

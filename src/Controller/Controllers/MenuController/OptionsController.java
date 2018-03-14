@@ -1,27 +1,47 @@
 package Controller.Controllers.MenuController;
 
+import Controller.ControllerMediator;
+import Controller.Controllers.MenuController.MenuController;
 import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.KeyBindings;
 import View.MenuView.OptionsView;
 
 public class OptionsController extends MenuController {
 
-    private int currentlySelected = 1;
-
     private OptionsView optionsView;
 
-    public OptionsController(GameLoader gameLoader, MenuController parent) {
-        setParent(parent);
-        optionsView = gameLoader.getMenuViewport().getOptionsView();
+    private KeyBindings keyBindings;
+
+    private ControllerMediator controllerMediator;
+
+    public OptionsController(GameLoader gameLoader, ControllerMediator controllerMediator) {
+        optionsView = gameLoader.getMainMenuViewport().getOptionsView();
+        setMenuViewPort(optionsView);
+        this.controllerMediator = controllerMediator;
+
+        this.keyBindings = gameLoader.getKeyBindings();
+        optionsView.setKeyBindings(keyBindings);
     }
 
-    public void scrollUp(){
-        if(currentlySelected > 0) currentlySelected -= 1;
-        optionsView.setSelectedMenuView(1);
+    public void select(){
+        changeKeyBindings(keyBindings.getBinding(selectedRightLeft),
+                keyBindings.getKey(keyBindings.getBinding(selectedRightLeft), selectedUpDown).getKey());
+
     }
 
-    public void scrollDown(){
-        if(currentlySelected < 4) currentlySelected += 1;
-        optionsView.setSelectedMenuView(-1);
+    protected void correctUpDownParameters() {
+        if(selectedUpDown > keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1) selectedUpDown = 0;
+        if(selectedUpDown < 0) selectedUpDown = keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1;
     }
 
+
+    protected void correctLeftRightParameters() {
+        if(selectedRightLeft > keyBindings.getNumberOfBindings() - 1) selectedRightLeft = 0;
+        if(selectedRightLeft < 0) selectedRightLeft = keyBindings.getNumberOfBindings() - 1;
+    }
+
+    private void changeKeyBindings(String bindingToChange, String keyToChange){
+        controllerMediator.primeKeyBindingState(bindingToChange, keyToChange);
+        controllerMediator.changeToKeyBindingState();
+    }
 }
