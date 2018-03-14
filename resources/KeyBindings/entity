@@ -35,6 +35,9 @@
    <Bind type="openSkills">
        <key>74</key>
    </Bind>
+   <Bind type="interact">
+       <key>83</key>
+   </Bind>
    <Bind type="slot1">
        <key>49</key>
    </Bind>
