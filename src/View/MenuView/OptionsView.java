@@ -7,6 +7,7 @@ import Controller.SavingLoading.KeyBindings;
 import View.Viewport;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class OptionsView extends MenuViewPort {
@@ -58,7 +59,7 @@ public class OptionsView extends MenuViewPort {
         for(int i = 0; i < numberOfKeys; ++i){
             graphics2D.drawRect(startX , startY + sizeOfKeyBoxY * i, sizeOfKeyBoxX, sizeOfKeyBoxY);
             graphics2D.drawString(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getKey(), startX, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
-            graphics2D.drawString(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getValue().toString(), startX + sizeOfKeyBoxX / 2, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
+            graphics2D.drawString(KeyEvent.getKeyText(keyBindings.getKey(keyBindings.getBinding(selectedX), i).getValue()), startX + sizeOfKeyBoxX / 2, (startY + sizeOfKeyBoxY * i + sizeOfKeyBoxY / 2));
         }
 
         int selectionBoxY = startY + selectedY * sizeOfKeyBoxY;
