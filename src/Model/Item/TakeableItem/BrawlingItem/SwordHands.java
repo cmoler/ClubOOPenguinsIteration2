@@ -5,11 +5,13 @@ import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.Map;
+import Model.Map.World;
 import Model.Utilites.Time;
 
 public class SwordHands extends TakeableItem{
 
-    private int damageAmount = 15;
+    private double damageAmount = 0.75; // gets multiplied by skill level
     private double secondsPerUse = 0.75;
     private double lastUse;
 
@@ -24,11 +26,16 @@ public class SwordHands extends TakeableItem{
     public void use(Entity entityUsingItem, Location locationOfEntity) {
         if(Time.currentInSeconds() > lastUse + secondsPerUse) {
 
+            Smasher role = (Smasher) entityUsingItem.getRole();
+            double brawlSkillLevel = (double) role.getBrawl();
+
             Direction directionFacing = entityUsingItem.getDirectionFacing();
             Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-            // if Entity on locationOfTarget: decrement Entity's health based on skill level
-            Smasher role = (Smasher) entityUsingItem.getRole();
-            int oneHandedWeaponSkillLevel = role.getOneHandedWeapon();
+            Map currentMap = World.getWorld().getCurrentMap();
+            if(currentMap.entityAtLocation(locationOfTarget) != null){
+                Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
+                entityAtTarget.takeDamage( (int)(damageAmount*brawlSkillLevel) );
+            }
 
             lastUse = Time.currentInSeconds();
         }

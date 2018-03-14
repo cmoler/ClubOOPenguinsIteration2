@@ -4,6 +4,10 @@ import Model.Entity.Entity;
 
 public class NPC extends Entity{
 
+    public void beFriends(){
+        // makes NPC friendly
+    }
+
     public void pissOff(){
         // makes NPC hostile
     }

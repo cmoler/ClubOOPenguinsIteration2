@@ -26,5 +26,7 @@ public class Heal extends TakeableItem{
         if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
             entityUsingItem.heal(healingIncrement);
         }
+
+        entityUsingItem.getInventory().removeItem(this);
     }
 }

@@ -26,5 +26,7 @@ public class IncreaseXP extends TakeableItem{
         if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
             entityUsingItem.gainExperience(XPIncrement);
         }
+
+        entityUsingItem.getInventory().removeItem(this);
     }
 }

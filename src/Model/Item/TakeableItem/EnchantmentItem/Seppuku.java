@@ -1,10 +1,13 @@
 package Model.Item.TakeableItem.EnchantmentItem;
 
 import Model.Entity.Entity;
+import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.Map;
+import Model.Map.World;
 
 import java.util.Random;
 
@@ -19,18 +22,24 @@ public class Seppuku extends TakeableItem{
     }
 
     public void use(Entity entityUsingItem, Location locationOfEntity) {
+
         Summoner role = (Summoner) entityUsingItem.getRole();
         int enchantmentSkillLevel = role.getEnchantment();
-        Random rand = new Random();
+
         Direction directionFacing = entityUsingItem.getDirectionFacing();
         Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-        // TODO: if NPC on locationOfTarget:
-        if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
-            // TODO: make NPC die
+        Map currentMap = World.getWorld().getCurrentMap();
+        if(currentMap.entityAtLocation(locationOfTarget) != null){
+            Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
+            Random rand = new Random();
+            if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
+                ((NPC) entityAtTarget).takeDamage(100);
+            }
+            else{
+                ((NPC) entityAtTarget).pissOff();
+            }
         }
-        else{
-            // TODO: piss off NPC
-        }
+
         entityUsingItem.getInventory().removeItem(this);
     }
 }

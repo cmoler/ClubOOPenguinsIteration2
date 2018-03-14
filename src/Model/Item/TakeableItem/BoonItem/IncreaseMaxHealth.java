@@ -26,5 +26,7 @@ public class IncreaseMaxHealth extends TakeableItem {
         if(rand.nextInt(100)+1 <= enchantmentSkillLevel) {
             entityUsingItem.modifyMaxHealth(maxHealingIncrement);
         }
+
+        entityUsingItem.getInventory().removeItem(this);
     }
 }

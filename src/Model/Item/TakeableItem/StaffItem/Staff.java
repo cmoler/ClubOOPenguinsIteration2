@@ -5,6 +5,8 @@ import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.Map;
+import Model.Map.World;
 
 public class Staff extends TakeableItem{
 
@@ -21,7 +23,9 @@ public class Staff extends TakeableItem{
     public void use(Entity entityUsingItem, Location locationOfEntity) {
         Direction directionFacing = entityUsingItem.getDirectionFacing();
         Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-        // TODO: if Entity on locationOfTarget: give mana to entityUsingItem
-
+        Map currentMap = World.getWorld().getCurrentMap();
+        if(currentMap.entityAtLocation(locationOfTarget) != null){
+            entityUsingItem.addMana(manaIncrement);
+        }
     }
 }

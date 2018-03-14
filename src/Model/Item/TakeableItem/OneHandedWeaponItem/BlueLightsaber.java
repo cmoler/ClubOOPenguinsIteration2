@@ -5,6 +5,7 @@ import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.Map;
 import Model.Map.World;
 import Model.Utilites.Time;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BlueLightsaber extends TakeableItem{
 
-    private int damageAmount = 20;
+    private double damageAmount = 1.0; // gets multiplied by skill level
     private double secondsPerUse = 1.25;
     private double lastUse;
 
@@ -27,11 +28,16 @@ public class BlueLightsaber extends TakeableItem{
     public void use(Entity entityUsingItem, Location locationOfEntity) {
         if(Time.currentInSeconds() > lastUse + secondsPerUse) {
 
+            Smasher role = (Smasher) entityUsingItem.getRole();
+            double oneHandedWeaponSkillLevel = (double) role.getOneHandedWeapon();
+
             Direction directionFacing = entityUsingItem.getDirectionFacing();
             Location locationOfTarget = locationOfEntity.getAdjacentAt(directionFacing);
-            // TODO: if Entity on locationOfTarget: decrement Entity's health based on skill level
-            Smasher role = (Smasher) entityUsingItem.getRole();
-            int oneHandedWeaponSkillLevel = role.getOneHandedWeapon();
+            Map currentMap = World.getWorld().getCurrentMap();
+            if(currentMap.entityAtLocation(locationOfTarget) != null){
+                Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
+                entityAtTarget.takeDamage( (int)(damageAmount*oneHandedWeaponSkillLevel) );
+            }
 
             lastUse = Time.currentInSeconds();
         }

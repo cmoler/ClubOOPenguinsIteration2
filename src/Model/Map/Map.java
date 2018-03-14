@@ -82,6 +82,12 @@ public class Map {
         entityLocationList.updateEntityLocations();
     }
 
+    public Entity entityAtLocation(Location location){
+        if (entityLocationList.getEntityAtLocation(location) != null)
+            return entityLocationList.getEntityAtLocation(location);
+        else
+            return null;
+    }
 
     public void setAdjacencyList() {
         for (int i = 0; i < numRows; i++) {
