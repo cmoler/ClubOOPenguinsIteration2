@@ -2,9 +2,17 @@ package View;
 
 import Model.Map.Direction;
 import View.AreaView.MapView;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,6 +100,23 @@ public class Viewport extends JPanel {
     public void updateMap(MapView lastMapView, MapView currentMapView){
         this.remove(lastMapView);
         this.add(currentMapView);
+    }
+
+    public static void LoopMusic() {
+        InputStream is;
+        try {
+            is = new FileInputStream("../resources/music/music.mp3");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        try {
+            AudioStream as = new AudioStream(is);
+            AudioData ad = as.getData();
+            ContinuousAudioDataStream cs = new ContinuousAudioDataStream(ad);
+            AudioPlayer.player.start(cs);
+        } catch (IOException e) {
+            System.out.println("Audio data exception");
+        }
     }
 
 }
