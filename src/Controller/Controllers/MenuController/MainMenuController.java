@@ -40,12 +40,12 @@ public class MainMenuController extends MenuController{
     }
 
     protected void correctUpDownParameters() {
-        if(selectedUpDown < 0) selectedUpDown = 4;
-        else if(selectedUpDown > 4) selectedUpDown = 0;
+        if(verticalSelection < 0) verticalSelection = 4;
+        else if(verticalSelection > 4) verticalSelection = 0;
     }
 
     protected void correctLeftRightParameters() {
-        if(selectedRightLeft != 0) selectedRightLeft = 0;
+        if(horizontalSelection != 0) horizontalSelection = 0;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class MainMenuController extends MenuController{
             activeSubMenu.select();
             return;
         }
-        switch (selectedUpDown){
+        switch (verticalSelection){
             case 0:
                 mainMenuView.enterNewGameView();
                 activeSubMenu = newGameController;

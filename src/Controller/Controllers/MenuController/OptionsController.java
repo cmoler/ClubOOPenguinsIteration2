@@ -1,7 +1,6 @@
 package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
-import Controller.Controllers.MenuController.MenuController;
 import Controller.SavingLoading.GameLoader;
 import Controller.SavingLoading.KeyBindings;
 import View.MenuView.OptionsView;
@@ -24,20 +23,20 @@ public class OptionsController extends MenuController {
     }
 
     public void select(){
-        changeKeyBindings(keyBindings.getBinding(selectedRightLeft),
-                keyBindings.getKey(keyBindings.getBinding(selectedRightLeft), selectedUpDown).getKey());
+        changeKeyBindings(keyBindings.getBinding(horizontalSelection),
+                keyBindings.getKey(keyBindings.getBinding(horizontalSelection), verticalSelection).getKey());
 
     }
 
     protected void correctUpDownParameters() {
-        if(selectedUpDown > keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1) selectedUpDown = 0;
-        if(selectedUpDown < 0) selectedUpDown = keyBindings.getNumberOfKeysForBinding(selectedRightLeft) - 1;
+        if(verticalSelection > keyBindings.getNumberOfKeysForBinding(horizontalSelection) - 1) verticalSelection = 0;
+        if(verticalSelection < 0) verticalSelection = keyBindings.getNumberOfKeysForBinding(horizontalSelection) - 1;
     }
 
 
     protected void correctLeftRightParameters() {
-        if(selectedRightLeft > keyBindings.getNumberOfBindings() - 1) selectedRightLeft = 0;
-        if(selectedRightLeft < 0) selectedRightLeft = keyBindings.getNumberOfBindings() - 1;
+        if(horizontalSelection > keyBindings.getNumberOfBindings() - 1) horizontalSelection = 0;
+        if(horizontalSelection < 0) horizontalSelection = keyBindings.getNumberOfBindings() - 1;
     }
 
     private void changeKeyBindings(String bindingToChange, String keyToChange){

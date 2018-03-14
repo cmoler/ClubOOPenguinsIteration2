@@ -1,7 +1,6 @@
 package Controller.Controllers.MenuController;
 
 import Controller.SavingLoading.GameLoader;
-import View.MenuView.ExitGameView;
 
 public class ExitGameController extends MenuController {
 
@@ -14,17 +13,17 @@ public class ExitGameController extends MenuController {
 
     @Override
     public void select() {
-        if(selectedRightLeft == 0) mainMenuController.exitSubMenu();
-        else if(selectedRightLeft == 1) System.exit(0);
+        if(horizontalSelection == 0) mainMenuController.exitSubMenu();
+        else if(horizontalSelection == 1) System.exit(0);
     }
 
     protected void correctUpDownParameters() {
-        if(selectedUpDown != 0) selectedUpDown = 0;
+        if(verticalSelection != 0) verticalSelection = 0;
     }
 
     protected void correctLeftRightParameters() {
-        if(selectedRightLeft < 0) selectedRightLeft = 1;
-        else if(selectedRightLeft > 1) selectedRightLeft = 0;
+        if(horizontalSelection < 0) horizontalSelection = 1;
+        else if(horizontalSelection > 1) horizontalSelection = 0;
     }
 
 }
