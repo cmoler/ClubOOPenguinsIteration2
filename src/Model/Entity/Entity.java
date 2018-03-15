@@ -21,6 +21,7 @@ public class Entity {
     private int health = maxHealth;
     private int mana;
     private int gold;
+    private int resistance;
     private Direction directionFacing;
     private int experience = 0;
     private int level = 1; // default level
@@ -77,6 +78,10 @@ public class Entity {
             this.health = maxHealth;
         }
     }
+
+    public void addResistance(int resistance) { this.resistance += resistance; }
+
+    public void decreaseResistance(int resistance) { this.resistance -= resistance; }
 
     public void addGold(int gold){
         this.gold += gold;
