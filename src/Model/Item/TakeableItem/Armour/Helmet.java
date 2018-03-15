@@ -4,7 +4,7 @@ import Model.Entity.Entity;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.WearableItem;
 
-public class Shield extends WearableItem{
+public class Helmet extends WearableItem{
 
     private double defenseIncrease = 50;
 
@@ -16,5 +16,10 @@ public class Shield extends WearableItem{
     @Override
     public void takeOff(Entity entity) {
         entity.modifyDefense(-defenseIncrease);
+    }
+
+    @Override
+    public String getSlot() {
+        return "head";
     }
 }
