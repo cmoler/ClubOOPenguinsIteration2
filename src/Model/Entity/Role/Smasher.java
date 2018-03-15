@@ -11,10 +11,6 @@ public class Smasher extends Role {
     private TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon();
     private Brawl brawl = new Brawl();
 
-    public Smasher(Entity e){
-        super(e);
-    }
-
     public int getOneHandedWeapon(){
         return oneHandedWeapon.getPoints();
     }

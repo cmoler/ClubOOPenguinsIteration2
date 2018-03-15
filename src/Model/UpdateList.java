@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Item.TakeableItem.Projectile.Projectile;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

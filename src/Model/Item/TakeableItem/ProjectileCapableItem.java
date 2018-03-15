@@ -19,8 +19,9 @@ public abstract class ProjectileCapableItem extends UseableItem {
     public List<Projectile> getProjectiles() {
         for(Iterator<Projectile> iterator = projectiles.iterator(); iterator.hasNext();){
             Projectile current = iterator.next();
-            if(current.isDone())
+            if(current.isDone()) {
                 iterator.remove();
+            }
         }
         return projectiles;
     }

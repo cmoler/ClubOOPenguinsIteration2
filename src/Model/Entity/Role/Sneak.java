@@ -13,10 +13,6 @@ public class Sneak extends Role {
     private Creep creep = new Creep();
     private RangedWeapon rangedWeapon = new RangedWeapon();
 
-    public Sneak(Entity e){
-        super(e);
-    }
-
     public int getPickPocket() {
         return pickPocket.getPoints();
     }

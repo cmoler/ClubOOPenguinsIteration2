@@ -1,6 +1,7 @@
 package Model.Entity;
 
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Item.TakeableItem.WearableItem;
 import View.Viewport;
 
@@ -11,13 +12,13 @@ public class Equipment {
 
     private List<Viewport> observers;
 
-    private Entity entity;
+    private Player entity;
     private UsableItems hotbar;
     private WearableItems armor;
 
     private int equipmentSize = 5;
 
-    public Equipment(Entity entity) {
+    public Equipment(Player entity) {
         this.entity = entity;
         hotbar = new UsableItems(equipmentSize);
         armor = new WearableItems();
@@ -51,6 +52,13 @@ public class Equipment {
 
     public TakeableItem getEquipped(int index) {
         return hotbar.getItem(index);
+    }
+
+    public void useItem(int index){
+        if (hotbar.getItem(index) != null){
+            TakeableItem item = hotbar.getItem(index);
+            ((UseableItem) item).use(this.entity, this.entity.getLocation());
+        }
     }
 
     public void attach(Viewport viewport){

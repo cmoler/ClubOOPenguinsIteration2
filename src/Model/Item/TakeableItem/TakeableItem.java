@@ -12,7 +12,7 @@ public class TakeableItem extends Item {
         entity.getInventory().addItem(this);
     }
 
-    public boolean canEquip(Entity entity) {
+    public boolean canEquip(Player entity) {
         return false;
     }
 

@@ -13,10 +13,6 @@ public class Summoner extends Role {
     private Bane bane = new Bane();
     private Staff staff = new Staff();
 
-    public Summoner(Entity e){
-        super(e);
-    }
-
     public int getEnchantment(){
         return enchantment.getPoints();
     }

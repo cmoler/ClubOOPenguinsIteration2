@@ -22,16 +22,16 @@ public class EquipmentView extends Viewport {
         this.equipment = equipment;
     }
 
-    @Override
-    public void draw(Graphics2D graphics2D) {
-        Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
-        if(equipment.getEquipped() != null)
-        graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
-        if(selected){
-            graphics2D.setColor(new Color(200, 200, 50, 90));
-            graphics2D.fillRect(EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT);
-        }
-    }
+//    @Override
+//    public void draw(Graphics2D graphics2D) {
+//        Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
+//        if(equipment.getEquipped() != null)
+//        graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+//        if(selected){
+//            graphics2D.setColor(new Color(200, 200, 50, 90));
+//            graphics2D.fillRect(EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT);
+//        }
+//    }
 
     @Override
     public List<Viewport> getChildren(){

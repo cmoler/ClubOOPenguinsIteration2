@@ -13,8 +13,10 @@ public class Role {
     private Bargain bargain;
     private Observation observation;
 
-    public Role(Entity e){
-        this.entity = e;
+    public Role(){}
+
+    public void setEntity(Entity entity){
+        this.entity = entity;
     }
 
     public int getBindWounds(){
