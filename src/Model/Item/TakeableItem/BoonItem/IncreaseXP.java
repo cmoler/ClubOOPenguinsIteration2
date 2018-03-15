@@ -9,7 +9,13 @@ import java.util.Random;
 
 public class IncreaseXP extends BoonItem {
 
+    private int manaNeeded = 100;
     private int XPIncrement = 40;
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
+    }
 
     @Override
     protected void apply(Entity entityUsingItem) {

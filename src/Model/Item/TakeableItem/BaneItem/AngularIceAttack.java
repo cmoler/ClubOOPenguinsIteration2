@@ -20,10 +20,16 @@ import static Model.Map.Direction.*;
 
 public class AngularIceAttack extends BaneItem {
 
+    private int manaNeeded = 5;
     private double damageAmount = 0.75;
     private double angularDecreaseFactor = 0.25;
 
     private double speed = 0.75;
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
+    }
 
     @Override
     protected void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel) {

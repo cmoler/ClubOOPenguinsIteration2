@@ -19,10 +19,17 @@ import static Model.Map.Direction.*;
 
 public class RadialIceBomb extends BaneItem {
 
+    private int manaNeeded = 20;
+
     private double damageAmount = 0.5;
     private double radialDecreaseFactor = 0.25;
 
     private double speed = 0.75;
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
+    }
 
     @Override
     protected void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel) {
