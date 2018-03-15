@@ -31,6 +31,7 @@ public class AngularIceAttack extends BaneItem {
         return manaNeeded;
     }
 
+    @Override
     protected void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel) {
 
         Projectile projectile = new AngularProjectile(damageAmount*baneSkillLevel,
