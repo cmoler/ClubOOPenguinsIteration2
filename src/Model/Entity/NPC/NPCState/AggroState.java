@@ -9,7 +9,7 @@ import java.util.*;
 
 public class AggroState implements NPCState {
 
-    private int visibleRange = 5;
+    private int visibleRange = 5;       //range(# of moves/Locations/steps) within which the NPC can see the player
 
     @Override
     public void move(NPC npc, Player player) {
@@ -37,6 +37,7 @@ public class AggroState implements NPCState {
             LocationQueueNode currentNode = queue.poll();
             visited.add(currentNode);
 
+            //if the player has been found in the visible range, get path and move NPC in the right direction.
             if (currentNode.location == goal) {
                 ArrayList<Direction> finalPath = queue.peek().path;
                 player.move(finalPath.get(0));
@@ -46,11 +47,15 @@ public class AggroState implements NPCState {
             for (Direction direction : Direction.values()) {
                 Location nextLocation = currentNode.location.getAdjacentAt(direction);
                 if (nextLocation != null && nextLocation.moveAllowed(npc)) {
+                    //increment path and cost for new node
                     LocationQueueNode toVisit = new LocationQueueNode(nextLocation, currentNode.path, currentNode.cost + 1);
                     toVisit.path.add(direction);
+
+                    //if unvisited and within range, add to queue
                     if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= visibleRange) {
                         queue.add(toVisit);
                     }
+                    // if in queue and current path cost is cheaper, update path and cost in existing node
                     else if (queue.contains(toVisit)) {
                         Iterator<LocationQueueNode> iter = queue.iterator();
                         LocationQueueNode existing;
