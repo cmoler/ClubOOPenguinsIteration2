@@ -1,27 +1,35 @@
 package Controller.Controllers.MenuController;
 
-import Controller.ControllerMediator;
+import Configs.Commons;
 import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.MemorySlots;
 import View.MenuView.SaveGameView;
 
-public class SaveGameController extends MenuController {
-
-    private int currentlySelected = 1;
+public class SaveGameController extends MainMenuController {
 
     private SaveGameView saveGameView;
+    private GameLoader gameLoader;
+    MemorySlots memorySlots;
 
-    public SaveGameController(GameLoader gameLoader, MenuController parent) {
-        setParent(parent);
-        saveGameView = gameLoader.getMenuViewport().getSaveGameView();
+    public SaveGameController(GameLoader gameLoader, MainMenuController parent) {
+        saveGameView = gameLoader.getMainMenuViewport().getSaveGameView();
+        this.gameLoader = gameLoader;
+        this.memorySlots = gameLoader.getMemorySlots();
+        setMenuViewPort(saveGameView);
+        saveGameView.setSlots(memorySlots);
     }
 
+    @Override
     public void scrollUp(){
-        if(currentlySelected > 0) currentlySelected -= 1;
-        saveGameView.setSelectedMenuView(1);
+        memorySlots.selectPrevious();
     }
 
+    @Override
     public void scrollDown(){
-        if(currentlySelected < 3) currentlySelected += 1;
-        saveGameView.setSelectedMenuView(-1);
+        memorySlots.selectNext();
+    }
+
+    public void select(){
+        memorySlots.saveOnSelected();
     }
 }

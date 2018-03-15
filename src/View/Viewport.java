@@ -2,29 +2,25 @@ package View;
 
 import Model.Map.Direction;
 import View.AreaView.MapView;
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class Viewport extends JPanel {
 
     protected Viewport parent;
     protected List<Viewport> children = new ArrayList<Viewport>();
 
-    public Viewport(){
-
+    public Viewport() {
         setFocusable(true);
         setDoubleBuffered(true);
+        LoopMusic();
     }
 
     public int getLocationX() {
@@ -43,7 +39,7 @@ public class Viewport extends JPanel {
 
 
     @Override
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
         Graphics2D graphics2D = (Graphics2D) g;
@@ -65,58 +61,50 @@ public class Viewport extends JPanel {
         }
     }
 
-    public void draw(Graphics2D graphics2D, int x, int y){
-        for(Viewport child: children){
+    public void draw(Graphics2D graphics2D, int x, int y) {
+        for (Viewport child : children) {
             child.draw(graphics2D, x, y);
         }
     }
 
-    public void addToFront(Viewport viewport){
+    public void addToFront(Viewport viewport) {
         viewport.parent = this;
         children.add(0, viewport);
     }
 
-    public void add(Viewport viewport){
+    public void add(Viewport viewport) {
         viewport.parent = this;
         children.add(viewport);
     }
 
-    public void remove(Viewport viewport){
-        for(int i = 0; i < children.size(); ++i){
+    public void remove(Viewport viewport) {
+        for (int i = 0; i < children.size(); ++i) {
             viewport.parent = null;
-            if(children.get(i) == viewport) children.remove(i);
+            if (children.get(i) == viewport) children.remove(i);
         }
     }
 
-    public List<Viewport> getChildren(){
+    public List<Viewport> getChildren() {
 
         return children;
     }
 
-    public void update(){
+    public void update() {
         repaint();
     }
 
-    public void updateMap(MapView lastMapView, MapView currentMapView){
+    public void updateMap(MapView lastMapView, MapView currentMapView) {
         this.remove(lastMapView);
         this.add(currentMapView);
     }
 
-    public static void LoopMusic() {
-        InputStream is;
+    public void LoopMusic() {
         try {
-            is = new FileInputStream("../resources/music/music.mp3");
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        }
-        try {
-            AudioStream as = new AudioStream(is);
-            AudioData ad = as.getData();
-            ContinuousAudioDataStream cs = new ContinuousAudioDataStream(ad);
-            AudioPlayer.player.start(cs);
-        } catch (IOException e) {
-            System.out.println("Audio data exception");
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
+            clip.start();
+        } catch (Exception e) {
+            System.out.println();
         }
     }
-
 }

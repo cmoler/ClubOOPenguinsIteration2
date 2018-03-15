@@ -31,6 +31,7 @@ public class EquipmentState implements ControllerState {
     public EquipmentState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         this.equipmentController = new EquipmentController(gameLoader);
+        loadKeyBindings();
     }
 
     @Override

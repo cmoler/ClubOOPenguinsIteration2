@@ -1,48 +1,49 @@
 package Controller.Controllers.MenuController;
 
-import Controller.ControllerMediator;
 import Controller.Controllers.Controller;
-import Controller.SavingLoading.GameLoader;
 import View.MenuView.MenuViewPort;
 
-public class MenuController implements Controller{
+public abstract class MenuController implements Controller {
 
-    private int currentlySelected = 0;
-    private ControllerMediator controllerMediator;
+    protected int verticalSelection = 0;
+    protected int horizontalSelection = 0;
 
-    private MenuViewPort menuViewPort;
+    protected MenuViewPort menuViewPort;
 
-    private MenuController parent;
-    private MenuController activeController = null;
-    private NewGameController newGameController;
-    private SaveGameController saveGameController;
-    private LoadGameController loadGameController;
-    private OptionsController optionsController;
-    private ExitGameController exitGameController;
+    public abstract void select();
 
-    public MenuController(){
+    protected abstract void correctUpDownParameters();
+    protected abstract void correctLeftRightParameters();
 
+    protected void setMenuViewPort(MenuViewPort menuViewPort){
+        this.menuViewPort = menuViewPort;
     }
 
-    public MenuController(GameLoader gameLoader, ControllerMediator controllerMediator){
-        this.menuViewPort = gameLoader.getMenuViewport();
-        this.controllerMediator = controllerMediator;
-
-        newGameController = new NewGameController(gameLoader, this);
-        saveGameController = new SaveGameController(gameLoader, this);
-        loadGameController = new LoadGameController(gameLoader, this);
-        optionsController = new OptionsController(gameLoader, this);
-        exitGameController = new ExitGameController(gameLoader, this);
+    public void scrollUp(){
+        verticalSelection -= 1;
+        correctParametersAndUpdateView();
     }
 
-    protected void setParent(MenuController menuController){
-        this.parent = menuController;
+    public void scrollDown(){
+        verticalSelection += 1;
+        correctParametersAndUpdateView();
     }
 
-    public void exitSubMenu(){
-        System.out.println("Exit menu");
-        menuViewPort.returnToMenu();
-        this.activeController = null;
+    public void scrollLeft(){
+        horizontalSelection -= 1;
+        correctParametersAndUpdateView();
+    }
+
+    public void scrollRight(){
+        horizontalSelection += 1;
+        correctParametersAndUpdateView();
+    }
+
+    private void correctParametersAndUpdateView(){
+        correctUpDownParameters();
+        correctLeftRightParameters();
+        menuViewPort.setSelectedX(horizontalSelection);
+        menuViewPort.setSelectedY(verticalSelection);
     }
 
     @Override
@@ -50,51 +51,4 @@ public class MenuController implements Controller{
         menuViewPort.setVisible(true);
         menuViewPort.requestFocus();
     }
-
-    public void scrollDown(){
-        if(activeController != null) {
-            activeController.scrollDown();
-            return;
-        }
-        if(currentlySelected < 4) currentlySelected += 1;
-        menuViewPort.setSelectedMenuView(-1);
-    }
-
-    public void scrollUp(){
-        if(activeController != null) {
-            activeController.scrollUp();
-            return;
-        }
-        if(currentlySelected > 0) currentlySelected -= 1;
-        menuViewPort.setSelectedMenuView(1);
-    }
-
-    public void select() {
-        if(activeController != null) {
-            activeController.select();
-            return;
-        }
-        switch (currentlySelected){
-            case 0:
-                menuViewPort.enterNewGameView();
-                activeController = newGameController;
-                break;
-            case 1:
-                menuViewPort.enterSaveGameView();
-                activeController = saveGameController;
-                break;
-            case 2:
-                menuViewPort.enterLoadGameView();
-                activeController = loadGameController;
-                break;
-            case 3:
-                menuViewPort.enterOptionsView();
-                activeController = optionsController;
-            case 4:
-                menuViewPort.enterExitGameView();
-                activeController = exitGameController;
-                break;
-        }
-    }
-
 }

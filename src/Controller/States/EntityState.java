@@ -29,6 +29,7 @@ public class EntityState implements ControllerState {
     public EntityState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
         this.entityController = new EntityController(gameLoader);
+        loadKeyBindings();
     }
 
     @Override
@@ -127,6 +128,12 @@ public class EntityState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> openSkills());
                             break;
+                        case "interact":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> interact());
+                            break;
                         case "slot1":
                             keyBinding.put(Integer.parseInt(eElement.
                                     getElementsByTagName("key").
@@ -224,6 +231,10 @@ public class EntityState implements ControllerState {
     }
 
     private void openSkills() {
+
+    }
+
+    private void interact(){
 
     }
 

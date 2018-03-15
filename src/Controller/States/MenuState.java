@@ -1,7 +1,7 @@
 package Controller.States;
 
 import Controller.ControllerMediator;
-import Controller.Controllers.MenuController.MenuController;
+import Controller.Controllers.MenuController.MainMenuController;
 import Controller.SavingLoading.GameLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -21,13 +21,13 @@ import java.util.Map;
 public class MenuState implements ControllerState {
 
     ControllerMediator controllerMediator;
-    MenuController menuController;
+    MainMenuController menuController;
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
     public MenuState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        menuController = new MenuController(gameLoader, controllerMediator);
+        menuController = new MainMenuController(gameLoader, controllerMediator);
         loadKeyBindings();
     }
 
@@ -120,11 +120,11 @@ public class MenuState implements ControllerState {
     }
 
     private void scrollLeft() {
-
+        menuController.scrollLeft();
     }
 
     private void scrollRight() {
-
+        menuController.scrollRight();
     }
 
     private void scrollUp() {
