@@ -2,7 +2,9 @@ package Model.Item.TakeableItem.RangedWeaponItem;
 
 import Model.Entity.Entity;
 import Model.Entity.Role.Sneak;
+import Model.Item.TakeableItem.ProjectileCapableItem;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Updateable;
@@ -10,7 +12,7 @@ import Model.Utilites.Time;
 
 import java.util.List;
 
-public abstract class RangedWeaponItem extends TakeableItem implements Updateable {
+public abstract class RangedWeaponItem extends ProjectileCapableItem {
 
     private double secondsPerUse = 1.25;
     private double lastUse;
@@ -35,8 +37,6 @@ public abstract class RangedWeaponItem extends TakeableItem implements Updateabl
             lastUse = Time.currentInSeconds();
         }
     }
-
-    public abstract List<Location> getLocationsOn();
 
     protected abstract void apply(Location locationOfEntity, Direction directionFacing, int rangedWeaponSkillLevel);
 }
