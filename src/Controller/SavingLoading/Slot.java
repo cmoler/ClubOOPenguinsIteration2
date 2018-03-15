@@ -1,16 +1,14 @@
 package Controller.SavingLoading;
-
-
 import java.io.*;
-
+import org.json.*;
 /*
 Purpose of this class is to load and save a game from it specified location.
  */
 public class Slot {
 
-    File file;
-    int gameTime;
-    String classtype;
+    private File file;
+    private int gameTime;
+    private String classtype;
 
     public Slot(String fileName){
         file = new File(fileName);
@@ -27,7 +25,16 @@ public class Slot {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        GameSaver saver;
+
+        JSONObject saveJSON = new JSONObject();
+        JSONObject world = new JSONObject();
+        
+        JSONObject player = new JSONObject();
+        saveJSON.put("World", world);
+        saveJson.put("Player", player);
+
+        fileWriter.write(saveJson.toString());
+        GameSaveVisitor saver;
 //
 //        for each model in gameloader{
 //            file.write(model.save(saver))
