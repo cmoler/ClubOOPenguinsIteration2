@@ -36,6 +36,8 @@ public class UpdateList {
             if(!current.isDone()){
                 current.update();
             }
+            else
+                iterator.remove();
         }
     }
 }
