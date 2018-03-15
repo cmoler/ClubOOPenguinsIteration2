@@ -65,4 +65,10 @@ public class NPC extends Entity implements Updateable{
     public boolean isDone() {
         return false;
     }
+
+
+    //OVERRIDED ENTITY METHODS
+
+
+
 }

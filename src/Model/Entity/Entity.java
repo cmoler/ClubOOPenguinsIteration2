@@ -19,8 +19,6 @@ public abstract class Entity {
     private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
-    private int mana;
-    private int gold;
     private Direction directionFacing;
     private int experience = 0;
     private int level = 1; // default level
@@ -68,11 +66,6 @@ public abstract class Entity {
             this.health = maxHealth;
         }
     }
-
-    public void addGold(int gold){
-        this.gold += gold;
-    }
-
 
     public void modifyDefense(double defense){
         this.defense = defense;
