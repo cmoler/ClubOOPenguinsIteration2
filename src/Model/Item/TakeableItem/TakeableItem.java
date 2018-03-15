@@ -18,8 +18,4 @@ public class TakeableItem extends Item {
 
     public boolean canWear() { return false; }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
-
 }

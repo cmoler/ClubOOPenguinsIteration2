@@ -3,12 +3,12 @@ package Model.Item.TakeableItem.BoonItem;
 import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Summoner;
-import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Location;
 
 import java.util.Random;
 
-public abstract class BoonItem extends TakeableItem{
+public abstract class BoonItem extends UseableItem {
 
     public boolean canEquip(Player entity) {
         // ok under OCP
@@ -19,15 +19,19 @@ public abstract class BoonItem extends TakeableItem{
     }
 
     public void use(Player entityUsingItem, Location locationOfEntity) {
-        Summoner role = (Summoner) entityUsingItem.getRole();
-        int boonSkillLevel = role.getBoon();
-        Random rand = new Random();
-        if(rand.nextInt(100)+1 <= boonSkillLevel) {
-            apply(entityUsingItem); // template method
-        }
+        if (entityUsingItem.getMana() > getManaNeeded()) {
 
-        entityUsingItem.getInventory().removeItem(this);
+            Summoner role = (Summoner) entityUsingItem.getRole();
+            int boonSkillLevel = role.getBoon();
+            Random rand = new Random();
+            if (rand.nextInt(100) + 1 <= boonSkillLevel) {
+                apply(entityUsingItem); // template method
+            }
+        }
     }
+
+
+    protected abstract int getManaNeeded();
 
     protected abstract void apply(Entity entityUsingItem);
 }

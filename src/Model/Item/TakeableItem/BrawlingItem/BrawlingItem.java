@@ -4,13 +4,14 @@ import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 import Model.Utilites.Time;
 
-public abstract class BrawlingItem extends TakeableItem {
+public abstract class BrawlingItem extends UseableItem {
 
     private double lastUse;
 

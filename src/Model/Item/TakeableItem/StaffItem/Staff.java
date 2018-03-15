@@ -4,12 +4,13 @@ import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
-public class Staff extends TakeableItem{
+public class Staff extends UseableItem {
 
     private int damage = 15;
 

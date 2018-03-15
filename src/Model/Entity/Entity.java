@@ -21,10 +21,10 @@ public abstract class Entity {
     private int health = maxHealth;
     private int mana;
     private int gold;
-    private int resistance;
     private Direction directionFacing;
     private int experience = 0;
     private int level = 1; // default level
+    private double defense = 0;
     private Inventory inventory = new Inventory(this);
     private Location location;
     private boolean intentToMove = false;
@@ -40,6 +40,8 @@ public abstract class Entity {
     }
 
     public void takeDamage(int damage){
+        if(defense > 0)
+            damage = (int)(((double)damage) * defense/100);
         health -= damage;
         if (health < 0)
             health = 0;
@@ -67,14 +69,14 @@ public abstract class Entity {
         }
     }
 
-    public void addResistance(int resistance) { this.resistance += resistance; }
-
-    public void decreaseResistance(int resistance) { this.resistance -= resistance; }
-
     public void addGold(int gold){
         this.gold += gold;
     }
 
+
+    public void modifyDefense(double defense){
+        this.defense = defense;
+    }
 
     private boolean canLevelUp(){
         if (level < finalLevel) {
