@@ -15,7 +15,14 @@ public class AggroState implements NPCState {
     public void move(NPC npc, Player player) {
 
         ArrayList<Direction> path = uniformCostSearch(npc, player);
-        npc.move(path.get(0));
+        if (!path.isEmpty()) {
+            npc.move(path.get(0));
+        }
+        else {
+            Random random = new Random();
+            Direction randomDirection = Direction.values()[random.nextInt(Direction.values().length)];
+            npc.move(randomDirection);
+        }
 
     }
 
@@ -45,7 +52,7 @@ public class AggroState implements NPCState {
             LocationQueueNode currentNode = queue.poll();
             visited.add(currentNode);
 
-            //if the player has been found in the visible range, get path and move NPC in the right direction.
+            //if the player has been found in the visible range, return the optimal path
             if (currentNode.location == goal) {
                 solution = queue.peek().path;
                 return solution;
