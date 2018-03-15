@@ -18,15 +18,20 @@ public abstract class BoonItem extends TakeableItem{
     }
 
     public void use(Entity entityUsingItem, Location locationOfEntity) {
-        Summoner role = (Summoner) entityUsingItem.getRole();
-        int boonSkillLevel = role.getBoon();
-        Random rand = new Random();
-        if(rand.nextInt(100)+1 <= boonSkillLevel) {
-            apply(entityUsingItem); // template method
-        }
+        if(entityUsingItem.getMana() > getManaNeeded()) {
 
-        entityUsingItem.getInventory().removeItem(this);
+            Summoner role = (Summoner) entityUsingItem.getRole();
+            int boonSkillLevel = role.getBoon();
+            Random rand = new Random();
+            if (rand.nextInt(100) + 1 <= boonSkillLevel) {
+                apply(entityUsingItem); // template method
+            }
+
+            entityUsingItem.getInventory().removeItem(this);
+        }
     }
+
+    protected abstract int getManaNeeded();
 
     protected abstract void apply(Entity entityUsingItem);
 }

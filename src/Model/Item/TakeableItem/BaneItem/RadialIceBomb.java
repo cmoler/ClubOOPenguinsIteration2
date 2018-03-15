@@ -17,6 +17,8 @@ import static Model.Map.Direction.*;
 
 public class RadialIceBomb extends BaneItem {
 
+    private int manaNeeded = 20;
+
     private double damageAmount = 0.5;
     private double radialDecreaseFactor = 0.25;
 
@@ -31,6 +33,11 @@ public class RadialIceBomb extends BaneItem {
     @Override
     public List<Location> getLocationsOn() {
         return locationsOn;
+    }
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
     }
 
     @Override

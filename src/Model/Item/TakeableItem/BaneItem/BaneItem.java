@@ -25,18 +25,22 @@ public abstract class BaneItem extends TakeableItem implements Updateable {
 
     public void use(Entity entityUsingItem, Location locationOfEntity) {
         if(Time.currentInSeconds() > lastUse + secondsPerUse) {
+            if(entityUsingItem.getMana() > getManaNeeded()) {
 
-            Summoner role = (Summoner) entityUsingItem.getRole();
-            int baneSkillLevel = role.getBane();
+                Summoner role = (Summoner) entityUsingItem.getRole();
+                int baneSkillLevel = role.getBane();
 
-            Direction directionFacing = entityUsingItem.getDirectionFacing();
-            apply(locationOfEntity, directionFacing, baneSkillLevel);
+                Direction directionFacing = entityUsingItem.getDirectionFacing();
+                apply(locationOfEntity, directionFacing, baneSkillLevel);
 
-            lastUse = Time.currentInSeconds();
+                lastUse = Time.currentInSeconds();
+            }
         }
     }
 
     public abstract List<Location> getLocationsOn();
+
+    protected abstract int getManaNeeded();
 
     protected abstract void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel);
 }

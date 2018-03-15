@@ -10,7 +10,13 @@ import java.util.Random;
 
 public class Heal extends BoonItem {
 
+    private int manaNeeded = 5;
     private int healingIncrement = 40;
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
+    }
 
     @Override
     protected void apply(Entity entityUsingItem) {

@@ -18,6 +18,7 @@ import static Model.Map.Direction.*;
 
 public class AngularIceAttack extends BaneItem {
 
+    private int manaNeeded = 5;
     private double damageAmount = 0.75;
     private double angularDecreaseFactor = 0.25;
 
@@ -31,6 +32,11 @@ public class AngularIceAttack extends BaneItem {
     @Override
     public List<Location> getLocationsOn() {
         return locationsOn;
+    }
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
     }
 
     @Override

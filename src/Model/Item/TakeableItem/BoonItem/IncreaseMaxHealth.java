@@ -9,7 +9,14 @@ import java.util.Random;
 
 public class IncreaseMaxHealth extends BoonItem {
 
+    private int manaNeeded = 10;
+
     private int maxHealthIncrement = 40;
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
+    }
 
     @Override
     protected void apply(Entity entityUsingItem) {

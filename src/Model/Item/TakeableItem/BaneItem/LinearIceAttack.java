@@ -12,6 +12,8 @@ import java.util.List;
 
 public class LinearIceAttack extends BaneItem {
 
+    private int manaNeeded = 10;
+
     private double damageAmount = 1.0;
     private double linearDecreaseFactor = 0.25;
 
@@ -29,6 +31,11 @@ public class LinearIceAttack extends BaneItem {
             return locations;
         locations.add(locationOn);
         return locations;
+    }
+
+    @Override
+    protected int getManaNeeded() {
+        return manaNeeded;
     }
 
     @Override
