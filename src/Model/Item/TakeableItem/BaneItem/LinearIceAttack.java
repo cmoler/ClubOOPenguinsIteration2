@@ -5,10 +5,6 @@ import Model.Item.TakeableItem.Projectile.Projectile;
 import Model.Map.Direction;
 import Model.Map.Location;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 public class LinearIceAttack extends BaneItem {
 
     private double damageAmount = 1.0;
