@@ -40,7 +40,7 @@ public class AggroState implements NPCState {
             //if the player has been found in the visible range, get path and move NPC in the right direction.
             if (currentNode.location == goal) {
                 ArrayList<Direction> finalPath = queue.peek().path;
-                player.move(finalPath.get(0));
+                npc.move(finalPath.get(0));
 
             }
 
