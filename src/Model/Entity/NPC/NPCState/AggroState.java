@@ -13,8 +13,16 @@ public class AggroState implements NPCState {
 
     @Override
     public void move(NPC npc, Player player) {
+
+        ArrayList<Direction> path = uniformCostSearch(npc, player);
+        npc.move(path.get(0));
+
+    }
+
+    private ArrayList<Direction> uniformCostSearch(NPC npc, Player player) {
         Location start = npc.getLocation();
         Location goal = player.getLocation();
+        ArrayList<Direction> solution = new ArrayList<>();
         PriorityQueue<LocationQueueNode> queue = new PriorityQueue<LocationQueueNode>(10, new Comparator<LocationQueueNode>() {
             @Override
             public int compare(LocationQueueNode node1, LocationQueueNode node2) {
@@ -39,8 +47,8 @@ public class AggroState implements NPCState {
 
             //if the player has been found in the visible range, get path and move NPC in the right direction.
             if (currentNode.location == goal) {
-                ArrayList<Direction> finalPath = queue.peek().path;
-                npc.move(finalPath.get(0));
+                solution = queue.peek().path;
+                return solution;
 
             }
 
@@ -76,9 +84,10 @@ public class AggroState implements NPCState {
 
         }
 
+        return solution;
     }
 
-    public class LocationQueueNode {
+    private class LocationQueueNode {
         public Location location;
         public ArrayList<Direction> path;
         public int cost;
