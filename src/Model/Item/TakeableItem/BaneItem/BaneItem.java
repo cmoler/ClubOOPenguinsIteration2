@@ -36,6 +36,7 @@ public abstract class BaneItem extends ProjectileCapableItem {
                 apply(locationOfEntity, directionFacing, baneSkillLevel);
 
                 lastUse = Time.currentInSeconds();
+                entityUsingItem.addMana(-getManaNeeded());
             }
         }
     }

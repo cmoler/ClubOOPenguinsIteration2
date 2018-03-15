@@ -29,6 +29,7 @@ public abstract class BoonItem extends UseableItem {
             }
 
             entityUsingItem.getInventory().removeItem(this);
+            entityUsingItem.addMana(-getManaNeeded());
         }
     }
 
