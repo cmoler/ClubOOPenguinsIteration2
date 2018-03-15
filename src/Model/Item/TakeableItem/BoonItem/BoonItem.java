@@ -27,6 +27,9 @@ public abstract class BoonItem extends UseableItem {
             if (rand.nextInt(100) + 1 <= boonSkillLevel) {
                 apply(entityUsingItem); // template method
             }
+
+            entityUsingItem.getInventory().removeItem(this);
+            entityUsingItem.addMana(-getManaNeeded());
         }
     }
 
