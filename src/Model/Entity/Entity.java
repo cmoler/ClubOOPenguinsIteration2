@@ -138,8 +138,7 @@ public abstract class Entity {
         return location;
     }
 
-    public void touchItems(){
-    }
+    public void touchItems(){ }
 
     public void setLocation(Location location){
         this.location = location;

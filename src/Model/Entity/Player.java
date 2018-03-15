@@ -8,28 +8,27 @@ public class Player extends Entity {
     private int mana;
     private int gold;
     private Equipment equipment = new Equipment(this);
-    private Location location;
 
-    public Player(Role role, Location initialLocation) {
+    public Player(Role role) {
         this.role = role;
         role.setEntity(this);
-        this.location = initialLocation;
         super.setEntityType(EntityType.ICE);// default EntityType
     }
 
-    public Player(Role role, Location initialLocation, EntityType type){
+    public Player(Role role, EntityType type){
         this.role = role;
         role.setEntity(this);
         super.setEntityType(type);
     }
 
+    @Override
     public void touchItems(){
-        super.getLocation().itemsTouchedBy(this);
+        getLocation().itemsTouchedBy(this);
     }
 
     @Override
     public Location getLocation() {
-        return location;
+        return super.getLocation();
     }
 
     public Role getRole(){

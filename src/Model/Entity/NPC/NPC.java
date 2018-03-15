@@ -13,8 +13,6 @@ import Model.Entity.NPC.NPCState.NPCState;
 
 public class NPC extends Entity implements Updateable{
 
-
-
     private NPCState npcState;
     private Player player;
     private boolean wantToTalk;
@@ -69,6 +67,11 @@ public class NPC extends Entity implements Updateable{
 
     //OVERRIDED ENTITY METHODS
 
+    @Override
+    public void takeDamage(int damage) {
+        super.takeDamage(damage);
+        pissOff();
+    }
 
 
 }
