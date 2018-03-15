@@ -1,8 +1,6 @@
-package Model.Item.TakeableItem.Armour;
+package Model.Item.TakeableItem.Armor;
 
-import Model.Entity.Entity;
 import Model.Entity.Player;
-import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.WearableItem;
 
 public class Helmet extends WearableItem{
