@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.Armour;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.WearableItem;
 
@@ -9,13 +10,13 @@ public class Helmet extends WearableItem{
     private double defenseIncrease = 50;
 
     @Override
-    public void putOn(Entity entity) {
-        entity.modifyDefense(defenseIncrease);
+    public void putOn(Player player) {
+        player.modifyDefense(defenseIncrease);
     }
 
     @Override
-    public void takeOff(Entity entity) {
-        entity.modifyDefense(-defenseIncrease);
+    public void takeOff(Player player) {
+        player.modifyDefense(-defenseIncrease);
     }
 
     @Override

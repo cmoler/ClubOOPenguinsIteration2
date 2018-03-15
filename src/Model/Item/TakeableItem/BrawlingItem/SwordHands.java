@@ -24,8 +24,4 @@ public class SwordHands extends BrawlingItem {
         return damageAmount;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

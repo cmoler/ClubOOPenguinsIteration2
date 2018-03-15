@@ -32,8 +32,4 @@ public class Staff extends UseableItem {
         }
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

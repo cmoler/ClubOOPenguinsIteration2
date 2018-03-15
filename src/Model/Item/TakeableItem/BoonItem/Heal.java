@@ -23,8 +23,4 @@ public class Heal extends BoonItem {
         entityUsingItem.heal(healingIncrement);
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

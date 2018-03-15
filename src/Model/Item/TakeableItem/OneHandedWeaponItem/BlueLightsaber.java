@@ -26,8 +26,4 @@ public class BlueLightsaber extends OneHandedWeaponItem{
         return damageAmount;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

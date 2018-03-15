@@ -43,5 +43,6 @@ public abstract class BaneItem extends ProjectileCapableItem {
     }
 
     protected abstract int getManaNeeded();
+
     protected abstract void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel);
 }

@@ -24,8 +24,4 @@ public class Charm extends EnchantmentItem {
         return manaNeeded;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

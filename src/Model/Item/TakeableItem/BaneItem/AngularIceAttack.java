@@ -42,8 +42,4 @@ public class AngularIceAttack extends BaneItem {
 
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

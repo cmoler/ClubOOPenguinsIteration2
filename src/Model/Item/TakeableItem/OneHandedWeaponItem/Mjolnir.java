@@ -24,8 +24,4 @@ public class Mjolnir extends OneHandedWeaponItem{
         return damageAmount;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

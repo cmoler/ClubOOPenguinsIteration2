@@ -23,8 +23,4 @@ public class Seppuku extends EnchantmentItem {
         return manaNeeded;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }

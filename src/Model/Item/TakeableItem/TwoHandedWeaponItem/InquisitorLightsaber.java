@@ -24,8 +24,4 @@ public class InquisitorLightsaber extends TwoHandedWeaponItem{
         return damageAmount;
     }
 
-    @Override
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
 }
