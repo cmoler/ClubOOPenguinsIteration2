@@ -1,7 +1,7 @@
 package Controller;
 
 import Controller.SavingLoading.GameLoader;
-import Controller.SavingLoading.GameSaver;
+import Controller.SavingLoading.GameSaveVisitor;
 import Controller.States.*;
 import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
@@ -28,7 +28,7 @@ public class ControllerMediator {
     private KeyBindingState keyBindingState;
 
     private GameLoader gameLoader;
-    private GameSaver gameSaver;
+    private GameSaveVisitor gameSaveVisitor;
 
     private Viewport viewport;
     private StatusViewPort statusViewPort;
@@ -42,7 +42,7 @@ public class ControllerMediator {
     public ControllerMediator(){
 
         gameLoader = new GameLoader();
-        gameSaver = new GameSaver();
+        gameSaveVisitor = new GameSaveVisitor();
 
         getViewsFromLoader();
         loadStates();
