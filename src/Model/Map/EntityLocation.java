@@ -20,6 +20,7 @@ public class EntityLocation {
 
     public void setEntityLocation(Location location, Entity entity) {
         entityLocations.put(location, entity);
+        entity.setLocation(location);
     }
 
     public void removeEntityLocation(Location location) {
@@ -54,8 +55,7 @@ public class EntityLocation {
     public void moveEntity(Location currentLocation, Location nextLocation, Entity currentEntity) {
         if (nextLocation.moveAllowed(currentEntity)) {
             entityLocations.remove(currentLocation, currentEntity);
-            entityLocations.put(nextLocation, currentEntity);
-            currentEntity.setLocation(nextLocation);
+            setEntityLocation(nextLocation, currentEntity);
             nextLocation.activateAreaEffect(currentEntity);
             currentEntity.touchItems();
         }

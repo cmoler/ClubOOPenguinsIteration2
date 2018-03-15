@@ -1,4 +1,9 @@
 package Model.Entity.NPC.NPCState;
 
-public class AggroState {
+public class AggroState implements NPCState {
+
+    @Override
+    public void move() {
+
+    }
 }

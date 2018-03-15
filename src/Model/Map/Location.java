@@ -1,6 +1,7 @@
 package Model.Map;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Item.Item;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.Terrain.Terrain;
@@ -82,7 +83,7 @@ public class Location {
         return false;
     }
 
-    public void itemsTouchedBy(Entity entity){
+    public void itemsTouchedBy(Player entity){
         LocationItemIterator locationItemIterator = getLocationItemIterator();
         for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
             locationItemIterator.touchCurrent(entity);
@@ -132,7 +133,7 @@ public class Location {
             return items.get(index);
         }
 
-        public void touchCurrent(Entity entity) {
+        public void touchCurrent(Player entity) {
             items.get(index).touch(entity);
         }
 

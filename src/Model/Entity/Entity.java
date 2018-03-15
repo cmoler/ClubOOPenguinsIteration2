@@ -11,11 +11,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class Entity {
+public abstract class Entity {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
-    private Role role;
+
     private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
@@ -26,22 +26,10 @@ public class Entity {
     private int experience = 0;
     private int level = 1; // default level
     private Inventory inventory = new Inventory(this);
-    private Equipment equipment = new Equipment(this);
     private Location location;
     private boolean intentToMove = false;
     // map is in World
 
-    public Entity(Role role, Location initialLocation) {
-        this.role = role;
-        entityType = EntityType.ICE; // default EntityType
-        location = initialLocation;
-    }
-
-    public Entity(Role role, EntityType type, Location initialLocation){
-        this.role = role;
-        entityType = type;
-        location = initialLocation;
-    }
 
     public EntityType getEntityType(){
         return entityType;
@@ -87,9 +75,6 @@ public class Entity {
         this.gold += gold;
     }
 
-    public void addMana(int mana){
-        this.mana += mana;
-    }
 
     private boolean canLevelUp(){
         if (level < finalLevel) {
@@ -123,10 +108,6 @@ public class Entity {
         return directionFacing;
     }
 
-    public void teleport(Location location){
-        this.location = location;
-        notifyView();
-    }
 
     // getters
     public int getHealth(){
@@ -143,17 +124,6 @@ public class Entity {
         return level;
     }
 
-    public int getGold() {
-        return gold;
-    }
-
-    public int getMana() {
-        return mana;
-    }
-
-    public Role getRole(){
-        return role;
-    }
 
     public int getExperienceForNextLevel(){
         if(level < finalLevel)
@@ -173,12 +143,15 @@ public class Entity {
         return location;
     }
 
+    public void touchItems(){
+    }
+
     public void setLocation(Location location){
         this.location = location;
     }
 
-    public void touchItems(){
-        location.itemsTouchedBy(this);
+    public void setEntityType(EntityType entityType) {
+        this.entityType = entityType;
     }
 
     public void accept(Visitor v){

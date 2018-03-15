@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.OneHandedWeaponItem;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
@@ -13,7 +14,7 @@ public abstract class OneHandedWeaponItem extends TakeableItem {
 
     private double lastUse;
 
-    public boolean canEquip(Entity entity) {
+    public boolean canEquip(Player entity) {
         // ok under OCP
         if(entity.getRole().getClass() == Smasher.class)
             return true;
@@ -21,7 +22,7 @@ public abstract class OneHandedWeaponItem extends TakeableItem {
             return false;
     }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
+    public void use(Player entityUsingItem, Location locationOfEntity) {
         if(Time.currentInSeconds() > lastUse + getSecondsPerUse()) {
 
             Smasher role = (Smasher) entityUsingItem.getRole();

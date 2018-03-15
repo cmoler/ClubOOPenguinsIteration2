@@ -1,8 +1,8 @@
 package Model.Item;
 
-import Model.Entity.Entity;
+import Model.Entity.Player;
 
 public abstract class Item {
 
-    public abstract void touch(Entity entity);
+    public abstract void touch(Player entity);
 }

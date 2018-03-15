@@ -1,13 +1,14 @@
 package Model.Item.TakeableItem;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Item.Item;
 import Model.Map.Location;
 
 public class TakeableItem extends Item {
 
     @Override
-    public final void touch(Entity entity) {
+    public final void touch(Player entity) {
         entity.getInventory().addItem(this);
     }
 

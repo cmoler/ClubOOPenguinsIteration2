@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.BoonItem;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Location;
@@ -9,7 +10,7 @@ import java.util.Random;
 
 public abstract class BoonItem extends TakeableItem{
 
-    public boolean canEquip(Entity entity) {
+    public boolean canEquip(Player entity) {
         // ok under OCP
         if(entity.getRole().getClass() == Summoner.class)
             return true;
@@ -17,7 +18,7 @@ public abstract class BoonItem extends TakeableItem{
             return false;
     }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
+    public void use(Player entityUsingItem, Location locationOfEntity) {
         Summoner role = (Summoner) entityUsingItem.getRole();
         int boonSkillLevel = role.getBoon();
         Random rand = new Random();
