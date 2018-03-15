@@ -79,28 +79,28 @@ public class Equipment {
                     if(head != null) return false;
                     else {
                         head = wearableItem;
-                        entity.addResistance(wearableItem.getResistance());
+                        wearableItem.putOn(entity);
                         return true;
                     }
                 case "body":
                     if(body != null) return false;
                     else {
                         body = wearableItem;
-                        entity.addResistance(wearableItem.getResistance());
+                        wearableItem.putOn(entity);
                         return true;
                     }
                 case "legs":
                     if(legs != null) return false;
                     else {
                         legs = wearableItem;
-                        entity.addResistance(wearableItem.getResistance());
+                        wearableItem.putOn(entity);
                         return true;
                     }
                 case "ring":
                     if(ring != null) return false;
                     else {
                         ring = wearableItem;
-                        entity.addResistance(wearableItem.getResistance());
+                        wearableItem.putOn(entity);
                         return true;
                     }
             }
@@ -110,19 +110,19 @@ public class Equipment {
         public boolean unequip(WearableItem wearableItem){
             if(head == wearableItem){
                 head = null;
-                entity.decreaseResistance(wearableItem.getResistance());
+                wearableItem.takeOff(entity);
                 return true;
             }else if(body == wearableItem){
                 body = null;
-                entity.decreaseResistance(wearableItem.getResistance());
+                wearableItem.takeOff(entity);
                 return true;
             }else if(legs == wearableItem){
                 legs = null;
-                entity.decreaseResistance(wearableItem.getResistance());
+                wearableItem.takeOff(entity);
                 return true;
             }else if(ring == wearableItem){
                 ring = null;
-                entity.decreaseResistance(wearableItem.getResistance());
+                wearableItem.takeOff(entity);
                 return true;
             }else {
                 return false;

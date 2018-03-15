@@ -15,4 +15,6 @@ public class TakeableItem extends Item {
         return false;
     }
 
+    public boolean canWear() { return false; }
+
 }
