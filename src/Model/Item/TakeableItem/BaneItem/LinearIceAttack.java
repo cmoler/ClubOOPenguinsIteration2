@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.BaneItem;
 
+import Model.Entity.Entity;
 import Model.Item.TakeableItem.Projectile.LinearProjectile;
 import Model.Item.TakeableItem.Projectile.Projectile;
 import Model.Map.Direction;
@@ -26,5 +27,10 @@ public class LinearIceAttack extends BaneItem {
                 speed, locationOfEntity, directionFacing,"Ice");
 
         super.addProjectile(projectile);
+    }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
     }
 }

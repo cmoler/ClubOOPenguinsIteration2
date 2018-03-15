@@ -22,4 +22,9 @@ public class Insomnia extends EnchantmentItem {
     protected int getManaNeeded(){
         return manaNeeded;
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

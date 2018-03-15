@@ -41,4 +41,9 @@ public class AngularIceAttack extends BaneItem {
         super.addProjectile(projectile);
 
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

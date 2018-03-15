@@ -21,4 +21,9 @@ public class IncreaseXP extends BoonItem {
     protected void apply(Entity entityUsingItem) {
         entityUsingItem.gainExperience(XPIncrement);
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

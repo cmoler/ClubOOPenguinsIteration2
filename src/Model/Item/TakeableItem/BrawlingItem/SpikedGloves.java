@@ -23,4 +23,9 @@ public class SpikedGloves extends BrawlingItem {
     protected double getDamageAmount() {
         return damageAmount;
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

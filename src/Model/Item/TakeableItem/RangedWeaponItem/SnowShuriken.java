@@ -34,4 +34,9 @@ public class SnowShuriken extends RangedWeaponItem {
 
         super.addProjectile(projectile);
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

@@ -25,4 +25,9 @@ public class BlueLightsaber extends OneHandedWeaponItem{
     protected double getDamageAmount() {
         return damageAmount;
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

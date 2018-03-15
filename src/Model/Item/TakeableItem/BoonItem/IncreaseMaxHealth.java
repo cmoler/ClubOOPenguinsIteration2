@@ -22,4 +22,9 @@ public class IncreaseMaxHealth extends BoonItem {
     protected void apply(Entity entityUsingItem) {
         entityUsingItem.modifyMaxHealth(maxHealthIncrement);
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+        
+    }
 }

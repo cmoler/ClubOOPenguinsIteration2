@@ -31,4 +31,9 @@ public class Staff extends UseableItem {
             entityAtTarget.takeDamage(damage);
         }
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }

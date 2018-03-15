@@ -23,4 +23,9 @@ public class JeweledCutlass extends TwoHandedWeaponItem{
     protected double getDamageAmount() {
         return damageAmount;
     }
+
+    @Override
+    public void use(Entity entityUsingItem, Location locationOfEntity) {
+
+    }
 }
