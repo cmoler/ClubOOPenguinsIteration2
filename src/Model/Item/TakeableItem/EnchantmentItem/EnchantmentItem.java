@@ -4,14 +4,16 @@ import Model.Entity.Entity;
 import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
+import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.util.Random;
 
-public abstract class EnchantmentItem extends TakeableItem {
+public abstract class EnchantmentItem extends UseableItem {
 
     public boolean canEquip(Entity entity) {
         // ok under OCP

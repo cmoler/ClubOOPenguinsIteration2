@@ -3,13 +3,16 @@ package Model.Item.TakeableItem.TwoHandedWeaponItem;
 import Model.Entity.Entity;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 import Model.Utilites.Time;
 
-public abstract class TwoHandedWeaponItem extends TakeableItem {
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+
+public abstract class TwoHandedWeaponItem extends UseableItem {
 
     private double lastUse;
 

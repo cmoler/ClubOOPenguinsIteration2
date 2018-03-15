@@ -15,8 +15,4 @@ public class TakeableItem extends Item {
         return false;
     }
 
-    public void use(Entity entityUsingItem, Location locationOfEntity) {
-
-    }
-
 }

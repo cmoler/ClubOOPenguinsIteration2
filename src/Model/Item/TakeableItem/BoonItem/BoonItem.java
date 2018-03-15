@@ -3,11 +3,12 @@ package Model.Item.TakeableItem.BoonItem;
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Location;
 
 import java.util.Random;
 
-public abstract class BoonItem extends TakeableItem{
+public abstract class BoonItem extends UseableItem {
 
     public boolean canEquip(Entity entity) {
         // ok under OCP
