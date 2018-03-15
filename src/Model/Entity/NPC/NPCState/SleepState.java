@@ -1,8 +1,7 @@
 package Model.Entity.NPC.NPCState;
 
 import Model.Entity.NPC.NPC;
-
-import java.util.Timer;
+import Model.Entity.Player;
 
 public class SleepState implements NPCState {
 
@@ -19,9 +18,9 @@ public class SleepState implements NPCState {
     }
 
     @Override
-    public void move() {
+    public void move(NPC npc, Player player) {
         if ( (int) (System.nanoTime() - startTime)/1000000000 >= duration){
-            npc.setNpcState(oldState);
+            this.npc.setNpcState(oldState);
         }
     }
 

@@ -4,13 +4,19 @@ import Model.Entity.Entity;
 import Model.Entity.NPC.NPCState.*;
 
 import java.util.Random;
+
+import Model.Entity.Player;
 import Model.Updateable;
+import Model.Entity.NPC.NPCState.AggroState;
+import Model.Entity.NPC.NPCState.FriendlyState;
+import Model.Entity.NPC.NPCState.NPCState;
 
 public class NPC extends Entity implements Updateable{
 
 
 
     private NPCState npcState;
+    private Player player;
     private boolean wantToTalk;
     private String talkString;
 
@@ -52,7 +58,7 @@ public class NPC extends Entity implements Updateable{
 
     @Override
     public void update(){
-        npcState.move();
+        npcState.move(this, player );
     }
 
     @Override
