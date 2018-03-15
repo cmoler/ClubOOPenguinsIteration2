@@ -1,21 +1,19 @@
 package View.MenuView;
 
 import View.Viewport;
-import javax.swing.*;
-import java.awt.*;
 
 public abstract class MenuViewPort extends Viewport {
 
     protected int selectedX;
     protected int selectedY;
 
-    public void setSelectedX(int selectedX) {
+    public void setSelectedX(int selectedX){
         this.selectedX = selectedX;
     }
-
-    public void setSelectedY(int selectedY) {
+    public void setSelectedY(int selectedY){
         this.selectedY = selectedY;
     }
+
 }
 
 //    private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
