@@ -35,6 +35,7 @@ public class Pizza extends RangedWeaponItem {
                 radialDecreaseFactor*rangedWeaponSkillLevel, speed,
                 locationOfEntity, "Pizza");
 
+        super.addProjectile(projectile);
     }
 
 }

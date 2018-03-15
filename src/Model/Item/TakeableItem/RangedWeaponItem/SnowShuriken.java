@@ -32,5 +32,6 @@ public class SnowShuriken extends RangedWeaponItem {
                 angularDecreaseFactor*rangedWeaponSkillLevel, speed, locationOfEntity,
                 directionFacing, "Snow");
 
+        super.addProjectile(projectile);
     }
 }

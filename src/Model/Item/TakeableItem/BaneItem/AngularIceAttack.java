@@ -32,5 +32,7 @@ public class AngularIceAttack extends BaneItem {
                 angularDecreaseFactor*baneSkillLevel, speed, locationOfEntity,
                 directionFacing, "Ice");
 
+        super.addProjectile(projectile);
+
     }
 }

@@ -29,6 +29,7 @@ public class SnowLauncher extends RangedWeaponItem {
                 linearDecreaseFactor*rangedWeaponSkillLevel, speed, locationOfEntity,
                 directionFacing, "Snow");
 
+        super.addProjectile(projectile);
     }
 
 }

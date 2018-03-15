@@ -2,6 +2,7 @@ package Model.Item.TakeableItem.BaneItem;
 
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
+import Model.Item.TakeableItem.ProjectileCapableItem;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
@@ -11,7 +12,7 @@ import Model.Utilites.Time;
 
 import java.util.List;
 
-public abstract class BaneItem extends UseableItem {
+public abstract class BaneItem extends ProjectileCapableItem {
 
     private double secondsPerUse = 1.25;
     private double lastUse;
