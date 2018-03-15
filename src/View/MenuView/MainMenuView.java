@@ -4,7 +4,10 @@ import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class MainMenuView extends MenuViewPort {
@@ -19,6 +22,86 @@ public class MainMenuView extends MenuViewPort {
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
+
+        //Display numbers for testing
+        JButton ngBtn = new JButton("1");
+        JButton sgBtn = new JButton("2");
+        JButton lgBtn = new JButton("3");
+        JButton opBtn = new JButton("4");
+        JButton egBtn = new JButton("5");
+
+        //Styling to make button invisible
+        ngBtn.setBorderPainted(false);
+        ngBtn.setContentAreaFilled(false);
+        ngBtn.setToolTipText("New Game");
+        ngBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Start new game");
+                getNewGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        sgBtn.setBorderPainted(false);
+        sgBtn.setContentAreaFilled(false);
+        sgBtn.setFocusable(false);
+        sgBtn.setToolTipText("Save Game");
+        sgBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Saving");
+                getSaveGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        lgBtn.setBorderPainted(false);
+        lgBtn.setContentAreaFilled(false);
+        lgBtn.setFocusable(false);
+        lgBtn.setToolTipText("Load Game");
+        lgBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Loading");
+                getLoadGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        opBtn.setBorderPainted(false);
+        opBtn.setContentAreaFilled(false);
+        opBtn.setFocusable(false);
+        opBtn.setToolTipText("Options");
+        opBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Options");
+                getOptionsView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        egBtn.setBorderPainted(false);
+        egBtn.setContentAreaFilled(false);
+        egBtn.setFocusable(false);
+        egBtn.setToolTipText("Exit Game");
+        egBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Exit");
+                getExitGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        add(ngBtn);
+        add(sgBtn);
+        add(lgBtn);
+        add(opBtn);
+        add(egBtn);
+
+        setVisible(true);
     }
 
     @Override

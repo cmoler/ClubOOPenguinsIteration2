@@ -50,8 +50,8 @@ btn.setToolTipText("Click to move");
         setVisible(true);
     }
 
-    private JButton createButton(int row, int col) {
-        JButton btn = new JButton(String.valueOf(row) + ", " + String.valueOf(col));
+    private JButton createButton(int x, int y) {
+        JButton btn = new JButton(String.valueOf(x) + ", " + String.valueOf(y));
 
         //Styling to make button invisible
         btn.setBorderPainted(false);
@@ -61,7 +61,7 @@ btn.setToolTipText("Click to move");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JButton getIndex = getButtonIndex(row, col);
+                JButton getIndex = getButtonIndex(x, y);
             }
         });
         return btn;
