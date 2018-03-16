@@ -16,7 +16,7 @@ import javax.lang.model.type.ArrayType;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class GameSaveVisitor implements Saver{
+public class GameSaver implements Saver{
     JSONObject world = new JSONObject();
     JSONObject player = new JSONObject();
 
@@ -24,7 +24,8 @@ public class GameSaveVisitor implements Saver{
     }
 
     private JSONObject saveEntity(Entity entity){
-
+        JSONObject entityJSON = new JSONObject();
+        entity.put("avatar", entity.getAvatar)
     }
 
     private JSONObject saveLocation(Location location) {
@@ -44,8 +45,8 @@ public class GameSaveVisitor implements Saver{
         mapJSON.put("rows", map.getRows());
         mapJSON.put("cols", map.getCols());
         ArrayList<JSONObject> entityLocationList = new ArrayList<>();
-        for (int i = 0; i < entityLocationList.size(); i++)
-                entityLocationList.get()
+        for (int i = 0; i < map..size(); i++)
+                entityLocationList.get(i).
         }
         mapJSON.put("")
     }
