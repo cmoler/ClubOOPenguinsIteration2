@@ -63,8 +63,7 @@ public class MapView extends Viewport {
             }
         }
         for(Viewport child: children){
-            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10&&
-                    child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ){
+            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
                 child.draw(graphics2D, child.getLocationX() - offsetJ + desiredPlayerXTileOffset, child.getLocationY() - offsetI + desiredPlayerYTileOffset);
             }
         }

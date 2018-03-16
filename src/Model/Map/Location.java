@@ -1,6 +1,7 @@
 package Model.Map;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Item.Item;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.Terrain.Terrain;
@@ -19,6 +20,8 @@ public class Location {
     private AreaEffect areaEffect;
     private List<Item> items = new ArrayList<>();
     private List<Viewport> observers = new ArrayList<Viewport>();
+    int xCoordinate;
+    int yCoordinate;
 
     public Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
         this.terrain = terrain;
@@ -38,13 +41,43 @@ public class Location {
         return adjacentLocations.get(direction);
     }
 
+
+    //May be needed
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getyCoordinate() {
+        return yCoordinate;
+    }
+
+    public void setxCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public void setyCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+    //
+
     public AreaEffect getAreaEffect() {
         return areaEffect;
+    }
+
+    public void activateAreaEffect(Entity entity){
+        if (areaEffect != null){
+            areaEffect.activate(entity);
+        }
+    }
+
+    public void setAreaEffect(AreaEffect areaEffect) {
+        this.areaEffect = areaEffect;
     }
 
     public Terrain getTerrain() {
         return terrain;
     }
+
 
     public boolean moveAllowed(Entity entity){
         if (!obstacle && terrain.enter(entity.getEntityType()))
@@ -52,6 +85,15 @@ public class Location {
             return true;
         }
         return false;
+    }
+
+    public void itemsTouchedBy(Player entity){
+        LocationItemIterator locationItemIterator = getLocationItemIterator();
+        for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
+            locationItemIterator.touchCurrent(entity);
+            //if(locationItemIterator.getCurrent().shouldBeRemoved())
+            locationItemIterator.removeCurrent();
+        }
     }
 
     public List<Item> getItems(){
@@ -95,7 +137,7 @@ public class Location {
             return items.get(index);
         }
 
-        public void touchCurrent(Entity entity) {
+        public void touchCurrent(Player entity) {
             items.get(index).touch(entity);
         }
 

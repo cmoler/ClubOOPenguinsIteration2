@@ -2,7 +2,7 @@ package Model.Map.AreaEffect;
 
 import Model.Entity.Entity;
 
-public class HealAreaEffect extends AreaEffect {
+public class HealAreaEffect extends ContinualAreaEffect {
 
     private int healAmount;
 

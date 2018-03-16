@@ -2,7 +2,7 @@ package Model.Map.AreaEffect;
 
 import Model.Entity.Entity;
 
-public class LevelUpAreaEffect extends AreaEffect {
+public class LevelUpAreaEffect extends OneShotAreaEffect {
 
     public LevelUpAreaEffect(){}
 

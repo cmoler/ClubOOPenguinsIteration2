@@ -1,0 +1,16 @@
+package Model.Item.TakeableItem.Potion;
+
+import Model.Entity.Player;
+import Model.Item.TakeableItem.UseableItem;
+import Model.Map.Location;
+
+public abstract class Potion extends UseableItem {
+
+    @Override
+    public void use(Player entityUsingItem, Location locationOfEntity) {
+        apply(entityUsingItem);
+        entityUsingItem.getEquipment().unEquip(this);
+    }
+
+    protected abstract void apply(Player entityUsingItem);
+}

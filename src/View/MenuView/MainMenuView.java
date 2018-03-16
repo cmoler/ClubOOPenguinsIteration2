@@ -4,21 +4,117 @@ import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class MainMenuView extends MenuViewPort {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
 
-    int currentSubMenu = -1;
+    private int currentSubMenu = -1;
+
+    private int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
+    private int startY = Commons.SCREEN_HEIGHT/4;
+
 
     public MainMenuView(){
+        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+
         add(new NewGameView());
         add(new SaveGameView());
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
+
+        //Display numbers for testing
+        JButton ngBtn = new JButton("1");
+        JButton sgBtn = new JButton("2");
+        JButton lgBtn = new JButton("3");
+        JButton opBtn = new JButton("4");
+        JButton egBtn = new JButton("5");
+
+        //Styling to make button invisible
+        ngBtn.setBorderPainted(false);
+        ngBtn.setContentAreaFilled(false);
+        ngBtn.setPreferredSize(new Dimension(30, 30));
+        ngBtn.setToolTipText("New Game");
+        ngBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Start new game");
+                enterNewGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        sgBtn.setBorderPainted(false);
+        sgBtn.setContentAreaFilled(false);
+        sgBtn.setFocusable(false);
+        sgBtn.setSize(new Dimension(80, 80));
+        sgBtn.setToolTipText("Save Game");
+        sgBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Saving");
+                enterSaveGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        lgBtn.setBorderPainted(false);
+        lgBtn.setContentAreaFilled(false);
+        lgBtn.setFocusable(false);
+        lgBtn.setSize(new Dimension(80, 80));
+        lgBtn.setToolTipText("Load Game");
+        lgBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Loading");
+                enterLoadGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        opBtn.setBorderPainted(false);
+        opBtn.setContentAreaFilled(false);
+        opBtn.setFocusable(false);
+        opBtn.setSize(new Dimension(80, 80));
+        opBtn.setToolTipText("Options");
+        opBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Options");
+                enterOptionsView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        egBtn.setBorderPainted(false);
+        egBtn.setContentAreaFilled(false);
+        egBtn.setFocusable(false);
+        egBtn.setSize(new Dimension(80, 80));
+        egBtn.setToolTipText("Exit Game");
+        egBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Exit");
+                enterExitGameView();
+                getTopLevelAncestor().requestFocus();
+            }
+        });
+
+        buttonGrid.add(ngBtn);
+        buttonGrid.add(sgBtn);
+        buttonGrid.add(lgBtn);
+        buttonGrid.add(opBtn);
+        buttonGrid.add(egBtn);
+
+        add(buttonGrid, BorderLayout.SOUTH);
+
+        setVisible(true);
     }
 
     @Override
@@ -29,9 +125,6 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void drawMainMenu(Graphics2D graphics2D){
-        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
-        int startY = Commons.SCREEN_HEIGHT/4;
-
         graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("New Game", (startX), (startY+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
