@@ -9,6 +9,10 @@ import java.util.Random;
 
 public class IncreaseXP extends BoonItem {
 
+    public IncreaseXP(){
+        this.name = "increaseLevel";
+    }
+
     private int manaNeeded = 100;
     private int XPIncrement = 40;
 

@@ -4,6 +4,10 @@ import Model.Entity.Player;
 import Model.Item.TakeableItem.WearableItem;
 
 public class Ring extends WearableItem {
+
+    public Ring(){
+        this.name = "ring";
+    }
     @Override
     public void putOn(Player player) {
 

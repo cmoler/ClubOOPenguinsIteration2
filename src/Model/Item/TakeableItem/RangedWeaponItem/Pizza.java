@@ -23,6 +23,10 @@ import static Model.Map.Direction.NE;
 
 public class Pizza extends RangedWeaponItem {
 
+    public Pizza(){
+        this.name = "pizza";
+    }
+
     private double damageAmount = 0.5;
     private double radialDecreaseFactor = 0.25;
 

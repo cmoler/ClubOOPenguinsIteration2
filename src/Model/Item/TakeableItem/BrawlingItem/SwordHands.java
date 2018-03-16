@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class SwordHands extends BrawlingItem {
 
+    public SwordHands(){
+        this.name = "swordHands";
+    }
+
     private double damageAmount = 0.75; // gets multiplied by skill level
     private double secondsPerUse = 0.75;
 
