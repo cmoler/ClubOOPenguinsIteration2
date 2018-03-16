@@ -43,7 +43,6 @@ class LinearIceAttackTest {
 
         equipment.equip(item);
 
-        System.out.println(npc.getHealth());
         equipment.useItem(0);
 //        int x = ((ProjectileCapableItem)item).getProjectiles().get(0).getLocationsOn().get(0).getxCoordinate();
 //        int y = ((ProjectileCapableItem)item).getProjectiles().get(0).getLocationsOn().get(0).getyCoordinate();

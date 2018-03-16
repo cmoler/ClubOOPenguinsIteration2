@@ -22,7 +22,7 @@ public class RadialIceBomb extends BaneItem {
     private int manaNeeded = 20;
 
     private double damageAmount = 0.5;
-    private double radialDecreaseFactor = 0.25;
+    private double radialDecreaseFactor = 0.2;
 
     private double speed = 0.75;
 
