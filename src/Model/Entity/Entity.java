@@ -1,7 +1,9 @@
 package Model.Entity;
 
+import Model.Entity.Role.Role;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -9,38 +11,23 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class Entity{
+public abstract class Entity {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
+
+    private EntityType entityType;
     private int maxHealth = 100;
-    private int health = maxHealth; // default health?
-    private int mana;
-    private int gold;
+    private int health = maxHealth;
     private Direction directionFacing;
     private int experience = 0;
     private int level = 1; // default level
+    private double defense = 0;
     private Inventory inventory = new Inventory(this);
-    private Equipment equipment = new Equipment(this);
-    private EntityType entityType;
     private Location location;
+    private boolean intentToMove = false;
     // map is in World
 
-    //Entity for testing purposes
-    public Entity(){
-        entityType = EntityType.ICE;
-        location = null;
-    }
-
-    public Entity(Location initialLocation) {
-        entityType = EntityType.ICE; // default EntityType
-        location = initialLocation;
-    }
-
-    public Entity(EntityType type, Location initialLocation){
-        entityType = type;
-        location = initialLocation;
-    }
 
     public EntityType getEntityType(){
         return entityType;
@@ -51,6 +38,8 @@ public class Entity{
     }
 
     public void takeDamage(int damage){
+        if(defense > 0)
+            damage = (int)(((double)damage) * defense/100);
         health -= damage;
         if (health < 0)
             health = 0;
@@ -73,14 +62,15 @@ public class Entity{
 
     public void modifyMaxHealth(int health){
         maxHealth += health;
-        if (this.health > maxHealth)
-        {
+        if (this.health > maxHealth) {
             this.health = maxHealth;
         }
-
     }
 
-    // don't think this needs to be public
+    public void modifyDefense(double defense){
+        this.defense = defense;
+    }
+
     private boolean canLevelUp(){
         if (level < finalLevel) {
             if (experience > ExperienceForLevel.get(level + 1))
@@ -93,28 +83,28 @@ public class Entity{
     }
 
     public void move(Direction direction){
-        if (isAlive()){
-            if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
-                return;
-            Location nextLocation = location.getAdjacentAt(direction);
-            if (nextLocation.moveAllowed(this)){
-                this.location = nextLocation;
-                if (this.location.getAreaEffect() != null){
-                    this.location.getAreaEffect().activate(this);
-                }
-                Location.LocationItemIterator locationItemIterator = location.getLocationItemIterator();
-                for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
-                    locationItemIterator.touchCurrent(this);
-                    if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
-                }
-            }
+
+        if (directionFacing == direction){
+            intentToMove = true;
+        }
+        else {
+            directionFacing = direction;
+
         }
     }
 
-    public void teleport(Location location){
-        this.location = location;
-        notifyView();
+    public boolean getIntentToMove(){
+        return intentToMove;
     }
+
+    public void setIntentToMove(boolean intentToMove) {
+        this.intentToMove = intentToMove;
+    }
+
+    public Direction getDirectionFacing() {
+        return directionFacing;
+    }
+
 
     // getters
     public int getHealth(){
@@ -130,6 +120,7 @@ public class Entity{
     public int getLevel(){
         return level;
     }
+
 
     public int getExperienceForNextLevel(){
         if(level < finalLevel)
@@ -149,6 +140,22 @@ public class Entity{
         return location;
     }
 
+    public void interactLocation(){
+        location.activateAreaEffect(this);
+    }
+
+    public void setLocation(Location location){
+        this.location = location;
+    }
+
+    public void setEntityType(EntityType entityType) {
+        this.entityType = entityType;
+    }
+
+    public void accept(Visitor v){
+        v.visitEntity(this);
+    }
+
     public void attach(Viewport viewport){
         observers.add(viewport);
     }
@@ -162,7 +169,7 @@ public class Entity{
             viewport.update();
         }
     }
-
+  
     private static final int finalLevel = 100;
     private static final java.util.Map<Integer, Integer> ExperienceForLevel; // <Level,Experience required for level>
     static {

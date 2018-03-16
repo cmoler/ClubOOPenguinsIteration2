@@ -1,7 +1,9 @@
 package Model.Map;
 
+import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.Terrain.Ice;
+import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ import static Model.Map.Direction.*;
 public class Map {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
+    private EntityLocation entityLocationList = new EntityLocation();
 
     private Location[][] locations;
     private Location defaultLocation;
@@ -64,6 +67,26 @@ public class Map {
 
         this.defaultLocation = locations[x/2][y/2];
         setAdjacencyList();
+    }
+
+    public void removeEntityLocation(Location location){
+        entityLocationList.removeEntityLocation(location);
+    }
+
+    public void setEntityLocation(Location location, Entity entity){
+        entityLocationList.setEntityLocation(location, entity);
+    }
+
+    //Update entity location if they are flagged to move
+    public void updateEntityLocations(){
+        entityLocationList.updateEntityLocations();
+    }
+
+    public Entity entityAtLocation(Location location){
+        if (entityLocationList.getEntityAtLocation(location) != null)
+            return entityLocationList.getEntityAtLocation(location);
+        else
+            return null;
     }
 
     public void setAdjacencyList() {
@@ -136,6 +159,8 @@ public class Map {
                 }
 
                 locations[i][j].setAdjacentLocations(AdjacentLocations);
+                locations[i][j].setxCoordinate(j);
+                locations[i][j].setyCoordinate(i);
             }
         }
 
@@ -156,6 +181,10 @@ public class Map {
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
+
+    public void accept(Visitor v){
+        v.visitMap(this);
+    }
 
     public void attach(Viewport viewport) {
         observers.add(viewport);
