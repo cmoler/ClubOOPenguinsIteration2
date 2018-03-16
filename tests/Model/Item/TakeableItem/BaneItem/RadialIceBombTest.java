@@ -35,7 +35,7 @@ class RadialIceBombTest {
         map.setEntityLocation(npc2Location, npc2);
         map.setEntityLocation(npc3Location, npc3);
         map.setEntityLocation(npc4Location, npc4);
-        World.getWorld().addMap("0001", map, new MapView());
+        World.getWorld().addMap("0001", map);
         World.getWorld().changeCurrentMapTo(map);
 
         Role role = new Summoner();

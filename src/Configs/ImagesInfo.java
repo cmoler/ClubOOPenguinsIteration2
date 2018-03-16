@@ -5,25 +5,25 @@ import java.awt.*;
 public interface ImagesInfo {
 
 
-    public static final String TILE_SHEET = "resources/images/terrain.png";
-    public static final String AVATAR_SHEET = "resources/images/bluePenguin.png";
-    public static final String AVATAR_SHEET_NINJA = "resources/images/Penguin_Chat_3_Ninja_spritesheet.png";
+    public static final String TILE_SHEET = "resources/images/terrain/terrain.png";
+    public static final String AVATAR_SHEET = "resources/images/playerSprites/bluePenguin.png";
+    public static final String AVATAR_SHEET_NINJA = "resources/images/playerSprites/Penguin_Chat_3_Ninja_spritesheet.png";
 
-    public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/Red_AOE.png";
-    public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/Green_AOE.png";
-    public static final String AREAEFFECT_KILL_FILELOCATION = "resources/images/Black_AOE.png";
-    public static final String AREAEFFECT_LEVELUP_FILELOCATION = "resources/images/Blue_AOE.png";
-    public static final String ITEM_ITERACTIVE_FILELOCATION = "resources/images/Moss_Key_Pin.png";
-    public static final String ITEM_ONESHOT_FILELOCATION = "resources/images/Fishburger.png";
-    public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/Blue_Bunny_Ears.png";
-    public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/Portal_box.png";
+    public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/aoe/Red_AOE.png";
+    public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/aoe/Green_AOE.png";
+    public static final String AREAEFFECT_KILL_FILELOCATION = "resources/images/aoe/Black_AOE.png";
+    public static final String AREAEFFECT_LEVELUP_FILELOCATION = "resources/images/aoe/Blue_AOE.png";
+    public static final String ITEM_ITERACTIVE_FILELOCATION = "resources/images/clubPenguinItems/Moss_Key_Pin.png";
+    public static final String ITEM_ONESHOT_FILELOCATION = "resources/images/clubPenguinItems/Fishburger.png";
+    public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/clubPenguinItems/Blue_Bunny_Ears.png";
+    public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/clubPenguinItems/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
 
-    public static final String RED_CROSS_FILELOCATION = "resources/images/RedCross.png";
-    public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/SkullCrossBone.png";
-    public static final String GOLD_STAR_FILELOCATION = "resources/images/goldstar.png";
+    public static final String RED_CROSS_FILELOCATION = "resources/images/terrain/RedCross.png";
+    public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/terrain/SkullCrossBone.png";
+    public static final String GOLD_STAR_FILELOCATION = "resources/images/terrain/goldstar.png";
 
-    public static final String GLACIER_FILELOCATION = "resources/images/glacier.png";
+    public static final String GLACIER_FILELOCATION = "resources/images/terrain/glacier.png";
 
     public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
 

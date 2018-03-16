@@ -28,7 +28,7 @@ class LinearIceAttackTest {
         Location NPCLocation = map.getDefaultLocation().getAdjacentAt(Direction.S).getAdjacentAt(Direction.S).getAdjacentAt(Direction.S);
         NPC npc = new NPC();
         map.setEntityLocation(NPCLocation, npc);
-        World.getWorld().addMap("0001", map, new MapView());
+        World.getWorld().addMap("0001", map);
         World.getWorld().changeCurrentMapTo(map);
 
         Role role = new Summoner();
