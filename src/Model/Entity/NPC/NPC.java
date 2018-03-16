@@ -17,6 +17,7 @@ public class NPC extends Entity implements Updateable{
     private Player player;
     private boolean wantToTalk;
     private String talkString;
+    private int visibleRange = 5;
 
     public NPC() {
 
@@ -46,12 +47,16 @@ public class NPC extends Entity implements Updateable{
 
     public void fallAsleep(){
         // makes NPC sleep for certain period of time
-        NPCState sleepState = new SleepState(this, npcState, 10);
+        NPCState sleepState = new SleepState(npcState, 10);
         setNpcState(sleepState);
     }
 
     public void setNpcState(NPCState npcState) {
         this.npcState = npcState;
+    }
+
+    public int getVisibleRange() {
+        return visibleRange;
     }
 
     @Override
