@@ -21,7 +21,7 @@ public class Player extends Entity {
         super.setEntityType(type);
     }
 
-    @Override
+
     public void touchItems(){
         getLocation().itemsTouchedBy(this);
     }
@@ -29,6 +29,12 @@ public class Player extends Entity {
     @Override
     public Location getLocation() {
         return super.getLocation();
+    }
+
+    @Override
+    public void interactLocation() {
+        super.interactLocation();
+        touchItems();
     }
 
     public Role getRole(){

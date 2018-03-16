@@ -56,8 +56,7 @@ public class EntityLocation {
         if (nextLocation.moveAllowed(currentEntity)) {
             entityLocations.remove(currentLocation, currentEntity);
             setEntityLocation(nextLocation, currentEntity);
-            nextLocation.activateAreaEffect(currentEntity);
-            currentEntity.touchItems();
+            currentEntity.interactLocation();
         }
     }
 
