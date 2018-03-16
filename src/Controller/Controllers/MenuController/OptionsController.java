@@ -1,7 +1,7 @@
 package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.KeyBindings;
 import View.MenuView.OptionsView;
 
@@ -13,12 +13,12 @@ public class OptionsController extends MenuController {
 
     private ControllerMediator controllerMediator;
 
-    public OptionsController(GameLoader gameLoader, ControllerMediator controllerMediator) {
-        optionsView = gameLoader.getMainMenuViewport().getOptionsView();
+    public OptionsController(GameBuilder gameBuilder, ControllerMediator controllerMediator) {
+        optionsView = gameBuilder.getMainMenuViewport().getOptionsView();
         setMenuViewPort(optionsView);
         this.controllerMediator = controllerMediator;
 
-        this.keyBindings = gameLoader.getKeyBindings();
+        this.keyBindings = gameBuilder.getKeyBindings();
         optionsView.setKeyBindings(keyBindings);
     }
 

@@ -1,10 +1,10 @@
 package Controller.Controllers;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 
 public class InventoryController implements Controller{
 
-    public InventoryController(GameLoader gameLoader){
+    public InventoryController(GameBuilder gameBuilder){
 
     }
 

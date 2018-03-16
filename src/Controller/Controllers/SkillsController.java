@@ -1,10 +1,10 @@
 package Controller.Controllers;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 
 public class SkillsController implements Controller{
 
-    public SkillsController(GameLoader gameLoader){
+    public SkillsController(GameBuilder gameBuilder){
 
     }
 

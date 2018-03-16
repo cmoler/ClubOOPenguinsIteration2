@@ -2,7 +2,7 @@ package Controller.States;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.MenuController.MainMenuController;
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -25,9 +25,9 @@ public class MenuState implements ControllerState {
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public MenuState(GameLoader gameLoader, ControllerMediator controllerMediator){
+    public MenuState(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        menuController = new MainMenuController(gameLoader, controllerMediator);
+        menuController = new MainMenuController(gameBuilder, controllerMediator);
         loadKeyBindings();
     }
 

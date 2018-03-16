@@ -1,14 +1,14 @@
 package Controller.Controllers.MenuController;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 
 public class ExitGameController extends MenuController {
 
     private MainMenuController mainMenuController;
 
-    public ExitGameController(GameLoader gameLoader, MainMenuController mainMenuController) {
+    public ExitGameController(GameBuilder gameBuilder, MainMenuController mainMenuController) {
         this.mainMenuController = mainMenuController;
-        setMenuViewPort(gameLoader.getMainMenuViewport().getExitGameView());
+        setMenuViewPort(gameBuilder.getMainMenuViewport().getExitGameView());
     }
 
     @Override

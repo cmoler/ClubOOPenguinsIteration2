@@ -3,17 +3,16 @@ package Controller.SavingLoading;
 import Configs.Commons;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MemorySlots {
     List<Slot> slots = new ArrayList<>();
-    GameLoader gameLoader;
+    GameBuilder gameBuilder;
     int selectedSlot;
 
-    public MemorySlots(GameLoader gameLoader) {
+    public MemorySlots(GameBuilder gameBuilder) {
         selectedSlot = 0;
-        this.gameLoader = gameLoader;
+        this.gameBuilder = gameBuilder;
 
         //createslots
         for (int i = 0; i < Commons.MAX_SAVE_SLOTS; i++) {
@@ -37,10 +36,10 @@ public class MemorySlots {
     }
 
     public void loadOnSelected(){
-        slots.get(selectedSlot).loadTo(gameLoader);
+        slots.get(selectedSlot).loadTo(gameBuilder);
     }
 
     public void saveOnSelected(){
-        slots.get(selectedSlot).saveFrom(gameLoader);
+        slots.get(selectedSlot).saveFrom(gameBuilder);
     }
 }

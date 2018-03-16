@@ -1,13 +1,13 @@
 package Controller.Controllers;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import Model.Entity.Entity;
 
 public class EntityController implements Controller {
 
     Entity entity;
 
-    public EntityController(GameLoader gameLoader){
+    public EntityController(GameBuilder gameBuilder){
 
     }
 

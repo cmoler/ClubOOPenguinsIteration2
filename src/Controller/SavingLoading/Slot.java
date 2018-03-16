@@ -18,7 +18,7 @@ public class Slot {
         gameTime = 0;
     }
 
-    public void saveFrom(GameLoader gameLoader){
+    public void saveFrom(GameBuilder gameBuilder){
         FileWriter fileWriter;
         JSONObject saveJSON = new JSONObject();
 
@@ -42,7 +42,7 @@ public class Slot {
 
     }
 
-    public void loadTo(GameLoader gameLoader){
+    public void loadTo(GameBuilder gameBuilder){
         FileReader fileReader;
         String source;
         try {

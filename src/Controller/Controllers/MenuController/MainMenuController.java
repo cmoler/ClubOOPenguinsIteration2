@@ -1,7 +1,7 @@
 package Controller.Controllers.MenuController;
 
 import Controller.ControllerMediator;
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import View.MenuView.MainMenuView;
 
 public class MainMenuController extends MenuController{
@@ -21,16 +21,16 @@ public class MainMenuController extends MenuController{
 
     }
 
-    public MainMenuController(GameLoader gameLoader, ControllerMediator controllerMediator){
-        this.mainMenuView = gameLoader.getMainMenuViewport();
+    public MainMenuController(GameBuilder gameBuilder, ControllerMediator controllerMediator){
+        this.mainMenuView = gameBuilder.getMainMenuViewport();
         setMenuViewPort(this.mainMenuView);
         this.controllerMediator = controllerMediator;
 
-        newGameController = new NewGameController(gameLoader, this);
-        saveGameController = new SaveGameController(gameLoader, this);
-        loadGameController = new LoadGameController(gameLoader, this);
-        optionsController = new OptionsController(gameLoader, controllerMediator);
-        exitGameController = new ExitGameController(gameLoader, this);
+        newGameController = new NewGameController(gameBuilder, this);
+        saveGameController = new SaveGameController(gameBuilder, this);
+        loadGameController = new LoadGameController(gameBuilder, this);
+        optionsController = new OptionsController(gameBuilder, controllerMediator);
+        exitGameController = new ExitGameController(gameBuilder, this);
     }
 
     public void exitSubMenu(){
