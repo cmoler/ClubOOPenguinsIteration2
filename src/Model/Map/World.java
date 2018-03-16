@@ -13,9 +13,7 @@ public class World {
 
     public static World instance = null;
     private Map currentMap;
-    private Viewport viewport;
     private HashMap<String,Map> maps = new HashMap<String,Map>();
-    private HashMap<Map,MapView> mapViews = new HashMap<Map,MapView>();
 
     protected World(){
         // Can't instantiate
@@ -29,13 +27,7 @@ public class World {
         return instance;
     }
 
-    public void setViewport(Viewport viewport){
-        this.viewport = viewport;
-    }
-
     public void changeCurrentMapTo(Map map){
-        if(viewport!=null)viewport.addToFront(mapViews.get(map));
-        if(currentMap!=null)viewport.remove(mapViews.get(currentMap));
         currentMap = map;
     }
 
@@ -43,9 +35,8 @@ public class World {
         return currentMap;
     }
 
-    public void addMap(String mapID, Map map, MapView mapView){
+    public void addMap(String mapID, Map map){
         maps.put(mapID, map);
-        mapViews.put(map, mapView);
     }
 
     public Map getMap(String mapID){
@@ -60,9 +51,9 @@ public class World {
         observers.remove(viewport);
     }
 
-    public void notifyView(MapView last, MapView current){
+    public void notifyView(){
         for (Viewport viewport : observers){
-            viewport.updateMap(last, current);
+            viewport.update();
         }
     }
 }

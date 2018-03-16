@@ -3,8 +3,10 @@ package Controller;
 import Controller.SavingLoading.GameLoader;
 import Controller.SavingLoading.GameSaver;
 import Controller.States.*;
+import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
 import View.MenuView.MenuViewPort;
+import View.StatusView.StatusViewPort;
 import View.Viewport;
 import Controller.Input.Input;
 
@@ -28,7 +30,8 @@ public class ControllerMediator {
     private GameLoader gameLoader;
     private GameSaver gameSaver;
 
-    private Viewport areaViewport;
+    private Viewport viewport;
+    private StatusViewPort statusViewPort;
     private MenuViewPort menuViewPort;
 
     private Input input;
@@ -80,7 +83,7 @@ public class ControllerMediator {
 
         @Override
         public void run() {
-            if(areaViewport != null) areaViewport.repaint();
+            if(viewport != null) viewport.repaint();
             if(menuViewPort != null) menuViewPort.repaint();
         }
     }
@@ -100,18 +103,21 @@ public class ControllerMediator {
     public void changeToInventoryState(){
         input.setActiveState(inventoryState);
         inventoryState.setActive();
+        statusViewPort.switchToInventory();
         activeState = inventoryState;
     }
 
     public void changeToEquipmentState(){
         input.setActiveState(equipmentState);
         equipmentState.setActive();
+        statusViewPort.switchToEquipment();
         activeState = equipmentState;
     }
 
     public void changeToSkillsState(){
         input.setActiveState(skillsState);
         skillsState.setActive();
+        statusViewPort.switchToSkills();
         activeState = skillsState;
     }
 
