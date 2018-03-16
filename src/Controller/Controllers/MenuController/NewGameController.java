@@ -1,23 +1,23 @@
 package Controller.Controllers.MenuController;
 
 import Configs.Commons;
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import View.MenuView.NewGameView;
 
 public class NewGameController extends MenuController {
 
     private NewGameView newGameView;
-    GameLoader gameLoader;
+    GameBuilder gameBuilder;
 
-    public NewGameController(GameLoader gameLoader, MainMenuController parent) {
-        newGameView = gameLoader.getMainMenuViewport().getNewGameView();
-        this.gameLoader = gameLoader;
+    public NewGameController(GameBuilder gameBuilder, MainMenuController parent) {
+        newGameView = gameBuilder.getMainMenuViewport().getNewGameView();
+        this.gameBuilder = gameBuilder;
         setMenuViewPort(newGameView);
     }
 
     public void select(){
         String fileName = Commons.SAVE_FOLDER + Commons.SAVE_NAME + Commons.DEFAULT_SAVE;
-        gameLoader.loadGame(fileName);
+        gameBuilder.loadGame(fileName);
     }
 
     protected void correctUpDownParameters() {

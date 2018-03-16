@@ -2,8 +2,7 @@ package Controller.States;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.EntityController;
-import Controller.SavingLoading.GameLoader;
-import Model.Entity.Entity;
+import Controller.SavingLoading.GameBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,7 +16,6 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.function.Consumer;
 
 public class EntityState implements ControllerState {
 
@@ -26,9 +24,9 @@ public class EntityState implements ControllerState {
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public EntityState(GameLoader gameLoader, ControllerMediator controllerMediator){
+    public EntityState(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        this.entityController = new EntityController(gameLoader);
+        this.entityController = new EntityController(gameBuilder);
         loadKeyBindings();
     }
 

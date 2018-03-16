@@ -1,6 +1,6 @@
 package Controller;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.GameSaver;
 import Controller.States.*;
 import View.MenuView.MenuViewPort;
@@ -24,7 +24,7 @@ public class ControllerMediator {
 
     private KeyBindingState keyBindingState;
 
-    private GameLoader gameLoader;
+    private GameBuilder gameBuilder;
     private GameSaver gameSaver;
 
     private Viewport areaViewport;
@@ -37,7 +37,7 @@ public class ControllerMediator {
     // initial load
     public ControllerMediator(){
 
-        gameLoader = new GameLoader();
+        gameBuilder = new GameBuilder();
         gameSaver = new GameSaver();
 
         getViewsFromLoader();
@@ -50,18 +50,18 @@ public class ControllerMediator {
     }
 
     private void getViewsFromLoader(){
-        menuViewPort = gameLoader.getMainMenuViewport();
-        gameFrame = gameLoader.getGameFrame();
+        menuViewPort = gameBuilder.getMainMenuViewport();
+        gameFrame = gameBuilder.getGameFrame();
     }
 
     private void loadStates(){
         keyBindingState = new KeyBindingState(this);
-        menuState = new MenuState(gameLoader,this);
+        menuState = new MenuState(gameBuilder,this);
         activeState = menuState;
-        entityState = new EntityState(gameLoader, this);
-        inventoryState = new InventoryState(gameLoader, this);
-        equipmentState = new EquipmentState(gameLoader, this);
-        skillsState = new SkillsState(gameLoader, this);
+        entityState = new EntityState(gameBuilder, this);
+        inventoryState = new InventoryState(gameBuilder, this);
+        equipmentState = new EquipmentState(gameBuilder, this);
+        skillsState = new SkillsState(gameBuilder, this);
     }
 
     private void attachInputToViews(){
@@ -70,9 +70,9 @@ public class ControllerMediator {
         menuViewPort.addKeyListener(input);
     }
 
-    // when loading a save game/new game: <- I (JAD) dont think this should be here; should be in GameLoader
+    // when loading a save game/new game: <- I (JAD) dont think this should be here; should be in GameBuilder
     public void loadGame(String fileName){
-        gameLoader.loadGame(fileName);
+        gameBuilder.loadGame(fileName);
     }
 
     private class ScheduleTask extends TimerTask {
@@ -125,7 +125,7 @@ public class ControllerMediator {
     }
 
     public void reloadKeyBindings(){
-        gameLoader.getKeyBindings().loadKeyBindings();
+        gameBuilder.getKeyBindings().loadKeyBindings();
         entityState.loadKeyBindings();
         menuState.loadKeyBindings();
         inventoryState.loadKeyBindings();
