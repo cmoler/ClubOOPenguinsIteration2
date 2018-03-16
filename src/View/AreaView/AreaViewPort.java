@@ -25,8 +25,8 @@ public class AreaViewPort extends Viewport {
 
     }
 
-    private JButton getButtonIndex(int row, int column) {
-        return btnList.get(row * rowCount + column);
+    private JButton getButtonIndex(int x, int y) {
+        return btnList.get(x * rowCount + y);
     }
 
     public void ButtonGrid() {
