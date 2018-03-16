@@ -46,7 +46,7 @@ public class NPC extends Entity implements Updateable{
 
     public void fallAsleep(){
         // makes NPC sleep for certain period of time
-        NPCState sleepState = new SleepState(this, npcState, 10);
+        NPCState sleepState = new SleepState(npcState, 10);
         setNpcState(sleepState);
     }
 
