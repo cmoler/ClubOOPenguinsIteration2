@@ -70,6 +70,10 @@ public class Location {
         }
     }
 
+    public void setAreaEffect(AreaEffect areaEffect) {
+        this.areaEffect = areaEffect;
+    }
+
     public Terrain getTerrain() {
         return terrain;
     }

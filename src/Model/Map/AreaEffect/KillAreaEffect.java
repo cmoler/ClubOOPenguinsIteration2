@@ -2,7 +2,7 @@ package Model.Map.AreaEffect;
 
 import Model.Entity.Entity;
 
-public class KillAreaEffect extends AreaEffect {
+public class KillAreaEffect extends OneShotAreaEffect {
 
     public KillAreaEffect(){}
 
