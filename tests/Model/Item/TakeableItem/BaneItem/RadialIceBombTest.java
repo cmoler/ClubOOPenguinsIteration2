@@ -39,7 +39,8 @@ class RadialIceBombTest {
         World.getWorld().changeCurrentMapTo(map);
 
         Role role = new Summoner();
-        Player player = new Player(role, map.getDefaultLocation());
+        Player player = new Player(role);
+        map.setEntityLocation(map.getDefaultLocation(), player);
         player.addMana(100);
 
         TakeableItem item = new RadialIceBomb();

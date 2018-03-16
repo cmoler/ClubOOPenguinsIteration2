@@ -39,7 +39,8 @@ class AngularIceAttackTest {
         World.getWorld().changeCurrentMapTo(map);
 
         Role role = new Summoner();
-        Player player = new Player(role, map.getDefaultLocation());
+        Player player = new Player(role);
+        map.setEntityLocation(map.getDefaultLocation(), player);
         player.addMana(100);
         player.move(Direction.W);
 
