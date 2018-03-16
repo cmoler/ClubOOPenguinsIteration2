@@ -17,6 +17,7 @@ public class StatusViewPort extends Viewport {
 
     public StatusViewPort(Entity entity, Equipment equipment, Inventory inventory, Role role){
         add(new StatsView(entity));
+        add(new HotBarView(equipment));
         add(new EquipmentView(equipment));
         add(new InventoryView(inventory));
         add(new SkillsView(role));
@@ -25,15 +26,16 @@ public class StatusViewPort extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D){
         children.get(0).draw(graphics2D);
+        children.get(1).draw(graphics2D);
         switch (currentView){
             case 1:
-                children.get(1).draw(graphics2D);
-                break;
-            case 2:
                 children.get(2).draw(graphics2D);
                 break;
-            case 3:
+            case 2:
                 children.get(3).draw(graphics2D);
+                break;
+            case 3:
+                children.get(4).draw(graphics2D);
                 break;
         }
     }
