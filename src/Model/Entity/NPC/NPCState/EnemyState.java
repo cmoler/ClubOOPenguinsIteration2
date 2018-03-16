@@ -19,20 +19,19 @@ public class EnemyState implements NPCState {
             return;
         }
 
-
     }
 
     private boolean playerInRange(NPC npc, Player player) {
         Location start = npc.getLocation();
         Location goal = player.getLocation();
-        LinkedList<LocationDistanceNode> queue = new LinkedList<>();
+        LinkedList<DistanceNode> queue = new LinkedList<>();
 
-        LocationDistanceNode initialNode = new LocationDistanceNode(start,  0);
+        DistanceNode initialNode = new DistanceNode(start,  0);
         queue.add(initialNode);
-        Set<LocationDistanceNode> visited = new HashSet<LocationDistanceNode>();
+        Set<DistanceNode> visited = new HashSet<DistanceNode>();
 
         while (!queue.isEmpty()) {
-            LocationDistanceNode currentNode = queue.poll();
+            DistanceNode currentNode = queue.poll();
             visited.add(currentNode);
 
             //if the player has been found in the visible range
@@ -45,7 +44,7 @@ public class EnemyState implements NPCState {
                 Location nextLocation = currentNode.location.getAdjacentAt(direction);
                 if (nextLocation != null && nextLocation.moveAllowed(npc)) {
                     //increment distance for new node
-                    LocationDistanceNode toVisit = new LocationDistanceNode(nextLocation,currentNode.distance + 1);
+                    DistanceNode toVisit = new DistanceNode(nextLocation,currentNode.distance + 1);
 
                     //if unvisited and within range, add to queue
                     if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.distance <= npc.getVisibleRange()) {
@@ -60,19 +59,19 @@ public class EnemyState implements NPCState {
         return false;
     }
 
-    private class LocationDistanceNode {
+    private class DistanceNode {
         public Location location;
         public int distance;
 
-        public LocationDistanceNode(Location location, int distance) {
+        public DistanceNode(Location location, int distance) {
             this.location = location;
             this.distance = distance;
         }
 
         @Override
         public boolean equals(Object o) {
-            if (o instanceof LocationDistanceNode) {
-                LocationDistanceNode other = (LocationDistanceNode) o;
+            if (o instanceof DistanceNode) {
+                DistanceNode other = (DistanceNode) o;
                 return other.location == this.location;
             }
             return false;
