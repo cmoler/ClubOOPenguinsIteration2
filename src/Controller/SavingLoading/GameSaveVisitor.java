@@ -1,5 +1,7 @@
 package Controller.SavingLoading;
 
+import org.json.*;
+
 import Model.Entity.Entity;
 import Model.Entity.Equipment;
 import Model.Entity.Inventory;
@@ -9,35 +11,28 @@ import Model.Map.Map;
 import Model.Map.World;
 
 public class GameSaveVisitor implements Saver{
+    JSONObject world = new JSONObject();
+    JSONObject player = new JSONObject();
 
+    public void savePlayer(Entity entity) {
 
-    @Override
-    public String saveEntity(Entity entity) {
-        String source= "";
-        source += entity.getHealth();
-
-        //...
-        return entity.toString();
     }
 
-    @Override
-    public String saveLocation(Location location) {
-        String source = "";
+    private void saveLocation(Location location) {
+        JSONObject locationJSON = new JSONObject();
+        locationJSON.put("AreaEffect", location.getAreaEffect() );
+        locationJSON.put("Terrain", location.getTerrain());
+        locationJSON.put("Items", location.getItems());
 //        source += "AE: " + location.getAreaEffect().getAreaEffectType() + "\t";
 //        source += "TT: " + location.getTerrain().getTerrainType() + "\t";
 //        source += "II: ";
 //        for(int i = 0; i < location.getItems().size(); i++) {
 //             source += location.getItems().get(i).getItemType() + "\t";
 //        }
-
-
-
-        return source;
     }
 
-    @Override
-    public String saveMap(Map map) {
-        String source = "";
+    private void saveMap(Map map) {
+        JSONObject mapJSON = new JSONObject();
 //        int ilength = map.getCols();
 //        int jlength = map.getRows();
 //        source += "CL: " + ilength + "\n";
@@ -48,28 +43,32 @@ public class GameSaveVisitor implements Saver{
 //                source += ": " + saveLocation(map.getLocationIJ(i,j)) + "\t";
 //            }
 //        }
-        return source;
     }
 
-    @Override
-    public String saveWorld(World world) {
-        String source = "";
-        source += saveMap(world.getCurrentMap());
-        return source;
+    
+    public void saveWorld(World world) {
     }
 
-    @Override
-    public String saveInventory(Inventory inventory) {
-        return inventory.toString();
+    
+    private JSONObject saveInventory(Inventory inventory) {
+        JSONObject inventoryJSON = new JSONObject();
     }
 
-    @Override
-    public String saveSkill(Skill skill) {
-        return skill.toString();
+    
+    private JSONObject saveSkill(Skill skill) {
+        JSONObject skillJSON = new JSONObject();
     }
 
-    @Override
-    public String saveEquipment(Equipment equipment) {
-        return equipment.toString();
+    
+    private JSONObject saveEquipment(Equipment equipment) {
+        JSONObject equipmentJSON = new JSONObject();
+    }
+
+    public JSONObject getWorld() {
+        return world;
+    }
+
+    public JSONObject getPlayer() {
+        return player;
     }
 }

@@ -36,29 +36,7 @@ public class GameLoader {
 
         keyBindings = new KeyBindings();
     }
-
-    public void loadGame(String fileName){
-        String source = "";
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            source = fileReader.getEncoding();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("file = " + source);
-    }
-
-    public void saveGame(String fileName){
-        String source = "";
-        try {
-            FileWriter fileWriter = new FileWriter(fileName);
-            //Todo: go through model and use saver
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
+    
     public MemorySlots getMemorySlots(){return memorySlots;}
 
 
