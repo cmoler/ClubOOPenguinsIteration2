@@ -83,7 +83,7 @@ public class LinearProjectile implements Projectile {
         }
         else{
             damageAmount -= linearDecreaseFactor;
-            if(damageAmount <= 0)
+            if(damageAmount <= 0 || locationOn.hasObstacle())
                 done = true;
         }
     }

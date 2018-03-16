@@ -1,12 +1,12 @@
-package Model.Item.TakeableItem.BaneItem;
+package Model.Item.TakeableItem.BrawlingItem;
 
-import Model.Entity.Entity;
 import Model.Entity.Equipment;
 import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
+import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Summoner;
-import Model.Item.TakeableItem.ProjectileCapableItem;
+import Model.Item.TakeableItem.BaneItem.AngularIceAttack;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
@@ -19,39 +19,36 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LinearIceAttackTest {
+class BrassKnucklesTest {
 
     @Test
-    public void testUse(){
+    public void testUse() {
 
         Map map = new Map(10,10);
-        Location NPCLocation = map.getDefaultLocation().getAdjacentAt(Direction.S).getAdjacentAt(Direction.S).getAdjacentAt(Direction.S);
-        NPC npc = new NPC();
-        map.setEntityLocation(NPCLocation, npc);
+        Location npc1Location = map.getDefaultLocation().getAdjacentAt(Direction.N);
+        NPC npc1 = new NPC();
+        map.setEntityLocation(npc1Location, npc1);
         World.getWorld().addMap("0001", map, new MapView());
         World.getWorld().changeCurrentMapTo(map);
 
-        Role role = new Summoner();
+        Role role = new Smasher();
         Player player = new Player(role);
         map.setEntityLocation(map.getDefaultLocation(), player);
         player.addMana(100);
-        player.move(Direction.S);
+        player.move(Direction.N);
 
-        TakeableItem item = new LinearIceAttack();
+        TakeableItem item = new BrassKnuckles();
 
         Equipment equipment = player.getEquipment();
 
         equipment.equip(item);
 
         equipment.useItem(0);
-//        int x = ((ProjectileCapableItem)item).getProjectiles().get(0).getLocationsOn().get(0).getxCoordinate();
-//        int y = ((ProjectileCapableItem)item).getProjectiles().get(0).getLocationsOn().get(0).getyCoordinate();
-//        System.out.println("x: " + x + ", y: " + y);
         double t = Time.currentInSeconds();
         while(Time.currentInSeconds() < t + 5) {
-            UpdateList.getInstance().update();
+            equipment.useItem(0);
         }
-        assertEquals(90, npc.getHealth(), "NPC hit with a LinearIceAttack");
+        assertEquals(65, npc1.getHealth(), "NPC got smacked with BrassKnuckles a bunch of times");
 
     }
 

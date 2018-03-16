@@ -18,10 +18,10 @@ import static Model.Map.Direction.*;
 
 public class RadialProjectile implements Projectile {
 
-    private double damageAmount = 0.5;
-    private double radialDecreaseFactor = 0.25;
+    private double damageAmount;
+    private double radialDecreaseFactor;
 
-    private double speed = 0.75;
+    private double speed;
     private double lastMoved;
 
     private List<Location> locationsOn;
@@ -114,6 +114,8 @@ public class RadialProjectile implements Projectile {
                 iterator.remove();
                 directionHeading.remove(currentLocation);
             }
+            if(currentLocation.hasObstacle())
+                iterator.remove();
         }
         damageAmount -= radialDecreaseFactor;
         if(damageAmount <= 0)

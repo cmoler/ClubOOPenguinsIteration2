@@ -9,8 +9,6 @@ import java.util.*;
 
 public class AggroState implements NPCState {
 
-    private int visibleRange = 5;       //range(# of moves/Locations/steps) within which the NPC can see the player
-
     @Override
     public void move(NPC npc, Player player) {
 
@@ -19,9 +17,7 @@ public class AggroState implements NPCState {
             npc.move(path.get(0));
         }
         else {
-            Random random = new Random();
-            Direction randomDirection = Direction.values()[random.nextInt(Direction.values().length)];
-            npc.move(randomDirection);
+            npc.setNpcState(new EnemyState());
         }
 
     }
@@ -30,9 +26,9 @@ public class AggroState implements NPCState {
         Location start = npc.getLocation();
         Location goal = player.getLocation();
         ArrayList<Direction> solution = new ArrayList<>();
-        PriorityQueue<LocationQueueNode> queue = new PriorityQueue<LocationQueueNode>(10, new Comparator<LocationQueueNode>() {
+        PriorityQueue<PathCostNode> queue = new PriorityQueue<PathCostNode>(10, new Comparator<PathCostNode>() {
             @Override
-            public int compare(LocationQueueNode node1, LocationQueueNode node2) {
+            public int compare(PathCostNode node1, PathCostNode node2) {
                 if(node1.cost > node2.cost){
                     return 1;
                 }
@@ -44,12 +40,12 @@ public class AggroState implements NPCState {
             }
         });
 
-        LocationQueueNode initialNode = new LocationQueueNode(start, new ArrayList<>(), 0);
+        PathCostNode initialNode = new PathCostNode(start, new ArrayList<>(), 0);
         queue.add(initialNode);
-        Set<LocationQueueNode> visited = new HashSet<LocationQueueNode>();
+        Set<PathCostNode> visited = new HashSet<PathCostNode>();
 
         while (!queue.isEmpty()) {
-            LocationQueueNode currentNode = queue.poll();
+            PathCostNode currentNode = queue.poll();
             visited.add(currentNode);
 
             //if the player has been found in the visible range, return the optimal path
@@ -63,17 +59,17 @@ public class AggroState implements NPCState {
                 Location nextLocation = currentNode.location.getAdjacentAt(direction);
                 if (nextLocation != null && nextLocation.moveAllowed(npc)) {
                     //increment path and cost for new node
-                    LocationQueueNode toVisit = new LocationQueueNode(nextLocation, currentNode.path, currentNode.cost + 1);
+                    PathCostNode toVisit = new PathCostNode(nextLocation, currentNode.path, currentNode.cost + 1);
                     toVisit.path.add(direction);
 
                     //if unvisited and within range, add to queue
-                    if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= visibleRange) {
+                    if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= npc.getVisibleRange()) {
                         queue.add(toVisit);
                     }
                     // if in queue and current path cost is cheaper, update path and cost in existing node
                     else if (queue.contains(toVisit)) {
-                        Iterator<LocationQueueNode> iter = queue.iterator();
-                        LocationQueueNode existing;
+                        Iterator<PathCostNode> iter = queue.iterator();
+                        PathCostNode existing;
                         while (iter.hasNext()) {
                             existing = iter.next();
                             if (existing.equals(toVisit) && existing.cost > currentNode.cost) {
@@ -94,12 +90,12 @@ public class AggroState implements NPCState {
         return solution;
     }
 
-    private class LocationQueueNode {
+    private class PathCostNode {
         public Location location;
         public ArrayList<Direction> path;
         public int cost;
 
-        public LocationQueueNode(Location location, ArrayList<Direction> path, int cost) {
+        public PathCostNode(Location location, ArrayList<Direction> path, int cost) {
             this.location = location;
             this.path = path;
             this.cost = cost;
@@ -107,8 +103,8 @@ public class AggroState implements NPCState {
 
         @Override
         public boolean equals(Object o) {
-            if (o instanceof LocationQueueNode) {
-                LocationQueueNode other = (LocationQueueNode) o;
+            if (o instanceof PathCostNode) {
+                PathCostNode other = (PathCostNode) o;
                 return other.location == this.location;
             }
             return false;
