@@ -3,6 +3,7 @@ package View.StatusView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Model.Entity.Entity;
+import Model.Entity.Role.Role;
 import View.Viewport;
 
 import java.awt.*;
@@ -12,7 +13,7 @@ public class SkillsView extends Viewport {
 
     private Entity entity;
 
-    public SkillsView(Entity entity){
+    public SkillsView(Role role){
         this.entity = entity;
         entity.attach(this);
     }

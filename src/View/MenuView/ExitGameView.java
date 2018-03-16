@@ -1,29 +1,43 @@
 package View.MenuView;
 
+import Configs.Commons;
+import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class ExitGameView extends Viewport {
+public class ExitGameView extends MenuViewPort {
 
-    private int x;
-    private int y;
+    private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
 
-    public ExitGameView(int x, int y){
-        this.x = x;
-        this.y = y;
+    public ExitGameView(){
+
     }
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawRect(x, y, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Exit Game", (x), (y+TextBoxInfo.TEXTBOX_HEIGHT/4));
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
+        int startY = Commons.SCREEN_HEIGHT/4;
+
+        graphics2D.drawString("Are you Sure, unsaved changes wont be saved", (startX), (startY));
+
+        graphics2D.drawRect(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        graphics2D.drawString("No",startX, startY + TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4);
+
+        graphics2D.drawRect(startX + TextBoxInfo.TEXTBOX_WIDTH, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        graphics2D.drawString("Exit Game", (startX + TextBoxInfo.TEXTBOX_WIDTH), (startY + TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
+
+        int selectedXPos = startX + TextBoxInfo.TEXTBOX_HEIGHT * selectedX;
+        int selectedYPos = startY + TextBoxInfo.TEXTBOX_HEIGHT;
+
+        graphics2D.drawImage(selected, selectedXPos, selectedYPos, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT, this);
     }
 
     @Override
     public List<Viewport> getChildren(){
         return null;
     }
+
 }

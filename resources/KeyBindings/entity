@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><class>
+   <Bind type="moveN">
+      <key>87</key>
+   </Bind>
+   <Bind type="moveNE">
+       <key>69</key>
+   </Bind>
+   <Bind type="moveE">
+      <key>68</key>
+   </Bind>
+   <Bind type="moveSE">
+       <key>67</key>
+   </Bind>
+   <Bind type="moveS">
+      <key>88</key>
+   </Bind>
+   <Bind type="moveSW">
+       <key>90</key>
+   </Bind>
+   <Bind type="moveW">
+      <key>65</key>
+   </Bind>
+   <Bind type="moveNW">
+       <key>81</key>
+   </Bind>
+    <Bind type="openMenu">
+       <key>27</key>
+   </Bind>
+   <Bind type="openInventory">
+       <key>73</key>
+   </Bind>
+   <Bind type="openEquipment">
+       <key>85</key>
+   </Bind>
+   <Bind type="openSkills">
+       <key>74</key>
+   </Bind>
+   <Bind type="interact">
+       <key>83</key>
+   </Bind>
+   <Bind type="slot1">
+       <key>49</key>
+   </Bind>
+   <Bind type="slot2">
+       <key>50</key>
+   </Bind>
+   <Bind type="slot3">
+       <key>51</key>
+   </Bind>
+   <Bind type="slot4">
+       <key>52</key>
+   </Bind>
+   <Bind type="slot5">
+       <key>53</key>
+   </Bind>
+</class>

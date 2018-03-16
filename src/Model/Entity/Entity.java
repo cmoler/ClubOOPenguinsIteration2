@@ -83,11 +83,13 @@ public abstract class Entity {
     }
 
     public void move(Direction direction){
+
         if (directionFacing == direction){
             intentToMove = true;
         }
         else {
             directionFacing = direction;
+
         }
     }
 
@@ -162,9 +164,12 @@ public abstract class Entity {
         observers.remove(viewport);
     }
 
-    public void notifyView() {
+    public void notifyView(){
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
-
+  
     private static final int finalLevel = 100;
     private static final java.util.Map<Integer, Integer> ExperienceForLevel; // <Level,Experience required for level>
     static {
