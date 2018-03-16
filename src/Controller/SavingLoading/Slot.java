@@ -27,9 +27,10 @@ public class Slot {
         }
 
         JSONObject saveJSON = new JSONObject();
+
         JSONObject world = new JSONObject();
-        
         JSONObject player = new JSONObject();
+
         saveJSON.put("World", world);
         saveJson.put("Player", player);
 

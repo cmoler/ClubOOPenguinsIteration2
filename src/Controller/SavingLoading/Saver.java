@@ -10,18 +10,8 @@ import Model.Map.World;
 
 public interface Saver {
 
-    public String saveEntity(Entity entity);
+    public void savePlayer(Entity entity);
 
-    public String saveLocation(Location location);
-
-    public String saveMap(Map map);
-
-    public String saveWorld(World world);
-
-    public String saveInventory(Inventory inventory);
-    
-    public String saveSkill(Skill skill);
-    
-    public String saveEquipment(Equipment equipment);
+    public void saveWorld(World world);
 
 }
