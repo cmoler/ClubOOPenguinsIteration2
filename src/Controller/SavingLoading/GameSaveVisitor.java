@@ -1,5 +1,7 @@
 package Controller.SavingLoading;
 
+import Model.Entity.Player;
+import Model.EntityLocation;
 import org.json.*;
 
 import Model.Entity.Entity;
@@ -10,43 +12,53 @@ import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
+import javax.lang.model.type.ArrayType;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class GameSaveVisitor implements Saver{
     JSONObject world = new JSONObject();
     JSONObject player = new JSONObject();
 
-    public void savePlayer(Entity entity) {
+    public void savePlayer(Player entity) {
+    }
+
+    private JSONObject saveEntity(Entity entity){
 
     }
 
-    private void saveLocation(Location location) {
+    private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
-        locationJSON.put("AreaEffect", location.getAreaEffect() );
-        locationJSON.put("Terrain", location.getTerrain());
-        locationJSON.put("Items", location.getItems());
-//        source += "AE: " + location.getAreaEffect().getAreaEffectType() + "\t";
-//        source += "TT: " + location.getTerrain().getTerrainType() + "\t";
-//        source += "II: ";
-//        for(int i = 0; i < location.getItems().size(); i++) {
-//             source += location.getItems().get(i).getItemType() + "\t";
-//        }
+        locationJSON.put("AreaEffect", ""+location.getAreaEffect().getAreaEffectType() );
+        locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
+        ArrayList<String> itemList = new ArrayList<>();
+        for(int i = 0; i < location.getItems().size(); i++){
+            itemList.add("" + location.getItems().get(i).getItemType());
+        }
+        locationJSON.put("Items", itemList);
+        return locationJSON;
     }
 
-    private void saveMap(Map map) {
+    private JSONObject saveMap(Map map) {
         JSONObject mapJSON = new JSONObject();
-//        int ilength = map.getCols();
-//        int jlength = map.getRows();
-//        source += "CL: " + ilength + "\n";
-//        source += "RS: " + jlength + "\n";
-//        for(int i = 0; i < ilength; i++){
-//            source += "\n";
-//            for(int j = 0; j < jlength; j++){
-//                source += ": " + saveLocation(map.getLocationIJ(i,j)) + "\t";
-//            }
-//        }
+        mapJSON.put("rows", map.getRows());
+        mapJSON.put("cols", map.getCols());
+        ArrayList<JSONObject> entityLocationList = new ArrayList<>();
+        for (int i = 0; i < entityLocationList.size(); i++)
+                entityLocationList.get()
+        }
+        mapJSON.put("")
     }
 
     
     public void saveWorld(World world) {
+    }
+
+    private JSONObject saveEntityLocation(EntityLocation entityLocation){
+        JSONObject entityLocationJSON = new JSONObject();
+        entityLocationJSON.put("Entity", saveEntity(entityLocation.getEntity()));
+        entityLocationJSON.put("Location", saveLocation(entityLocation.getLocation());
+        return entityLocationJSON;
     }
 
     
