@@ -29,6 +29,8 @@ public abstract class Entity {
     // map is in World
 
 
+    //TODO Add Role interact on move
+
     public EntityType getEntityType(){
         return entityType;
     }

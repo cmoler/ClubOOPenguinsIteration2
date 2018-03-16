@@ -4,6 +4,7 @@ import Model.Entity.Entity;
 import Model.Entity.Skill.Bargain;
 import Model.Entity.Skill.BindWounds;
 import Model.Entity.Skill.Observation;
+import Model.Map.Location;
 import javafx.beans.Observable;
 
 public class Role {
@@ -46,4 +47,8 @@ public class Role {
     public void bindWounds(){
         bindWounds.use(this.entity);
     }
+
+    public void activateTrait(Location location){}
+
+
 }

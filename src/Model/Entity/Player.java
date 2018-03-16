@@ -27,6 +27,10 @@ public class Player extends Entity {
         getLocation().itemsTouchedBy(this);
     }
 
+    public void useRoleTraits(){
+        role.activateTrait(super.getLocation());
+    }
+
     @Override
     public Location getLocation() {
         return super.getLocation();
@@ -36,6 +40,8 @@ public class Player extends Entity {
     public void interactLocation() {
         super.interactLocation();
         touchItems();
+        useRoleTraits();
+
     }
 
     @Override

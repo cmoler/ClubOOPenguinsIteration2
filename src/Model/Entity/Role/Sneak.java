@@ -5,6 +5,9 @@ import Model.Entity.Skill.Creep;
 import Model.Entity.Skill.DetectAndRemoveTrap;
 import Model.Entity.Skill.PickPocket;
 import Model.Entity.Skill.RangedWeapon;
+import Model.Map.AreaEffect.AreaEffectType;
+import Model.Map.Direction;
+import Model.Map.Location;
 
 public class Sneak extends Role {
 
@@ -51,5 +54,18 @@ public class Sneak extends Role {
 
     public void creep(){
         creep.use(this.entity);
+    }
+
+    @Override
+    public void activateTrait(Location location){
+
+        //Detect Traps
+        for (Direction dir : Direction.values()){
+            Location adjLocation = location.getAdjacentAt(dir);
+            if (adjLocation.getAreaEffect().getAreaEffectType() ==  AreaEffectType.TRAP){
+                //TODO Setvisible based on level
+            }
+        }
+
     }
 }
