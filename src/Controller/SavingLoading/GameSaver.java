@@ -2,6 +2,7 @@ package Controller.SavingLoading;
 
 import Model.Entity.Player;
 import Model.EntityLocation;
+import javafx.util.Pair;
 import org.json.*;
 
 import Model.Entity.Entity;
@@ -20,12 +21,32 @@ public class GameSaver implements Saver{
     JSONObject world = new JSONObject();
     JSONObject player = new JSONObject();
 
-    public void savePlayer(Player entity) {
+    public void savePlayer(Player player) {
+        JSONObject playerJSON = new JSONObject();
+//        playerJSON.put("Class", player.getRole() );//todo: fix this
+        playerJSON.put("Level", player.getLevel());
+        playerJSON.put("Skills", "1 1 1 1");//Todo: fix this
+//        playerJSON.put("X", player.getX());//Todo: fix this
+//        playerJSON.put("Y", player.getY());//Todo: fix this
+        playerJSON.put("Inventory", saveInventory(player.getInventory()));
+//        playerJSON.put("Equipment", saveEquipment(player.getEquipment()));//Todo: fix this
+        playerJSON.put("HP", player.getHealth());
+        playerJSON.put("MaxHP", player.getMaxHealth());
+//        playerJSON.put("Mana", player.getMana());//Todo: fix this
+        playerJSON.put("XP", player.getExperience());
+//        playerJSON.put("Gold", player.getGold());//Todo: fix this
     }
 
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
-        entity.put("avatar", entity.getAvatar)
+        entityJSON.put("Level", entity.getLevel());
+//        entityJSON.put("X", entity.getX());//Todo: fix this
+//        entityJSON.put("Y", entity.getY());//Todo: fix this
+        entityJSON.put("Inventory", saveInventory(entity.getInventory()));
+//        entityJSON.put("Equipment", saveEquipment(entity.getEquipment()));//Todo: fix this
+        entityJSON.put("HP", entity.getHealth());
+        entityJSON.put("MaxHP", entity.getMaxHealth());
+        return entityJSON;
     }
 
     private JSONObject saveLocation(Location location) {
@@ -44,37 +65,55 @@ public class GameSaver implements Saver{
         JSONObject mapJSON = new JSONObject();
         mapJSON.put("rows", map.getRows());
         mapJSON.put("cols", map.getCols());
-        ArrayList<JSONObject> entityLocationList = new ArrayList<>();
-        for (int i = 0; i < map..size(); i++)
-                entityLocationList.get(i).
-        }
-        mapJSON.put("")
+//        mapJSON.put("EntityLocations:", saveEntityLocation(map.getEntityLocations()));//Todo: fix this
+//        ArrayList< ArrayList<Location> > locationMap = map.getMap();//Todo: fix this
+        ArrayList< ArrayList<JSONObject> > locationMapJSON = new ArrayList< ArrayList<JSONObject> >();
+//        for(int i = 0; i < locationMap.size(); i++ ){
+//            for (int j = 0; j < locationMap.get(i).size(); j++){
+//                locationMapJSON.get(i).set(j, saveLocation(locationMap.get(i).get(j)));
+//            }
+//        }
+//        mapJSON.put("Locations", locationMapJSON); //todo: I don't think this needs to be 2 dimensional
+        return mapJSON;
     }
 
     
     public void saveWorld(World world) {
+
     }
 
     private JSONObject saveEntityLocation(EntityLocation entityLocation){
+        //get entitylocationlist hashmap list or iterator
         JSONObject entityLocationJSON = new JSONObject();
-        entityLocationJSON.put("Entity", saveEntity(entityLocation.getEntity()));
-        entityLocationJSON.put("Location", saveLocation(entityLocation.getLocation());
+        ArrayList<JSONObject> entityLocationList = new ArrayList<>();
+//        ArrayList<Pair> entityLocationPair = map.getEntityLocation.getList(); //Todo: fix this
+//        for (int i = 0; i < entityLocationPair.size(); i++){
+//            Entity entity = entityLocationPair.get(i).getKey();
+//            Location location = entityLocationPair.get(i).getValue();
+//        }
         return entityLocationJSON;
     }
 
     
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
+        ArrayList<String> items = new ArrayList<>();
+        for(int i = 0;inventory.getIterator().hasNext();i++, inventory.getIterator().next()){
+            items.add(""+inventory.getIterator().getCurrent().getItemType());//todo: getitemtype needs to be reliable
+        }
+        return inventoryJSON;
     }
 
     
     private JSONObject saveSkill(Skill skill) {
         JSONObject skillJSON = new JSONObject();
+        return skillJSON;
     }
 
     
     private JSONObject saveEquipment(Equipment equipment) {
         JSONObject equipmentJSON = new JSONObject();
+        return equipmentJSON;
     }
 
     public JSONObject getWorld() {
