@@ -11,7 +11,6 @@ import Model.Map.World;
 public interface Saver {
 
     public void savePlayer(Entity entity);
-
     public void saveWorld(World world);
 
 }

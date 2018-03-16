@@ -36,13 +36,10 @@ public class GameLoader {
 
         keyBindings = new KeyBindings();
     }
-    
+
     public MemorySlots getMemorySlots(){return memorySlots;}
 
-
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
-
-
 
     public AreaViewPort getAreaViewport(){
         return null;

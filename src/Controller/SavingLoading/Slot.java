@@ -20,21 +20,20 @@ public class Slot {
 
     public void saveFrom(GameLoader gameLoader){
         FileWriter fileWriter;
-        try {
-            fileWriter = new FileWriter(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         JSONObject saveJSON = new JSONObject();
 
         JSONObject world = new JSONObject();
         JSONObject player = new JSONObject();
 
         saveJSON.put("World", world);
-        saveJson.put("Player", player);
+        saveJSON.put("Player", player);
 
-        fileWriter.write(saveJson.toString());
+        try {
+            fileWriter = new FileWriter(file);
+            fileWriter.write(saveJSON.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         GameSaveVisitor saver;
 //
 //        for each model in gameloader{
@@ -45,8 +44,10 @@ public class Slot {
 
     public void loadTo(GameLoader gameLoader){
         FileReader fileReader;
+        String source;
         try {
             fileReader = new FileReader(file);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
