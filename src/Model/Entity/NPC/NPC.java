@@ -78,5 +78,12 @@ public class NPC extends Entity implements Updateable{
         pissOff();
     }
 
+    @Override
+    public void interactEntity(Entity entity) {
+        if (player == entity){
+            player.takeDamage(10);
+        }
+    }
+
 
 }

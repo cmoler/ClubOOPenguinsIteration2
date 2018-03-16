@@ -1,5 +1,6 @@
 package Model.Entity;
 
+import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Role;
 import Model.Map.Location;
 
@@ -35,6 +36,11 @@ public class Player extends Entity {
     public void interactLocation() {
         super.interactLocation();
         touchItems();
+    }
+
+    @Override
+    public void interactEntity(Entity entity) {
+        ((NPC) entity).talk();
     }
 
     public Role getRole(){

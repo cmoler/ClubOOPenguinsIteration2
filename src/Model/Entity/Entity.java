@@ -144,6 +144,8 @@ public abstract class Entity {
         location.activateAreaEffect(this);
     }
 
+    public abstract void interactEntity(Entity entity);
+
     public void setLocation(Location location){
         this.location = location;
     }
