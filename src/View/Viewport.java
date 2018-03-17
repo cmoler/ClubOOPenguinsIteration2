@@ -98,7 +98,7 @@ public class Viewport extends JPanel {
         this.add(currentMapView);
     }
 
-    public void LoopMusic() {
+    private void LoopMusic() {
         try {
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
