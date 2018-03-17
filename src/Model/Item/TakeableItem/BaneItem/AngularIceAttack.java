@@ -20,6 +20,10 @@ import static Model.Map.Direction.*;
 
 public class AngularIceAttack extends BaneItem {
 
+    public AngularIceAttack(){
+        this.name = "iceAttacks";
+    }
+
     private int manaNeeded = 5;
     private double damageAmount = 0.75;
     private double angularDecreaseFactor = 0.25;

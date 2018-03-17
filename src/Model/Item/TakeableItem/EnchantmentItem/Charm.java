@@ -14,6 +14,10 @@ import java.util.Random;
 
 public class Charm extends EnchantmentItem {
 
+    public Charm(){
+        this.name = "charm";
+    }
+
     private int manaNeeded = 5;
 
     protected void apply(Entity entityAtTarget){

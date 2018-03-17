@@ -17,6 +17,10 @@ import java.util.List;
 
 public class SnowLauncher extends RangedWeaponItem {
 
+    public SnowLauncher(){
+        this.name = "snowLauncher";
+    }
+
     private double damageAmount = 1.0;
     private double linearDecreaseFactor = 0.25;
 

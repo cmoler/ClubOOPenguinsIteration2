@@ -13,6 +13,10 @@ import java.util.Random;
 
 public class Insomnia extends EnchantmentItem {
 
+    public Insomnia(){
+        this.name = "sleep";
+    }
+
     private int manaNeeded = 10;
 
     protected void apply(Entity entityAtTarget){

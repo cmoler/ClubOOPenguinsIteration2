@@ -21,86 +21,59 @@ public class MainMenuView extends MenuViewPort {
 
 
     public MainMenuView(){
-        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
-
         add(new NewGameView());
         add(new SaveGameView());
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
 
-        //Display numbers for testing
-        JButton ngBtn = new JButton("1");
-        JButton sgBtn = new JButton("2");
-        JButton lgBtn = new JButton("3");
-        JButton opBtn = new JButton("4");
-        JButton egBtn = new JButton("5");
+        ClickableMenu();
+    }
 
-        //Styling to make button invisible
-        ngBtn.setBorderPainted(false);
-        ngBtn.setContentAreaFilled(false);
-        ngBtn.setPreferredSize(new Dimension(30, 30));
-        ngBtn.setToolTipText("New Game");
+    public void ClickableMenu() {
+        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+        //Display numbers for testing
+        JButton ngBtn = ConfigureButton(new JButton("1"), "New Game");
+        JButton sgBtn = ConfigureButton(new JButton("2"), "Save Game");
+        JButton lgBtn = ConfigureButton(new JButton("3"), "Load Game");
+        JButton opBtn = ConfigureButton(new JButton("4"), "Options");
+        JButton egBtn = ConfigureButton(new JButton("5"), "Exit Game");
+
         ngBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Start new game");
                 enterNewGameView();
                 getTopLevelAncestor().requestFocus();
             }
         });
 
-        sgBtn.setBorderPainted(false);
-        sgBtn.setContentAreaFilled(false);
-        sgBtn.setFocusable(false);
-        sgBtn.setSize(new Dimension(80, 80));
-        sgBtn.setToolTipText("Save Game");
         sgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Saving");
                 enterSaveGameView();
                 getTopLevelAncestor().requestFocus();
             }
         });
 
-        lgBtn.setBorderPainted(false);
-        lgBtn.setContentAreaFilled(false);
-        lgBtn.setFocusable(false);
-        lgBtn.setSize(new Dimension(80, 80));
-        lgBtn.setToolTipText("Load Game");
         lgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Loading");
                 enterLoadGameView();
                 getTopLevelAncestor().requestFocus();
             }
         });
 
-        opBtn.setBorderPainted(false);
-        opBtn.setContentAreaFilled(false);
-        opBtn.setFocusable(false);
-        opBtn.setSize(new Dimension(80, 80));
-        opBtn.setToolTipText("Options");
         opBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Options");
                 enterOptionsView();
                 getTopLevelAncestor().requestFocus();
             }
         });
 
-        egBtn.setBorderPainted(false);
-        egBtn.setContentAreaFilled(false);
-        egBtn.setFocusable(false);
-        egBtn.setSize(new Dimension(80, 80));
-        egBtn.setToolTipText("Exit Game");
         egBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Exit");
                 enterExitGameView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -113,8 +86,19 @@ public class MainMenuView extends MenuViewPort {
         buttonGrid.add(egBtn);
 
         add(buttonGrid, BorderLayout.SOUTH);
-
+        
         setVisible(true);
+
+    }
+
+    public JButton ConfigureButton(JButton btn, String btnFn) {
+        //Styling to make button invisible
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setOpaque(false);
+        btn.setPreferredSize(new Dimension(50, 50));
+        btn.setToolTipText(btnFn);
+        return btn;
     }
 
     @Override

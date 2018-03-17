@@ -49,6 +49,8 @@ public class Role {
         bindWounds.use(this.entity);
     }
 
+    public RoleType getRoleType() { return RoleType.Base; }
+
     public void activateTrait(Location location){}
 
 

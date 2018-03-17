@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class Mjolnir extends OneHandedWeaponItem{
 
+    public Mjolnir(){
+        this.name = "mjolnir";
+    }
+
     private double damageAmount = 1.25; // gets multiplied by skill level
     private double secondsPerUse = 1.25;
 
