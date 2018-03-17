@@ -3,6 +3,7 @@ package View.MenuView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
+import com.sun.prism.image.ViewPort;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class MainMenuView extends MenuViewPort {
 
     private int currentSubMenu = -1;
 
-    private int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH;
+    private int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 35;
     private int startY = Commons.SCREEN_HEIGHT/4;
 
 
@@ -33,11 +34,11 @@ public class MainMenuView extends MenuViewPort {
     public void ClickableMenu() {
         JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
         //Display numbers for testing
-        JButton ngBtn = ConfigureButton(new JButton("1"), "New Game");
-        JButton sgBtn = ConfigureButton(new JButton("2"), "Save Game");
-        JButton lgBtn = ConfigureButton(new JButton("3"), "Load Game");
-        JButton opBtn = ConfigureButton(new JButton("4"), "Options");
-        JButton egBtn = ConfigureButton(new JButton("5"), "Exit Game");
+        JButton ngBtn = ConfigureButton(new JButton(" "), "New Game");
+        JButton sgBtn = ConfigureButton(new JButton(" "), "Save Game");
+        JButton lgBtn = ConfigureButton(new JButton(" "), "Load Game");
+        JButton opBtn = ConfigureButton(new JButton(" "), "Options");
+        JButton egBtn = ConfigureButton(new JButton(" "), "Exit Game");
 
         ngBtn.addActionListener(new ActionListener() {
             @Override
@@ -85,7 +86,18 @@ public class MainMenuView extends MenuViewPort {
         buttonGrid.add(opBtn);
         buttonGrid.add(egBtn);
 
-        add(buttonGrid, BorderLayout.SOUTH);
+
+        buttonGrid.setOpaque(false);
+        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 190));
+
+        this.add(buttonGrid);
+
+//        add(ngBtn);
+//        add(sgBtn);
+//        add(lgBtn);
+//        add(opBtn);
+//        add(egBtn);
         
         setVisible(true);
 
@@ -96,7 +108,7 @@ public class MainMenuView extends MenuViewPort {
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
         btn.setOpaque(false);
-        btn.setPreferredSize(new Dimension(50, 50));
+        btn.setPreferredSize(new Dimension(TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT));
         btn.setToolTipText(btnFn);
         return btn;
     }
