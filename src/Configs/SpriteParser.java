@@ -1,5 +1,7 @@
 package Configs;
 
+import Model.Map.Direction;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -109,8 +111,26 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
-    public Image getAvatarImage(){
-        return avatarSprites[0];
+    public Image getAvatarImage(Direction direction){
+        switch (direction){
+            case N:
+                return avatarSprites[4];
+            case NE:
+                return avatarSprites[5];
+            case E:
+                return avatarSprites[6];
+            case SE:
+                return avatarSprites[7];
+            case S:
+                return avatarSprites[0];
+            case SW:
+                return avatarSprites[1];
+            case W:
+                return avatarSprites[2];
+            case NW:
+                return avatarSprites[3];
+        }
+        return null;
     }
 
     public Image getAvatarImage_NINJA() {return avatarSprites_NINJA[0];}
@@ -157,10 +177,10 @@ public class SpriteParser {
             e.printStackTrace();
         }
 
-        final int width = 40;
+        final int width = 37;
         final int height = 40;
         final int rows = 1;
-        final int cols = 1;
+        final int cols = 7;
         avatarSprites = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)

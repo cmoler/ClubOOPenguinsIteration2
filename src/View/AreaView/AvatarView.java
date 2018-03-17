@@ -4,6 +4,7 @@ package View.AreaView;
 import Configs.AreaSizes;
 import Configs.Commons;
 import Configs.ImagesInfo;
+import Configs.SpriteParser;
 import Model.Entity.Entity;
 import Model.Map.Direction;
 import View.Viewport;
@@ -17,12 +18,13 @@ public class AvatarView extends Viewport {
     private Entity entity;
     private int x;
     private int y;
-    private int velocity = 1;
+    private Direction directionFacing;
 
     public AvatarView(Entity entity, int x, int y){
-        avatarImage = ImagesInfo.AVATAR_IMAGE;
         this.entity = entity;
         entity.attach(this);
+        directionFacing = entity.getDirectionFacing();
+        avatarImage = SpriteParser.getSpriteParser().getAvatarImage(directionFacing);
         this.x = x;
         this.y = y;
 
@@ -64,7 +66,9 @@ public class AvatarView extends Viewport {
         this.avatarImage = e;
     }
 
-    private void playerOffset(){
-
+    @Override
+    public void update(){
+        directionFacing = entity.getDirectionFacing();
+        avatarImage = SpriteParser.getSpriteParser().getAvatarImage(directionFacing);
     }
 }
