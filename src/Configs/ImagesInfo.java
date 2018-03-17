@@ -6,7 +6,8 @@ public interface ImagesInfo {
 
 
     public static final String TILE_SHEET = "resources/images/terrain/terrain.png";
-    public static final String AVATAR_SHEET = "resources/images/playerSprites/bluePenguin.png";
+    public static final String AVATAR_SHEET_BLUE = "resources/images/playerSprites/bluePenguin.png";
+    public static final String AVATAR_SHEET_RED = "resources/images/playerSprites/redPenguin.png";
     public static final String AVATAR_SHEET_NINJA = "resources/images/playerSprites/Penguin_Chat_3_Ninja_spritesheet.png";
 
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/aoe/Red_AOE.png";
@@ -52,9 +53,6 @@ public interface ImagesInfo {
     public static final Image PROJECTILE_ANGULARICEATTACK = SpriteParser.getSpriteParser().getAngularIceAttackImage();
     public static final Image PROJECTILE_RADIALICEATTACK = SpriteParser.getSpriteParser().getRadialIceAttackImage();
     public static final Image PROJECTILE_PIZZA = SpriteParser.getSpriteParser().getPizzaImage();
-
-    public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
-    public static final Image AVATAR_IMAGE_NINJA1 = SpriteParser.getSpriteParser().getAvatarImage_NINJA();
 
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
     public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();

@@ -20,6 +20,8 @@ public class AreaViewPort extends Viewport {
     private final List<JButton> btnList = new ArrayList<JButton>();
     private int rowCount = Commons.SCREEN_HEIGHT / AreaSizes.TERRAIN_HEIGHT;
     private int colCount = Commons.SCREEN_WIDTH / AreaSizes.TERRAIN_WIDTH;
+    private int gridSize = 0;
+    private int playerPos = 0;
 
     public AreaViewPort() {
 
@@ -62,6 +64,7 @@ btn.setToolTipText("Click to move");
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 JButton getIndex = getButtonIndex(x, y);
+                getTopLevelAncestor().requestFocus();
             }
         });
         return btn;
