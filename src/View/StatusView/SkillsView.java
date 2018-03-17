@@ -18,23 +18,26 @@ public class SkillsView extends Viewport {
     //TODO - adjust POINTS_COLUMN_X and BUTTON_COLUMN_X
 
     private Player player;
+    private Role role;
+    private int SKILL_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private int POINTS_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private int BUTTON_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private int SKILL_Y = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
+    private Image selectedImage = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
+    private int highlighterX = BUTTON_COLUMN_X;
+    private int highlighterY = SKILL_Y;
 
     public SkillsView(Role role){
-        this.player = player;
+        this.player = (Player) role.getEntity();
         player.attach(this);
+        this.role = role;
     }
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        Role role = player.getRole();
-
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_SKILL_ICON);
         Image increaseSkillImage = imageIcon.getImage();
         int pointsAvailable = player.getSkillPointsAvailable();
-        int SKILL_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
-        int POINTS_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
-        int BUTTON_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
-        int SKILL_Y = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
         int rowNumber = 0;
 
         graphics2D.drawString("Points:", SKILL_COLUMN_X, SKILL_Y + (rowNumber * SkillsSizes.SKILL_ROW_HEIGHT));
@@ -119,6 +122,9 @@ public class SkillsView extends Viewport {
                 break;
         }
 
+        //draw selector
+        graphics2D.drawImage(selectedImage, highlighterX, highlighterY, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+
     }
 
     @Override
@@ -128,6 +134,7 @@ public class SkillsView extends Viewport {
 
     @Override
     public void update(){
+        highlighterY = SKILL_Y + SKILL_Y + (role.getSelected() * SkillsSizes.SKILL_ROW_HEIGHT);
         repaint();
     }
 }
