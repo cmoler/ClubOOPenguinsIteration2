@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class SpikedGloves extends BrawlingItem {
 
+    public SpikedGloves(){
+        this.name = "spikedGloves";
+    }
+
     private double damageAmount = 0.50; // gets multiplied by skill level
     private double secondsPerUse = 0.75;
 

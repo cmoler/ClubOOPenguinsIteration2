@@ -10,6 +10,10 @@ import java.util.Random;
 
 public class Heal extends BoonItem {
 
+    public Heal(){
+        this.name = "heal";
+    }
+
     private int manaNeeded = 5;
     private int healingIncrement = 40;
 

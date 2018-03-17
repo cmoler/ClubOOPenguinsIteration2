@@ -45,4 +45,40 @@ public class Summoner extends Role {
         staff.addPoints(points);
     }
 
+    @Override
+    protected void correctSelected(){
+        if(selected < 0) selected = 6;
+        if(selected > 6) selected = 0;
+    }
+
+    @Override
+    public void increaseSkill(int points){
+        if(entity.canIncrementSkill()) {
+            switch (selected) {
+                case 3:
+                    addEnchantment(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 4:
+                    addBoon(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 5:
+                    addBane(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 6:
+                    addStaff(points);
+                    entity.skillPointIncremented();
+                    break;
+                default:
+                    super.increaseSkill(points);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public RoleType getRoleType() { return RoleType.Summoner; }
+
 }

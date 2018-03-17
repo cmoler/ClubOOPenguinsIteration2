@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class JeweledCutlass extends TwoHandedWeaponItem{
 
+    public JeweledCutlass(){
+        this.name = "jeweledCutlass";
+    }
+
     private double damageAmount = 2.0; // gets multiplied by skill level
     private double secondsPerUse = 2.0;
 

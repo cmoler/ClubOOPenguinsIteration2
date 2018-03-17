@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class ThunderBlade extends OneHandedWeaponItem{
 
+    public ThunderBlade(){
+        this.name = "thunderBlade";
+    }
+
     private double damageAmount = 1.5; // gets multiplied by skill level
     private double secondsPerUse = 1.25;
 

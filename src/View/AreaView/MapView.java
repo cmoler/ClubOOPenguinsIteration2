@@ -6,6 +6,7 @@ import Model.Entity.Entity;
 import Model.Map.MapIterator;
 import Model.Map.World;
 import View.Viewport;
+import javafx.util.Pair;
 
 import java.awt.*;
 
@@ -16,6 +17,9 @@ public class MapView extends Viewport {
 
     private int initialI;
     private int initialJ;
+
+    private int offsetI = 0;
+    private int offsetJ = 0;
 
     private int desiredPlayerXTileOffset;
     private int desiredPlayerYTileOffset;
@@ -51,20 +55,27 @@ public class MapView extends Viewport {
         calculatePlayerOffSet();
     }
 
+    public Pair<Integer, Integer> calculateScreenXY(int x, int y){
+        return new Pair<Integer, Integer>(x - offsetJ + desiredPlayerXTileOffset, y - offsetI + desiredPlayerYTileOffset);
+    }
+
     @Override
     public void draw(Graphics2D graphics2D){
-        int offsetI = 0;
-        int offsetJ = 0;
+        for(Viewport child: children){
+            Pair<Integer, Integer> location = calculateScreenXY(child.getLocationX(), child.getLocationY());
+            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
+                child.draw(graphics2D,location.getKey() ,location.getValue());
+            }
+        }
+    }
+
+    @Override
+    public void update(){
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
             if(mapIterator.currentItem() == entity.getLocation()){
                 offsetI = mapIterator.getI() - initialI;
                 offsetJ = mapIterator.getJ() - initialJ;
-            }
-        }
-        for(Viewport child: children){
-            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
-                child.draw(graphics2D, child.getLocationX() - offsetJ + desiredPlayerXTileOffset, child.getLocationY() - offsetI + desiredPlayerYTileOffset);
             }
         }
     }

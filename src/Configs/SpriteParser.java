@@ -1,5 +1,7 @@
 package Configs;
 
+import Model.Map.Direction;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -26,6 +28,11 @@ public class SpriteParser {
 
     private BufferedImage[] avatarSprites;
     private BufferedImage[] avatarSprites_NINJA;
+
+    public Image getItemFromName(String name){
+        ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
+        return imageIcon.getImage();
+    }
 
     public Image getIceImage(){
         return tileSprites[11*12];
@@ -104,11 +111,69 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
-    public Image getAvatarImage(){
-        return avatarSprites[0];
+    public Image getLinearIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_LINEARICEATTACKFILELOCATION);
+        return imageIcon.getImage();
     }
 
-    public Image getAvatarImage_NINJA() {return avatarSprites_NINJA[0];}
+    public Image getAngularIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_ANGULARICEATTACKFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getRadialIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_RADIALICEATTACKFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getPizzaImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_PIZZAFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getAvatarImage(Direction direction){
+        switch (direction){
+            case N:
+                return avatarSprites[4];
+            case NE:
+                return avatarSprites[5];
+            case E:
+                return avatarSprites[6];
+            case SE:
+                return avatarSprites[7];
+            case S:
+                return avatarSprites[0];
+            case SW:
+                return avatarSprites[1];
+            case W:
+                return avatarSprites[2];
+            case NW:
+                return avatarSprites[3];
+        }
+        return null;
+    }
+
+    public Image getAvatarImage_NINJA(Direction direction) {
+        switch (direction){
+            case N:
+                return avatarSprites_NINJA[3];
+            case NE:
+                return avatarSprites[7];
+            case E:
+                return avatarSprites[6];
+            case SE:
+                return avatarSprites[5];
+            case S:
+                return avatarSprites[4];
+            case SW:
+                return avatarSprites[0];
+            case W:
+                return avatarSprites[1];
+            case NW:
+                return avatarSprites[2];
+        }
+        return null;
+    }
 
     private void getSprites(){
         getTileSprites();
@@ -152,10 +217,10 @@ public class SpriteParser {
             e.printStackTrace();
         }
 
-        final int width = 40;
+        final int width = 37;
         final int height = 40;
         final int rows = 1;
-        final int cols = 1;
+        final int cols = 7;
         avatarSprites = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
@@ -179,10 +244,10 @@ public class SpriteParser {
             e.printStackTrace();
         }
 
-        final int width = 40;
+        final int width = 36;
         final int height = 40;
-        final int rows = 1;
-        final int cols = 1;
+        final int rows = 2;
+        final int cols = 4;
         avatarSprites_NINJA = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)

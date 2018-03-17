@@ -1,6 +1,5 @@
 package Model.Entity.Role;
 
-import Model.Entity.Entity;
 import Model.Entity.Skill.Brawl;
 import Model.Entity.Skill.OneHandedWeapon;
 import Model.Entity.Skill.TwoHandedWeapon;
@@ -34,4 +33,36 @@ public class Smasher extends Role {
     public void addBrawl(int points){
         brawl.addPoints(points);
     }
+
+    @Override
+    protected void correctSelected(){
+        if(selected < 0) selected = 5;
+        if(selected > 5) selected = 0;
+    }
+
+    @Override
+    public void increaseSkill(int points){
+        if(entity.canIncrementSkill()) {
+            switch (selected) {
+                case 3:
+                    addOneHandedWeapon(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 4:
+                    addTwoHandedWeapon(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 5:
+                    addBrawl(points);
+                    entity.skillPointIncremented();
+                    break;
+                    default:
+                        super.increaseSkill(points);
+                        break;
+            }
+        }
+    }
+
+    @Override
+    public RoleType getRoleType() { return RoleType.Smasher; }
 }

@@ -5,6 +5,10 @@ import Model.Item.TakeableItem.WearableItem;
 
 public class Helmet extends WearableItem{
 
+    public Helmet(){
+        this.name = "helmet";
+    }
+
     private double defenseIncrease = 50;
 
     @Override

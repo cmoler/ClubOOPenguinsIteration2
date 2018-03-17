@@ -20,6 +20,10 @@ import static Model.Map.Direction.*;
 
 public class SnowShuriken extends RangedWeaponItem {
 
+    public SnowShuriken(){
+        this.name = "snowShuriken";
+    }
+
     private double damageAmount = 0.75;
     private double angularDecreaseFactor = 0.25;
 

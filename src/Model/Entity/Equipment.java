@@ -4,6 +4,7 @@ import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.UseableItem;
 import Model.Item.TakeableItem.WearableItem;
 import View.Viewport;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public class Equipment {
         return false;
     }
 
-    public TakeableItem getEquipped(int index) {
+    public TakeableItem getSlot(int index) {
         return hotbar.getItem(index);
     }
 
@@ -69,10 +70,56 @@ public class Equipment {
         observers.remove(viewport);
     }
 
+    public int getEquipmentSize(){
+        return equipmentSize;
+    }
+
     public void notifyView(){
         for( Viewport viewport : observers) {
             viewport.update();
         }
+    }
+
+    public WearableItem getHead() {
+        return armor.head;
+    }
+
+    public WearableItem getBody() {
+        return armor.body;
+    }
+
+    public WearableItem getLegs() {
+        return armor.legs;
+    }
+
+    public WearableItem getRing() {
+        return armor.ring;
+    }
+
+    public void scrollArmorX(int i){
+        if(i > 0) {
+            armor.selectedX++;
+            if(armor.selectedX > 1) armor.selectedX = 0;
+        }
+        if(i < 0) {
+            armor.selectedX--;
+            if(armor.selectedX < 0) armor.selectedX = 1;
+        }
+    }
+
+    public void scrollArmorY(int i){
+        if(i > 0) {
+            armor.selectedY++;
+            if(armor.selectedY > 2) armor.selectedY = 0;
+        }
+        if(i < 0) {
+            armor.selectedY--;
+            if(armor.selectedY < 0) armor.selectedY = 2;
+        }
+    }
+
+    public Pair<Integer, Integer> getSelectedArmor(){
+        return new Pair<Integer, Integer>(armor.selectedX, armor.selectedY);
     }
 
     private class WearableItems{
@@ -80,6 +127,9 @@ public class Equipment {
         private WearableItem body = null;
         private WearableItem legs = null;
         private WearableItem ring = null;
+
+        private int selectedX = 0;
+        private int selectedY = 0;
 
         public boolean equip(WearableItem wearableItem){
             switch (wearableItem.getSlot()){
