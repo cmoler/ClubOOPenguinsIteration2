@@ -28,42 +28,48 @@ public class SkillsView extends Viewport {
 
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_SKILL_ICON);
         Image increaseSkillImage = imageIcon.getImage();
+        int pointsAvailable = player.getSkillPointsAvailable();
+        int skillColumnX = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0);
+        int pointsColumnX;
+        int buttonColumnX;
 
-        graphics2D.drawString("Bind Wounds", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-        graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-        graphics2D.drawString("Bargain", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-        graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-        graphics2D.drawString("Observation", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-        graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+        graphics2D.drawString("Points:", skillColumnX, 0);
+        graphics2D.drawString("" + pointsAvailable,  );
+        graphics2D.drawString("Bind Wounds", skillColumnX, 0);
+        graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+        graphics2D.drawString("Bargain", skillColumnX, 0);
+        graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+        graphics2D.drawString("Observation", skillColumnX, 0);
+        graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
 
         switch (role.getRoleType()) {
             case Smasher:
-                graphics2D.drawString("One Handed Weapon", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Two Handed Weapon", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Brawl", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("One Handed Weapon", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Two Handed Weapon", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Brawl", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
                 break;
             case Sneak:
-                graphics2D.drawString("Pick Pocket", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Detect Traps", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Creep", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Ranged Weapon", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Pick Pocket", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Detect Traps", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Creep", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Ranged Weapon", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
                 break;
             case Summoner:
-                graphics2D.drawString("Enchantment", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Boon", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Bane", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
-                graphics2D.drawString("Staff", ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), 0);
-                graphics2D.drawImage(increaseSkillImage, 0, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Enchantment", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Boon", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Bane", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
+                graphics2D.drawString("Staff", skillColumnX, 0);
+                graphics2D.drawImage(increaseSkillImage, buttonColumnX, 0, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
                 break;
             default:
                 break;
