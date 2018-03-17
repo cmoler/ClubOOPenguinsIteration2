@@ -7,6 +7,7 @@ import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.RoleType;
+import Model.Entity.Role.Smasher;
 import View.Viewport;
 
 import javax.swing.*;

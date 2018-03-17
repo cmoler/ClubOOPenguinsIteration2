@@ -57,6 +57,8 @@ public class Player extends Entity {
         return mana;
     }
 
+    public int getMaxMana() { return role.getMaxMana(); }
+
     public void addMana(int mana){
         this.mana += mana;
     }

@@ -15,6 +15,8 @@ public class Role {
     private Bargain bargain;
     private Observation observation;
 
+    private int maxMana = 50;
+
     public Role(){}
 
     public void setEntity(Player entity){
@@ -53,4 +55,5 @@ public class Role {
 
     public void activateTrait(Location location){}
 
+    public int getMaxMana() {return maxMana;}
 }
