@@ -133,7 +133,27 @@ public class SpriteParser {
         return null;
     }
 
-    public Image getAvatarImage_NINJA() {return avatarSprites_NINJA[0];}
+    public Image getAvatarImage_NINJA(Direction direction) {
+        switch (direction){
+            case N:
+                return avatarSprites_NINJA[3];
+            case NE:
+                return avatarSprites[7];
+            case E:
+                return avatarSprites[6];
+            case SE:
+                return avatarSprites[5];
+            case S:
+                return avatarSprites[4];
+            case SW:
+                return avatarSprites[0];
+            case W:
+                return avatarSprites[1];
+            case NW:
+                return avatarSprites[2];
+        }
+        return null;
+    }
 
     private void getSprites(){
         getTileSprites();
@@ -204,10 +224,10 @@ public class SpriteParser {
             e.printStackTrace();
         }
 
-        final int width = 40;
+        final int width = 36;
         final int height = 40;
-        final int rows = 1;
-        final int cols = 1;
+        final int rows = 2;
+        final int cols = 4;
         avatarSprites_NINJA = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)

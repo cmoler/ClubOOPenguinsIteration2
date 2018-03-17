@@ -17,11 +17,12 @@ public class SkillsView extends Viewport {
 
     //TODO - adjust POINTS_COLUMN_X and BUTTON_COLUMN_X
 
-    private Player player;
+    private Role role;
 
     public SkillsView(Role role){
-        this.player = player;
-        player.attach(this);
+        this.role = role;
+        Role role = role.
+        role.attach(this);
     }
 
     @Override
