@@ -147,7 +147,7 @@ public class SkillsState implements ControllerState {
     }
 
     private void increaseCurrent() {
-
+        skillsController.incrememntSkill();
     }
 
     private void scrollLeft() {
@@ -159,11 +159,11 @@ public class SkillsState implements ControllerState {
     }
 
     private void scrollUp() {
-
+        skillsController.scrollUp();
     }
 
     private void scrollDown() {
-
+        skillsController.scrollDown();
     }
 
 }
