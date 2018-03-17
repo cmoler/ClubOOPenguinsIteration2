@@ -17,9 +17,21 @@ public abstract class Role implements Saveable{
     private Bargain bargain;
     private Observation observation;
 
-    private int maxMana = 50;
+    private int maxMana;
 
-    public Role(){}
+    public Role(){
+        bindWounds = new BindWounds();
+        bargain = new Bargain();
+        observation = new Observation();
+    }
+
+    public Role(BindWounds bindWounds, Bargain bargain, Observation observation){
+        this.bindWounds = bindWounds;
+        this.bargain = bargain;
+        this.observation = observation;
+    }
+
+
 
     public void setEntity(Player entity){
         this.entity = entity;
@@ -93,4 +105,8 @@ public abstract class Role implements Saveable{
     public void activateTrait(Location location){}
 
     public int getMaxMana() {return maxMana;}
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
 }
