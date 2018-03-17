@@ -9,7 +9,12 @@ public class TakeableItem extends Item {
 
     @Override
     public final void touch(Player entity) {
-        entity.getInventory().addItem(this);
+        entity.takeItem(this);
+    }
+
+    @Override
+    public boolean shouldBeRemoved() {
+        return true;
     }
 
     public boolean canEquip(Player entity) {

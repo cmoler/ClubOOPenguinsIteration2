@@ -12,7 +12,7 @@ public class World {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
-    public static World instance = null;
+    private static World instance = null;
     private Map currentMap;
     private HashMap<String,Map> maps = new HashMap<String,Map>();
 

@@ -18,6 +18,7 @@ import java.util.List;
 public class SnowLauncher extends RangedWeaponItem {
 
     public SnowLauncher(){
+        super();
         this.name = "snowLauncher";
     }
 

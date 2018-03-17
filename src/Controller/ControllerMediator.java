@@ -3,8 +3,6 @@ package Controller;
 import Controller.SavingLoading.GameLoader;
 import Controller.SavingLoading.GameSaver;
 import Controller.States.*;
-import View.AreaView.AreaViewPort;
-import View.MenuView.MainMenuView;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
@@ -19,7 +17,7 @@ public class ControllerMediator {
 
     private OOPenguinGameFrame gameFrame;
 
-    private EntityState entityState;
+    private PlayerState entityState;
     private MenuState menuState;
     private InventoryState inventoryState;
     private EquipmentState equipmentState;
@@ -62,7 +60,7 @@ public class ControllerMediator {
         keyBindingState = new KeyBindingState(this);
         menuState = new MenuState(gameLoader,this);
         activeState = menuState;
-        entityState = new EntityState(gameLoader, this);
+        entityState = new PlayerState(gameLoader, this);
         inventoryState = new InventoryState(gameLoader, this);
         equipmentState = new EquipmentState(gameLoader, this);
         skillsState = new SkillsState(gameLoader, this);

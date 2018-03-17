@@ -3,6 +3,7 @@ package Model.Item.TakeableItem.OneHandedWeaponItem;
 import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
+import Model.Entity.Skill.OneHandedWeapon;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.UseableItem;
 import Model.Map.Direction;
@@ -14,6 +15,10 @@ import Model.Utilites.Time;
 public abstract class OneHandedWeaponItem extends UseableItem {
 
     private double lastUse;
+
+    public OneHandedWeaponItem(){
+        super();
+    }
 
     public boolean canEquip(Player entity) {
         // ok under OCP

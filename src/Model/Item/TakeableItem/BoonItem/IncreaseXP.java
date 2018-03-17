@@ -10,6 +10,7 @@ import java.util.Random;
 public class IncreaseXP extends BoonItem {
 
     public IncreaseXP(){
+        super();
         this.name = "increaseLevel";
     }
 

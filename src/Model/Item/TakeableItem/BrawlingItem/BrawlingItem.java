@@ -15,6 +15,10 @@ public abstract class BrawlingItem extends UseableItem {
 
     private double lastUse;
 
+    public BrawlingItem(){
+        super();
+    }
+
     public boolean canEquip(Player entity) {
         // ok under OCP
         if(entity.getRole().getClass() == Smasher.class)

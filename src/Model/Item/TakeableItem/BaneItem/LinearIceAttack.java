@@ -9,6 +9,7 @@ import Model.Map.Location;
 public class LinearIceAttack extends BaneItem {
 
     public LinearIceAttack(){
+        super();
         this.name = "linearIceAttack";
     }
 

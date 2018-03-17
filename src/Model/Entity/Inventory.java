@@ -8,9 +8,9 @@ import java.util.List;
 
 public class Inventory {
 
-    private List<Viewport> observers;
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
-    private List<TakeableItem> items;
+    private List<TakeableItem> items = new ArrayList<>();
 
     private int selectedX = 0;
     private int selectedY = 0;
@@ -20,8 +20,7 @@ public class Inventory {
     }
 
     public Inventory(Entity entity) {
-        observers = new ArrayList<>();
-        items = new ArrayList<>();
+
     }
 
     public boolean addItem(TakeableItem item){
@@ -48,6 +47,13 @@ public class Inventory {
         return removedItem;
     }
 
+    public TakeableItem getItem(int index){
+        if(index < items.size())
+            return items.get(index);
+        else
+            return null;
+    }
+
     public boolean doesExist(TakeableItem item){
         boolean itemExists;
         itemExists = items.contains(item);
@@ -55,6 +61,16 @@ public class Inventory {
         return itemExists;
     }
 
+    public TakeableItem getItemNamed(String name){
+        InventoryIterator inventoryIterator = new InventoryIterator();
+        while(inventoryIterator.hasNext()){
+            TakeableItem item = inventoryIterator.getCurrent();
+            if (item.getName() == name){
+                return item;
+            }
+        }
+        return null;
+    }
     public int getSelectedX() {
         return selectedX;
     }

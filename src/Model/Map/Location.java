@@ -2,6 +2,7 @@ package Model.Map;
 
 import Model.Entity.Entity;
 import Model.Entity.Player;
+import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.Item;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.Terrain.Terrain;
@@ -19,6 +20,7 @@ public class Location {
     private HashMap<Direction, Location> adjacentLocations;
     private AreaEffect areaEffect;
     private List<Item> items = new ArrayList<>();
+
     private List<Viewport> observers = new ArrayList<Viewport>();
     int xCoordinate;
     int yCoordinate;
@@ -91,8 +93,9 @@ public class Location {
         LocationItemIterator locationItemIterator = getLocationItemIterator();
         for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
             locationItemIterator.touchCurrent(entity);
-            //if(locationItemIterator.getCurrent().shouldBeRemoved())
-            locationItemIterator.removeCurrent();
+            if(locationItemIterator.getCurrent().shouldBeRemoved()){
+                locationItemIterator.removeCurrent();
+            }
         }
     }
 

@@ -10,4 +10,9 @@ public abstract class OneShotItem extends Item {
     public void touch(Player entity) {
 
     }
+
+    @Override
+    public boolean shouldBeRemoved() {
+        return true;
+    }
 }

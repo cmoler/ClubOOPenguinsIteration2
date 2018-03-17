@@ -15,6 +15,7 @@ import java.util.Random;
 public class Charm extends EnchantmentItem {
 
     public Charm(){
+        super();
         this.name = "charm";
     }
 

@@ -16,6 +16,11 @@ import java.util.Random;
 
 public abstract class EnchantmentItem extends UseableItem {
 
+
+    public EnchantmentItem(){
+        super();
+    }
+
     public boolean canEquip(Player entity) {
         // ok under OCP
         if(entity.getRole().getClass() == Summoner.class)

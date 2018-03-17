@@ -44,7 +44,7 @@ public class EntityLocation {
                     }
                     //If there is an entity on nextLocation, interact
                     else {
-                        interactEntity();
+                       currentEntity.interactEntity(entityLocations.get(nextLocation));
                     }
                 }
                 currentEntity.setIntentToMove(false);
@@ -60,9 +60,6 @@ public class EntityLocation {
         }
     }
 
-    public void interactEntity() {
-        //TODO Do Something
-    }
 
 
 }

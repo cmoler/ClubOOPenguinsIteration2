@@ -9,6 +9,7 @@ public class LevelUpAreaEffect extends OneShotAreaEffect {
     public void affect(Entity entity) {
         int experienceToAdd = entity.getExperienceForNextLevel() - entity.getExperience();
         entity.gainExperience(experienceToAdd+1);
+        setActive(false);
     }
 
     @Override

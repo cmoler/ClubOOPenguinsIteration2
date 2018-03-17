@@ -18,6 +18,10 @@ public abstract class RangedWeaponItem extends ProjectileCapableItem {
     private double secondsPerUse = 1.25;
     private double lastUse;
 
+    public RangedWeaponItem(){
+        super();
+    }
+
     public boolean canEquip(Player entity) {
         // ok under OCP
         if (entity.getRole().getClass() == Sneak.class)

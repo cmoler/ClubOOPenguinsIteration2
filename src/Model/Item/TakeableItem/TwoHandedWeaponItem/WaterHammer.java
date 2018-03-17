@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class WaterHammer extends TwoHandedWeaponItem{
 
     public WaterHammer(){
+        super();
         this.name = "waterHammer";
     }
 

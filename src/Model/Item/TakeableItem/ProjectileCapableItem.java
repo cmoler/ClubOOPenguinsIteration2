@@ -10,6 +10,10 @@ import java.util.List;
 
 public abstract class ProjectileCapableItem extends UseableItem {
 
+    public ProjectileCapableItem(){
+        super();
+    }
+
     private List<Projectile> projectiles = new ArrayList<Projectile>();
 
     protected void addProjectile(Projectile projectile){

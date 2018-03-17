@@ -134,19 +134,19 @@ public class SkillsState implements ControllerState {
     }
 
     private void openMenu() {
-
+        controllerMediator.changeToMenuState();
     }
 
     private void openEquipment() {
-
+        controllerMediator.changeToEquipmentState();
     }
 
     private void openInventory() {
-
+        controllerMediator.changeToInventoryState();
     }
 
     private void exitSkills() {
-
+        controllerMediator.changeToEntityState();
     }
 
     private void increaseCurrent() {

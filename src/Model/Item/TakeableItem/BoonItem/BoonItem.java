@@ -10,6 +10,11 @@ import java.util.Random;
 
 public abstract class BoonItem extends UseableItem {
 
+
+    public BoonItem(){
+        super();
+    }
+
     public boolean canEquip(Player entity) {
         // ok under OCP
         if(entity.getRole().getClass() == Summoner.class)

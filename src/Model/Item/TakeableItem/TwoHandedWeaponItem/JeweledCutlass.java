@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class JeweledCutlass extends TwoHandedWeaponItem{
 
     public JeweledCutlass(){
+        super();
         this.name = "jeweledCutlass";
     }
 

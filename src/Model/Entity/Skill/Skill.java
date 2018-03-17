@@ -2,7 +2,7 @@ package Model.Entity.Skill;
 
 public abstract class Skill {
 
-    private int points = 20; // default?
+    private int points = 0; // default?
 
     public Skill(){}
 

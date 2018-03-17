@@ -5,6 +5,10 @@ import Model.Entity.Player;
 
 public abstract class WearableItem extends TakeableItem {
 
+    public WearableItem(){
+        value = 20;
+    }
+
     public abstract void putOn(Player player);
 
     public abstract void takeOff(Player player);

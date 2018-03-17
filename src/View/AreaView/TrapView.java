@@ -1,16 +1,16 @@
 package View.AreaView;
 
-import Model.Map.AreaEffect.Trap;
+import Model.Map.AreaEffect.TrapAreaEffect;
 import View.Viewport;
 
 import java.awt.*;
 
 public class TrapView extends Viewport {
 
-    private Trap trap;
+    private TrapAreaEffect trap;
     private boolean drawTrap = false;
 
-    public TrapView(Trap trap){
+    public TrapView(TrapAreaEffect trap){
         this.trap = trap;
     }
 

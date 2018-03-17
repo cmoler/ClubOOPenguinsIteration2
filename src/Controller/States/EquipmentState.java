@@ -83,10 +83,10 @@ public class EquipmentState implements ControllerState {
                                     getTextContent()), () -> openSkills());
                             break;
                         case "unEquipItem":
-                            keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("key").
-                                    item(0).
-                                    getTextContent()), () -> unEquipItem());
+//                            keyBinding.put(Integer.parseInt(eElement.
+//                                    getElementsByTagName("key").
+//                                    item(0).
+//                                    getTextContent()), () -> unEquipItem());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
@@ -123,31 +123,38 @@ public class EquipmentState implements ControllerState {
 
 
     private void openMenu() {
+        controllerMediator.changeToMenuState();
     }
 
 
     private void openInventory() {
-
+        controllerMediator.changeToInventoryState();
     }
 
     private void exitEquipment() {
-
+        controllerMediator.changeToEntityState();
     }
 
     private void openSkills() {
-
+        controllerMediator.changeToSkillsState();
     }
 
-    private void unEquipItem() {
+    private void unEquipUsableItem() {
+        // TODO
+//        equipmentController.unEquipUsableItem(); // needs index
+    }
 
+    private void upEquipWearableItem(){
+        // TODO
+//        equipmentController.unEquipWearableItem(); // needs index
     }
 
     private void scrollLeft() {
-
+        // TODO
     }
 
     private void scrollRight() {
-
+        // TODO
     }
 
 

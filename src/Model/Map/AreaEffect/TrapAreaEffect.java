@@ -2,12 +2,22 @@ package Model.Map.AreaEffect;
 
 import Model.Entity.Entity;
 
-public class Trap extends OneShotAreaEffect{
+import java.util.Random;
+
+public class TrapAreaEffect extends OneShotAreaEffect{
     boolean isVisible;
 
 
-    public void setVisible(boolean visible) {
-        isVisible = visible;
+    public TrapAreaEffect() {
+        isVisible = false;
+    }
+
+    public void setVisible(int detectChance) {
+        Random random = new Random();
+        int chance = random.nextInt(100);
+        if (chance < detectChance ) {
+            isVisible = true;
+        }
     }
 
     public boolean isVisible() {
@@ -21,6 +31,7 @@ public class Trap extends OneShotAreaEffect{
     @Override
     protected void affect(Entity entity) {
         entity.takeDamage(entity.getMaxHealth()/2);
+        setActive(false);
     }
 
     @Override

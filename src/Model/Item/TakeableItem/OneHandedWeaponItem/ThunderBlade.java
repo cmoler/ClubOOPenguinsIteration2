@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class ThunderBlade extends OneHandedWeaponItem{
 
     public ThunderBlade(){
+        super();
         this.name = "thunderBlade";
     }
 

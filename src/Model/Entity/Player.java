@@ -1,5 +1,6 @@
 package Model.Entity;
 
+import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Role;
 import Model.Map.Location;
 
@@ -8,6 +9,8 @@ public class Player extends Entity {
     private int mana;
     private int gold;
     private Equipment equipment = new Equipment(this);
+    private int skillPointsUsed;
+    private int skillPointsPerLevel = 5;
 
     public Player(Role role) {
         this.role = role;
@@ -21,9 +24,12 @@ public class Player extends Entity {
         super.setEntityType(type);
     }
 
-
     public void touchItems(){
         getLocation().itemsTouchedBy(this);
+    }
+
+    public void useRoleTraits(){
+        role.activateTrait(super.getLocation());
     }
 
     @Override
@@ -35,6 +41,12 @@ public class Player extends Entity {
     public void interactLocation() {
         super.interactLocation();
         touchItems();
+        useRoleTraits();
+    }
+
+    @Override
+    public void interactEntity(Entity entity) {
+        ((NPC) entity).talk();
     }
 
     public Role getRole(){
@@ -45,6 +57,8 @@ public class Player extends Entity {
         return mana;
     }
 
+    public int getMaxMana() { return role.getMaxMana(); }
+
     public void addMana(int mana){
         this.mana += mana;
     }
@@ -53,8 +67,23 @@ public class Player extends Entity {
         return gold;
     }
 
-    public void addGold(int gold){
+    public void modifyGold(int gold){
         this.gold += gold;
+    }
+
+    public boolean canIncrementSkill(){
+        if(getLevel()*skillPointsPerLevel > skillPointsUsed)
+            return true;
+        else
+            return false;
+    }
+
+    public void skillPointIncremented(){
+        skillPointsUsed++;
+    }
+
+    public int getSkillPointsAvailable(){
+        return (getLevel()*skillPointsPerLevel - skillPointsUsed);
     }
 
     public Equipment getEquipment() {

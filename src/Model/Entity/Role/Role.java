@@ -1,23 +1,26 @@
 package Model.Entity.Role;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Entity.Skill.Bargain;
 import Model.Entity.Skill.BindWounds;
 import Model.Entity.Skill.Observation;
+import Model.Map.Location;
 import javafx.beans.Observable;
 
 public class Role {
 
-    protected Entity entity;
+    protected Player entity;
     protected int selected;
-
     private BindWounds bindWounds;
     private Bargain bargain;
     private Observation observation;
 
+    private int maxMana = 50;
+
     public Role(){}
 
-    public void setEntity(Entity entity){
+    public void setEntity(Player entity){
         this.entity = entity;
     }
 
@@ -85,4 +88,8 @@ public class Role {
     }
 
     public RoleType getRoleType() { return RoleType.Base; }
+
+    public void activateTrait(Location location){}
+
+    public int getMaxMana() {return maxMana;}
 }

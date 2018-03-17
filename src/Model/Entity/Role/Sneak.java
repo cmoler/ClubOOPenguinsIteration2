@@ -1,10 +1,14 @@
 package Model.Entity.Role;
 
-import Model.Entity.Entity;
 import Model.Entity.Skill.Creep;
 import Model.Entity.Skill.DetectAndRemoveTrap;
 import Model.Entity.Skill.PickPocket;
 import Model.Entity.Skill.RangedWeapon;
+import Model.Map.AreaEffect.AreaEffect;
+import Model.Map.AreaEffect.AreaEffectType;
+import Model.Map.AreaEffect.TrapAreaEffect;
+import Model.Map.Direction;
+import Model.Map.Location;
 
 public class Sneak extends Role {
 
@@ -45,12 +49,35 @@ public class Sneak extends Role {
         rangedWeapon.addPoints(points);
     }
 
-    public void pickPocket(Entity otherEntity){
-        pickPocket.use(this.entity, otherEntity);
+    public void pickPocket(){
+        pickPocket.use(this.entity);
     }
 
     public void creep(){
         creep.use(this.entity);
+    }
+
+    @Override
+    public void activateTrait(Location location){
+
+        //Detect Traps
+        int detectChance = getDetectAndRemoveTrap()*10;
+
+        for (Direction dir : Direction.values()){
+            Location adjLocation = location.getAdjacentAt(dir);
+            AreaEffect areaEffect = adjLocation.getAreaEffect();
+            if (areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
+                ((TrapAreaEffect) areaEffect).setVisible(detectChance);
+            }
+        }
+
+        if(creep.isBeingUsed(this.entity)){
+            if(this.entity.getMana() > creep.getManaDecrement())
+                this.entity.addMana(-creep.getManaDecrement());
+            else
+                creep.turnOff(this.entity);
+        }
+
     }
 
     @Override

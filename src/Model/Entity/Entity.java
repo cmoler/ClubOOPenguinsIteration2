@@ -1,6 +1,8 @@
 package Model.Entity;
 
 import Model.Entity.Role.Role;
+import Model.Item.Item;
+import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Visitor.Visitor;
@@ -26,8 +28,11 @@ public abstract class Entity {
     private Inventory inventory = new Inventory(this);
     private Location location;
     private boolean intentToMove = false;
+    private int visibleRange = 5;
     // map is in World
 
+
+    //TODO Add Role interact on move
 
     public EntityType getEntityType(){
         return entityType;
@@ -121,6 +126,13 @@ public abstract class Entity {
         return level;
     }
 
+    public int getVisibleRange(){
+        return visibleRange;
+    }
+
+    public void setVisibleRange(int visibleRange){
+        this.visibleRange = visibleRange;
+    }
 
     public int getExperienceForNextLevel(){
         if(level < finalLevel)
@@ -131,6 +143,14 @@ public abstract class Entity {
     public int getExperienceForCurrentLevel(){
         return ExperienceForLevel.get(level);
     }
+
+    public void takeItem(TakeableItem item){
+        inventory.addItem(item);
+    }
+
+    public void removeItem(TakeableItem item) {inventory.removeItem(item); }
+
+    public Item getItemNamed(String name){ return inventory.getItemNamed(name); }
 
     public Inventory getInventory() {
         return inventory;
@@ -143,6 +163,8 @@ public abstract class Entity {
     public void interactLocation(){
         location.activateAreaEffect(this);
     }
+
+    public abstract void interactEntity(Entity entity);
 
     public void setLocation(Location location){
         this.location = location;

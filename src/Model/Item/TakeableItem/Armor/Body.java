@@ -6,6 +6,7 @@ import Model.Item.TakeableItem.WearableItem;
 public class Body extends WearableItem {
 
     public Body(){
+        super();
         this.name = "chest";
     }
     @Override
