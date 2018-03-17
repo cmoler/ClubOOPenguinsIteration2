@@ -8,17 +8,16 @@ import java.util.List;
 
 public class Inventory {
 
-    private List<Viewport> observers;
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
-    private List<TakeableItem> items;
+    private List<TakeableItem> items = new ArrayList<>();
 
     public InventoryIterator getIterator(){
         return new InventoryIterator();
     }
 
     public Inventory(Entity entity) {
-        observers = new ArrayList<>();
-        items = new ArrayList<>();
+
     }
 
     public boolean addItem(TakeableItem item){
@@ -43,6 +42,13 @@ public class Inventory {
         notifyView();
 
         return removedItem;
+    }
+
+    public TakeableItem getItem(int index){
+        if(index < items.size())
+            return items.get(index);
+        else
+            return null;
     }
 
     public boolean doesExist(TakeableItem item){

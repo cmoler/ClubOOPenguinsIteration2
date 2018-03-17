@@ -14,7 +14,7 @@ import Model.Entity.NPC.NPCState.NPCState;
 public class NPC extends Entity implements Updateable{
 
     private NPCState npcState;
-    private Player player;
+    protected Player player;
     private boolean wantToTalk;
     private String talkString;
     private int visibleRange = 5;

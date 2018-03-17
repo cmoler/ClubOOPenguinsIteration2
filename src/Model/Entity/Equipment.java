@@ -13,6 +13,7 @@ public class Equipment {
     private List<Viewport> observers;
 
     private Player entity;
+    private Inventory inventory;
     private UsableItems hotbar;
     private WearableItems armor;
 
@@ -20,6 +21,7 @@ public class Equipment {
 
     public Equipment(Player entity) {
         this.entity = entity;
+        this.inventory = entity.getInventory();
         hotbar = new UsableItems(equipmentSize);
         armor = new WearableItems();
         observers = new ArrayList<>();
@@ -28,6 +30,7 @@ public class Equipment {
     public boolean equip(TakeableItem item){
         if (item.canEquip(this.entity)) {
             if (hotbar.add(item)) {
+                inventory.removeItem(item);
                 notifyView();
                 return true;
             }
@@ -35,6 +38,7 @@ public class Equipment {
                 return false;
         } else if(item.canWear()){
             if(armor.equip((WearableItem)item)){
+                inventory.removeItem(item);
                 notifyView();
                 return true;
             }
@@ -47,6 +51,29 @@ public class Equipment {
             notifyView();
             return true;
         }
+        return false;
+    }
+
+    public boolean unEquipUsableItem(int index){
+        TakeableItem item = hotbar.getItem(index);
+        if(hotbar.remove(item)) {
+            inventory.addItem(item);
+            notifyView();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean unEquipWearableItem(String armorType){
+        if(armor.getArmor(armorType) != null) {
+            WearableItem item = armor.getArmor(armorType);
+            if(armor.unequip(item)) {
+                inventory.addItem(item);
+                notifyView();
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -135,6 +162,20 @@ public class Equipment {
             }else {
                 return false;
             }
+        }
+
+        public WearableItem getArmor(String armorType){
+            switch (armorType){
+                case "head":
+                    return head;
+                case "body":
+                    return body;
+                case "legs":
+                    return legs;
+                case "ring":
+                    return ring;
+            }
+            return null;
         }
     }
 
