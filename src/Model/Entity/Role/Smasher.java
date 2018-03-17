@@ -15,6 +15,7 @@ public class Smasher extends Role {
         oneHandedWeapon = new OneHandedWeapon();
         twoHandedWeapon = new TwoHandedWeapon();
         brawl = new Brawl();
+        setMaxMana(20);
     }
 
     public Smasher(BindWounds bindWounds, Bargain bargain, Observation observation, OneHandedWeapon oneHandedWeapon, TwoHandedWeapon twoHandedWeapon, Brawl brawl){
@@ -22,6 +23,7 @@ public class Smasher extends Role {
         this.oneHandedWeapon = oneHandedWeapon;
         this.twoHandedWeapon = twoHandedWeapon;
         this.brawl = brawl;
+        setMaxMana(20);
     }
 
 

@@ -17,6 +17,7 @@ public class Summoner extends Role {
         boon = new Boon();
         bane = new Bane();
         staff = new Staff();
+        setMaxMana(100);
     }
 
     public Summoner(BindWounds bindWounds, Bargain bargain, Observation observation, Enchantment enchantment, Boon boon, Bane bane, Staff staff ){
@@ -25,6 +26,7 @@ public class Summoner extends Role {
         this.boon = boon;
         this.bane = bane;
         this.staff = staff;
+        setMaxMana(100);
     }
 
     public int getEnchantment(){

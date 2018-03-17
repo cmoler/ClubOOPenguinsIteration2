@@ -22,6 +22,7 @@ public class Sneak extends Role {
         detectAndRemoveTrap = new DetectAndRemoveTrap();
         creep = new Creep();
         rangedWeapon = new RangedWeapon();
+        setMaxMana(50);
     }
 
     public Sneak (BindWounds bindWounds, Bargain bargain, Observation observation, PickPocket pickPocket, DetectAndRemoveTrap detectAndRemoveTrap, Creep creep, RangedWeapon rangedWeapon){
@@ -30,6 +31,7 @@ public class Sneak extends Role {
         this.detectAndRemoveTrap = detectAndRemoveTrap;
         this.creep = creep;
         this.rangedWeapon = rangedWeapon;
+        setMaxMana(50);
     }
 
 
