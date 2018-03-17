@@ -41,6 +41,7 @@ import Model.Item.TakeableItem.Projectile.RadialProjectile;
 import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
+import Model.Item.TakeableItem.StaffItem.StaffItem;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
@@ -71,7 +72,7 @@ public class Serializer implements Saver{
         this.player.put("Location", saveLocation(player.getLocation()));
         this.player.put("Inventory", saveInventory(player.getInventory()));
         this.player.put("Equipment", saveEquipment(player.getEquipment()));
-        this.player.put("EntityType", player.getEntityType());
+        this.player.put("EntityType", player.getEntityType().toString());
         this.player.put("HP", player.getHealth());
         this.player.put("MaxHP", player.getMaxHealth());
         this.player.put("Mana", player.getMana());
@@ -215,199 +216,186 @@ public class Serializer implements Saver{
         playerRole.put("RangedWeaponLevel", role.getRangedWeapon());
     }
 
+
+
     @Override
     public String saveInteractiveItem(InteractiveItem interactiveItem) {
-        return "InteractiveItem";
+        return interactiveItem.getName();
     }
 
     @Override
     public String saveGoldOneShotItem(GoldOneShotItem goldOneShotItem) {
-        return "GoldOneShotItem";
+        return goldOneShotItem.getName();
     }
 
     @Override
     public String saveHealingOneShotItem(HealingOneShotItem healingOneShotItem) {
-        return "HealingOneShotItem";
+        return healingOneShotItem.getName();
     }
 
     @Override
     public String saveManaOneShotItem(ManaOneShotItem manaOneShotItem) {
-        return "ManaOneShotItem";
+        return manaOneShotItem.getName();
     }
 
     @Override
     public String saveXPOneShotItem(XPOneShotItem xpOneShotItem) {
-        return "XPOneShotItem";
+        return xpOneShotItem.getName();
     }
 
     @Override
     public String saveBody(Body body) {
-        return "Body";
+        return body.getName();
     }
 
     @Override
     public String saveHelmet(Helmet helmet) {
-        return "Helmet";
+        return helmet.getName();
     }
 
     @Override
     public String saveLeg(Leg leg) {
-        return "Leg";
+        return leg.getName();
     }
 
     @Override
     public String saveRing(Ring ring) {
-        return "Ring";
+        return ring.getName();
     }
 
     @Override
     public String saveAngulariceAttack(AngularIceAttack angularIceAttack) {
-        return "AngularIceAttack";
+        return angularIceAttack.getName();
     }
 
     @Override
     public String saveLinearIceAttack(LinearIceAttack linearIceAttack) {
-        return "LinearIceAttack";
+        return linearIceAttack.getName();
     }
 
     @Override
     public String saveRadialIceBomb(RadialIceBomb radialIceBomb) {
-        return "RadialIceBomb";
+        return radialIceBomb.getName();
     }
 
     @Override
     public String saveHeal(Heal heal) {
-        return "Heal";
+        return heal.getName();
     }
 
     @Override
     public String saveIncreaseMaxHealth(IncreaseMaxHealth increaseMaxHealth) {
-        return "IncreaseMaxHealth";
+        return increaseMaxHealth.getName();
     }
 
     @Override
     public String saveIncreaseXP(IncreaseXP increaseXP) {
-        return "IncreaseXP";
+        return increaseXP.getName();
     }
 
     @Override
     public String saveBrassKnuckles(BrassKnuckles brassKnuckles) {
-        return "BrassKnuckles";
+        return brassKnuckles.getName();
     }
 
     @Override
     public String saveSpikedGloves(SpikedGloves spikedGloves) {
-        return "SpikedGloves";
+        return spikedGloves.getName();
     }
 
     @Override
     public String saveSwordHands(SwordHands swordHands) {
-        return "SwordHands";
+        return swordHands.getName();
     }
 
     @Override
     public String saveCharm(Charm charm) {
-        return "Charm";
+        return charm.getName();
     }
 
     @Override
     public String saveInsomnia(Insomnia insomnia) {
-        return "Insomnia";
+        return insomnia.getName();
     }
 
     @Override
     public String saveSeppuku(Seppuku seppuku) {
-        return "Seppuku";
+        return seppuku.getName();
     }
 
     @Override
     public String saveBlueLightSaber(BlueLightsaber blueLightsaber) {
-        return "BlueLightsaber";
+        return blueLightsaber.getName();
     }
 
     @Override
     public String saveMjolnir(Mjolnir mjolnir) {
-        return "Mjolnir";
+        return mjolnir.getName();
     }
 
     @Override
     public String saveThunderBlade(ThunderBlade thunderBlade) {
-        return "ThunderBlade";
+        return thunderBlade.getName();
     }
 
     @Override
     public String saveHealthPotion(HealthPotion healthPotion) {
-        return "HealthPotion";
+        return healthPotion.getName();
     }
 
     @Override
     public String saveManaPotion(ManaPotion manaPotion) {
-        return "ManaPotion";
+        return manaPotion.getName();
     }
 
     @Override
     public String saveXPPotion(XPPotion xpPotion) {
-        return "XPPotion";
-    }
-
-    @Override
-    public String saveAngularProjectile(AngularProjectile angularProjectile) {
-        return "AngularProjectile";
-    }
-
-    @Override
-    public String saveLinearProjectile(LinearProjectile linearProjectile) {
-        return "LinearProjectile";
-    }
-
-    @Override
-    public String saveRadialProjectile(RadialProjectile radialProjectile) {
-        return "RadialProjectile";
+        return xpPotion.getName();
     }
 
     @Override
     public String savePizza(Pizza pizza) {
-        return "Pizza";
+        return pizza.getName();
     }
 
     @Override
     public String saveSnowLauncher(SnowLauncher snowLauncher) {
-        return "SnowLauncher";
+        return snowLauncher.getName();
     }
 
     @Override
     public String saveSnowShuriken(SnowShuriken snowShuriken) {
-        return "SnowShuriken";
+        return snowShuriken.getName();
     }
 
     @Override
-    public String saveStaff(Staff staff) {
-        return "Staff";
+    public String saveStaff(StaffItem staff) {
+        return staff.getName();
     }
 
     @Override
     public String saveInquisitorLightsaber(InquisitorLightsaber inquisitorLightsaber) {
-        return "InquisitorLightsaber";
+        return inquisitorLightsaber.getName();
     }
 
     @Override
     public String saveJeweledCutlass(JeweledCutlass jeweledCutlass) {
-        return "JeweledCutlass";
+        return jeweledCutlass.getName();
     }
 
     @Override
     public String saveWaterHammer(WaterHammer waterHammer) {
-        return "WaterHammer";
+        return waterHammer.getName();
     }
 
     @Override
     public String saveKey(Key key) {
-        return "Key";
+        return key.getName();
     }
 
     @Override
     public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
-        return "ChestInteractiveItem";
+        return chestInteractiveItem.getName();
     }
 
     public JSONObject getWorld() {

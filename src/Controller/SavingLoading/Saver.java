@@ -1,14 +1,10 @@
 package Controller.SavingLoading;
 
-import Model.Entity.Entity;
-import Model.Entity.Equipment;
-import Model.Entity.Inventory;
 import Model.Entity.Player;
-import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
-import Model.Item.TakeableItem.StaffItem.Staff;
+import Model.Item.TakeableItem.StaffItem.StaffItem;
 import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.OneShotItem.GoldOneShotItem;
@@ -47,8 +43,6 @@ import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
-import Model.Map.Location;
-import Model.Map.Map;
 import Model.Map.World;
 
 public interface Saver {
@@ -85,13 +79,10 @@ public interface Saver {
     public String saveHealthPotion(HealthPotion healthPotion);
     public String saveManaPotion(ManaPotion manaPotion);
     public String saveXPPotion(XPPotion xpPotion);
-    public String saveAngularProjectile(AngularProjectile angularProjectile);
-    public String saveLinearProjectile(LinearProjectile linearProjectile);
-    public String saveRadialProjectile(RadialProjectile radialProjectile);
     public String savePizza(Pizza pizza);
     public String saveSnowLauncher(SnowLauncher snowLauncher);
     public String saveSnowShuriken(SnowShuriken snowShuriken);
-    public String saveStaff(Staff staff);
+    public String saveStaff(StaffItem staffItem);
     public String saveInquisitorLightsaber(InquisitorLightsaber inquisitorLightsaber);
     public String saveJeweledCutlass(JeweledCutlass jeweledCutlass);
     public String saveWaterHammer(WaterHammer waterHammer);
