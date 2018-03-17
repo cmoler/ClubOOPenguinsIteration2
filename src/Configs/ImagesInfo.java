@@ -56,7 +56,6 @@ public interface ImagesInfo {
     public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
     public static final Image AVATAR_IMAGE_NINJA1 = SpriteParser.getSpriteParser().getAvatarImage_NINJA();
 
-
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
     public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();
     public static final Image GOLD_STAR_IMAGE = SpriteParser.getSpriteParser().getGoldStarImage();
