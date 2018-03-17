@@ -10,6 +10,7 @@ public class Player extends Entity {
     private int gold;
     private Equipment equipment = new Equipment(this);
     private int skillPointsUsed;
+    private int skillPointsPerLevel = 5;
 
     public Player(Role role) {
         this.role = role;
@@ -69,7 +70,7 @@ public class Player extends Entity {
     }
 
     public boolean canIncrementSkill(){
-        if(getLevel()*5 > skillPointsUsed)
+        if(getLevel()*skillPointsPerLevel > skillPointsUsed)
             return true;
         else
             return false;
@@ -77,6 +78,10 @@ public class Player extends Entity {
 
     public void skillPointIncremented(){
         skillPointsUsed++;
+    }
+
+    public int getSkillPointsAvailable(){
+        return (getLevel()*skillPointsPerLevel - skillPointsUsed);
     }
 
     public Equipment getEquipment() {
