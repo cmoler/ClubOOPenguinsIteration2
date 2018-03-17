@@ -12,6 +12,9 @@ public class Inventory {
 
     private List<TakeableItem> items;
 
+    private int selectedX = 0;
+    private int selectedY = 0;
+
     public InventoryIterator getIterator(){
         return new InventoryIterator();
     }
@@ -52,6 +55,27 @@ public class Inventory {
         return itemExists;
     }
 
+    public int getSelectedX() {
+        return selectedX;
+    }
+
+    public int getSelectedY() {
+        return selectedY;
+    }
+
+    public void scrollHorizontal(int i){
+        selectedX += i;
+        if(selectedX < 0) selectedX = 7;
+        else if(selectedX > 7) selectedX = 0;
+    }
+
+    public void scrollVeritical(int i){
+        selectedY += i;
+        int numberOfColumns = (int)Math.ceil(((double)items.size())/7.0);
+
+        if(selectedY < 0) selectedY = numberOfColumns;
+        else if(selectedY > numberOfColumns) selectedY = 0;
+    }
 
     public void attach(Viewport viewport){
         observers.add(viewport);

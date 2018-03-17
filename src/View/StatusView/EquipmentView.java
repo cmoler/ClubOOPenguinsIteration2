@@ -14,8 +14,8 @@ import java.util.List;
 
 public class EquipmentView extends Viewport {
 
-    private final int EQUIPMENT_X = (int) (Commons.SCREEN_WIDTH * 660.0/765.0);
-    private final int EQUIPMENT_Y = (int) (Commons.SCREEN_HEIGHT * 250.0/501.0);
+    private final int EQUIPMENT_X = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private final int EQUIPMENT_Y = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
 
     private Equipment equipment;
     private String head = null;
