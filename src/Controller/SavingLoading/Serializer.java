@@ -64,7 +64,7 @@ public class Serializer implements Saver{
     JSONObject playerRole = new JSONObject();
 
     public void serializePlayer(Player player) {
-        this.player.put("Class", saveClass(player.getRole()));
+        this.player.put("Role", saveRole(player.getRole()));
         this.player.put("Level", player.getLevel());
         this.player.put("Location", saveLocation(player.getLocation()));
         this.player.put("Inventory", saveInventory(player.getInventory()));
@@ -73,7 +73,7 @@ public class Serializer implements Saver{
         this.player.put("HP", player.getHealth());
         this.player.put("MaxHP", player.getMaxHealth());
         this.player.put("Mana", player.getMana());
-//        this.player.put("MaxMana", player.getMaxMana());
+        this.player.put("MaxMana", player.getMaxMana());
         this.player.put("XP", player.getExperience());
         this.player.put("Gold", player.getGold());
     }
@@ -145,14 +145,14 @@ public class Serializer implements Saver{
         return entityLocationJSON;
     }
 
-    private JSONObject saveClass(Role role){
-        JSONObject classJSON = new JSONObject();
-        classJSON.put("BindWoundsLevel", role.getBindWounds());
-        classJSON.put("BargainLevel", role.getBargain());
-        classJSON.put("ObservationLevel", role.getObservation());
+    private JSONObject saveRole(Role role){
+        JSONObject roleJSON = new JSONObject();
+        roleJSON.put("BindWoundsLevel", role.getBindWounds());
+        roleJSON.put("BargainLevel", role.getBargain());
+        roleJSON.put("ObservationLevel", role.getObservation());
         role.save(this);
-        classJSON.put("Role", playerRole);
-        return classJSON;
+        roleJSON.put("Role", playerRole);
+        return roleJSON;
     }
 
     //DANGER
