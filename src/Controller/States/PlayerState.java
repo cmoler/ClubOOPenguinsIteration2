@@ -1,9 +1,9 @@
 package Controller.States;
 
 import Controller.ControllerMediator;
-import Controller.Controllers.EntityController;
+import Controller.Controllers.PlayerController;
 import Controller.SavingLoading.GameLoader;
-import Model.Entity.Entity;
+import Model.Map.Direction;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,18 +17,17 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.function.Consumer;
 
-public class EntityState implements ControllerState {
+public class PlayerState implements ControllerState {
 
     ControllerMediator controllerMediator;
-    EntityController entityController;
+    PlayerController playerController;
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public EntityState(GameLoader gameLoader, ControllerMediator controllerMediator){
+    public PlayerState(GameLoader gameLoader, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        this.entityController = new EntityController(gameLoader);
+        this.playerController = new PlayerController(gameLoader);
         loadKeyBindings();
     }
 
@@ -182,79 +181,79 @@ public class EntityState implements ControllerState {
 
     @Override
     public void setActive() {
-        entityController.setActive();
+        playerController.setActive();
     }
 
 
     private void moveN() {
-
+        playerController.move(Direction.N);
     }
 
     private void moveNE() {
-
+        playerController.move(Direction.NE);
     }
 
     private void moveE() {
-
+        playerController.move(Direction.E);
     }
 
     private void moveSE() {
-
+        playerController.move(Direction.SE);
     }
 
     private void moveS() {
-
+        playerController.move(Direction.S);
     }
 
     private void moveSW() {
-
+        playerController.move(Direction.SW);
     }
 
     private void moveW() {
-
+        playerController.move(Direction.W);
     }
 
     private void moveNW() {
-
+        playerController.move(Direction.NW);
     }
 
     private void openMenu() {
-
+        controllerMediator.changeToMenuState();
     }
 
     private void openInventory() {
-
+        controllerMediator.changeToInventoryState();
     }
 
     private void openEquipment() {
-
+        controllerMediator.changeToEquipmentState();
     }
 
     private void openSkills() {
-
+        controllerMediator.changeToSkillsState();
     }
 
     private void interact(){
-
+        // TODO
     }
 
     private void slot1() {
-
+        playerController.useItem(0);
     }
 
     private void slot2() {
-
+        playerController.useItem(1);
     }
 
     private void slot3() {
-
+        playerController.useItem(2);
     }
 
     private void slot4() {
-
+        playerController.useItem(3);
     }
 
     private void slot5() {
-
+        playerController.useItem(4);
     }
 }

@@ -20,11 +20,6 @@ public class EquipmentController implements Controller{
 
     }
 
-    public void equipItem(int indexOfItemInInventory){
-        TakeableItem item = inventory.getItem(indexOfItemInInventory);
-        equipment.equip(item);
-    }
-
     public void unEquipUsableItem(int indexOfItemInInventory){
         equipment.unEquipUsableItem(indexOfItemInInventory);
     }
@@ -33,7 +28,4 @@ public class EquipmentController implements Controller{
         equipment.unEquipWearableItem(armorType);
     }
 
-    public void useItem(int index){
-        equipment.useItem(index);
-    }
 }

@@ -134,38 +134,39 @@ public class InventoryState implements ControllerState {
     }
 
     private void openMenu() {
-
+        controllerMediator.changeToMenuState();
     }
 
     private void openEquipment() {
-
+        controllerMediator.changeToEquipmentState();
     }
 
     private void exitInventory() {
-
+        controllerMediator.changeToEntityState();
     }
 
     private void openSkills() {
-
+        controllerMediator.changeToSkillsState();
     }
 
     private void equipItem() {
-
+        // TODO
+//        inventoryController.equipItem(); // needs index
     }
 
     private void scrollLeft() {
-
+        // TODO
     }
 
     private void scrollRight() {
-
+        // TODO
     }
 
     private void scrollUp() {
-
+        // TODO
     }
 
     private void scrollDown() {
-
+        // TODO
     }
 }
