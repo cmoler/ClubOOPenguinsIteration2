@@ -9,6 +9,8 @@ import javafx.beans.Observable;
 public class Role {
 
     protected Entity entity;
+    protected int selected;
+
     private BindWounds bindWounds;
     private Bargain bargain;
     private Observation observation;
@@ -31,20 +33,49 @@ public class Role {
         return observation.getPoints();
     }
 
-    public void addBindWounds(int points){
+    private void addBindWounds(int points){
         bindWounds.addPoints(points);
     }
 
-    public void addBargain(int points){
+    private void addBargain(int points){
         bargain.addPoints(points);
     }
 
-    public void addObservation(int points){
+    private void addObservation(int points){
         observation.addPoints(points);
     }
 
     public void bindWounds(){
         bindWounds.use(this.entity);
+    }
+
+    public void scroll(int i){
+        selected += i;
+        correctSelected();
+    }
+
+    protected void correctSelected(){
+        if(selected < 0) selected = 2;
+        if(selected > 2) selected = 0;
+    }
+
+    public void increaseSkill(int points){
+        if(entity.canIncrementSkill()) {
+            switch (selected) {
+                case 0:
+                    addBindWounds(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 1:
+                    addBargain(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 2:
+                    addObservation(points);
+                    entity.skillPointIncremented();
+                    break;
+            }
+        }
     }
 
     public RoleType getRoleType() { return RoleType.Base; }

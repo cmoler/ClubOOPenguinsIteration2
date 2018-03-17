@@ -54,5 +54,38 @@ public class Sneak extends Role {
     }
 
     @Override
+    protected void correctSelected(){
+        if(selected < 0) selected = 6;
+        if(selected > 6) selected = 0;
+    }
+
+    @Override
+    public void increaseSkill(int points){
+        if(entity.canIncrementSkill()) {
+            switch (selected) {
+                case 3:
+                    addPickPocket(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 4:
+                    addDetectAndRemoveTrap(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 5:
+                    addCreep(points);
+                    entity.skillPointIncremented();
+                    break;
+                case 6:
+                    addRangedWeapon(points);
+                    entity.skillPointIncremented();
+                    break;
+                default:
+                    super.increaseSkill(points);
+                    break;
+            }
+        }
+    }
+
+    @Override
     public RoleType getRoleType() { return RoleType.Sneak; }
 }
