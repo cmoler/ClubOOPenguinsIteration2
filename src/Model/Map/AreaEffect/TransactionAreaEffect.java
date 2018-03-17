@@ -18,7 +18,8 @@ public class TransactionAreaEffect extends OneShotAreaEffect {
         Player player = (Player) entity;
         if (player.getGold() > shopItem.getValue()){
             player.takeItem(shopItem);
-            player.modifyGold(-shopItem.getValue());
+            int itemCost = shopItem.getValue()-player.getBargain();
+            player.modifyGold(-itemCost);
             setActive(false);
         }
     }
