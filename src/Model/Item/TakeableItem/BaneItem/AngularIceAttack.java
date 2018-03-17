@@ -21,7 +21,7 @@ import static Model.Map.Direction.*;
 public class AngularIceAttack extends BaneItem {
 
     public AngularIceAttack(){
-        this.name = "iceAttacks";
+        this.name = "angularIceAttack";
     }
 
     private int manaNeeded = 5;
