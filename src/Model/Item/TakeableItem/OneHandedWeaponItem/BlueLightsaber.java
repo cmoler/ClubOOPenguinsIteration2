@@ -13,6 +13,10 @@ import java.util.concurrent.TimeUnit;
 
 public class BlueLightsaber extends OneHandedWeaponItem{
 
+    public BlueLightsaber(){
+        this.name = "blueLightsaber";
+    }
+
     private double damageAmount = 1.0; // gets multiplied by skill level
     private double secondsPerUse = 1.25;
 

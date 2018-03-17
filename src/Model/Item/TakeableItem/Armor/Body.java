@@ -4,6 +4,10 @@ import Model.Entity.Player;
 import Model.Item.TakeableItem.WearableItem;
 
 public class Body extends WearableItem {
+
+    public Body(){
+        this.name = "chest";
+    }
     @Override
     public void putOn(Player player) {
 

@@ -12,6 +12,10 @@ import Model.Map.World;
 
 public class Staff extends UseableItem {
 
+    public Staff(){
+        this.name = "staff";
+    }
+
     private int damage = 15;
 
     public boolean canEquip(Player entity) {

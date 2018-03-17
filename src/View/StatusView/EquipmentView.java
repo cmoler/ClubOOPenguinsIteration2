@@ -25,7 +25,7 @@ public class EquipmentView extends Viewport {
 //    @Override
 //    public void draw(Graphics2D graphics2D) {
 //        Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
-//        if(equipment.getEquipped() != null)
+//        if(equipment.getSlot() != null)
 //        graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
 //        if(selected){
 //            graphics2D.setColor(new Color(200, 200, 50, 90));

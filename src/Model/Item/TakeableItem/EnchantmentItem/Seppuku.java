@@ -13,6 +13,10 @@ import java.util.Random;
 
 public class Seppuku extends EnchantmentItem {
 
+    public Seppuku(){
+        this.name = "seppuku";
+    }
+
     private int manaNeeded = 20;
 
     protected void apply(Entity entityAtTarget){

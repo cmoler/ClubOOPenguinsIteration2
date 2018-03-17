@@ -50,7 +50,7 @@ public class Equipment {
         return false;
     }
 
-    public TakeableItem getEquipped(int index) {
+    public TakeableItem getSlot(int index) {
         return hotbar.getItem(index);
     }
 
@@ -67,6 +67,10 @@ public class Equipment {
 
     public void detach(Viewport viewport){
         observers.remove(viewport);
+    }
+
+    public int getEquipmentSize(){
+        return equipmentSize;
     }
 
     public void notifyView(){
