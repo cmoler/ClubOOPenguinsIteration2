@@ -381,7 +381,7 @@ public class Serializer implements Saver{
     }
 
     @Override
-    public String saveStaff(Staff staff) {
+    public String saveStaff(Model.Item.TakeableItem.StaffItem.Staff staff) {
         return "Staff";
     }
 

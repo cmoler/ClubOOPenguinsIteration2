@@ -38,13 +38,15 @@ public class Deserializer {
         int mana  = deserializeMana(saveFileJSON);
         int XP    = deserializeXP(saveFileJSON);
         int gold  = deserializeGold(saveFileJSON);
+
+        return null;
     }
 
     private Role deserializeRole(JSONObject playerClass){
 
         BindWounds bindWounds = new BindWounds(playerClass.getInt("BindWoundsLevel"));
         Bargain bargain = new Bargain(playerClass.getInt("BargainLevel"));
-        Observation observation = new Observation(playerClass.getInt("ObservationLevel"));
+        //Observation observation = new Observation(playerClass.getInt("ObservationLevel"));
 
         //JSONObject roleJSON = playerClass.getJSONObject("SpecificRole");
 
@@ -59,17 +61,22 @@ public class Deserializer {
             return classJSON;
         }
         */
+
+        return null;
     }
 
     private Location deserializeLocation(JSONObject location){
+        return null;
 
     }
 
     private Inventory deserializeInventory(JSONObject inventory){
+        return null;
 
     }
 
     private Equipment deserializeEquipment(JSONObject equipment){
+        return null;
 
     }
 

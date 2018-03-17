@@ -273,13 +273,13 @@ public class SpriteParser {
         final int height = 40;
         final int rows = 1;
         final int cols = 7;
-        avatarSprites_BLUE = new BufferedImage[rows * cols];
+        avatarSprites_RED = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                avatarSprites_BLUE[(i * cols) + j] = bigImg.getSubimage(
+                avatarSprites_RED[(i * cols) + j] = bigImg.getSubimage(
                         j * width,
                         i * height,
                         width,
