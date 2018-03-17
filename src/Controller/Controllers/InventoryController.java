@@ -1,18 +1,16 @@
 package Controller.Controllers;
 
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Item.TakeableItem.TakeableItem;
 
 public class InventoryController implements Controller{
 
-    private Inventory inventory;
-    private Equipment equipment;
+    public InventoryController(GameBuilder gameBuilder){
 
-    public InventoryController(GameLoader gameLoader){
-        inventory = gameLoader.getInventory();
-        equipment = gameLoader.getEquipment();
+        inventory = gameBuilder.getInventory();
+        equipment = gameBuilder.getEquipment();
     }
 
     @Override

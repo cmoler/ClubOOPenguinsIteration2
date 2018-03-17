@@ -1,10 +1,12 @@
 package Model.Entity;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Role;
 import Model.Map.Location;
+import Model.Saveable;
 
-public class Player extends Entity {
+public class Player extends Entity implements Saveable{
     private Role role;
     private int mana;
     private int gold;
@@ -88,5 +90,10 @@ public class Player extends Entity {
 
     public Equipment getEquipment() {
         return equipment;
+    }
+
+    @Override
+    public void save(Saver saver) {
+        saver.serializePlayer(this);
     }
 }

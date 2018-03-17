@@ -1,7 +1,7 @@
 package Controller;
 
-import Controller.SavingLoading.GameLoader;
-import Controller.SavingLoading.GameSaver;
+import Controller.SavingLoading.GameBuilder;
+import Controller.SavingLoading.Serializer;
 import Controller.States.*;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
@@ -25,8 +25,7 @@ public class ControllerMediator {
 
     private KeyBindingState keyBindingState;
 
-    private GameLoader gameLoader;
-    private GameSaver gameSaver;
+    private GameBuilder gameBuilder;
 
     private Viewport viewport;
     private StatusViewPort statusViewPort;
@@ -38,43 +37,33 @@ public class ControllerMediator {
 
     // initial load
     public ControllerMediator(){
-
-        gameLoader = new GameLoader();
-        gameSaver = new GameSaver();
-
-        getViewsFromLoader();
+        gameBuilder = new GameBuilder();
+        getViewsFromBuilder();
         loadStates();
         attachInputToViews();
         changeToMenuState();
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+        startTimer();
     }
 
-    private void getViewsFromLoader(){
-        menuViewPort = gameLoader.getMainMenuViewport();
-        gameFrame = gameLoader.getGameFrame();
+    private void getViewsFromBuilder(){
+        menuViewPort = gameBuilder.getMainMenuViewport();
+        gameFrame = gameBuilder.getGameFrame();
     }
 
     private void loadStates(){
         keyBindingState = new KeyBindingState(this);
-        menuState = new MenuState(gameLoader,this);
+        menuState = new MenuState(gameBuilder,this);
         activeState = menuState;
-        entityState = new PlayerState(gameLoader, this);
-        inventoryState = new InventoryState(gameLoader, this);
-        equipmentState = new EquipmentState(gameLoader, this);
-        skillsState = new SkillsState(gameLoader, this);
+        entityState = new EntityState(gameBuilder, this);
+        inventoryState = new InventoryState(gameBuilder, this);
+        equipmentState = new EquipmentState(gameBuilder, this);
+        skillsState = new SkillsState(gameBuilder, this);
     }
 
     private void attachInputToViews(){
         input = new Input(activeState);
         gameFrame.addKeyListener(input);
         menuViewPort.addKeyListener(input);
-    }
-
-    // when loading a save game/new game: <- I (JAD) dont think this should be here; should be in GameLoader
-    public void loadGame(String fileName){
-        gameLoader.loadGame(fileName);
     }
 
     private class ScheduleTask extends TimerTask {
@@ -130,12 +119,17 @@ public class ControllerMediator {
     }
 
     public void reloadKeyBindings(){
-        gameLoader.getKeyBindings().loadKeyBindings();
+        gameBuilder.getKeyBindings().loadKeyBindings();
         entityState.loadKeyBindings();
         menuState.loadKeyBindings();
         inventoryState.loadKeyBindings();
         equipmentState.loadKeyBindings();
         skillsState.loadKeyBindings();
+    }
+
+    private void startTimer(){
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
     }
 
 }

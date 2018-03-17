@@ -1,98 +1,53 @@
 package Controller.SavingLoading;
 
-import Controller.OOPenguinGameFrame;
-import Model.Entity.Equipment;
-import Model.Entity.Inventory;
-import Model.Entity.Player;
+import Model.Entity.*;
 import Model.Entity.Role.Role;
-import View.AreaView.AreaViewPort;
-import View.MenuView.MainMenuView;
-import View.StatusView.EquipmentView;
-import View.StatusView.InventoryView;
-import View.StatusView.SkillsView;
-import View.Viewport;
+import Model.Map.Location;
+import Model.Map.World;
+import org.json.*;
 
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.util.Scanner;
 
 public class GameLoader {
 
-    private String saveGameDirectory;
+    private Deserializer deserializer;
 
-    private OOPenguinGameFrame gameFrame;
-    private Viewport areaViewport;
-    private MainMenuView menuViewPort;
-    private MemorySlots memorySlots;
+    private World world = World.getWorld();
+    private Player player;
 
-    private KeyBindings keyBindings;
+    public GameLoader(String filePath) throws FileNotFoundException{
+        try{
 
-    public GameLoader(){
-        menuViewPort = new MainMenuView();
-        gameFrame = new OOPenguinGameFrame();
-        gameFrame.add(menuViewPort);
-        menuViewPort.setVisible(true);
-        memorySlots = new MemorySlots(this);
+            deserializer = new Deserializer(load(filePath));
 
-        keyBindings = new KeyBindings();
-    }
+            //world is a singleton, so deserializer can access world
+            deserializer.deserializeWorld();
 
-    public void loadGame(String fileName){
-        String source = "";
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            source = fileReader.getEncoding();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+            //deserialize gives back a Player object
+            player = deserializer.deserializePlayer();
 
-        System.out.println("file = " + source);
-    }
-
-    public void saveGame(String fileName){
-        String source = "";
-        try {
-            FileWriter fileWriter = new FileWriter(fileName);
-            //Todo: go through model and use saver
-        } catch (Exception e){
-            e.printStackTrace();
+        } catch (FileNotFoundException fileNotFoundException){
+            throw fileNotFoundException;
         }
     }
-
-    public MemorySlots getMemorySlots(){return memorySlots;}
-
-
-    public OOPenguinGameFrame getGameFrame() { return gameFrame; }
-
-
-
-    public AreaViewPort getAreaViewport(){
-        return null;
-    }
-
-    public EquipmentView getEquipmentView() { return null; }
-
-    public InventoryView getInventoryView() { return null; }
-
-    public MainMenuView getMainMenuViewport() { return menuViewPort; }
-
-    public SkillsView getSkillsView() { return null; }
 
     public Player getPlayer(){
-        return null;
+        return player;
     }
 
-    public Inventory getInventory(){
-        return null;
-    }
+    private JSONObject load(String filePath) throws FileNotFoundException {
+        try {
 
-    public Equipment getEquipment(){
-        return null;
-    }
+            File saveFile = new File(filePath);
+            String saveFileContent = new Scanner(saveFile).useDelimiter("\\Z").next();
+            JSONObject saveFileJSON = new JSONObject(saveFileContent);
 
-    public Role getSkills() { return null; }
+            return  saveFileJSON;
 
-    public KeyBindings getKeyBindings() {
-        return keyBindings;
+        } catch (FileNotFoundException fileNotFoundException) {
+            throw fileNotFoundException;
+        }
     }
 }

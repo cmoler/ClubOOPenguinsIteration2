@@ -3,25 +3,95 @@ package Controller.SavingLoading;
 import Model.Entity.Entity;
 import Model.Entity.Equipment;
 import Model.Entity.Inventory;
+import Model.Entity.Player;
+import Model.Entity.Role.Role;
+import Model.Entity.Role.Smasher;
+import Model.Entity.Role.Sneak;
+import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.Skill;
+import Model.Entity.Skill.Staff;
+import Model.Item.InteractiveItem.InteractiveItem;
+import Model.Item.OneShotItem.GoldOneShotItem;
+import Model.Item.OneShotItem.HealingOneShotItem;
+import Model.Item.OneShotItem.ManaOneShotItem;
+import Model.Item.OneShotItem.XPOneShotItem;
+import Model.Item.TakeableItem.Armor.Body;
+import Model.Item.TakeableItem.Armor.Helmet;
+import Model.Item.TakeableItem.Armor.Leg;
+import Model.Item.TakeableItem.Armor.Ring;
+import Model.Item.TakeableItem.BaneItem.AngularIceAttack;
+import Model.Item.TakeableItem.BaneItem.LinearIceAttack;
+import Model.Item.TakeableItem.BaneItem.RadialIceBomb;
+import Model.Item.TakeableItem.BoonItem.Heal;
+import Model.Item.TakeableItem.BoonItem.IncreaseMaxHealth;
+import Model.Item.TakeableItem.BoonItem.IncreaseXP;
+import Model.Item.TakeableItem.BrawlingItem.BrassKnuckles;
+import Model.Item.TakeableItem.BrawlingItem.SpikedGloves;
+import Model.Item.TakeableItem.BrawlingItem.SwordHands;
+import Model.Item.TakeableItem.EnchantmentItem.Charm;
+import Model.Item.TakeableItem.EnchantmentItem.Insomnia;
+import Model.Item.TakeableItem.EnchantmentItem.Seppuku;
+import Model.Item.TakeableItem.OneHandedWeaponItem.BlueLightsaber;
+import Model.Item.TakeableItem.OneHandedWeaponItem.Mjolnir;
+import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
+import Model.Item.TakeableItem.Potion.HealthPotion;
+import Model.Item.TakeableItem.Potion.ManaPotion;
+import Model.Item.TakeableItem.Potion.XPPotion;
+import Model.Item.TakeableItem.Projectile.AngularProjectile;
+import Model.Item.TakeableItem.Projectile.LinearProjectile;
+import Model.Item.TakeableItem.Projectile.RadialProjectile;
+import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
+import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
+import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
 public interface Saver {
 
-    public String saveEntity(Entity entity);
-
-    public String saveLocation(Location location);
-
-    public String saveMap(Map map);
-
-    public String saveWorld(World world);
-
-    public String saveInventory(Inventory inventory);
-    
-    public String saveSkill(Skill skill);
-    
-    public String saveEquipment(Equipment equipment);
-
+    public void serializePlayer(Player entity);
+    public void serializeWorld(World world);
+    public void saveSmasher(Smasher role);
+    public void saveSummoner(Summoner role);
+    public void saveSneak(Sneak role);
+    public String saveInteractiveItem(InteractiveItem interactiveItem);
+    public String saveGoldOneShotItem(GoldOneShotItem goldOneShotItem);
+    public String saveHealingOneShotItem(HealingOneShotItem healingOneShotItem);
+    public String saveManaOneShotItem(ManaOneShotItem manaOneShotItem);
+    public String saveXPOneShotItem(XPOneShotItem xpOneShotItem);
+    public String saveBody(Body body);
+    public String saveHelmet(Helmet helmet);
+    public String saveLeg(Leg leg);
+    public String saveRing(Ring ring);
+    public String saveAngulariceAttack(AngularIceAttack angularIceAttack);
+    public String saveLinearIceAttack(LinearIceAttack linearIceAttack);
+    public String saveRadialIceBomb(RadialIceBomb radialIceBomb);
+    public String saveHeal(Heal heal);
+    public String saveIncreaseMaxHealth(IncreaseMaxHealth increaseMaxHealth);
+    public String saveIncreaseXP(IncreaseXP increaseXP);
+    public String saveBrassKnuckles(BrassKnuckles brassKnuckles);
+    public String saveSpikedGloves(SpikedGloves spikedGloves);
+    public String saveSwordHands(SwordHands swordHands);
+    public String saveCharm(Charm charm);
+    public String saveInsomnia(Insomnia insomnia);
+    public String saveSeppuku(Seppuku seppuku);
+    public String saveBlueLightSaber(BlueLightsaber blueLightsaber);
+    public String saveMjolnir(Mjolnir mjolnir);
+    public String saveThunderBlade(ThunderBlade thunderBlade);
+    public String saveHealthPotion(HealthPotion healthPotion);
+    public String saveManaPotion(ManaPotion manaPotion);
+    public String saveXPPotion(XPPotion xpPotion);
+    public String saveAngularProjectile(AngularProjectile angularProjectile);
+    public String saveLinearProjectile(LinearProjectile linearProjectile);
+    public String saveRadialProjectile(RadialProjectile radialProjectile);
+    public String savePizza(Pizza pizza);
+    public String saveSnowLauncher(SnowLauncher snowLauncher);
+    public String saveSnowShuriken(SnowShuriken snowShuriken);
+    public String saveStaff(Staff staff);
+    public String saveInquisitorLightsaber(InquisitorLightsaber inquisitorLightsaber);
+    public String saveJeweledCutlass(JeweledCutlass jeweledCutlass);
+    public String saveWaterHammer(WaterHammer waterHammer);
 }

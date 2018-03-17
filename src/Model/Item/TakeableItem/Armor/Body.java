@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Armor;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Player;
 import Model.Item.TakeableItem.WearableItem;
 
@@ -22,5 +23,10 @@ public class Body extends WearableItem {
     @Override
     public String getSlot() {
         return "body";
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveBody(this);
     }
 }

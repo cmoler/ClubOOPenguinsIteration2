@@ -2,9 +2,7 @@ package Controller.States;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.EquipmentController;
-import Controller.SavingLoading.GameLoader;
-import Model.Entity.Entity;
-import Model.Entity.Equipment;
+import Controller.SavingLoading.GameBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,7 +17,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
 public class EquipmentState implements ControllerState {
 
@@ -28,9 +25,9 @@ public class EquipmentState implements ControllerState {
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public EquipmentState(GameLoader gameLoader, ControllerMediator controllerMediator){
+    public EquipmentState(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        this.equipmentController = new EquipmentController(gameLoader);
+        this.equipmentController = new EquipmentController(gameBuilder);
         loadKeyBindings();
     }
 

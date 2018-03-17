@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.BoonItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.TakeableItem;
@@ -28,4 +29,8 @@ public class IncreaseMaxHealth extends BoonItem {
         entityUsingItem.modifyMaxHealth(maxHealthIncrement);
     }
 
+    @Override
+    public String save(Saver saver) {
+        return saver.saveIncreaseMaxHealth(this);
+    }
 }

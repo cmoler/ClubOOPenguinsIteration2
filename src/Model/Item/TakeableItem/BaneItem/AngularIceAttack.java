@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.BaneItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Summoner;
 import Model.Item.TakeableItem.Projectile.AngularProjectile;
@@ -45,6 +46,11 @@ public class AngularIceAttack extends BaneItem {
 
         super.addProjectile(projectile);
 
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveAngulariceAttack(this);
     }
 
 }

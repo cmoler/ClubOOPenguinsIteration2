@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Projectile;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Map.Direction;
 import Model.Map.Location;
@@ -86,5 +87,10 @@ public class LinearProjectile implements Projectile {
             if(damageAmount <= 0 || locationOn.hasObstacle())
                 done = true;
         }
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveLinearProjectile(this);
     }
 }

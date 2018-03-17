@@ -1,19 +1,25 @@
 package Model.Map;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
-import View.AreaView.MapView;
+import Model.Saveable;
 import View.Viewport;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class World {
+public class World implements Saveable{
 
     private List<Viewport> observers = new ArrayList<Viewport>();
 
     private static World instance = null;
     private Map currentMap;
+
+    public HashMap<String, Map> getMaps() {
+        return maps;
+    }
+
     private HashMap<String,Map> maps = new HashMap<String,Map>();
 
     protected World(){
@@ -42,6 +48,7 @@ public class World {
     }
 
     public void addMap(String mapID, Map map){
+        map.setMapID(mapID);
         maps.put(mapID, map);
     }
 
@@ -61,5 +68,10 @@ public class World {
         for (Viewport viewport : observers){
             viewport.update();
         }
+    }
+
+    @Override
+    public void save(Saver saver) {
+        saver.serializeWorld(this);
     }
 }

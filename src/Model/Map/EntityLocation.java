@@ -1,7 +1,9 @@
 package Model.Map;
 
 import Model.Entity.Entity;
+import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -60,6 +62,13 @@ public class EntityLocation {
         }
     }
 
-
-
+    public ArrayList<Pair> getAssociations(){
+        ArrayList<Pair> p = new ArrayList<>();
+        Iterator<Location> e = entityLocations.keySet().iterator();
+        while(e.hasNext()){
+            Location location = e.next();
+            p.add(new Pair(location, entityLocations.get(location)));
+        }
+        return p;
+    }
 }

@@ -1,52 +1,30 @@
 package Controller.SavingLoading;
 
-import Model.Entity.Entity;
-import Model.Entity.Equipment;
-import Model.Entity.Inventory;
-import Model.Entity.Skill.Skill;
-import Model.Map.Location;
-import Model.Map.Map;
-import Model.Map.World;
+import org.json.JSONObject;
 
-public class GameSaver implements Saver{
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-
-    @Override
-    public String saveEntity(Entity entity) {
-        String saveString = "";
-        saveString += entity.getHealth();
-        //...
-        return entity.toString();
+public class GameSaver {
+    GameBuilder gameBuilder;
+    GameSaver(GameBuilder gameBuilder){
+        this.gameBuilder = gameBuilder;
     }
 
-    @Override
-    public String saveLocation(Location location) {
-        return location.toString();
-    }
+    void save(String filepath){
+        JSONObject saveJSON = new JSONObject();
+        Serializer serializer = new Serializer();
+        gameBuilder.getPlayer().save(serializer);
+        gameBuilder.getWorld().save(serializer);
+        saveJSON.put("Player", serializer.getPlayer());
+        saveJSON.put("World", serializer.getWorld());
 
-    @Override
-    public String saveMap(Map map) {
-        return map.toString();
+        try {
+            FileWriter fileWriter = new FileWriter(new File(filepath));
+            fileWriter.write(saveJSON.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-    @Override
-    public String saveWorld(World world) {
-        return world.toString();
-    }
-
-    @Override
-    public String saveInventory(Inventory inventory) {
-        return inventory.toString();
-    }
-
-    @Override
-    public String saveSkill(Skill skill) {
-        return skill.toString();
-    }
-
-    @Override
-    public String saveEquipment(Equipment equipment) {
-        return equipment.toString();
-    }
-
 }

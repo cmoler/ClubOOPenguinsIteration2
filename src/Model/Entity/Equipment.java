@@ -1,11 +1,13 @@
 package Model.Entity;
 
+import Model.Item.Item;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.UseableItem;
 import Model.Item.TakeableItem.WearableItem;
 import View.Viewport;
 import javafx.util.Pair;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,6 +88,10 @@ public class Equipment {
         return hotbar.getItem(index);
     }
 
+    public List<TakeableItem> getHotbarItems(){
+        return hotbar.getItems();
+    }
+
     public void useItem(int index){
         if (hotbar.getItem(index) != null){
             TakeableItem item = hotbar.getItem(index);
@@ -155,8 +161,8 @@ public class Equipment {
 
     private class WearableItems{
         private WearableItem head = null;
-        private WearableItem body = null;
         private WearableItem legs = null;
+        private WearableItem body = null;
         private WearableItem ring = null;
 
         private int selectedX = 0;
@@ -231,6 +237,10 @@ public class Equipment {
             }
             return null;
         }
+
+        public List<TakeableItem> getHotbarItems(){
+            return hotbar.getItems();
+        }
     }
 
     private class UsableItems{
@@ -263,6 +273,10 @@ public class Equipment {
                 return items.get(index);
             else
                 return null;
+        }
+
+        public List<TakeableItem> getItems(){
+            return items;
         }
     }
 }

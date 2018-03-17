@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.OneHandedWeaponItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
@@ -29,4 +30,8 @@ public class ThunderBlade extends OneHandedWeaponItem{
         return damageAmount;
     }
 
+    @Override
+    public String save(Saver saver) {
+        return saver.saveThunderBlade(this);
+    }
 }

@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.StaffItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.Summoner;
@@ -37,4 +38,8 @@ public class Staff extends UseableItem {
         }
     }
 
+    @Override
+    public String save(Saver saver) {
+        return saver.saveStaff(this);
+    }
 }

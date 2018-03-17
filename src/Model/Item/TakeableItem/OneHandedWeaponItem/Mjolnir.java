@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.OneHandedWeaponItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
@@ -27,6 +28,11 @@ public class Mjolnir extends OneHandedWeaponItem{
     @Override
     protected double getDamageAmount() {
         return damageAmount;
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveMjolnir(this);
     }
 
 }

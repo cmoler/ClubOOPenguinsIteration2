@@ -1,20 +1,19 @@
 package Controller.Controllers.MenuController;
 
-import Configs.Commons;
-import Controller.SavingLoading.GameLoader;
+import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.MemorySlots;
 import View.MenuView.SaveGameView;
 
 public class SaveGameController extends MainMenuController {
 
     private SaveGameView saveGameView;
-    private GameLoader gameLoader;
+    private GameBuilder gameBuilder;
     MemorySlots memorySlots;
 
-    public SaveGameController(GameLoader gameLoader, MainMenuController parent) {
-        saveGameView = gameLoader.getMainMenuViewport().getSaveGameView();
-        this.gameLoader = gameLoader;
-        this.memorySlots = gameLoader.getMemorySlots();
+    public SaveGameController(GameBuilder gameBuilder, MainMenuController parent) {
+        saveGameView = gameBuilder.getMainMenuViewport().getSaveGameView();
+        this.gameBuilder = gameBuilder;
+        this.memorySlots = gameBuilder.getMemorySlots();
         setMenuViewPort(saveGameView);
         saveGameView.setSlots(memorySlots);
     }

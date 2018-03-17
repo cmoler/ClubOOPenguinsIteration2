@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.RangedWeaponItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Sneak;
 import Model.Item.TakeableItem.BaneItem.RadialIceBomb;
@@ -41,6 +42,11 @@ public class Pizza extends RangedWeaponItem {
                 locationOfEntity, "Pizza");
 
         super.addProjectile(projectile);
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.savePizza(this);
     }
 
 }

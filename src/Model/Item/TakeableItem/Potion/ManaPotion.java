@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Potion;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Player;
 
 public class ManaPotion extends Potion {
@@ -15,4 +16,10 @@ public class ManaPotion extends Potion {
     protected void apply(Player entityUsingItem) {
         entityUsingItem.addMana(manaIncrement);
     }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveManaPotion(this);
+    }
+
 }
