@@ -6,6 +6,7 @@ import Model.Item.TakeableItem.WearableItem;
 public class Helmet extends WearableItem{
 
     public Helmet(){
+        super();
         this.name = "helmet";
     }
 

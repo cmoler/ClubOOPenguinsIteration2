@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class BrassKnuckles extends BrawlingItem {
 
     public BrassKnuckles(){
+        super();
         this.name = "brassKnuckles";
     }
 

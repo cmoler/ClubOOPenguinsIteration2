@@ -11,6 +11,7 @@ public class ChestInteractiveItem extends InteractiveItem {
     boolean isOpened;
 
     public ChestInteractiveItem(TakeableItem item, boolean isOpened){
+        name = "chestInteractiveItem";
         chestLoot = item;
         this.isOpened = isOpened;
     }

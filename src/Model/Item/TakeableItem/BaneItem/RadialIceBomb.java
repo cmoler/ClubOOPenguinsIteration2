@@ -20,6 +20,7 @@ import static Model.Map.Direction.*;
 public class RadialIceBomb extends BaneItem {
 
     public RadialIceBomb(){
+        super();
         this.name = "iceAttacks";
     }
 

@@ -6,6 +6,7 @@ import Model.Item.TakeableItem.WearableItem;
 public class Ring extends WearableItem {
 
     public Ring(){
+        super();
         this.name = "ring";
     }
     @Override

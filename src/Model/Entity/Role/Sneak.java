@@ -1,19 +1,14 @@
 package Model.Entity.Role;
 
-import Model.Entity.Entity;
 import Model.Entity.Skill.Creep;
 import Model.Entity.Skill.DetectAndRemoveTrap;
 import Model.Entity.Skill.PickPocket;
 import Model.Entity.Skill.RangedWeapon;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.AreaEffect.AreaEffectType;
-import Model.Map.AreaEffect.Trap;
+import Model.Map.AreaEffect.TrapAreaEffect;
 import Model.Map.Direction;
 import Model.Map.Location;
-import Model.Map.World;
-
-import java.awt.geom.Area;
-import java.util.Random;
 
 public class Sneak extends Role {
 
@@ -72,7 +67,7 @@ public class Sneak extends Role {
             Location adjLocation = location.getAdjacentAt(dir);
             AreaEffect areaEffect = adjLocation.getAreaEffect();
             if (areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
-                ((Trap) areaEffect).setVisible(detectChance);
+                ((TrapAreaEffect) areaEffect).setVisible(detectChance);
             }
         }
 

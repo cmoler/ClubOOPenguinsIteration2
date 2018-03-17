@@ -65,7 +65,7 @@ public class Player extends Entity {
         return gold;
     }
 
-    public void addGold(int gold){
+    public void modifyGold(int gold){
         this.gold += gold;
     }
 

@@ -24,6 +24,7 @@ import static Model.Map.Direction.NE;
 public class Pizza extends RangedWeaponItem {
 
     public Pizza(){
+        super();
         this.name = "pizza";
     }
 

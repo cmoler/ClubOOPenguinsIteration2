@@ -5,7 +5,8 @@ import Model.Item.TakeableItem.WearableItem;
 
 public class Leg extends WearableItem {
 
-    public void Leg(){
+    public Leg(){
+        super();
         this.name = "legs";
     }
     @Override

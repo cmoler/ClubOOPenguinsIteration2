@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class InquisitorLightsaber extends TwoHandedWeaponItem{
 
     public InquisitorLightsaber(){
+        super();
         this.name = "inquisitorLightsaber";
     }
 

@@ -11,6 +11,7 @@ import java.util.Random;
 public class Heal extends BoonItem {
 
     public Heal(){
+        super();
         this.name = "heal";
     }
 

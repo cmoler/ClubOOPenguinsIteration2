@@ -4,8 +4,12 @@ import Model.Entity.Player;
 
 public class GoldOneShotItem extends OneShotItem {
 
+    public GoldOneShotItem() {
+        name = "goldOneShotItem";
+    }
+
     @Override
     public void touch(Player entity) {
-        entity.addGold(35);
+        entity.modifyGold(35);
     }
 }

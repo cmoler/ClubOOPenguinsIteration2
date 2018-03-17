@@ -74,7 +74,14 @@ public class NPC extends Entity implements Updateable{
     @Override
     public void takeDamage(int damage) {
         super.takeDamage(damage);
-        pissOff();
+        if (isAlive()) {
+            pissOff();
+        }
+        else {
+            player.modifyGold(100);
+            player.gainExperience(50);
+        }
+
     }
 
     @Override

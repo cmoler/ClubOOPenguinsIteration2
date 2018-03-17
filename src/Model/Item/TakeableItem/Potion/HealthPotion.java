@@ -7,6 +7,7 @@ import Model.Map.Location;
 public class HealthPotion extends Potion {
 
     public HealthPotion(){
+        super();
         this.name = "healthPotion";
     }
 

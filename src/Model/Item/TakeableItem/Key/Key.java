@@ -10,6 +10,7 @@ public class Key extends UseableItem {
 
     public Key(){
         this.name = "key";
+        value = 15;
     }
 
     @Override

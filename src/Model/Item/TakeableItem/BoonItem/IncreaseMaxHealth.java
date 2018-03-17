@@ -10,6 +10,7 @@ import java.util.Random;
 public class IncreaseMaxHealth extends BoonItem {
 
     public IncreaseMaxHealth(){
+        super();
         this.name = "increaseMaxHealth";
     }
 

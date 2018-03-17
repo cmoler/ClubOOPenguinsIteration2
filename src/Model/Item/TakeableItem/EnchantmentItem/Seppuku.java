@@ -14,6 +14,7 @@ import java.util.Random;
 public class Seppuku extends EnchantmentItem {
 
     public Seppuku(){
+        super();
         this.name = "seppuku";
     }
 

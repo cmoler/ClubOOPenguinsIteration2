@@ -21,6 +21,7 @@ import static Model.Map.Direction.*;
 public class SnowShuriken extends RangedWeaponItem {
 
     public SnowShuriken(){
+        super();
         this.name = "snowShuriken";
     }
 

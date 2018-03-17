@@ -12,6 +12,7 @@ import Model.Utilites.Time;
 public class Mjolnir extends OneHandedWeaponItem{
 
     public Mjolnir(){
+        super();
         this.name = "mjolnir";
     }
 

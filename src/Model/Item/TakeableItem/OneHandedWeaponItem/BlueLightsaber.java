@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class BlueLightsaber extends OneHandedWeaponItem{
 
     public BlueLightsaber(){
+        super();
         this.name = "blueLightsaber";
     }
 

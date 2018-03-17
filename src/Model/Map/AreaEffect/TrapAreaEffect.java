@@ -4,11 +4,11 @@ import Model.Entity.Entity;
 
 import java.util.Random;
 
-public class Trap extends OneShotAreaEffect{
+public class TrapAreaEffect extends OneShotAreaEffect{
     boolean isVisible;
 
 
-    public Trap() {
+    public TrapAreaEffect() {
         isVisible = false;
     }
 
@@ -31,6 +31,7 @@ public class Trap extends OneShotAreaEffect{
     @Override
     protected void affect(Entity entity) {
         entity.takeDamage(entity.getMaxHealth()/2);
+        setActive(false);
     }
 
     @Override

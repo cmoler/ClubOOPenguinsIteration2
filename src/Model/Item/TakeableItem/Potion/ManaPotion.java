@@ -5,6 +5,7 @@ import Model.Entity.Player;
 public class ManaPotion extends Potion {
 
     public ManaPotion(){
+        super();
         this.name = "manaPotion";
     }
 

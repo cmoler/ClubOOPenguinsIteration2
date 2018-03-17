@@ -13,6 +13,7 @@ import Model.Map.World;
 public class Staff extends UseableItem {
 
     public Staff(){
+        super();
         this.name = "staff";
     }
 

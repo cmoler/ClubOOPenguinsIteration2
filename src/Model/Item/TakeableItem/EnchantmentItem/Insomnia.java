@@ -14,6 +14,7 @@ import java.util.Random;
 public class Insomnia extends EnchantmentItem {
 
     public Insomnia(){
+        super();
         this.name = "sleep";
     }
 
