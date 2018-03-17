@@ -1,5 +1,6 @@
 package Controller.Controllers;
 
+import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.GameLoader;
 import Model.Entity.Entity;
 import Model.Entity.Equipment;
@@ -11,9 +12,9 @@ public class PlayerController implements Controller {
     Player player;
     Equipment equipment;
 
-    public PlayerController(GameLoader gameLoader){
-        player = gameLoader.getPlayer();
-        equipment = gameLoader.getEquipment();
+    public PlayerController(GameBuilder gameBuilder){
+        player = gameBuilder.getPlayer();
+        equipment = gameBuilder.getEquipment();
     }
 
     @Override

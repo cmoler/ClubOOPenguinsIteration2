@@ -2,6 +2,7 @@ package Controller.States;
 
 import Controller.ControllerMediator;
 import Controller.Controllers.PlayerController;
+import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.GameLoader;
 import Model.Map.Direction;
 import org.w3c.dom.Document;
@@ -25,9 +26,9 @@ public class PlayerState implements ControllerState {
 
     Map<Integer, Runnable> keyBinding = new HashMap();
 
-    public PlayerState(GameLoader gameLoader, ControllerMediator controllerMediator){
+    public PlayerState(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.controllerMediator = controllerMediator;
-        this.playerController = new PlayerController(gameLoader);
+        this.playerController = new PlayerController(gameBuilder);
         loadKeyBindings();
     }
 

@@ -54,7 +54,7 @@ public class ControllerMediator {
         keyBindingState = new KeyBindingState(this);
         menuState = new MenuState(gameBuilder,this);
         activeState = menuState;
-        entityState = new EntityState(gameBuilder, this);
+        entityState = new PlayerState(gameBuilder, this);
         inventoryState = new InventoryState(gameBuilder, this);
         equipmentState = new EquipmentState(gameBuilder, this);
         skillsState = new SkillsState(gameBuilder, this);
