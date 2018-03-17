@@ -28,7 +28,8 @@ public class SpriteParser {
     private BufferedImage[] avatarSprites_NINJA;
 
     public Image getItemFromName(String name){
-        return null;
+        ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
+        return imageIcon.getImage();
     }
 
     public Image getIceImage(){
