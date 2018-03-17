@@ -3,7 +3,6 @@ package View.MenuView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
-import com.sun.prism.image.ViewPort;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
