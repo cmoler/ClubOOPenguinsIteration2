@@ -62,17 +62,13 @@ public class EntityLocation {
         }
     }
 
-    //todo: fix this ugly shit
     public ArrayList<Pair> getAssociations(){
         ArrayList<Pair> p = new ArrayList<>();
         Iterator<Location> e = entityLocations.keySet().iterator();
-        for(; e.hasNext(); e.next()){
-            p.add(new Pair(e.next(), entityLocations.get(e.next()) ));
+        while(e.hasNext()){
+            Location location = e.next();
+            p.add(new Pair(location, entityLocations.get(location)));
         }
-
         return p;
     }
-
-
-
 }

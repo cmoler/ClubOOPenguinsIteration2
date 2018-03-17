@@ -39,9 +39,11 @@ import Model.Item.TakeableItem.Projectile.RadialProjectile;
 import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
+import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
+import Model.Item.TakeableItem.UseableItem;
 import Model.Map.EntityLocation;
 import javafx.util.Pair;
 import org.json.*;
@@ -54,6 +56,7 @@ import Model.Map.Map;
 import Model.Map.World;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Serializer implements Saver{
     JSONObject world = new JSONObject();
@@ -66,10 +69,11 @@ public class Serializer implements Saver{
         this.player.put("Location", saveLocation(player.getLocation()));
         this.player.put("Inventory", saveInventory(player.getInventory()));
         this.player.put("Equipment", saveEquipment(player.getEquipment()));
-        this.player.put("HP", player.getHealth());
         this.player.put("EntityType", player.getEntityType());
+        this.player.put("HP", player.getHealth());
         this.player.put("MaxHP", player.getMaxHealth());
         this.player.put("Mana", player.getMana());
+//        this.player.put("MaxMana", player.getMaxMana());
         this.player.put("XP", player.getExperience());
         this.player.put("Gold", player.getGold());
     }
@@ -114,11 +118,11 @@ public class Serializer implements Saver{
 
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
-        locationJSON.put("AreaEffect", ""+location.getAreaEffect().getAreaEffectType() );
+        locationJSON.put("AreaEffect",  ""+location.getAreaEffect().getAreaEffectType() );
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
-            itemList.add("" + location.getItems().get(i));
+//            itemList.add(location.getItems().get(i).getName());
         }
         locationJSON.put("Items", itemList);
         return locationJSON;
@@ -130,12 +134,12 @@ public class Serializer implements Saver{
         ArrayList<JSONObject> entityLocationList = new ArrayList<>();
         ArrayList<Pair> entityLocationPair = entityLocation.getAssociations();
         for (int i = 0; i < entityLocationPair.size(); i++){
-            Entity entity = (Entity) entityLocationPair.get(i).getKey(); // I apoligize for this this needs to be changed to get keys/values the right way
+            Entity entity = (Entity) entityLocationPair.get(i).getKey();
             Location location = (Location) entityLocationPair.get(i).getValue();
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("Entity", saveEntity(entity));
-            jsonObject.put("Location", saveLocation(location));
-            entityLocationList.add(jsonObject);
+            JSONObject pairJSON = new JSONObject();
+            pairJSON.put("Entity", saveEntity(entity));
+            pairJSON.put("Location", saveLocation(location));
+            entityLocationList.add(pairJSON);
         }
         entityLocationJSON.put("Pairs", new JSONArray(entityLocationList));
         return entityLocationJSON;
@@ -151,7 +155,7 @@ public class Serializer implements Saver{
         return classJSON;
     }
 
-
+    //DANGER
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
         ArrayList<String> items = new ArrayList<>();
@@ -162,10 +166,26 @@ public class Serializer implements Saver{
         return inventoryJSON;
     }
 
+    //DANGER
     private JSONObject saveEquipment(Equipment equipment) {
         JSONObject equipmentJSON = new JSONObject();
-        equipment.getEquipped(0).save(this); //Todo: This needs to be changed
+        equipmentJSON.put("Hotbar", saveHotbar(equipment.getHotbarItems()));
+        ArrayList<String> itemsList = new ArrayList<>();
+//        for(int i = 0; i < equipment.getEquippedItems().size(); i++) {
+//            itemsList.add(equipment.getEquippedItems().get(i).save(this));
+//        }
+//        equipmentJSON.put("Items", new JSONArray(itemsList));
         return equipmentJSON;
+    }
+
+    private JSONObject saveHotbar(List<TakeableItem> items){
+        JSONObject hotbarJSON = new JSONObject();
+        ArrayList<String> itemsList = new ArrayList<>();
+        for(int i =0; i < items.size(); i++) {
+            itemsList.add(items.get(i).save(this));
+        }
+        hotbarJSON.put("Items", new JSONArray(itemsList));
+        return hotbarJSON;
     }
 
     @Override
