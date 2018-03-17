@@ -34,4 +34,7 @@ public class Smasher extends Role {
     public void addBrawl(int points){
         brawl.addPoints(points);
     }
+
+    @Override
+    public RoleType getRoleType() { return RoleType.Smasher; }
 }

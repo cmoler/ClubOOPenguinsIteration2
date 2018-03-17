@@ -46,4 +46,6 @@ public class Role {
     public void bindWounds(){
         bindWounds.use(this.entity);
     }
+
+    public RoleType getRoleType() { return RoleType.Base; }
 }

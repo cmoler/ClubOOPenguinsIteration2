@@ -52,4 +52,7 @@ public class Sneak extends Role {
     public void creep(){
         creep.use(this.entity);
     }
+
+    @Override
+    public RoleType getRoleType() { return RoleType.Sneak; }
 }

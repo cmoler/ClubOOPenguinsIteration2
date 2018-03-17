@@ -25,6 +25,8 @@ public interface ImagesInfo {
 
     public static final String GLACIER_FILELOCATION = "resources/images/terrain/glacier.png";
 
+    public static final String INCREASE_SKILL_ICON = "resources/images/IncreaseSkillIcon.png";
+
     public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
