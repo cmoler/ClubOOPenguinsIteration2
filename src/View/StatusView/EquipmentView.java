@@ -28,13 +28,13 @@ public class EquipmentView extends Viewport {
     public EquipmentView(Equipment equipment){
         equipment.attach(this);
         this.equipment = equipment;
-        if(equipment.getHead() != null) head = equipment.getHead().getSlot();
+        if(equipment.getHead() != null) head = equipment.getHead().getName();
         else head = null;
-        if(equipment.getBody() != null) body = equipment.getBody().getSlot();
+        if(equipment.getBody() != null) body = equipment.getBody().getName();
         else body = null;
-        if(equipment.getLegs() != null) legs = equipment.getLegs().getSlot();
+        if(equipment.getLegs() != null) legs = equipment.getLegs().getName();
         else legs = null;
-        if(equipment.getRing() != null) ring = equipment.getRing().getSlot();
+        if(equipment.getRing() != null) ring = equipment.getRing().getName();
         else ring = null;
         selectedArmor = equipment.getSelectedArmor();
     }
@@ -108,11 +108,11 @@ public class EquipmentView extends Viewport {
 
     @Override
     public void update(){
-        if(equipment.getHead() != null) head = equipment.getHead().getSlot();
+        if(equipment.getHead() != null) head = equipment.getHead().getName();
         else head = null;
-        if(equipment.getBody() != null) body = equipment.getBody().getSlot();
+        if(equipment.getBody() != null) body = equipment.getBody().getName();
         else body = null;
-        if(equipment.getLegs() != null) legs = equipment.getLegs().getSlot();
+        if(equipment.getLegs() != null) legs = equipment.getLegs().getName();
         else legs = null;
         if(equipment.getRing() != null) ring = equipment.getRing().getSlot();
         else ring = null;

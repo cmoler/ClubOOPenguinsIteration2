@@ -20,6 +20,6 @@ public class Ring extends WearableItem {
 
     @Override
     public String getSlot() {
-        return null;
+        return "ring";
     }
 }

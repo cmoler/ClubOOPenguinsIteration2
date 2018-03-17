@@ -20,6 +20,6 @@ public class Leg extends WearableItem {
 
     @Override
     public String getSlot() {
-        return null;
+        return "legs";
     }
 }
