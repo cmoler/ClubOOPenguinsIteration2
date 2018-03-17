@@ -9,6 +9,7 @@ public class Player extends Entity {
     private int mana;
     private int gold;
     private Equipment equipment = new Equipment(this);
+    private int skillPointsToUse;
 
     public Player(Role role) {
         this.role = role;
