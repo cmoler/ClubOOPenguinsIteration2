@@ -148,6 +148,10 @@ public abstract class Entity {
         inventory.addItem(item);
     }
 
+    public void removeItem(TakeableItem item) {inventory.removeItem(item); }
+
+    public Item getItemNamed(String name){ return inventory.getItemNamed(name); }
+
     public Inventory getInventory() {
         return inventory;
     }

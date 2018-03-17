@@ -58,6 +58,17 @@ public class Inventory {
         return itemExists;
     }
 
+    public TakeableItem getItemNamed(String name){
+        InventoryIterator inventoryIterator = new InventoryIterator();
+        while(inventoryIterator.hasNext()){
+            TakeableItem item = inventoryIterator.getCurrent();
+            if (item.getName() == name){
+                return item;
+            }
+        }
+        return null;
+    }
+
 
     public void attach(Viewport viewport){
         observers.add(viewport);
