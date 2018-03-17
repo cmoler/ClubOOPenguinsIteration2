@@ -1,6 +1,8 @@
 package Model.Entity;
 
 import Model.Entity.Role.Role;
+import Model.Item.Item;
+import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Visitor.Visitor;
@@ -132,6 +134,10 @@ public abstract class Entity {
 
     public int getExperienceForCurrentLevel(){
         return ExperienceForLevel.get(level);
+    }
+
+    public void takeItem(TakeableItem item){
+        inventory.addItem(item);
     }
 
     public Inventory getInventory() {
