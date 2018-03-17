@@ -152,9 +152,4 @@ public class AngularProjectile implements Projectile {
         }
         return null;
     }
-
-    @Override
-    public String save(Saver saver) {
-        return saver.saveAngularProjectile(this);
-    }
 }

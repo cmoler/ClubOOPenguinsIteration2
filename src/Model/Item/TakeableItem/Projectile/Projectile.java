@@ -7,7 +7,7 @@ import Model.Updateable;
 
 import java.util.List;
 
-public interface Projectile extends Updateable, SaveableItem{
+public interface Projectile extends Updateable{
 
     List<Location> getLocationsOn();
 
