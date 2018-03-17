@@ -4,6 +4,7 @@ package View.StatusView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import View.Viewport;
 
 import java.awt.*;
@@ -16,6 +17,11 @@ public class StatsView extends Viewport {
     private final int ENTITY_HEALTH_HEIGHT = 20;
     private final int ENTITY_HEALTH_WIDTH = 500;
 
+    private final int ENTITY_MANA_X = (int) (Commons.SCREEN_WIDTH * 20.0/765.0);
+    private final int ENTITY_MANA_Y = (int) (Commons.SCREEN_HEIGHT * 390.0/501.0);
+    private final int ENTITY_MANA_HEIGHT = 20;
+    private final int ENTITY_MANA_WIDTH = 500;
+
     private final int ENTITY_EXP_X = (int) (Commons.SCREEN_WIDTH * 560/765.0);
     private final int ENTITY_EXP_Y = (int) (Commons.SCREEN_HEIGHT * 0/765.0);
     private final int ENTITY_EXP_HEIGHT = 250;
@@ -26,25 +32,29 @@ public class StatsView extends Viewport {
     private final int ENTITY_LEVEL_WIDTH = 200;
     private final int ENTITY_LEVEL_HEIGHT = 200;
 
-    private Entity entity;
+    private Player player;
 
     public StatsView(Entity entity){
-        this.entity = entity;
-        entity.attach(this);
+        this.player = (Player) entity;
+        player.attach(this);
     }
 
     @Override
     public void draw(Graphics2D graphics2D) {
         //Portion of HP
-        int dynamicHealthWidth = (ENTITY_HEALTH_WIDTH * entity.getMaxHealth()) / 100;
-        double percentHP = 1 - entity.getHealth()/(double) entity.getMaxHealth();
+        int dynamicHealthWidth = (ENTITY_HEALTH_WIDTH * player.getMaxHealth()) / 100;
+        double percentHP = 1 - player.getHealth()/(double) player.getMaxHealth();
         int hprectSize = (int) (percentHP * dynamicHealthWidth);
 
+        int dynamicManaWidth = (ENTITY_MANA_WIDTH * player.getMaxMana()) / 100;
+        double percentMANA = 1 - player.getMana() / (double) player.getMaxMana();
+        int manaRectSize = (int) (percentMANA * dynamicManaWidth);
+
         //Needed XP vars
-        double expNeeded = (double) entity.getExperienceForNextLevel();
-        double prevExp = (double) entity.getExperienceForCurrentLevel();
-        double exp = (double) entity.getExperience();
-        int getLevel = entity.getLevel();
+        double expNeeded = (double) player.getExperienceForNextLevel();
+        double prevExp = (double) player.getExperienceForCurrentLevel();
+        double exp = (double) player.getExperience();
+        int getLevel = player.getLevel();
 
         //Portion of XP
         double percentEXP;
@@ -74,7 +84,15 @@ public class StatsView extends Viewport {
         graphics2D.setColor(new Color(233, 3, 3));
         graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, dynamicHealthWidth - hprectSize, ENTITY_HEALTH_HEIGHT );
         graphics2D.setColor(new Color(255, 255, 255));
-        graphics2D.drawString("" + entity.getHealth() + " / " + entity.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y +( ENTITY_HEALTH_HEIGHT/2));
+        graphics2D.drawString("" + player.getHealth() + " / " + player.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y +( ENTITY_HEALTH_HEIGHT/2));
+
+        //MANABAR
+        graphics2D.setColor(new Color(0,0,0));
+        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth, ENTITY_MANA_HEIGHT);
+        graphics2D.setColor(new Color(16,90,209));
+        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth - manaRectSize, ENTITY_MANA_HEIGHT);
+        graphics2D.setColor(new Color(255, 255, 255));
+        graphics2D.drawString("" + player.getMana() + " / " + player.getMaxMana(), ENTITY_MANA_X + (ENTITY_MANA_WIDTH/2), ENTITY_MANA_Y + (ENTITY_EXP_HEIGHT/2));
 
         //level indicator
         //graphics2D.setColor(new Color(200, 200, 200));
@@ -82,11 +100,11 @@ public class StatsView extends Viewport {
         graphics2D.setColor(new Color(0, 0, 0));
         graphics2D.setFont(new Font("Calibri",2,70));
         graphics2D.drawString("" + getLevel,  ENTITY_LEVEL_X , ENTITY_LEVEL_Y );
-//      graphics2D.drawString("entity.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
-//      graphics2D.drawString("entity.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);
+//      graphics2D.drawString("player.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
+//      graphics2D.drawString("player.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);
 
 
-        if(entity.getHealth() == 0){
+        if(player.getHealth() == 0){
             graphics2D.setColor(new Color(233, 3, 3));
             graphics2D.setFont(new Font("Calibri",2,150));
             graphics2D.drawString("Game Over Dude", (int)(Commons.SCREEN_WIDTH * 100.0/765.0), (int) (Commons.SCREEN_HEIGHT * 250.0/501.0));
