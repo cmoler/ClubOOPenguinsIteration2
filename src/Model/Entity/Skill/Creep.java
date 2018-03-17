@@ -1,6 +1,7 @@
 package Model.Entity.Skill;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 
 public class Creep extends Skill {
 
@@ -12,8 +13,23 @@ public class Creep extends Skill {
         super(points);
     }
 
-    public void use(Entity me){
+    public void use(Player me){
+        if(me.getMana() > getManaDecrement())
+            me.setVisibleRange(0);
+    }
 
-        // TODO: creep around
+    public boolean isBeingUsed(Entity me){
+        if(me.getVisibleRange() == 0)
+            return true;
+        else
+            return false;
+    }
+
+    public void turnOff(Entity me){
+        me.setVisibleRange(5);
+    }
+
+    public int getManaDecrement(){
+        return (int)(((double)10)/getPoints());
     }
 }

@@ -22,7 +22,6 @@ public class Player extends Entity {
         super.setEntityType(type);
     }
 
-
     public void touchItems(){
         getLocation().itemsTouchedBy(this);
     }
@@ -41,7 +40,6 @@ public class Player extends Entity {
         super.interactLocation();
         touchItems();
         useRoleTraits();
-
     }
 
     @Override

@@ -26,6 +26,7 @@ public abstract class Entity {
     private Inventory inventory = new Inventory(this);
     private Location location;
     private boolean intentToMove = false;
+    private int visibleRange = 5;
     // map is in World
 
 
@@ -123,6 +124,13 @@ public abstract class Entity {
         return level;
     }
 
+    public int getVisibleRange(){
+        return visibleRange;
+    }
+
+    public void setVisibleRange(int visibleRange){
+        this.visibleRange = visibleRange;
+    }
 
     public int getExperienceForNextLevel(){
         if(level < finalLevel)

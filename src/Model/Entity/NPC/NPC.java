@@ -17,7 +17,6 @@ public class NPC extends Entity implements Updateable{
     protected Player player;
     private boolean wantToTalk;
     private String talkString;
-    private int visibleRange = 5;
 
     public NPC() {
 
@@ -56,7 +55,7 @@ public class NPC extends Entity implements Updateable{
     }
 
     public int getVisibleRange() {
-        return visibleRange;
+        return player.getVisibleRange();
     }
 
     @Override
