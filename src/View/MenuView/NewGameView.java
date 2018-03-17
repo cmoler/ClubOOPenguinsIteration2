@@ -30,7 +30,7 @@ public class NewGameView extends MenuViewPort {
         graphics2D.drawString("Select Your Avatar", (startX), (startY + TextBoxInfo.TEXTBOX_HEIGHT/2));
 
         graphics2D.drawRect(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawImage(SpriteParser.getSpriteParser().getAvatarImage(), startX, startY+ TextBoxInfo.TEXTBOX_HEIGHT,TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT,this );
+        graphics2D.drawImage(SpriteParser.getSpriteParser().getAvatarImage_BLUE(), startX, startY+ TextBoxInfo.TEXTBOX_HEIGHT,TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT,this );
         graphics2D.drawString("1",startX,startY + TextBoxInfo.TEXTBOX_HEIGHT);
 
         graphics2D.drawRect(startX + TextBoxInfo.TEXTBOX_WIDTH, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
