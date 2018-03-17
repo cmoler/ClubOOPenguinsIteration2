@@ -2,17 +2,32 @@ package Model.Entity.Role;
 
 import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
-import Model.Entity.Skill.Bane;
-import Model.Entity.Skill.Boon;
-import Model.Entity.Skill.Enchantment;
-import Model.Entity.Skill.Staff;
+import Model.Entity.Skill.*;
 
 public class Summoner extends Role {
 
-    private Enchantment enchantment = new Enchantment();
-    private Boon boon = new Boon();
-    private Bane bane = new Bane();
-    private Staff staff = new Staff();
+    private Enchantment enchantment;
+    private Boon boon;
+    private Bane bane;
+    private Staff staff;
+
+    public Summoner(){
+        super();
+        enchantment = new Enchantment();
+        boon = new Boon();
+        bane = new Bane();
+        staff = new Staff();
+        setMaxMana(100);
+    }
+
+    public Summoner(BindWounds bindWounds, Bargain bargain, Observation observation, Enchantment enchantment, Boon boon, Bane bane, Staff staff ){
+        super(bindWounds, bargain, observation);
+        this.enchantment = enchantment;
+        this.boon = boon;
+        this.bane = bane;
+        this.staff = staff;
+        setMaxMana(100);
+    }
 
     public int getEnchantment(){
         return enchantment.getPoints();
