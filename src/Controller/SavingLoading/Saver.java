@@ -52,8 +52,8 @@ import Model.Map.World;
 
 public interface Saver {
 
-    public void savePlayer(Player entity);
-    public void saveWorld(World world);
+    public void serializePlayer(Player entity);
+    public void serializeWorld(World world);
     public void saveSmasher(Smasher role);
     public void saveSummoner(Summoner role);
     public void saveSneak(Sneak role);

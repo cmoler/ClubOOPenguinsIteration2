@@ -12,32 +12,13 @@ public class Slot {
 
     public Slot(String savePath){
         this.savePath = savePath;
-
-
         //must be pulled from file (must also be saved to file), is needed here for the view to show playtime under each slot.
         gameTime = 0;
     }
 
     public void saveFrom(GameBuilder gameBuilder){
-        FileWriter fileWriter;
-        JSONObject saveJSON = new JSONObject();
-        GameSaver saver = new GameSaver();
-
-        gameBuilder.getWorld().save(saver);
-        JSONObject world = saver.getWorld();
-        gameBuilder.getPlayer().save(saver);
-        JSONObject player = saver.getPlayer();
-        saveJSON.put("World", world);
-        saveJSON.put("Player", player);
-        System.out.println("Saved: " + saveJSON);
-
-        try {
-            fileWriter = new FileWriter(new File(savePath));
-            fileWriter.write(saveJSON.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        GameSaver saver = new GameSaver(gameBuilder);
+        saver.save(savePath);
     }
 
     public void loadTo(GameBuilder gameBuilder){

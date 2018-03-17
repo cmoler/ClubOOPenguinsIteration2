@@ -77,6 +77,6 @@ public class Player extends Entity implements Saveable{
 
     @Override
     public void save(Saver saver) {
-        saver.savePlayer(this);
+        saver.serializePlayer(this);
     }
 }

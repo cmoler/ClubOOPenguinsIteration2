@@ -1,10 +1,8 @@
 package Controller;
 
 import Controller.SavingLoading.GameBuilder;
-import Controller.SavingLoading.GameSaver;
+import Controller.SavingLoading.Serializer;
 import Controller.States.*;
-import View.AreaView.AreaViewPort;
-import View.MenuView.MainMenuView;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
@@ -28,7 +26,6 @@ public class ControllerMediator {
     private KeyBindingState keyBindingState;
 
     private GameBuilder gameBuilder;
-    private GameSaver gameSaver;
 
     private Viewport viewport;
     private StatusViewPort statusViewPort;
@@ -40,20 +37,15 @@ public class ControllerMediator {
 
     // initial load
     public ControllerMediator(){
-
         gameBuilder = new GameBuilder();
-        gameSaver = new GameSaver();
-
-        getViewsFromLoader();
+        getViewsFromBuilder();
         loadStates();
         attachInputToViews();
         changeToMenuState();
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+        startTimer();
     }
 
-    private void getViewsFromLoader(){
+    private void getViewsFromBuilder(){
         menuViewPort = gameBuilder.getMainMenuViewport();
         gameFrame = gameBuilder.getGameFrame();
     }
@@ -72,11 +64,6 @@ public class ControllerMediator {
         input = new Input(activeState);
         gameFrame.addKeyListener(input);
         menuViewPort.addKeyListener(input);
-    }
-
-    // when loading a save game/new game: <- I (JAD) dont think this should be here; should be in GameBuilder
-    public void loadGame(String fileName){
-        gameBuilder.loadGame(fileName);
     }
 
     private class ScheduleTask extends TimerTask {
@@ -138,6 +125,11 @@ public class ControllerMediator {
         inventoryState.loadKeyBindings();
         equipmentState.loadKeyBindings();
         skillsState.loadKeyBindings();
+    }
+
+    private void startTimer(){
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
     }
 
 }

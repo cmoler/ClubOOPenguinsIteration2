@@ -3,7 +3,6 @@ package Model.Map;
 import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Saveable;
-import View.AreaView.MapView;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -73,6 +72,6 @@ public class World implements Saveable{
 
     @Override
     public void save(Saver saver) {
-        saver.saveWorld(this);
+        saver.serializeWorld(this);
     }
 }

@@ -16,7 +16,7 @@ public class MemorySlots {
 
         //createslots
         for (int i = 0; i < Commons.MAX_SAVE_SLOTS; i++) {
-            slots.add(new Slot(Commons.SAVE_FOLDER + Commons.SAVE_NAME + i));
+            slots.add(new Slot(Commons.SAVE_FOLDER + Commons.SAVE_NAME + i + ".json"));
         }
     }
 
