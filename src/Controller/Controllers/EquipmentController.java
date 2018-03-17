@@ -1,11 +1,14 @@
 package Controller.Controllers;
 
 import Controller.SavingLoading.GameBuilder;
+import Model.Entity.Equipment;
 
 public class EquipmentController implements Controller{
 
-    public EquipmentController(GameBuilder gameBuilder){
+    private Equipment equipment;
 
+    public EquipmentController(GameBuilder gameBuilder){
+        this.equipment = gameBuilder.getEquipment();
     }
 
     @Override
