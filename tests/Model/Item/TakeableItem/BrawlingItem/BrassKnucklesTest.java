@@ -28,7 +28,7 @@ class BrassKnucklesTest {
         Location npc1Location = map.getDefaultLocation().getAdjacentAt(Direction.N);
         NPC npc1 = new NPC();
         map.setEntityLocation(npc1Location, npc1);
-        World.getWorld().addMap("0001", map, new MapView());
+        World.getWorld().addMap("0001", map);
         World.getWorld().changeCurrentMapTo(map);
 
         Role role = new Smasher();

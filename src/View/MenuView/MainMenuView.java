@@ -43,7 +43,6 @@ public class MainMenuView extends MenuViewPort {
         ngBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Start new game");
                 enterNewGameView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -52,7 +51,6 @@ public class MainMenuView extends MenuViewPort {
         sgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Saving");
                 enterSaveGameView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -61,7 +59,6 @@ public class MainMenuView extends MenuViewPort {
         lgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Loading");
                 enterLoadGameView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -70,7 +67,6 @@ public class MainMenuView extends MenuViewPort {
         opBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Options");
                 enterOptionsView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -79,7 +75,6 @@ public class MainMenuView extends MenuViewPort {
         egBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Exit");
                 enterExitGameView();
                 getTopLevelAncestor().requestFocus();
             }
@@ -92,7 +87,7 @@ public class MainMenuView extends MenuViewPort {
         buttonGrid.add(egBtn);
 
         add(buttonGrid, BorderLayout.SOUTH);
-
+        
         setVisible(true);
 
     }
@@ -100,6 +95,7 @@ public class MainMenuView extends MenuViewPort {
     public JButton ConfigureButton(JButton btn, String btnFn) {
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
+        btn.setOpaque(false);
         btn.setPreferredSize(new Dimension(30, 30));
         btn.setToolTipText(btnFn);
         return btn;
