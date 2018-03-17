@@ -7,6 +7,9 @@ import Model.Item.TakeableItem.TakeableItem;
 
 public class InventoryController implements Controller{
 
+    private Inventory inventory;
+    private Equipment equipment;
+
     public InventoryController(GameBuilder gameBuilder){
 
         inventory = gameBuilder.getInventory();
