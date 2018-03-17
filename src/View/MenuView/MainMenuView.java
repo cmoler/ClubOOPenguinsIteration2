@@ -39,7 +39,6 @@ public class MainMenuView extends MenuViewPort {
         JButton opBtn = ConfigureButton(new JButton("4"), "Options");
         JButton egBtn = ConfigureButton(new JButton("5"), "Exit Game");
 
-        //Styling to make button invisible
         ngBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -93,10 +92,11 @@ public class MainMenuView extends MenuViewPort {
     }
 
     public JButton ConfigureButton(JButton btn, String btnFn) {
+        //Styling to make button invisible
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
         btn.setOpaque(false);
-        btn.setPreferredSize(new Dimension(30, 30));
+        btn.setPreferredSize(new Dimension(50, 50));
         btn.setToolTipText(btnFn);
         return btn;
     }
