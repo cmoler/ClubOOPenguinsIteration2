@@ -54,6 +54,7 @@ import Model.Map.Map;
 import Model.Map.World;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GameSaver implements Saver{
     JSONObject world = new JSONObject();
@@ -67,6 +68,7 @@ public class GameSaver implements Saver{
         this.player.put("Inventory", saveInventory(player.getInventory()));
         this.player.put("Equipment", saveEquipment(player.getEquipment()));
         this.player.put("HP", player.getHealth());
+        this.player.put("EntityType", player.getEntityType());
         this.player.put("MaxHP", player.getMaxHealth());
         this.player.put("Mana", player.getMana());
         this.player.put("XP", player.getExperience());
@@ -77,10 +79,10 @@ public class GameSaver implements Saver{
         this.world.put("CurrentMap", world.getCurrentMap());
 
         ArrayList<JSONObject> mapJSONS = new ArrayList<>();
-//        for (Map map: world.getMaps() ) {
-//            mapJSONS.add(saveMap(map));
-//        }
-//        this.world.put("Maps", new JSONArray(mapJSONS));//TODO: add Map getter from maps somehow
+        for (String str: world.getMaps().keySet() ) {
+            mapJSONS.add(saveMap(world.getMap(str)));
+        }
+        this.world.put("Maps", new JSONArray(mapJSONS));
 
     }
 
@@ -96,7 +98,7 @@ public class GameSaver implements Saver{
 
     private JSONObject saveMap(Map map) {
         JSONObject mapJSON = new JSONObject();
-//        mapJSON.put("MapID", map.getID());//TODO: NEEDS TO ADD MAPIDGETTER TO MAPS
+        mapJSON.put("MapID", map.getMapID());
         mapJSON.put("Rows", map.getRows());
         mapJSON.put("Cols", map.getCols());
         mapJSON.put("EntityLocations:", saveEntityLocation(map.getEntityLocationList()));

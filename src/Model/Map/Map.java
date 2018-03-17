@@ -15,7 +15,6 @@ import static Model.Map.Direction.*;
 public class Map {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
-
     public Location[][] getLocations() {
         return locations;
     }
@@ -29,6 +28,7 @@ public class Map {
 
     private Location[][] locations;
     private Location defaultLocation;
+    private String mapID;
     private int numRows = 0;
     private int numCols = 0;
 
@@ -202,6 +202,15 @@ public class Map {
 
     public void detach(Viewport viewport) {
         observers.remove(viewport);
+    }
+
+    public String getMapID() {
+        return mapID;
+    }
+
+    public void setMapID(String mapID) {
+
+        this.mapID = mapID;
     }
 
     public void notifyView() {

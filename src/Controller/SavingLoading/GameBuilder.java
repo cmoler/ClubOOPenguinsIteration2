@@ -5,6 +5,7 @@ import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
+import Model.Map.World;
 import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
 import View.StatusView.EquipmentView;
@@ -56,6 +57,8 @@ public class GameBuilder {
     public Player getPlayer(){
         return null;
     }
+
+    public World getWorld() {return null;}
 
     public Inventory getInventory(){
         return null;

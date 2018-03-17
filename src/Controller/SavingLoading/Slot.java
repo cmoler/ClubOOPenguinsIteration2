@@ -21,12 +21,15 @@ public class Slot {
     public void saveFrom(GameBuilder gameBuilder){
         FileWriter fileWriter;
         JSONObject saveJSON = new JSONObject();
+        GameSaver saver = new GameSaver();
 
-        JSONObject world = new JSONObject();
-        JSONObject player = new JSONObject();
-
+        gameBuilder.getWorld().save(saver);
+        JSONObject world = saver.getWorld();
+        gameBuilder.getPlayer().save(saver);
+        JSONObject player = saver.getPlayer();
         saveJSON.put("World", world);
         saveJSON.put("Player", player);
+        System.out.println("Saved: " + saveJSON);
 
         try {
             fileWriter = new FileWriter(new File(savePath));
@@ -34,11 +37,6 @@ public class Slot {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        GameSaver saver;
-//
-//        for each model in gameloader{
-//            file.write(model.save(saver))
-//        }
 
     }
 
