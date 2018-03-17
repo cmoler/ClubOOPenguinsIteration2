@@ -111,6 +111,26 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
+    public Image getLinearIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_LINEARICEATTACKFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getAngularIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_ANGULARICEATTACKFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getRadialIceAttackImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_RADIALICEATTACKFILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getPizzaImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PROJECTILE_PIZZAFILELOCATION);
+        return imageIcon.getImage();
+    }
+
     public Image getAvatarImage(Direction direction){
         switch (direction){
             case N:

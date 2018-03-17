@@ -21,6 +21,8 @@ public class Role {
         this.entity = entity;
     }
 
+    public Entity getEntity() { return entity; }
+
     public int getBindWounds(){
         return bindWounds.getPoints();
     }
@@ -76,6 +78,10 @@ public class Role {
                     break;
             }
         }
+    }
+
+    public int getSelected() {
+        return selected;
     }
 
     public RoleType getRoleType() { return RoleType.Base; }

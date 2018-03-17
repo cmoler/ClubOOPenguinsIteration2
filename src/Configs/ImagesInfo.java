@@ -18,6 +18,10 @@ public interface ImagesInfo {
     public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/clubPenguinItems/Blue_Bunny_Ears.png";
     public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/clubPenguinItems/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
+    public static final String PROJECTILE_LINEARICEATTACKFILELOCATION = "resources/images/magic/linearIceAttack.png";
+    public static final String PROJECTILE_ANGULARICEATTACKFILELOCATION = "resources/images/magic/anglularIceAttack.png";
+    public static final String PROJECTILE_RADIALICEATTACKFILELOCATION = "resources/images/magic/radialIceAttack.png";
+    public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment/pizza.png";
 
     public static final String RED_CROSS_FILELOCATION = "resources/images/terrain/RedCross.png";
     public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/terrain/SkullCrossBone.png";
@@ -44,6 +48,12 @@ public interface ImagesInfo {
     public static final Image ITEM_TAKEABLE_IMAGE = SpriteParser.getSpriteParser().getTakeAbleItemImage();
     public static final Image ITEM_TELEPORTER_IMAGE = SpriteParser.getSpriteParser().getTeleporterItemImage();
 
+    public static final Image PROJECTILE_LINEARICEATTACK = SpriteParser.getSpriteParser().getLinearIceAttackImage();
+    public static final Image PROJECTILE_ANGULARICEATTACK = SpriteParser.getSpriteParser().getAngularIceAttackImage();
+    public static final Image PROJECTILE_RADIALICEATTACK = SpriteParser.getSpriteParser().getRadialIceAttackImage();
+    public static final Image PROJECTILE_PIZZA = SpriteParser.getSpriteParser().getPizzaImage();
+
+    public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
     public static final Image AVATAR_IMAGE_NINJA1 = SpriteParser.getSpriteParser().getAvatarImage_NINJA();
 
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
