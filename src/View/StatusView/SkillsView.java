@@ -3,10 +3,8 @@ package View.StatusView;
 import Configs.Commons;
 import Configs.SkillsSizes;
 import Configs.ImagesInfo;
-import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Entity.Role.*;
-import Model.Entity.Skill.Skill;
 import View.Viewport;
 
 import javax.swing.*;
@@ -20,8 +18,8 @@ public class SkillsView extends Viewport {
     private Player player;
     private Role role;
     private int SKILL_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
-    private int POINTS_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
-    private int BUTTON_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private int POINTS_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 670.0/765.0));
+    private int BUTTON_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 700.0/765.0));
     private int SKILL_Y = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
     private Image selectedImage = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
     private int highlighterX = BUTTON_COLUMN_X;
