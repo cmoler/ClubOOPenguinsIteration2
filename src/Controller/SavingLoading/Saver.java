@@ -10,6 +10,7 @@ import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.Skill;
 import Model.Entity.Skill.Staff;
+import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.OneShotItem.GoldOneShotItem;
 import Model.Item.OneShotItem.HealingOneShotItem;
@@ -31,6 +32,7 @@ import Model.Item.TakeableItem.BrawlingItem.SwordHands;
 import Model.Item.TakeableItem.EnchantmentItem.Charm;
 import Model.Item.TakeableItem.EnchantmentItem.Insomnia;
 import Model.Item.TakeableItem.EnchantmentItem.Seppuku;
+import Model.Item.TakeableItem.Key.Key;
 import Model.Item.TakeableItem.OneHandedWeaponItem.BlueLightsaber;
 import Model.Item.TakeableItem.OneHandedWeaponItem.Mjolnir;
 import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
@@ -94,4 +96,6 @@ public interface Saver {
     public String saveInquisitorLightsaber(InquisitorLightsaber inquisitorLightsaber);
     public String saveJeweledCutlass(JeweledCutlass jeweledCutlass);
     public String saveWaterHammer(WaterHammer waterHammer);
+    public String saveKey(Key key);
+    public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem);
 }

@@ -6,6 +6,7 @@ import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.Staff;
+import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.OneShotItem.GoldOneShotItem;
 import Model.Item.OneShotItem.HealingOneShotItem;
@@ -27,6 +28,7 @@ import Model.Item.TakeableItem.BrawlingItem.SwordHands;
 import Model.Item.TakeableItem.EnchantmentItem.Charm;
 import Model.Item.TakeableItem.EnchantmentItem.Insomnia;
 import Model.Item.TakeableItem.EnchantmentItem.Seppuku;
+import Model.Item.TakeableItem.Key.Key;
 import Model.Item.TakeableItem.OneHandedWeaponItem.BlueLightsaber;
 import Model.Item.TakeableItem.OneHandedWeaponItem.Mjolnir;
 import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
@@ -73,7 +75,6 @@ public class Serializer implements Saver{
         this.player.put("HP", player.getHealth());
         this.player.put("MaxHP", player.getMaxHealth());
         this.player.put("Mana", player.getMana());
-        this.player.put("MaxMana", player.getMaxMana());
         this.player.put("XP", player.getExperience());
         this.player.put("Gold", player.getGold());
     }
@@ -397,6 +398,16 @@ public class Serializer implements Saver{
     @Override
     public String saveWaterHammer(WaterHammer waterHammer) {
         return "WaterHammer";
+    }
+
+    @Override
+    public String saveKey(Key key) {
+        return "Key";
+    }
+
+    @Override
+    public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
+        return "ChestInteractiveItem";
     }
 
     public JSONObject getWorld() {
