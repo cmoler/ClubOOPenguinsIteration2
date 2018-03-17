@@ -1,6 +1,7 @@
 package Model.Entity.Role;
 
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Entity.Skill.Bargain;
 import Model.Entity.Skill.BindWounds;
 import Model.Entity.Skill.Observation;
@@ -9,14 +10,14 @@ import javafx.beans.Observable;
 
 public class Role {
 
-    protected Entity entity;
+    protected Player entity;
     private BindWounds bindWounds;
     private Bargain bargain;
     private Observation observation;
 
     public Role(){}
 
-    public void setEntity(Entity entity){
+    public void setEntity(Player entity){
         this.entity = entity;
     }
 

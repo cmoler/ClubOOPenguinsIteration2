@@ -10,6 +10,7 @@ import Model.Map.AreaEffect.AreaEffectType;
 import Model.Map.AreaEffect.Trap;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.World;
 
 import java.awt.geom.Area;
 import java.util.Random;
@@ -53,8 +54,8 @@ public class Sneak extends Role {
         rangedWeapon.addPoints(points);
     }
 
-    public void pickPocket(Entity otherEntity){
-        pickPocket.use(this.entity, otherEntity);
+    public void pickPocket(){
+        pickPocket.use(this.entity);
     }
 
     public void creep(){
@@ -63,8 +64,6 @@ public class Sneak extends Role {
 
     @Override
     public void activateTrait(Location location){
-
-
 
         //Detect Traps
         int detectChance = getDetectAndRemoveTrap()*10;
@@ -75,6 +74,13 @@ public class Sneak extends Role {
             if (areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
                 ((Trap) areaEffect).setVisible(detectChance);
             }
+        }
+
+        if(creep.isBeingUsed(this.entity)){
+            if(this.entity.getMana() > creep.getManaDecrement())
+                this.entity.addMana(-creep.getManaDecrement());
+            else
+                creep.turnOff(this.entity);
         }
 
     }
