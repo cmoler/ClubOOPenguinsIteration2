@@ -2,6 +2,9 @@ package Controller.temp;
 
 import Configs.ImagesInfo;
 import Model.Item.*;
+import Model.Item.InteractiveItem.InteractiveItem;
+import Model.Item.OneShotItem.OneShotItem;
+import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.AreaEffect.*;
 import Model.Map.Location;
 import Model.Map.Map;

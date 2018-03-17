@@ -21,26 +21,25 @@ public class MainMenuView extends MenuViewPort {
 
 
     public MainMenuView(){
-        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
-
         add(new NewGameView());
         add(new SaveGameView());
         add(new LoadGameView());
         add(new OptionsView());
         add(new ExitGameView());
 
+        ClickableMenu();
+    }
+
+    public void ClickableMenu() {
+        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
         //Display numbers for testing
-        JButton ngBtn = new JButton("1");
-        JButton sgBtn = new JButton("2");
-        JButton lgBtn = new JButton("3");
-        JButton opBtn = new JButton("4");
-        JButton egBtn = new JButton("5");
+        JButton ngBtn = ConfigureButton(new JButton("1"), "New Game");
+        JButton sgBtn = ConfigureButton(new JButton("2"), "Save Game");
+        JButton lgBtn = ConfigureButton(new JButton("3"), "Load Game");
+        JButton opBtn = ConfigureButton(new JButton("4"), "Options");
+        JButton egBtn = ConfigureButton(new JButton("5"), "Exit Game");
 
         //Styling to make button invisible
-        ngBtn.setBorderPainted(false);
-        ngBtn.setContentAreaFilled(false);
-        ngBtn.setPreferredSize(new Dimension(30, 30));
-        ngBtn.setToolTipText("New Game");
         ngBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -50,11 +49,6 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        sgBtn.setBorderPainted(false);
-        sgBtn.setContentAreaFilled(false);
-        sgBtn.setFocusable(false);
-        sgBtn.setSize(new Dimension(80, 80));
-        sgBtn.setToolTipText("Save Game");
         sgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -64,11 +58,6 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        lgBtn.setBorderPainted(false);
-        lgBtn.setContentAreaFilled(false);
-        lgBtn.setFocusable(false);
-        lgBtn.setSize(new Dimension(80, 80));
-        lgBtn.setToolTipText("Load Game");
         lgBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -78,11 +67,6 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        opBtn.setBorderPainted(false);
-        opBtn.setContentAreaFilled(false);
-        opBtn.setFocusable(false);
-        opBtn.setSize(new Dimension(80, 80));
-        opBtn.setToolTipText("Options");
         opBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -92,11 +76,6 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        egBtn.setBorderPainted(false);
-        egBtn.setContentAreaFilled(false);
-        egBtn.setFocusable(false);
-        egBtn.setSize(new Dimension(80, 80));
-        egBtn.setToolTipText("Exit Game");
         egBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -115,6 +94,15 @@ public class MainMenuView extends MenuViewPort {
         add(buttonGrid, BorderLayout.SOUTH);
 
         setVisible(true);
+
+    }
+
+    public JButton ConfigureButton(JButton btn, String btnFn) {
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setPreferredSize(new Dimension(30, 30));
+        btn.setToolTipText(btnFn);
+        return btn;
     }
 
     @Override
