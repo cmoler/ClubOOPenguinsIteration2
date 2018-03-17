@@ -1,6 +1,8 @@
 package Controller.SavingLoading;
 
-import Model.Entity.Entity;
+import Model.Entity.*;
+import Model.Entity.Role.Role;
+import Model.Map.Location;
 import Model.Map.World;
 import org.json.*;
 
@@ -10,40 +12,42 @@ import java.util.Scanner;
 
 public class GameLoader {
 
-    private World world;
-    private Entity playerEntity;
+    private Deserializer deserializer;
 
-    public void loadGameContentJSON(String filePath){
+    private World world = World.getWorld();
+    private Player player;
 
+    public GameLoader(String filePath) throws FileNotFoundException{
+        try{
 
+            deserializer = new Deserializer(load(filePath));
 
+            //world is a singleton, so deserializer can access world
+            deserializer.deserializeWorld();
+
+            //deserialize gives back a Player object
+            player = deserializer.deserializePlayer();
+
+        } catch (FileNotFoundException fileNotFoundException){
+            throw fileNotFoundException;
+        }
+    }
+
+    public Player getPlayer(){
+        return player;
+    }
+
+    private JSONObject load(String filePath) throws FileNotFoundException {
         try {
+
             File saveFile = new File(filePath);
             String saveFileContent = new Scanner(saveFile).useDelimiter("\\Z").next();
+            JSONObject saveFileJSON = new JSONObject(saveFileContent);
 
-            JSONObject gameContentJSON = new JSONObject(saveFileContent);
-            JSONObject worldJSON = gameContentJSON.getJSONObject("World");
-            JSONObject playerEntityJSON = gameContentJSON.getJSONObject("PlayerEntity");
+            return  saveFileJSON;
 
-            loadWorld(worldJSON);
-            loadPlayerEntity(playerEntityJSON);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException fileNotFoundException) {
+            throw fileNotFoundException;
         }
-
-
-    }
-
-    private void loadWorld(JSONObject worldJSON){
-        world = World.getWorld();
-
-
-
-    }
-
-    private void loadPlayerEntity(JSONObject playerEntityJSON){
-        playerEntity
-
     }
 }
