@@ -4,6 +4,9 @@ import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
+import Model.Entity.Skill.Bargain;
+import Model.Entity.Skill.BindWounds;
+import Model.Entity.Skill.Observation;
 import Model.Map.Location;
 import Model.Map.World;
 import org.json.JSONObject;
@@ -27,7 +30,7 @@ public class Deserializer {
         Inventory inventory = deserializeInventory(playerJSON.getJSONObject("Inventory"));
         Equipment equipment = deserializeEquipment(playerJSON.getJSONObject("Equipment"));
         Location   location = deserializeLocation(playerJSON.getJSONObject("Location"));
-        Role           role = deserializeRole(playerJSON.getJSONObject("Class"));
+        Role           role = deserializeRole(playerJSON.getJSONObject("Role"));
 
         int level = deserializeLevel(playerJSON);
         int HP    = deserializeHP(playerJSON);
@@ -37,8 +40,25 @@ public class Deserializer {
         int gold  = deserializeGold(saveFileJSON);
     }
 
-    private Role deserializeRole(JSONObject role){
+    private Role deserializeRole(JSONObject playerClass){
 
+        BindWounds bindWounds = new BindWounds(playerClass.getInt("BindWoundsLevel"));
+        Bargain bargain = new Bargain(playerClass.getInt("BargainLevel"));
+        Observation observation = new Observation(playerClass.getInt("ObservationLevel"));
+
+        //JSONObject roleJSON = playerClass.getJSONObject("SpecificRole");
+
+        /*
+        private JSONObject saveClass(Role role){
+            JSONObject classJSON = new JSONObject();
+            classJSON.put("BindWoundsLevel", role.getBindWounds());
+            classJSON.put("BargainLevel", role.getBargain());
+            classJSON.put("ObservationLevel", role.getObservation());
+            role.save(this);
+            classJSON.put("Role", playerRole);
+            return classJSON;
+        }
+        */
     }
 
     private Location deserializeLocation(JSONObject location){
@@ -53,28 +73,28 @@ public class Deserializer {
 
     }
 
-    private int deserializeLevel(JSONObject playerJSON){
-        int level = playerJSON.getInt("Level");
+    private int deserializeLevel(JSONObject entityJSON){
+        return entityJSON.getInt("Level");
     }
 
-    private int deserializeHP(JSONObject playerJSON){
-        int HP = playerJSON.getInt("HP");
+    private int deserializeHP(JSONObject entityJSON){
+        return entityJSON.getInt("HP");
     }
 
-    private int deserializeMaxHP(JSONObject playerJSON){
-        int maxXP = playerJSON.getInt("MaxHP");
+    private int deserializeMaxHP(JSONObject entityJSON){
+        return entityJSON.getInt("MaxHP");
     }
 
     private int deserializeMana(JSONObject playerJSON){
-        int mana = playerJSON.getInt("Mana");
+        return playerJSON.getInt("Mana");
     }
 
     private int deserializeXP(JSONObject playerJSON){
-        int XP = playerJSON.getInt("XP");
+        return playerJSON.getInt("XP");
     }
 
     private int deserializeGold(JSONObject playerJSON){
-        int gold = playerJSON.getInt("Gold");
+        return playerJSON.getInt("Gold");
     }
 
 }
