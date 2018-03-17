@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.TwoHandedWeaponItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
@@ -22,6 +23,11 @@ public class WaterHammer extends TwoHandedWeaponItem{
     @Override
     protected double getDamageAmount() {
         return damageAmount;
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveWaterHammer(this);
     }
 
 }

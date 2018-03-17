@@ -5,9 +5,10 @@ import Model.Entity.Skill.Bargain;
 import Model.Entity.Skill.BindWounds;
 import Model.Entity.Skill.Observation;
 import Model.Map.Location;
+import Model.Saveable;
 import javafx.beans.Observable;
 
-public class Role {
+public abstract class Role implements Saveable{
 
     protected Entity entity;
     private BindWounds bindWounds;

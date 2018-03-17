@@ -5,7 +5,7 @@ import Model.Entity.Player;
 import Model.Item.Item;
 import Model.Map.Location;
 
-public class TakeableItem extends Item {
+public abstract class TakeableItem extends Item {
 
     @Override
     public final void touch(Player entity) {

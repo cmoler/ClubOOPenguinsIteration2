@@ -1,5 +1,6 @@
 package Model.Entity.Role;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Skill.Brawl;
 import Model.Entity.Skill.OneHandedWeapon;
@@ -34,4 +35,10 @@ public class Smasher extends Role {
     public void addBrawl(int points){
         brawl.addPoints(points);
     }
+
+    @Override
+    public void save(Saver saver) {
+        saver.saveSmasher(this);
+    }
+
 }

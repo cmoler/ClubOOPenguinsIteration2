@@ -1,5 +1,6 @@
 package Model.Entity.Role;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Skill.Bane;
 import Model.Entity.Skill.Boon;
@@ -45,4 +46,8 @@ public class Summoner extends Role {
         staff.addPoints(points);
     }
 
+    @Override
+    public void save(Saver saver) {
+        saver.saveSummoner(this);
+    }
 }

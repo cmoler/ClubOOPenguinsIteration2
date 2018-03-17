@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.BaneItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Item.TakeableItem.Projectile.LinearProjectile;
 import Model.Item.TakeableItem.Projectile.Projectile;
@@ -27,5 +28,10 @@ public class LinearIceAttack extends BaneItem {
                 speed, locationOfEntity, directionFacing,"Ice");
 
         super.addProjectile(projectile);
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveLinearIceAttack(this);
     }
 }

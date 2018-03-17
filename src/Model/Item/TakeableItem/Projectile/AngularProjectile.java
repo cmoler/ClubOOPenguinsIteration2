@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Projectile;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Item.TakeableItem.BaneItem.AngularIceAttack;
 import Model.Map.Direction;
@@ -150,5 +151,10 @@ public class AngularProjectile implements Projectile {
                 return N;
         }
         return null;
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveAngularProjectile(this);
     }
 }

@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Projectile;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Item.TakeableItem.BaneItem.RadialIceBomb;
 import Model.Map.Direction;
@@ -246,5 +247,10 @@ public class RadialProjectile implements Projectile {
                 return N;
         }
         return null;
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveRadialProjectile(this);
     }
 }

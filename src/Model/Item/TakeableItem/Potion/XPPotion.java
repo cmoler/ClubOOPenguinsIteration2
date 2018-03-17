@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.Potion;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Player;
 
 public class XPPotion extends Potion {
@@ -9,5 +10,10 @@ public class XPPotion extends Potion {
     @Override
     protected void apply(Player entityUsingItem) {
         entityUsingItem.gainExperience(XPIncrement);
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveXPPotion(this);
     }
 }

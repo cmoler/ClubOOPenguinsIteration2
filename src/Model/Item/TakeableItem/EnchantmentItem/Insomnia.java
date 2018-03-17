@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.EnchantmentItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.NPC.NPC;
 import Model.Entity.Role.Summoner;
@@ -21,6 +22,11 @@ public class Insomnia extends EnchantmentItem {
 
     protected int getManaNeeded(){
         return manaNeeded;
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveInsomnia(this);
     }
 
 }

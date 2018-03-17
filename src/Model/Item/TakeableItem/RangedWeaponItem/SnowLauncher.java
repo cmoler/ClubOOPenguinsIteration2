@@ -1,5 +1,6 @@
 package Model.Item.TakeableItem.RangedWeaponItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Role.Sneak;
 import Model.Item.TakeableItem.BaneItem.LinearIceAttack;
@@ -30,6 +31,11 @@ public class SnowLauncher extends RangedWeaponItem {
                 directionFacing, "Snow");
 
         super.addProjectile(projectile);
+    }
+
+    @Override
+    public String save(Saver saver) {
+        return saver.saveSnowLauncher(this);
     }
 
 }

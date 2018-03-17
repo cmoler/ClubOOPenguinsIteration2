@@ -15,6 +15,16 @@ import static Model.Map.Direction.*;
 public class Map {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public EntityLocation getEntityLocationList() {
+
+        return entityLocationList;
+    }
+
     private EntityLocation entityLocationList = new EntityLocation();
 
     private Location[][] locations;

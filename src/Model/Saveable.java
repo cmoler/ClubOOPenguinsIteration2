@@ -5,6 +5,6 @@ import Controller.SavingLoading.Saver;
 
 public interface Saveable {
 
-    public String save(Saver saver);
+    public void save(Saver saver);
 
 }

@@ -1,5 +1,6 @@
 package Model.Entity.Role;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
 import Model.Entity.Skill.Creep;
 import Model.Entity.Skill.DetectAndRemoveTrap;
@@ -77,5 +78,10 @@ public class Sneak extends Role {
             }
         }
 
+    }
+
+    @Override
+    public void save(Saver saver) {
+        saver.saveSneak(this);
     }
 }
