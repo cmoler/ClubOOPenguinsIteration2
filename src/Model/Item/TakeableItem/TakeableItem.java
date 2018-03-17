@@ -12,6 +12,11 @@ public class TakeableItem extends Item {
         entity.takeItem(this);
     }
 
+    @Override
+    public boolean shouldBeRemoved() {
+        return true;
+    }
+
     public boolean canEquip(Player entity) {
         return false;
     }

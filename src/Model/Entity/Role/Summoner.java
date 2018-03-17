@@ -45,4 +45,7 @@ public class Summoner extends Role {
         staff.addPoints(points);
     }
 
+    @Override
+    public RoleType getRoleType() { return RoleType.Summoner; }
+
 }

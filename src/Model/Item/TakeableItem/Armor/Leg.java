@@ -4,6 +4,10 @@ import Model.Entity.Player;
 import Model.Item.TakeableItem.WearableItem;
 
 public class Leg extends WearableItem {
+
+    public void Leg(){
+        this.name = "legs";
+    }
     @Override
     public void putOn(Player player) {
 
@@ -16,6 +20,6 @@ public class Leg extends WearableItem {
 
     @Override
     public String getSlot() {
-        return null;
+        return "legs";
     }
 }

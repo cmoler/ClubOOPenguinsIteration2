@@ -8,6 +8,10 @@ import Model.Map.Location;
 
 public class LinearIceAttack extends BaneItem {
 
+    public LinearIceAttack(){
+        this.name = "iceAttacks";
+    }
+
     private int manaNeeded = 10;
 
     private double damageAmount = 1.0;

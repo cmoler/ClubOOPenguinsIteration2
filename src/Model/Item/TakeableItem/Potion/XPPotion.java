@@ -4,6 +4,10 @@ import Model.Entity.Player;
 
 public class XPPotion extends Potion {
 
+    public XPPotion(){
+        this.name = "xpPotion";
+    }
+
     private int XPIncrement = 75;
 
     @Override

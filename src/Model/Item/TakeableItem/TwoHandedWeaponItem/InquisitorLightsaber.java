@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class InquisitorLightsaber extends TwoHandedWeaponItem{
 
+    public InquisitorLightsaber(){
+        this.name = "inquisitorLightsaber";
+    }
+
     private double damageAmount = 2.25; // gets multiplied by skill level
     private double secondsPerUse = 2.0;
 

@@ -11,6 +11,10 @@ import Model.Utilites.Time;
 
 public class WaterHammer extends TwoHandedWeaponItem{
 
+    public WaterHammer(){
+        this.name = "waterHammer";
+    }
+
     private double damageAmount = 1.75; // gets multiplied by skill level
     private double secondsPerUse = 2.0;
 

@@ -84,4 +84,7 @@ public class Sneak extends Role {
         }
 
     }
+
+    @Override
+    public RoleType getRoleType() { return RoleType.Sneak; }
 }

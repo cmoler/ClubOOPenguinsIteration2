@@ -10,4 +10,9 @@ public class InteractiveItem extends Item {
     public void touch(Player entity) {
 
     }
+
+    @Override
+    public boolean shouldBeRemoved() {
+        return false;
+    }
 }

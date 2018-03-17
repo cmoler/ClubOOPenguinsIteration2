@@ -27,6 +27,11 @@ public class SpriteParser {
     private BufferedImage[] avatarSprites;
     private BufferedImage[] avatarSprites_NINJA;
 
+    public Image getItemFromName(String name){
+        ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
+        return imageIcon.getImage();
+    }
+
     public Image getIceImage(){
         return tileSprites[11*12];
     }
