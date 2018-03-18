@@ -1,15 +1,18 @@
 package Controller.SavingLoading;
 
-import Model.Entity.Equipment;
-import Model.Entity.Inventory;
-import Model.Entity.Player;
+import Model.Entity.*;
 import Model.Entity.Role.Role;
-import Model.Entity.Skill.Bargain;
-import Model.Entity.Skill.BindWounds;
-import Model.Entity.Skill.Observation;
+import Model.Entity.Role.Smasher;
+import Model.Entity.Role.Sneak;
+import Model.Entity.Role.Summoner;
+import Model.Entity.Skill.*;
+import Model.Map.AreaEffect.*;
 import Model.Map.Location;
+import Model.Map.Terrain.Terrain;
 import Model.Map.World;
 import org.json.JSONObject;
+
+import java.awt.geom.Area;
 
 public class Deserializer {
 
@@ -27,41 +30,121 @@ public class Deserializer {
 
         JSONObject playerJSON = saveFileJSON.getJSONObject("Player");
 
-        Inventory inventory = deserializeInventory(playerJSON.getJSONObject("Inventory"));
-        Equipment equipment = deserializeEquipment(playerJSON.getJSONObject("Equipment"));
-        Location   location = deserializeLocation(playerJSON.getJSONObject("Location"));
-        Role           role = deserializeRole(playerJSON.getJSONObject("Role"));
+        Inventory   inventory = deserializeInventory(playerJSON.getJSONObject("Inventory"));
+        Equipment   equipment = deserializeEquipment(playerJSON.getJSONObject("Equipment"));
+        Location     location = deserializeLocation(playerJSON.getJSONObject("Location"));
+        Role             role = deserializeRole(playerJSON.getJSONObject("Role"));
+        EntityType entityType = deserializeEntityType(playerJSON);
+
 
         int level = deserializeLevel(playerJSON);
         int HP    = deserializeHP(playerJSON);
         int maxHP = deserializeMaxHP(playerJSON);
-        int mana  = deserializeMana(saveFileJSON);
-        int XP    = deserializeXP(saveFileJSON);
-        int gold  = deserializeGold(saveFileJSON);
+        int mana  = deserializeMana(playerJSON);
+        int XP    = deserializeXP(playerJSON);
+        int gold  = deserializeGold(playerJSON);
+
+        return new Player(role, entityType);
     }
 
-    private Role deserializeRole(JSONObject playerClass){
-
-        BindWounds bindWounds = new BindWounds(playerClass.getInt("BindWoundsLevel"));
-        Bargain bargain = new Bargain(playerClass.getInt("BargainLevel"));
-        Observation observation = new Observation(playerClass.getInt("ObservationLevel"));
-
-        //JSONObject roleJSON = playerClass.getJSONObject("SpecificRole");
-
-        /*
-        private JSONObject saveClass(Role role){
-            JSONObject classJSON = new JSONObject();
-            classJSON.put("BindWoundsLevel", role.getBindWounds());
-            classJSON.put("BargainLevel", role.getBargain());
-            classJSON.put("ObservationLevel", role.getObservation());
-            role.save(this);
-            classJSON.put("Role", playerRole);
-            return classJSON;
+    private EntityType deserializeEntityType(JSONObject playerJSON){
+        if(playerJSON.getString("EntityType").equals("ICE")){
+            return EntityType.ICE;
         }
-        */
+        else{
+            return EntityType.WATER;
+        }
+    }
+
+    private Role deserializeRole(JSONObject playerRoleJSON){
+
+        BindWounds bindWounds = new BindWounds(playerRoleJSON.getInt("BindWoundsLevel"));
+        Bargain bargain = new Bargain(playerRoleJSON.getInt("BargainLevel"));
+        Observation observation = new Observation(playerRoleJSON.getInt("ObservationLevel"));
+
+        JSONObject roleJSON = playerRoleJSON.getJSONObject("Role");
+        String roleType = roleJSON.getString("RoleName");
+
+        if(roleType.equals("Smasher")){
+
+            OneHandedWeapon oneHandedWeapon = new OneHandedWeapon(roleJSON.getInt("OneHandedWeaponLevel"));
+            TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon(roleJSON.getInt("TwoHandedWeaponLevel"));
+            Brawl brawl = new Brawl(roleJSON.getInt("BrawlLevel"));
+
+            return new Smasher(bindWounds, bargain, observation, oneHandedWeapon, twoHandedWeapon, brawl);
+
+        }
+
+        else if(roleType.equals("Summoner")){
+
+            Enchantment enchantment = new Enchantment(roleJSON.getInt("EnchantmentLevel"));
+            Boon boon = new Boon(roleJSON.getInt("BoonLevel"));
+            Bane bane = new Bane(roleJSON.getInt("BaneLevel"));
+            Staff staff = new Staff(roleJSON.getInt("StaffLevel"));
+
+            return new Summoner(bindWounds, bargain, observation, enchantment, boon, bane, staff);
+        }
+
+        else{
+
+            PickPocket pickPocket = new PickPocket(roleJSON.getInt("PickPocketLevel"));
+            DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap(roleJSON.getInt("DetectAndRemoveTrapLevel"));
+            Creep creep = new Creep(roleJSON.getInt("CreepLevel"));
+            RangedWeapon rangedWeapon = new RangedWeapon(roleJSON.getInt("RangedWeaponLevel"));
+
+            return new Sneak(bindWounds, bargain, observation, pickPocket, detectAndRemoveTrap, creep, rangedWeapon);
+        }
+
     }
 
     private Location deserializeLocation(JSONObject location){
+
+        //DAMAGE, HEAL, KILL, LEVELUP, TELEPORT, TRAP, TRANSACTION
+
+        AreaEffect areaEffect;
+        Terrain terrain;
+
+        JSONObject areaEffectJSON = location.getJSONObject("AreaEffect");
+        String areaEffectType = areaEffectJSON.getString("Type");
+        if(areaEffectType.equals("DAMAGE")){
+            areaEffect = new DamageAreaEffect();
+        }
+        else if(areaEffectType.equals("HEAL")){
+            areaEffect = new HealAreaEffect();
+        }
+        else if(areaEffectType.equals("KILL")){
+            areaEffect = new KillAreaEffect();
+        }
+        else if(areaEffectType.equals("LEVELUP")){
+            areaEffect = new LevelUpAreaEffect();
+        }
+        else if(areaEffectType.equals("TELEPORT")){
+            String mapID = areaEffectJSON.getString("mapID");
+            int X = areaEffectJSON.getInt("X");
+            int Y = areaEffectJSON.getInt("Y");
+            areaEffect = new TeleportAreaEffect(mapID,X,Y);
+        }
+        else if(areaEffectType.equals("TRAP")){
+            areaEffect = new TrapAreaEffect();
+        }
+        else {
+
+        }
+
+        /*
+        private JSONObject saveLocation(Location location) {
+        JSONObject locationJSON = new JSONObject();
+        locationJSON.put("AreaEffect",  ""+location.getAreaEffect().getAreaEffectType() );
+        locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
+        ArrayList<String> itemList = new ArrayList<>();
+        for(int i = 0; i < location.getItems().size(); i++){
+//            itemList.add(location.getItems().get(i).getName());
+        }
+        locationJSON.put("Items", itemList);
+        return locationJSON;
+    }
+         */
+
 
     }
 
