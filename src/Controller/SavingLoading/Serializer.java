@@ -1,12 +1,12 @@
 package Controller.SavingLoading;
 
 import Model.Entity.NPC.NPC;
+import Model.Entity.NPC.ShopKeepNPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
-import Model.Entity.Skill.Staff;
 import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.OneShotItem.GoldOneShotItem;
@@ -36,9 +36,6 @@ import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
 import Model.Item.TakeableItem.Potion.HealthPotion;
 import Model.Item.TakeableItem.Potion.ManaPotion;
 import Model.Item.TakeableItem.Potion.XPPotion;
-import Model.Item.TakeableItem.Projectile.AngularProjectile;
-import Model.Item.TakeableItem.Projectile.LinearProjectile;
-import Model.Item.TakeableItem.Projectile.RadialProjectile;
 import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
@@ -47,7 +44,7 @@ import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
-import Model.Item.TakeableItem.UseableItem;
+import Model.Item.TakeableItem.WearableItem;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.AreaEffect.AreaEffectType;
 import Model.Map.AreaEffect.TeleportAreaEffect;
@@ -67,22 +64,7 @@ import java.util.List;
 
 public class Serializer implements Saver{
     JSONObject world = new JSONObject();
-    JSONObject player = new JSONObject();
     JSONObject playerRole = new JSONObject();
-
-    public void serializePlayer(Player player) {
-        this.player.put("Role", saveRole(player.getRole()));
-        this.player.put("Level", player.getLevel());
-        this.player.put("Location", saveLocation(player.getLocation()));
-        this.player.put("Inventory", saveInventory(player.getInventory()));
-        this.player.put("Equipment", saveEquipment(player.getEquipment()));
-        this.player.put("EntityType", player.getEntityType().toString());
-        this.player.put("HP", player.getHealth());
-        this.player.put("MaxHP", player.getMaxHealth());
-        this.player.put("Mana", player.getMana());
-        this.player.put("XP", player.getExperience());
-        this.player.put("Gold", player.getGold());
-    }
 
     public void serializeWorld(World world) {
         this.world.put("CurrentMap", world.getCurrentMap());
@@ -98,48 +80,67 @@ public class Serializer implements Saver{
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
         entityJSON.put("Level", entity.getLevel());
-        entityJSON.put("Location", saveLocation(entity.getLocation()));
+        entityJSON.put("Location", saveLocation(entity.getLocation()));//TODO: Change
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
         entityJSON.put("EntityType", entity.getEntityType().toString());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
-
+        entityJSON.put("LocationX", entity.getLocation().getxCoordinate());
+        entityJSON.put("LocationY", entity.getLocation().getyCoordinate());
         //Save either as player or as NPC
-        if (entity.getName() == "npc") {
-            entityJSON.put("Name", "npc");
-            saveNPC((NPC) entity, entityJSON);
+        JSONObject classJSON;
+        if (entity.getName().equals("npc")) {
+            classJSON = saveNPC((NPC) entity);
         }
-        else{
-            entityJSON.put("Name", "player");
-            savePlayer((Player) entity, entityJSON);
+        else if (entity.getName().equals("shopkeeper")){
+            classJSON = saveShopKeeper((ShopKeepNPC) entity);
         }
+        else {
+            classJSON = savePlayer((Player) entity);
+        }
+        entityJSON.put("EntityClass", classJSON);
 
         return entityJSON;
     }
 
 
-    public void savePlayer(Player player, JSONObject entityJSON) {
+    public JSONObject savePlayer(Player player) {
+        JSONObject playerJSON = new JSONObject();
 
-        //TODO save player stuff
+        playerJSON.put("Role", saveRole(player.getRole()));
+        playerJSON.put("SkillPoints", player.getSkillPointsAvailable());
+        playerJSON.put("Equipment", saveEquipment(player.getEquipment()));
+        playerJSON.put("Mana", player.getMana());
+        playerJSON.put("XP", player.getExperience());
+        playerJSON.put("Gold", player.getGold());
 
-
-//        this.player.put("Role", saveRole(player.getRole()));
-//        this.player.put("Level", player.getLevel());
-//        this.player.put("Location", saveLocation(player.getLocation()));
-//        this.player.put("Inventory", saveInventory(player.getInventory()));
-//        this.player.put("Equipment", saveEquipment(player.getEquipment()));
-//        this.player.put("EntityType", player.getEntityType().toString());
-//        this.player.put("HP", player.getHealth());
-//        this.player.put("MaxHP", player.getMaxHealth());
-//        this.player.put("Mana", player.getMana());
-//        this.player.put("XP", player.getExperience());
-//        this.player.put("Gold", player.getGold());
+        return playerJSON;
     }
 
-    public void saveNPC(NPC npc, JSONObject entityJSON){
+    public JSONObject saveNPC(NPC npc){
+        JSONObject NPCJSON = new JSONObject();
 
-        //TODO save NPC stuff
+        NPCJSON.put("Name", npc.getName());
+        NPCJSON.put("NPCState", npc.getState());
+        NPCJSON.put("Color", npc.getColor());
 
+        return NPCJSON;
+    }
+
+    public JSONObject saveShopKeeper(ShopKeepNPC shopKeepNPC){
+        JSONObject shopKeepNPCJSON = new JSONObject();
+
+        shopKeepNPCJSON.put("Name", shopKeepNPC.getName());
+        shopKeepNPCJSON.put("NPCState", shopKeepNPC.getState());
+
+        JSONObject shopMapJSON = new JSONObject();
+        shopMapJSON.put("MapID", shopKeepNPC.getMapID());
+        shopMapJSON.put("I", shopKeepNPC.getLocationI());
+        shopMapJSON.put("J", shopKeepNPC.getLocationJ());
+
+        shopKeepNPCJSON.put("ShopMap", shopMapJSON );
+
+        return shopKeepNPCJSON;
     }
 
 
@@ -166,10 +167,11 @@ public class Serializer implements Saver{
         JSONObject areaEffectJSON = new JSONObject();
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
         locationJSON.put("Obstacle", location.hasObstacle());
+        locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
+        locationJSON.put("X", location.getxCoordinate());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
 
-        locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
             itemList.add(location.getItems().get(i).getName());
         }
         locationJSON.put("Items", itemList);
@@ -215,26 +217,33 @@ public class Serializer implements Saver{
         return roleJSON;
     }
 
-    //DANGER
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
-        JSONArray items = new JSONArray();
+        ArrayList<String> items = new ArrayList<>();
         for(int i = 0;inventory.getIterator().hasNext();i++, inventory.getIterator().next()){
-            items.put(inventory.getIterator().getCurrent().save(this));
+            items.add(inventory.getIterator().getCurrent().save(this));
         }
-        inventoryJSON.put("Items:", new JSONArray(items));
+        inventoryJSON.put("Items", new JSONArray(items));
         return inventoryJSON;
     }
 
-    //DANGER
     private JSONObject saveEquipment(Equipment equipment) {
         JSONObject equipmentJSON = new JSONObject();
         equipmentJSON.put("Hotbar", saveHotbar(equipment.getHotbarItems()));
-        equipmentJSON.put("Head", equipment.getHead().save(this));
-        equipmentJSON.put("Body", equipment.getBody().save(this));
-        equipmentJSON.put("Legs", equipment.getLegs().save(this));
-        equipmentJSON.put("Ring", equipment.getRing().save(this));
+        equipmentJSON.put("Head", nullChecker(equipment.getHead()));
+        equipmentJSON.put("Body", nullChecker(equipment.getBody()));
+        equipmentJSON.put("Legs", nullChecker(equipment.getLegs()));
+        equipmentJSON.put("Ring", nullChecker(equipment.getRing()));
         return equipmentJSON;
+    }
+
+    private String nullChecker(WearableItem object){
+        if(object == null){
+            return "";
+        }
+        else{
+            return object.save(this);
+        }
     }
 
     private JSONObject saveHotbar(List<TakeableItem> items){
@@ -463,9 +472,5 @@ public class Serializer implements Saver{
 
     public JSONObject getWorld() {
         return world;
-    }
-
-    public JSONObject getPlayer() {
-        return player;
     }
 }

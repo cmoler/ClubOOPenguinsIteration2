@@ -101,4 +101,8 @@ public class NPC extends Entity implements Updateable{
     public String getColor() {
         return color;
     }
+
+    public String getState(){
+        return npcState.getType();
+    }
 }

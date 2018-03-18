@@ -27,6 +27,18 @@ public class ShopKeepNPC extends NPC {
         World.getWorld().changeCurrentMapTo(nextMap);
     }
 
+    public String getMapID() {
+        return mapID;
+    }
+
+    public int getLocationI() {
+        return locationI;
+    }
+
+    public int getLocationJ() {
+        return locationJ;
+    }
+
     @Override
     public void talk(){
         openShop();

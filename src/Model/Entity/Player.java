@@ -6,7 +6,7 @@ import Model.Entity.Role.Role;
 import Model.Map.Location;
 import Model.Saveable;
 
-public class Player extends Entity implements Saveable{
+public class Player extends Entity{
     private Role role;
     private int mana;
     private int gold;
@@ -100,10 +100,5 @@ public class Player extends Entity implements Saveable{
 
     public Equipment getEquipment() {
         return equipment;
-    }
-
-    @Override
-    public void save(Saver saver) {
-        saver.serializePlayer(this);
     }
 }
