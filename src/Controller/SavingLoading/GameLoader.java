@@ -2,6 +2,7 @@ package Controller.SavingLoading;
 
 import Model.Entity.*;
 import Model.Entity.Role.Role;
+import Model.Entity.Role.Smasher;
 import Model.Map.Location;
 import Model.Map.World;
 import org.json.*;
