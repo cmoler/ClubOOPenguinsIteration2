@@ -1,5 +1,6 @@
 package Model.Entity.NPC;
 
+import Model.Entity.EntityType;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
@@ -12,8 +13,8 @@ public class ShopKeepNPC extends NPC {
     private int locationI;
     private int locationJ;
 
-    public ShopKeepNPC(String color, String mapID, int locationI, int locationJ) {
-        super(color);
+    public ShopKeepNPC(String color, String mapID, int locationI, int locationJ, EntityType entityType) {
+        super(color, entityType);
         this.mapID = mapID;
         this.locationI = locationI;
         this.locationJ = locationJ;

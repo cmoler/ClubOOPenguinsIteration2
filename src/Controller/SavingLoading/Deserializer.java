@@ -3,10 +3,20 @@ package Controller.SavingLoading;
 import Model.Entity.*;
 import Model.Entity.Role.*;
 import Model.Entity.NPC.*;
+import Model.Entity.NPC.NPC;
+import Model.Entity.NPC.NPCState.NPCState;
+import Model.Entity.NPC.ShopKeepNPC;
+import Model.Entity.Role.Role;
+import Model.Entity.Role.Smasher;
+import Model.Entity.Role.Sneak;
+import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.*;
 
 import Model.Map.*;
 import Model.Map.AreaEffect.*;
+import Model.Map.Direction;
+import Model.Map.EntityLocation;
+import Model.Map.Location;
 import Model.Map.Terrain.*;
 
 import Model.Item.*;
@@ -27,6 +37,8 @@ import View.StatusView.StatusViewPort;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,61 +97,140 @@ public class Deserializer {
         return map;
     }
 
-    public Entity deserializeEntity(JSONObject entityJSON){
 
-        JSONObject playerJSON = saveFileJSON.getJSONObject("Player");
+    private Entity deserializeEntity(JSONObject entityJSON){
 
-        Inventory   inventory = deserializeInventory(playerJSON.getJSONObject("Inventory"));
-        Equipment   equipment = deserializeEquipment(playerJSON.getJSONObject("Equipment"));
-        Location     location = deserializeLocation(playerJSON.getJSONObject("Location"));
-        Role             role = deserializeRole(playerJSON.getJSONObject("Role"));
-        EntityType entityType = deserializeEntityType(playerJSON);
+        Inventory inventory = deserializeInventory(entityJSON.getJSONObject("Inventory"));
+        EntityType entityType = deserializeEntityType(entityJSON);
+        int HP = deserializeHP(entityJSON);
+        int maxHP = deserializeMaxHP(entityJSON);
 
+        JSONObject entityClass = entityJSON.getJSONObject("EntityClass");
+        String name = entityClass.getString("Name");
 
-        int level = deserializeLevel(playerJSON);
-        int HP    = deserializeHP(playerJSON);
-        int maxHP = deserializeMaxHP(playerJSON);
-        int mana  = deserializeMana(playerJSON);
-        int XP    = deserializeXP(playerJSON);
-        int gold  = deserializeGold(playerJSON);
+        Entity entity;
 
-        return new Player(role, entityType);
+        switch (name) {
+            case "Player":
+                entity = deserializePlayer(entityClass, entityType);
+                break;
+            case "NPC":
+                entity = deserializeNPC(entityClass, entityType);
+                break;
+            case "ShopKeepNPC":
+                entity = deserializeShopKeepNPC(entityClass, entityType);
+                break;
+            default:
+                entity = null;
+        }
+
+        entity.modifyMaxHealth(maxHP - 100);
+        entity.setHealth(HP);
+        entity.setInventory(inventory);
+
+        return entity;
     }
 
-    private EntityType deserializeEntityType(JSONObject playerJSON){
-        if(playerJSON.getString("EntityType").equals("ICE")){
-            return EntityType.ICE;
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
+        int skillPointsAvailable = EntityClass.getInt("SkillPoints");
+        JSONObject roleJSON = EntityClass.getJSONObject("Role");
+        int bindWoundsLevel = roleJSON.getInt("BindWoundsLevel");
+        int bargainLevel = roleJSON.getInt("BargainLevel");
+        int observationLevel = roleJSON.getInt("ObservationLevel");
+        JSONObject roleType = roleJSON.getJSONObject("Role");
+
+        BindWounds bindWounds = new BindWounds(bindWoundsLevel);
+        Bargain bargain = new Bargain(bargainLevel);
+        Observation observation = new Observation(observationLevel);
+
+        Role role = null;
+
+        switch(roleType.getString("RoleName")){
+            case "Smasher":
+                OneHandedWeapon oneHandedWeapon = new OneHandedWeapon(roleType.getInt("OneHandedWeaponLevel"));
+                TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon(roleType.getInt("TwoHandedWeaponLevel"));
+                Brawl brawl = new Brawl(roleType.getInt("BrawlLevel"));
+                role = new Smasher(bindWounds, bargain, observation, oneHandedWeapon, twoHandedWeapon, brawl);
+                break;
+            case "Sneak":
+                PickPocket pickPocket = new PickPocket(roleType.getInt("PickPocketLevel"));
+                DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap(roleType.getInt("DetectAndRemoveTrapLevel"));
+                Creep creep = new Creep(roleType.getInt("CreepLevel"));
+                RangedWeapon rangedWeapon = new RangedWeapon(roleType.getInt("RangedWeaponLevel"));
+                role = new Sneak(bindWounds, bargain, observation, pickPocket, detectAndRemoveTrap, creep, rangedWeapon);
+                break;
+            case "Summoner":
+                Enchantment enchantment = new Enchantment(roleType.getInt("EnchantmentLevel"));
+                Boon boon = new Boon(roleType.getInt("BoonLevel"));
+                Bane bane = new Bane(roleType.getInt("BaneLevel"));
+                Staff staff = new Staff((roleType.getInt("StaffLevel")));
+                role = new Summoner(bindWounds, bargain, observation, enchantment, boon, bane, staff);
+                break;
+            default:
+                break;
         }
-        else{
-            return EntityType.WATER;
-        }
+
+        Player player = new Player(role, type, skillPointsAvailable);
+
+        player.addMana(EntityClass.getInt("Mana"));
+        player.gainExperience(EntityClass.getInt("XP"));
+        player.modifyGold(EntityClass.getInt("Gold"));
+
+        deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
+
+        return player;
+
+    }
+
+    private Entity deserializeNPC(JSONObject entityClass, EntityType entityType){
+
+        String color = entityClass.getString("color");
+        NPC npc = new NPC(color, entityType);
+        deserializeNPCState(entityClass, npc);
+
+        return npc;
     }
 
     private Entity deserializeShopKeepNPC(JSONObject entityClass, EntityType entityType){
-        String npcState = entityClass.getString("NPCState");
         String color = entityClass.getString("color");
         JSONObject shopMap = entityClass.getJSONObject("ShopMap");
         String mapID = shopMap.getString("MapID");
         int i = shopMap.getInt("I");
         int j= shopMap.getInt("J");
 
-        ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j);
+        ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j, entityType);
+        deserializeNPCState(entityClass, shopKeepNPC);
+
+        return shopKeepNPC;
+    }
+
+    private void deserializeNPCState(JSONObject entityClass, NPC npc){
+        String npcState = entityClass.getString("NPCState");
+
         switch (npcState){
             case "aggro":
-                shopKeepNPC.pissOff();
+                npc.pissOff();
                 break;
             case "enemy":
-                shopKeepNPC.pissOff();
+                npc.pissOff();
                 break;
             case "sleep":
-                shopKeepNPC.fallAsleep();
+                npc.fallAsleep();
                 break;
             case "friendly":
-                shopKeepNPC.beFriends();
+                npc.beFriends();
                 break;
         }
 
-        return shopKeepNPC;
+    }
+
+    private EntityType deserializeEntityType(JSONObject entityJSON){
+        if(entityJSON.getString("EntityType").equals("ICE")){
+            return EntityType.ICE;
+        }
+        else{
+            return EntityType.WATER;
+        }
     }
 
     private Role deserializeRole(JSONObject playerRoleJSON){
@@ -296,61 +387,7 @@ public class Deserializer {
 
     }
 
-    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
-        int skillPointsAvailable = EntityClass.getInt("SkillPoints");
-        JSONObject roleJSON = EntityClass.getJSONObject("Role");
-        int bindWoundsLevel = roleJSON.getInt("BindWoundsLevel");
-        int bargainLevel = roleJSON.getInt("BargainLevel");
-        int observationLevel = roleJSON.getInt("ObservationLevel");
-        JSONObject roleType = roleJSON.getJSONObject("Role");
 
-        BindWounds bindWounds = new BindWounds(bindWoundsLevel);
-        Bargain bargain = new Bargain(bargainLevel);
-        Observation observation = new Observation(observationLevel);
-
-        Role role = new Role() {
-            @Override
-            public void save(Saver saver) {
-
-            }
-        };
-
-        switch(roleType.getString("RoleName")){
-            case "Smasher":
-                OneHandedWeapon oneHandedWeapon = new OneHandedWeapon(roleType.getInt("OneHandedWeaponLevel"));
-                TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon(roleType.getInt("TwoHandedWeaponLevel"));
-                Brawl brawl = new Brawl(roleType.getInt("BrawlLevel"));
-                role = new Smasher(bindWounds, bargain, observation, oneHandedWeapon, twoHandedWeapon, brawl);
-                break;
-            case "Sneak":
-                PickPocket pickPocket = new PickPocket(roleType.getInt("PickPocketLevel"));
-                DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap(roleType.getInt("DetectAndRemoveTrapLevel"));
-                Creep creep = new Creep(roleType.getInt("CreepLevel"));
-                RangedWeapon rangedWeapon = new RangedWeapon(roleType.getInt("RangedWeaponLevel"));
-                role = new Sneak(bindWounds, bargain, observation, pickPocket, detectAndRemoveTrap, creep, rangedWeapon);
-                break;
-            case "Summoner":
-                Enchantment enchantment = new Enchantment(roleType.getInt("EnchantmentLevel"));
-                Boon boon = new Boon(roleType.getInt("BoonLevel"));
-                Bane bane = new Bane(roleType.getInt("BaneLevel"));
-                Staff staff = new Staff((roleType.getInt("StaffLevel")));
-                role = new Summoner(bindWounds, bargain, observation, enchantment, boon, bane, staff);
-                break;
-            default:
-                break;
-        }
-
-        Player player = new Player(role, type, skillPointsAvailable);
-
-        player.addMana(EntityClass.getInt("Mana"));
-        player.gainExperience(EntityClass.getInt("XP"));
-        player.modifyGold(EntityClass.getInt("Gold"));
-
-        deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
-
-        return player;
-
-    }
 
     private TakeableItem parseItem(String itemName){
         switch(itemName){
