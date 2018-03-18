@@ -3,10 +3,8 @@ package View.AreaView;
 import View.Viewport;
 import Configs.AreaSizes;
 import Configs.Commons;
-import Configs.AreaSizes;
-import Model.Entity.Entity;
-import Model.Map.MapIterator;
-import Model.Map.World;
+import Model.Map.Location;
+import Model.Entity.Skill.Observation;
 
 import java.awt.*;
 import java.awt.event.*;

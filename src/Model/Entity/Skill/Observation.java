@@ -1,8 +1,10 @@
 package Model.Entity.Skill;
 
+import Model.Entity.Entity;
 import Model.Map.Direction;
 import Model.Map.Location;
 import Model.Item.Item;
+import Model.Map.EntityLocation;
 
 import java.util.ArrayList;
 
@@ -55,5 +57,38 @@ public class Observation extends Skill {
 
         return location.getAreaEffect().getAreaEffectType().toString();
     }
+
+    public int getEntityHealth(Location location, int moveX, int moveY) {
+        location = goToTile(location, moveX, moveY);
+
+        EntityLocation el =  new EntityLocation();
+
+        return el.getEntityAtLocation(location).getHealth();
+    }
+
+    public int getEntityMaxHealth(Location location, int moveX, int moveY) {
+        location = goToTile(location, moveX, moveY);
+
+        EntityLocation el =  new EntityLocation();
+
+        return el.getEntityAtLocation(location).getMaxHealth();
+    }
+
+    public int getEntityLevel(Location location, int moveX, int moveY) {
+        location = goToTile(location, moveX, moveY);
+
+        EntityLocation el =  new EntityLocation();
+
+        return el.getEntityAtLocation(location).getLevel();
+    }
+
+    public String getEntityType(Location location, int moveX, int moveY) {
+        location = goToTile(location, moveX, moveY);
+
+        EntityLocation el =  new EntityLocation();
+
+        return el.getEntityAtLocation(location).getEntityType().toString();
+    }
+
 
 }
