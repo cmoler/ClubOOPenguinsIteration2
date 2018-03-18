@@ -1,5 +1,6 @@
 package View.AreaView;
 
+import Model.Entity.Player;
 import View.Viewport;
 import Configs.AreaSizes;
 import Configs.Commons;
@@ -19,8 +20,10 @@ public class AreaViewPort extends Viewport {
     private int rowCount = Commons.SCREEN_HEIGHT / AreaSizes.TERRAIN_HEIGHT;
     private int colCount = Commons.SCREEN_WIDTH / AreaSizes.TERRAIN_WIDTH;
 
-    public AreaViewPort() {
+    private Player player;
 
+    public AreaViewPort(Player player) {
+        this.player = player;
     }
 
     private JButton getButtonIndex(int x, int y) {
@@ -40,6 +43,8 @@ public class AreaViewPort extends Viewport {
 
         buttonGrid.setOpaque(false);
 
+        this.setLayout(new BorderLayout());
+
         add(buttonGrid);
         setVisible(true);
     }
@@ -54,6 +59,7 @@ public class AreaViewPort extends Viewport {
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
         btn.setOpaque(false);
+        btn.setPreferredSize(new Dimension(AreaSizes.TERRAIN_WIDTH, AreaSizes.TERRAIN_HEIGHT));
         btn.setToolTipText("Click to observe");
 
         btn.addActionListener(new ActionListener() {
@@ -68,6 +74,11 @@ public class AreaViewPort extends Viewport {
                 JButton getIndex = getButtonIndex(x, y);
 
                 //Get player location
+                Location location = player.getLocation();
+                String type = ob.getEntityType(location, moveX, moveY);
+                String maxHealth = Integer.toString(ob.getEntityMaxHealth(location, moveX, moveY));
+                String health = Integer.toString(ob.getEntityHealth(location, moveX, moveY));
+                String level = Integer.toString(ob.getEntityLevel(location, moveX, moveY));
 
 
                 getTopLevelAncestor().requestFocus();

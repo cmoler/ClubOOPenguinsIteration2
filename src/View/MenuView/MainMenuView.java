@@ -94,7 +94,7 @@ public class MainMenuView extends MenuViewPort {
 
 
         buttonGrid.setOpaque(false);
-        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+//        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
 
         this.add(buttonGrid);

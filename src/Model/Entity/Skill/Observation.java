@@ -7,11 +7,15 @@ import Model.Item.Item;
 import Model.Map.EntityLocation;
 
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Observation extends Skill {
 
+    private int probablity;
+
     public Observation(int points){
         super(points);
+        probablity = points * 9 + 9;
     }
 
     private Location goToTile(Location location, int moveX, int moveY) {
@@ -64,7 +68,10 @@ public class Observation extends Skill {
 
         EntityLocation el =  new EntityLocation();
 
-        return el.getEntityAtLocation(location).getHealth();
+        if (ThreadLocalRandom.current().nextInt(0, 101) <= probablity)
+            return el.getEntityAtLocation(location).getHealth();
+        else
+            return ThreadLocalRandom.current().nextInt(1, 200);
     }
 
     public int getEntityMaxHealth(Location location, int moveX, int moveY) {
@@ -72,7 +79,10 @@ public class Observation extends Skill {
 
         EntityLocation el =  new EntityLocation();
 
-        return el.getEntityAtLocation(location).getMaxHealth();
+        if (ThreadLocalRandom.current().nextInt(0, 101) <= probablity)
+            return el.getEntityAtLocation(location).getMaxHealth();
+        else
+            return ThreadLocalRandom.current().nextInt(1, 200);
     }
 
     public int getEntityLevel(Location location, int moveX, int moveY) {
@@ -80,7 +90,10 @@ public class Observation extends Skill {
 
         EntityLocation el =  new EntityLocation();
 
-        return el.getEntityAtLocation(location).getLevel();
+        if(ThreadLocalRandom.current().nextInt(0, 101) <= probablity)
+            return el.getEntityAtLocation(location).getLevel();
+        else
+            return ThreadLocalRandom.current().nextInt(1, 51);
     }
 
     public String getEntityType(Location location, int moveX, int moveY) {
@@ -88,10 +101,10 @@ public class Observation extends Skill {
 
         EntityLocation el =  new EntityLocation();
 
-        if(el != null)
+        if(ThreadLocalRandom.current().nextInt(0, 101) <= probablity)
             return el.getEntityAtLocation(location).getEntityType().toString();
         else
-            return "There isn't anything here";
+            return "Unidentified";
     }
 
 
