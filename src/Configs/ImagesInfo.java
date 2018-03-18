@@ -10,6 +10,10 @@ public interface ImagesInfo {
     public static final String AVATAR_SHEET_RED = "resources/images/playerSprites/redPenguin.png";
     public static final String AVATAR_SHEET_NINJA = "resources/images/playerSprites/Penguin_Chat_3_Ninja_spritesheet.png";
 
+    public static final String NPC_BLUE_FILELOCATION = "resources/images/clubPenguinEnemies/blackPuffle.png":
+    public static final String NPC_RED_FILELOCATION = "resources/images/clubPenguinEnemies/greenPuffle.png":
+    public static final String NPC_YELLOW_FILELOCATION = "resources/images/clubPenguinEnemies/chickenPuffle.png":
+
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/aoe/Red_AOE.png";
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/aoe/Green_AOE.png";
     public static final String AREAEFFECT_KILL_FILELOCATION = "resources/images/aoe/Black_AOE.png";
@@ -33,6 +37,10 @@ public interface ImagesInfo {
     public static final String INCREASE_SKILL_ICON = "resources/images/IncreaseSkillIcon.png";
 
     public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
+
+    public static final Image NPC_BLUE_IMAGE = SpriteParser.getSpriteParser().getNPCBlueImage();
+    public static final Image NPC_RED_IMAGE = SpriteParser.getSpriteParser().getNPCRedImage();
+    public static final Image NPC_YELLOW_IMAGE = SpriteParser.getSpriteParser().getNPCYellowImage();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
     public static final Image WATER_IMAGE = SpriteParser.getSpriteParser().getWaterImage();
