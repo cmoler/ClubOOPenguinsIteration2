@@ -40,7 +40,7 @@ import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Map.AreaEffect.*;
 import Model.Map.Location;
-import Model.Map.Terrain.Terrain;
+import Model.Map.Terrain.*;
 import Model.Map.World;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -134,11 +134,22 @@ public class Deserializer {
 
     private Location deserializeLocation(JSONObject location){
 
-        //DAMAGE, HEAL, KILL, LEVELUP, TELEPORT, TRAP, TRANSACTION
-
-        AreaEffect areaEffect;
+        //TERRAIN DESERIALIZATION
         Terrain terrain;
+        String terrainType = location.getString("Terrain");
+        if(terrainType.equals("ICE")){
+            terrain = new Ice();
+        }
+        else if(terrainType.equals("GLACIER")){
+            terrain = new Glacier();
+        }
+        else{
+            terrain = new Water();
+        }
 
+
+        //AREAEFFECT DESERIALIZATION
+        AreaEffect areaEffect;
         JSONObject areaEffectJSON = location.getJSONObject("AreaEffect");
         String areaEffectType = areaEffectJSON.getString("Type");
         if(areaEffectType.equals("DAMAGE")){
@@ -166,6 +177,12 @@ public class Deserializer {
             areaEffect = new TransactionAreaEffect();
         }
 
+
+        //OBSTACLE DESERIALIZATION
+        boolean obstacle = location.getBoolean("Obstacle");
+
+
+        //ITEMS DESERIALIZATION
         List<Item> items = new ArrayList<>();
         JSONArray jsonItems = location.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
@@ -174,22 +191,8 @@ public class Deserializer {
             items.add(takeableItem);
         }
 
-        
-        /*
-        private JSONObject saveLocation(Location location) {
-        JSONObject locationJSON = new JSONObject();
-        locationJSON.put("AreaEffect",  ""+location.getAreaEffect().getAreaEffectType() );
-        locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
-        ArrayList<String> itemList = new ArrayList<>();
-        for(int i = 0; i < location.getItems().size(); i++){
-//            itemList.add(location.getItems().get(i).getName());
-        }
-        locationJSON.put("Items", itemList);
-        return locationJSON;
-    }
-         */
 
-
+        return new Location(terrain, obstacle, areaEffect, items);
     }
 
     private Inventory deserializeInventory(JSONObject inventory){

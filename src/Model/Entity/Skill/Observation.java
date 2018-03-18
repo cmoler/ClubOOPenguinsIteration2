@@ -5,9 +5,9 @@ import Model.Map.Location;
 import java.util.ArrayList;
 
 public class Observation extends Skill {
-//    public Observation(int points){
-//        super(points);
-//    }
+    public Observation(int points){
+        super(points);
+    }
 //
 //    public String getTileItems(Location location) {
 //        Location.LocationItemIterator li = new Location.LocationItemIterator();
