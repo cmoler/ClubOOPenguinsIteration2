@@ -1,10 +1,7 @@
 package Controller.SavingLoading;
 
 import Model.Entity.*;
-import Model.Entity.Role.*;
-import Model.Entity.NPC.*;
 import Model.Entity.NPC.NPC;
-import Model.Entity.NPC.NPCState.NPCState;
 import Model.Entity.NPC.ShopKeepNPC;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
@@ -14,8 +11,7 @@ import Model.Entity.Skill.*;
 
 import Model.Map.*;
 import Model.Map.AreaEffect.*;
-import Model.Map.Direction;
-import Model.Map.EntityLocation;
+
 import Model.Map.Location;
 import Model.Map.Terrain.*;
 
@@ -38,7 +34,6 @@ import View.StatusView.StatusViewPort;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.List;
 
