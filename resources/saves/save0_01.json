@@ -1,0 +1,46 @@
+{
+  "World": {
+    "CurrentMap": "3213",
+    "Maps": [
+      {
+        "mapID": "3213",
+        "Rows": 2,
+        "Cols": 2,
+        "Entities": [
+          {
+            "Inventory": {
+              "Items": [
+                "key",
+                "key"
+              ]
+            },
+            "EntityType": "ICE",
+            "HP": 2,
+            "MaxHP": 100,
+            "LocationX": 0,
+            "LocationY": 0,
+            "EntityClass": {
+              "Name": "NPC",
+              "NPCState": "aggro",
+              "Color": "blue"
+            }
+          }
+        ],
+        "Locations": [
+          {
+            "AreaEffect": {
+              "Type": "HEAL"
+            },
+            "Terrain": "ICE",
+            "Obstacle": 0,
+            "Items": [
+              "Key"
+            ],
+            "X": 3,
+            "Y": 3
+          }
+        ]
+      }
+    ]
+  }
+}
