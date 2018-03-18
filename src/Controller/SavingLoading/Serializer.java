@@ -140,7 +140,7 @@ public class Serializer implements Saver{
     private JSONObject saveAreaEffect(AreaEffect areaEffect){
         JSONObject areaEffectJSON = new JSONObject();
         areaEffectJSON.put("Type", areaEffect.getAreaEffectType());
-        if(areaEffect.getAreaEffectType() == AreaEffectType.){
+        if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
             areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
             areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
             areaEffectJSON.put("Y", ((TeleportAreaEffect) areaEffect).getY());
