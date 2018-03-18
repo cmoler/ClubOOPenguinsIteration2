@@ -404,4 +404,19 @@ public class SpriteParser {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.SLEEP_FILELOCATION);
         return imageIcon.getImage();
     }
+
+    public Image getExpPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.EXP_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealthPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEALTH_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getManaPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.MANA_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
 }

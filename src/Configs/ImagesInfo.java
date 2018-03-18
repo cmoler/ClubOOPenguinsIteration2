@@ -28,6 +28,10 @@ public interface ImagesInfo {
     public static final String PROJECTILE_RADIALICEATTACKFILELOCATION = "resources/images/magic/radialIceAttack.png";
     public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment/pizza.png";
 
+    public static final String EXP_POTION_FILELOCATION = "resources/images/equipment/expPotion.png";
+    public static final String HEALTH_POTION_FILELOCATION = "resources/images/equipment/healthPotion.png";
+    public static final String MANA_POTION_FILELOCATION = "resources/images/equipment/manaPotion.png";
+
     public static final String RED_CROSS_FILELOCATION = "resources/images/terrain/RedCross.png";
     public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/terrain/SkullCrossBone.png";
     public static final String GOLD_STAR_FILELOCATION = "resources/images/terrain/goldstar.png";
@@ -75,6 +79,10 @@ public interface ImagesInfo {
     public static final Image PROJECTILE_ANGULARICEATTACK = SpriteParser.getSpriteParser().getAngularIceAttackImage();
     public static final Image PROJECTILE_RADIALICEATTACK = SpriteParser.getSpriteParser().getRadialIceAttackImage();
     public static final Image PROJECTILE_PIZZA = SpriteParser.getSpriteParser().getPizzaImage();
+
+    public static final Image EXP_POTION_IMAGE = SpriteParser.getSpriteParser().getExpPotionImage();
+    public static final Image HEALTH_POTION_IMAGE = SpriteParser.getSpriteParser().getHealthPotionImage();
+    public static final Image MANA_POTION_IMAGE = SpriteParser.getSpriteParser().getManaPotionImage();
 
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
     public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();
