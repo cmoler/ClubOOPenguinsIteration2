@@ -21,7 +21,7 @@ public class NPC extends Entity implements Updateable{
 
     public NPC(String color) {
         this.color = color;
-        name = "npc";
+        name = "NPC";
         talkString = "Hello World!";
     }
 
