@@ -107,4 +107,5 @@ public class Player extends Entity{
     public Equipment getEquipment() {
         return equipment;
     }
+
 }

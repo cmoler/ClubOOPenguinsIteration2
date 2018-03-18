@@ -30,7 +30,7 @@ import Model.Item.TakeableItem.RangedWeaponItem.*;
 import Model.Item.TakeableItem.StaffItem.*;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.*;
 
-import View.AreaView.AreaViewPort;
+import View.AreaView.*;
 import View.StatusView.StatusViewPort;
 
 import View.Viewport;
@@ -38,6 +38,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Deserializer {
@@ -49,6 +50,9 @@ public class Deserializer {
     private List<NPC> NPCs;
 
     private Viewport viewport = new Viewport();
+    private HashMap<Map,MapView> mapViews = new HashMap<>();
+    private MapView currentMapView;
+    private WorldView worldView;
     private AreaViewPort areaViewPort = new AreaViewPort();
 
 
@@ -56,6 +60,8 @@ public class Deserializer {
         this.saveFileJSON = saveFileJSON;
         this.gameBuilder = gameBuilder;
         NPCs = new ArrayList<>();
+
+        viewport.add(areaViewPort);
 
         deserializeWorld(saveFileJSON.getJSONObject("World"));
 
@@ -72,6 +78,8 @@ public class Deserializer {
         }
 
         setNPC(this.NPCs, this.player);
+        worldView = new WorldView(mapViews);
+
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -96,6 +104,10 @@ public class Deserializer {
 
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
+
+        MapView mapView = new MapView();
+        currentMapView = mapView;
+        mapViews.put(map, mapView);
 
         return map;
     }
@@ -151,6 +163,10 @@ public class Deserializer {
 
         deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
 
+        PlayerView playerView = new PlayerView(player, player.getLocation().getxCoordinate(),
+                player.getLocation().getyCoordinate(), player.getRole().getRoleType().name());
+        currentMapView.add(playerView);
+
         this.player = player;
         return player;
 
@@ -163,6 +179,10 @@ public class Deserializer {
         deserializeNPCState(entityClass, npc);
 
         NPCs.add(npc);
+
+        NPCView npcView = new NPCView(npc);
+        currentMapView.add(npcView);
+
         return npc;
     }
 
@@ -177,6 +197,10 @@ public class Deserializer {
         deserializeNPCState(entityClass, shopKeepNPC);
 
         NPCs.add(shopKeepNPC);
+
+        NPCView npcView = new NPCView(shopKeepNPC);
+        currentMapView.add(npcView);
+
         return shopKeepNPC;
     }
 
