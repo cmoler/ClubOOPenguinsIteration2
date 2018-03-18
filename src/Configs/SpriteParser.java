@@ -26,7 +26,8 @@ public class SpriteParser {
 
     private BufferedImage[] tileSprites;
 
-    private BufferedImage[] avatarSprites;
+    private BufferedImage[] avatarSprites_BLUE;
+    private BufferedImage[] avatarSprites_RED;
     private BufferedImage[] avatarSprites_NINJA;
 
     public Image getItemFromName(String name){
@@ -131,24 +132,46 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
-    public Image getAvatarImage(Direction direction){
+    public Image getAvatarImage_BLUE(Direction direction){
         switch (direction){
             case N:
-                return avatarSprites[4];
+                return avatarSprites_BLUE[4];
             case NE:
-                return avatarSprites[5];
+                return avatarSprites_BLUE[5];
             case E:
-                return avatarSprites[6];
+                return avatarSprites_BLUE[6];
             case SE:
-                return avatarSprites[7];
+                return avatarSprites_BLUE[7];
             case S:
-                return avatarSprites[0];
+                return avatarSprites_BLUE[0];
             case SW:
-                return avatarSprites[1];
+                return avatarSprites_BLUE[1];
             case W:
-                return avatarSprites[2];
+                return avatarSprites_BLUE[2];
             case NW:
-                return avatarSprites[3];
+                return avatarSprites_BLUE[3];
+        }
+        return null;
+    }
+
+    public Image getAvatarImage_RED(Direction direction){
+        switch (direction){
+            case N:
+                return avatarSprites_RED[4];
+            case NE:
+                return avatarSprites_RED[5];
+            case E:
+                return avatarSprites_RED[6];
+            case SE:
+                return avatarSprites_RED[7];
+            case S:
+                return avatarSprites_RED[0];
+            case SW:
+                return avatarSprites_RED[1];
+            case W:
+                return avatarSprites_RED[2];
+            case NW:
+                return avatarSprites_RED[3];
         }
         return null;
     }
@@ -158,26 +181,27 @@ public class SpriteParser {
             case N:
                 return avatarSprites_NINJA[3];
             case NE:
-                return avatarSprites[7];
+                return avatarSprites_NINJA[7];
             case E:
-                return avatarSprites[6];
+                return avatarSprites_NINJA[6];
             case SE:
-                return avatarSprites[5];
+                return avatarSprites_NINJA[5];
             case S:
-                return avatarSprites[4];
+                return avatarSprites_NINJA[4];
             case SW:
-                return avatarSprites[0];
+                return avatarSprites_NINJA[0];
             case W:
-                return avatarSprites[1];
+                return avatarSprites_NINJA[1];
             case NW:
-                return avatarSprites[2];
+                return avatarSprites_NINJA[2];
         }
         return null;
     }
 
     private void getSprites(){
         getTileSprites();
-        getAvatarSprites();
+        getAvatarSprites_BLUE();
+        getAvatarSprites_RED();
         getAvatarSprites_NINJA();
     }
 
@@ -209,10 +233,10 @@ public class SpriteParser {
         }
     }
 
-    private void getAvatarSprites(){
+    private void getAvatarSprites_BLUE(){
         BufferedImage bigImg = null;
         try {
-            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET));
+            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET_BLUE));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -221,13 +245,13 @@ public class SpriteParser {
         final int height = 40;
         final int rows = 1;
         final int cols = 7;
-        avatarSprites = new BufferedImage[rows * cols];
+        avatarSprites_BLUE = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                avatarSprites[(i * cols) + j] = bigImg.getSubimage(
+                avatarSprites_BLUE[(i * cols) + j] = bigImg.getSubimage(
                         j * width,
                         i * height,
                         width,
@@ -236,6 +260,35 @@ public class SpriteParser {
             }
         }
     }
+
+    private void getAvatarSprites_RED(){
+        BufferedImage bigImg = null;
+        try {
+            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET_RED));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final int width = 37;
+        final int height = 40;
+        final int rows = 1;
+        final int cols = 7;
+        avatarSprites_BLUE = new BufferedImage[rows * cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                avatarSprites_BLUE[(i * cols) + j] = bigImg.getSubimage(
+                        j * width,
+                        i * height,
+                        width,
+                        height
+                );
+            }
+        }
+    }
+
     private void getAvatarSprites_NINJA(){
         BufferedImage bigImg = null;
         try {

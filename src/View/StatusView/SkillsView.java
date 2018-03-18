@@ -13,8 +13,6 @@ import java.util.List;
 
 public class SkillsView extends Viewport {
 
-    //TODO - adjust POINTS_COLUMN_X and BUTTON_COLUMN_X
-
     private Player player;
     private Role role;
     private int SKILL_COLUMN_X = (int) ((Commons.SCREEN_WIDTH  * 564.0/765.0));

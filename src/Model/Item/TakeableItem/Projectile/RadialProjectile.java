@@ -248,9 +248,4 @@ public class RadialProjectile implements Projectile {
         }
         return null;
     }
-
-    @Override
-    public String save(Saver saver) {
-        return saver.saveRadialProjectile(this);
-    }
 }

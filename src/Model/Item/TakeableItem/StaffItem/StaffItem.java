@@ -11,9 +11,9 @@ import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
-public class Staff extends UseableItem {
+public class StaffItem extends UseableItem {
 
-    public Staff(){
+    public StaffItem(){
         super();
         this.name = "staff";
     }

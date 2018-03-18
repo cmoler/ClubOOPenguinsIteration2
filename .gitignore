@@ -1,4 +1,8 @@
-.idea/
 out/
-idea/
+.DS_Store
+.idea/inspectionProfiles/
 .idea/workspace.xml
+.idea/vcs.xml
+.idea/uiDesigner.xml
+.idea/modules.xml
+.idea/misc.xml

@@ -37,6 +37,6 @@ public class ChestInteractiveItem extends InteractiveItem {
 
     @Override
     public String save(Saver saver) {
-        return null;
+        return saver.saveChestInteractiveItem(this);
     }
 }
