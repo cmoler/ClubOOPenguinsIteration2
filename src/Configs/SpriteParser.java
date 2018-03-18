@@ -322,7 +322,7 @@ public class SpriteParser {
     private void getChestSprites(){
         BufferedImage bigImg = null;
         try {
-            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCAITON));
+            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCATION));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -372,6 +372,36 @@ public class SpriteParser {
 
     public Image getTrapImage() {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.TRAP_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getCharmImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.CHARM_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEAL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseLevelImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_LEVEL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseMaxHealthImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_MAX_HEALTH_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSeppukuImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SEPPUKU_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSleepImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SLEEP_FILELOCATION);
         return imageIcon.getImage();
     }
 }
