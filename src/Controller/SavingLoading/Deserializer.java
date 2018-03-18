@@ -6,10 +6,42 @@ import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.*;
+import Model.Item.TakeableItem.Armor.Body;
+import Model.Item.TakeableItem.Armor.Helmet;
+import Model.Item.TakeableItem.Armor.Leg;
+import Model.Item.TakeableItem.Armor.Ring;
+import Model.Item.TakeableItem.BaneItem.AngularIceAttack;
+import Model.Item.TakeableItem.BaneItem.LinearIceAttack;
+import Model.Item.TakeableItem.BaneItem.RadialIceBomb;
+import Model.Item.TakeableItem.BoonItem.Heal;
+import Model.Item.TakeableItem.BoonItem.IncreaseMaxHealth;
+import Model.Item.TakeableItem.BoonItem.IncreaseXP;
+import Model.Item.TakeableItem.BrawlingItem.BrassKnuckles;
+import Model.Item.TakeableItem.BrawlingItem.SpikedGloves;
+import Model.Item.TakeableItem.BrawlingItem.SwordHands;
+import Model.Item.TakeableItem.EnchantmentItem.Charm;
+import Model.Item.TakeableItem.EnchantmentItem.Insomnia;
+import Model.Item.TakeableItem.EnchantmentItem.Seppuku;
+import Model.Item.TakeableItem.Key.Key;
+import Model.Item.TakeableItem.OneHandedWeaponItem.BlueLightsaber;
+import Model.Item.TakeableItem.OneHandedWeaponItem.Mjolnir;
+import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
+import Model.Item.TakeableItem.Potion.HealthPotion;
+import Model.Item.TakeableItem.Potion.ManaPotion;
+import Model.Item.TakeableItem.Potion.XPPotion;
+import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
+import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
+import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
+import Model.Item.TakeableItem.StaffItem.StaffItem;
+import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
+import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Map.AreaEffect.*;
 import Model.Map.Location;
 import Model.Map.Terrain.Terrain;
 import Model.Map.World;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.awt.geom.Area;
@@ -149,11 +181,86 @@ public class Deserializer {
     }
 
     private Inventory deserializeInventory(JSONObject inventory){
+        Inventory inventoryModel = new Inventory();
+        JSONArray items = inventory.getJSONArray("Items");
+        for(int i = 0; i < items.length(); ++i){
+            Object item = items.get(i);
+            TakeableItem takeableItem = parseItem(((TakeableItem)item).getName());
+            inventoryModel.addItem(takeableItem);
+        }
 
+        return inventoryModel;
     }
 
     private Equipment deserializeEquipment(JSONObject equipment){
 
+    }
+
+    private TakeableItem parseItem(String itemName){
+        switch(itemName){
+            case "body":
+                return new Body();
+            case "helmet":
+                return new Helmet();
+            case "legs":
+                return new Leg();
+            case "ring":
+                return new Ring();
+            case "angularIceAttack":
+                return new AngularIceAttack();
+            case "linearIceAttack":
+                return new LinearIceAttack();
+            case "radialIceAttack":
+                return new RadialIceBomb();
+            case "heal":
+                return new Heal();
+            case "increaseMaxHealth":
+                return new IncreaseMaxHealth();
+            case "increaseLevel":
+                return new IncreaseXP();
+            case "brassKnuckles":
+                return new BrassKnuckles();
+            case "spikedGloves":
+                return new SpikedGloves();
+            case "swordHands":
+                return new SwordHands();
+            case "charm":
+                return new Charm();
+            case "sleep":
+                return new Insomnia();
+            case "seppuku":
+                return new Seppuku();
+            case "key":
+                return new Key();
+            case "blueLightsaber":
+                return new BlueLightsaber();
+            case "mjolnir":
+                return new Mjolnir();
+            case "thunderBlade":
+                return new ThunderBlade();
+            case "pizza":
+                return new Pizza();
+            case "snowLauncher":
+                return new SnowLauncher();
+            case "snowShuriken":
+                return new SnowShuriken();
+            case "staffItem":
+                return new StaffItem();
+            case "inquisitorLightsaber":
+                return new InquisitorLightsaber();
+            case "jeweledCutlass":
+                return new JeweledCutlass();
+            case "waterHammer":
+                return new WaterHammer();
+            case "healthPotion":
+                return new HealthPotion();
+            case "manaPotion":
+                return new ManaPotion();
+            case "xpPotion":
+                return new XPPotion();
+            default:
+                return new Key();
+        }
     }
 
     private int deserializeLevel(JSONObject entityJSON){

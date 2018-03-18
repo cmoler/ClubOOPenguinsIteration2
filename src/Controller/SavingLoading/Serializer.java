@@ -179,9 +179,9 @@ public class Serializer implements Saver{
     //DANGER
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
-        ArrayList<String> items = new ArrayList<>();
+        JSONArray items = new JSONArray();
         for(int i = 0;inventory.getIterator().hasNext();i++, inventory.getIterator().next()){
-            items.add(inventory.getIterator().getCurrent().save(this));
+            items.put(inventory.getIterator().getCurrent().save(this));
         }
         inventoryJSON.put("Items:", new JSONArray(items));
         return inventoryJSON;

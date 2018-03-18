@@ -19,7 +19,7 @@ public class Inventory {
         return new InventoryIterator();
     }
 
-    public Inventory(Entity entity) {
+    public Inventory() {
 
     }
 
