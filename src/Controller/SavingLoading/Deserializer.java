@@ -56,6 +56,7 @@ public class Deserializer {
     private HashMap<Map,MapView> mapViews = new HashMap<>();
     private MapView currentMapView;
     private WorldView worldView;
+    private StatusViewPort statusViewPort;
     private AreaViewPort areaViewPort = new AreaViewPort();
 
 
@@ -68,7 +69,9 @@ public class Deserializer {
 
         deserializeWorld(saveFileJSON.getJSONObject("World"));
 
-        gameBuilder.setStatusViewPort(new StatusViewPort(player));
+        statusViewPort = new StatusViewPort(player);
+        viewport.add(statusViewPort);
+        gameBuilder.setStatusViewPort(statusViewPort);
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -88,6 +91,12 @@ public class Deserializer {
             Map currentMap = maps.next();
             mapViews.get(currentMap).setEntity(player);
         }
+
+        worldView = new WorldView(mapViews);
+
+        areaViewPort.add(worldView);
+
+        viewport.add(areaViewPort);
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -309,7 +318,8 @@ public class Deserializer {
         AreaEffect areaEffect;
         JSONObject areaEffectJSON = locationJSON.getJSONObject("AreaEffect");
         String areaEffectType = areaEffectJSON.getString("Type");
-        Viewport areaEffectView;
+        Viewport areaEffectView = null;
+        DecalView decalView = null;
 
         if(areaEffectType.equals("DAMAGE")){
             areaEffect = new DamageAreaEffect();
@@ -321,22 +331,19 @@ public class Deserializer {
             areaEffect = new HealAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_HEAL_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
         }
         else if(areaEffectType.equals("KILL")){
             areaEffect = new KillAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_KILL_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
         }
         else if(areaEffectType.equals("LEVELUP")){
             areaEffect = new LevelUpAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_LEVELUP_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
         }
         else if(areaEffectType.equals("TELEPORT")){
             String mapID = areaEffectJSON.getString("mapID");
@@ -388,8 +395,12 @@ public class Deserializer {
         for(ItemView itemView : itemViews){
             locationView.add(itemView);
         }
+        
         locationView.add(areaEffectView);
+        locationView.add(decalView);
         locationView.add(terrainView);
+
+        currentMapView.add(locationView);
 
         if(obstacle){
             locationView.add(new ObstacleView(ImagesInfo.OBSTACLE_IMAGE));

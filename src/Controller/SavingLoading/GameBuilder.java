@@ -55,18 +55,6 @@ public class GameBuilder {
         this.player = player;
     }
 
-    public void setInventoryView(InventoryView inventoryView){
-        this.inventoryView = inventoryView;
-    }
-
-    public void setSkillsView(SkillsView skillsView){
-        this.skillsView = skillsView;
-    }
-
-    public void setEquipmentView(EquipmentView equipmentView){
-        this.equipmentView = equipmentView;
-    }
-
     public void setStatusViewPort(StatusViewPort statusViewPort){
         this.statusViewPort = statusViewPort;
     }
@@ -79,13 +67,7 @@ public class GameBuilder {
         return null;
     }
 
-    public EquipmentView getEquipmentView() { return null; }
-
-    public InventoryView getInventoryView() { return null; }
-
     public MainMenuView getMainMenuViewport() { return menuViewPort; }
-
-    public SkillsView getSkillsView() { return null; }
 
     public Player getPlayer(){
         return null;
