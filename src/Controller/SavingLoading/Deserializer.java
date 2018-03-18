@@ -70,6 +70,7 @@ public class Deserializer {
             deserializeMap(mapsJSON.getJSONObject(mapIndex));
         }
 
+        setNPC(this.NPCs, this.player);
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -173,6 +174,12 @@ public class Deserializer {
 
         NPCs.add(shopKeepNPC);
         return shopKeepNPC;
+    }
+
+    private void setNPC(List<NPC> NPCs, Player player){
+        for (NPC npc : NPCs) {
+            npc.setPlayer(player);
+        }
     }
 
     private void deserializeNPCState(JSONObject entityClass, NPC npc){
