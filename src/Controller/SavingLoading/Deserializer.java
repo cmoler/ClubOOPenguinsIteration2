@@ -75,8 +75,6 @@ public class Deserializer {
         int rows = mapJSON.getInt("Rows");
         int cols = mapJSON.getInt("Cols");
 
-
-
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
         for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
             Entity entity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
@@ -90,10 +88,9 @@ public class Deserializer {
         }
 
         return new Map(locations);
-
     }
 
-    public Player deserializePlayer(){
+    public Entity deserializeEntity(){
 
         JSONObject playerJSON = saveFileJSON.getJSONObject("Player");
 
@@ -165,11 +162,11 @@ public class Deserializer {
 
     }
 
-    private Location deserializeLocation(JSONObject location){
+    private Location deserializeLocation(JSONObject locationJSON){
 
         //TERRAIN DESERIALIZATION
         Terrain terrain;
-        String terrainType = location.getString("Terrain");
+        String terrainType = locationJSON.getString("Terrain");
         if(terrainType.equals("ICE")){
             terrain = new Ice();
         }
@@ -183,7 +180,7 @@ public class Deserializer {
 
         //AREAEFFECT DESERIALIZATION
         AreaEffect areaEffect;
-        JSONObject areaEffectJSON = location.getJSONObject("AreaEffect");
+        JSONObject areaEffectJSON = locationJSON.getJSONObject("AreaEffect");
         String areaEffectType = areaEffectJSON.getString("Type");
         if(areaEffectType.equals("DAMAGE")){
             areaEffect = new DamageAreaEffect();
@@ -212,20 +209,27 @@ public class Deserializer {
 
 
         //OBSTACLE DESERIALIZATION
-        boolean obstacle = location.getBoolean("Obstacle");
+        boolean obstacle = locationJSON.getBoolean("Obstacle");
 
 
         //ITEMS DESERIALIZATION
         List<Item> items = new ArrayList<>();
-        JSONArray jsonItems = location.getJSONArray("Items");
+        JSONArray jsonItems = locationJSON.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
             String itemType = jsonItems.getString(itemIndex);
             TakeableItem takeableItem = parseItem(itemType);
             items.add(takeableItem);
         }
 
+        //X,Y DESERIALIZATION
+        int X = locationJSON.getInt("X");
+        int Y = locationJSON.getInt("Y");
 
-        return new Location(terrain, obstacle, areaEffect, items);
+        Location location = new Location(terrain, obstacle, areaEffect, items);
+        location.setxCoordinate(X);
+        location.setyCoordinate(Y);
+
+        return location;
     }
 
     private EntityLocation deserializeEntityLocation(JSONObject entityLocation){
