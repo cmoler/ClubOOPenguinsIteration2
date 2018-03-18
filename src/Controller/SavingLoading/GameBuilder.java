@@ -6,6 +6,7 @@ import Model.Entity.Inventory;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Map.World;
+import Model.Updateable;
 import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
 import View.StatusView.EquipmentView;
@@ -16,6 +17,7 @@ import View.Viewport;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 
 public class GameBuilder {
 
@@ -27,6 +29,7 @@ public class GameBuilder {
     private MemorySlots memorySlots;
 
     private KeyBindings keyBindings;
+    private List<Updateable> updateables;
 
     public GameBuilder(){
         menuViewPort = new MainMenuView();
@@ -72,5 +75,9 @@ public class GameBuilder {
 
     public KeyBindings getKeyBindings() {
         return keyBindings;
+    }
+
+    public List<Updateable> getUpdateables() {
+        return updateables;
     }
 }

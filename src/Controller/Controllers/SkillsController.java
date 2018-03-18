@@ -8,7 +8,7 @@ public class SkillsController implements Controller{
     private Role role;
 
     public SkillsController(GameBuilder gameBuilder){
-        role = gameBuilder.getPlayer().getRole();
+        //role = gameBuilder.getPlayer().getRole();
     }
 
     @Override

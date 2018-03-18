@@ -30,8 +30,8 @@ public class AreaViewPort extends Viewport {
     public void ButtonGrid() {
         JPanel buttonGrid = new JPanel(new GridLayout(rowCount, colCount, 0, 0));
 
-        for(int i = 0; i < rowCount; i++) {
-            for(int j = 0; j < colCount; j++) {
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
                 JButton btn = createButton(i, j);
                 btnList.add(btn);
                 buttonGrid.add(btn);
@@ -77,3 +77,4 @@ public class AreaViewPort extends Viewport {
     }
 
 
+}
