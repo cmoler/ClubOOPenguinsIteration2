@@ -81,7 +81,7 @@ public class Serializer implements Saver{
         JSONObject entityJSON = new JSONObject();
         entityJSON.put("Level", entity.getLevel());
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
-        entityJSON.put("EntityType", entity.getEntityType().name();
+        entityJSON.put("EntityType", entity.getEntityType().name());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
         entityJSON.put("LocationX", entity.getLocation().getxCoordinate());
