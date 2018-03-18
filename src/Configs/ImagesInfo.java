@@ -18,10 +18,10 @@ public interface ImagesInfo {
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/aoe/Green_AOE.png";
     public static final String AREAEFFECT_KILL_FILELOCATION = "resources/images/aoe/Black_AOE.png";
     public static final String AREAEFFECT_LEVELUP_FILELOCATION = "resources/images/aoe/Blue_AOE.png";
-    public static final String ITEM_ITERACTIVE_FILELOCATION = "resources/images/clubPenguinItems/Moss_Key_Pin.png";
-    public static final String ITEM_ONESHOT_FILELOCATION = "resources/images/clubPenguinItems/Fishburger.png";
+    public static final String KEY_FILELOCATION = "resources/images/clubPenguinItems/Moss_Key_Pin.png";
+    public static final String BURGER_FILELOCATION = "resources/images/clubPenguinItems/Fishburger.png";
     public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/clubPenguinItems/Blue_Bunny_Ears.png";
-    public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/clubPenguinItems/Portal_box.png";
+    public static final String PORTAL_FILELOCATION = "resources/images/clubPenguinItems/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
     public static final String PROJECTILE_LINEARICEATTACKFILELOCATION = "resources/images/magic/linearIceAttack.png";
     public static final String PROJECTILE_ANGULARICEATTACKFILELOCATION = "resources/images/magic/anglularIceAttack.png";
@@ -59,8 +59,8 @@ public interface ImagesInfo {
     public static final Image AREAEFFECT_KILL_IMAGE = SpriteParser.getSpriteParser().getAreaEffectKillImage();
     public static final Image AREAEFFECT_LEVELUP_IMAGE = SpriteParser.getSpriteParser().getAreaEffectLevelUpImage();
 
-    public static final Image ITEM_ITERACTIVE_IMAGE = SpriteParser.getSpriteParser().getInteractiveItemImage();
-    public static final Image ITEM_ONESHOT_IMAGE = SpriteParser.getSpriteParser().getOneShotItemImage();
+    public static final Image KEY_IMAGE = SpriteParser.getSpriteParser().getInteractiveItemImage();
+    public static final Image BURGER_IMAGE = SpriteParser.getSpriteParser().getOneShotItemImage();
     public static final Image ITEM_TAKEABLE_IMAGE = SpriteParser.getSpriteParser().getTakeAbleItemImage();
     public static final Image ITEM_TELEPORTER_IMAGE = SpriteParser.getSpriteParser().getTeleporterItemImage();
 
