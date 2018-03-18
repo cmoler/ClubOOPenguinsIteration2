@@ -47,6 +47,8 @@ import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Item.TakeableItem.UseableItem;
+import Model.Map.AreaEffect.AreaEffect;
+import Model.Map.AreaEffect.TeleportAreaEffect;
 import Model.Map.EntityLocation;
 import javafx.util.Pair;
 import org.json.*;
@@ -88,8 +90,8 @@ public class Serializer implements Saver{
             mapJSONS.add(saveMap(world.getMap(str)));
         }
         this.world.put("Maps", new JSONArray(mapJSONS));
-
     }
+
 
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
@@ -120,14 +122,27 @@ public class Serializer implements Saver{
 
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
-        locationJSON.put("AreaEffect",  ""+location.getAreaEffect().getAreaEffectType() );
+        JSONObject areaEffectJSON = new JSONObject();
+
+        locationJSON.put("AreaEffect",  "" + location.getAreaEffect().getAreaEffectType() );
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
-//            itemList.add(location.getItems().get(i).getName());
+            itemList.add(location.getItems().get(i).getName());
         }
         locationJSON.put("Items", itemList);
         return locationJSON;
+    }
+
+    private JSONObject saveAreaEffect(AreaEffect areaEffect){
+        JSONObject areaEffectJSON = new JSONObject();
+        areaEffectJSON.put("Type", areaEffect.getAreaEffectType());
+        if(areaEffect instanceof TeleportAreaEffect){
+            areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
+            areaEffectJSON.put("I", ((TeleportAreaEffect) areaEffect).getMapID());
+            areaEffectJSON.put("J", ((TeleportAreaEffect) areaEffect).getMapID());
+        }
+        return areaEffectJSON;
     }
 
     private JSONObject saveEntityLocation(EntityLocation entityLocation){
@@ -140,7 +155,8 @@ public class Serializer implements Saver{
             Location location = (Location) entityLocationPair.get(i).getValue();
             JSONObject pairJSON = new JSONObject();
             pairJSON.put("Entity", saveEntity(entity));
-            pairJSON.put("Location", saveLocation(location));
+            pairJSON.put("LocationX", location.getxCoordinate());
+            pairJSON.put("LocationY", location.getyCoordinate());
             entityLocationList.add(pairJSON);
         }
         entityLocationJSON.put("Pairs", new JSONArray(entityLocationList));
