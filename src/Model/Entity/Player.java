@@ -26,6 +26,10 @@ public class Player extends Entity implements Saveable{
         super.setEntityType(type);
     }
 
+    public Player(Role role, EntityType type, int skillPointsAvailable){
+        skillPointsUsed = skillPointsPerLevel*getLevel() - skillPointsAvailable;
+    }
+
     public void touchItems(){
         getLocation().itemsTouchedBy(this);
     }
