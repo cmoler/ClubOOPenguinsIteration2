@@ -12,9 +12,6 @@ import java.io.IOException;
 public class SpriteParser {
 
     public static SpriteParser spriteParser = null;
-    private Image NPCBlueImage;
-    private Image NPCRedImage;
-    private Image NPCYellowImage;
 
     private SpriteParser(){
         getSprites();
@@ -32,6 +29,7 @@ public class SpriteParser {
     private BufferedImage[] avatarSprites_BLUE;
     private BufferedImage[] avatarSprites_RED;
     private BufferedImage[] avatarSprites_NINJA;
+    private BufferedImage[] chestSprites;
 
     public Image getItemFromName(String name){
         ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
@@ -206,6 +204,7 @@ public class SpriteParser {
         getAvatarSprites_BLUE();
         getAvatarSprites_RED();
         getAvatarSprites_NINJA();
+        getChestSprites();
     }
 
     private void getTileSprites(){
@@ -276,13 +275,13 @@ public class SpriteParser {
         final int height = 40;
         final int rows = 1;
         final int cols = 7;
-        avatarSprites_BLUE = new BufferedImage[rows * cols];
+        avatarSprites_RED = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                avatarSprites_BLUE[(i * cols) + j] = bigImg.getSubimage(
+                avatarSprites_RED[(i * cols) + j] = bigImg.getSubimage(
                         j * width,
                         i * height,
                         width,
@@ -320,15 +319,59 @@ public class SpriteParser {
         }
     }
 
+    private void getChestSprites(){
+        BufferedImage bigImg = null;
+        try {
+            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCAITON));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final int width = 100;
+        final int height = 139;
+        final int rows = 1;
+        final int cols = 3;
+        chestSprites = new BufferedImage[rows * cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                chestSprites[(i * cols) + j] = bigImg.getSubimage(
+                        j * width,
+                        i * height,
+                        width,
+                        height
+                );
+            }
+        }
+    }
+
     public Image getNPCBlueImage() {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_BLUE_IMAGE);
-        return imageIcon.getImage();    }
+        return imageIcon.getImage();
+    }
 
     public Image getNPCRedImage() {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_RED_IMAGE);
-        return imageIcon.getImage();    }
+        return imageIcon.getImage();
+    }
 
     public Image getNPCYellowImage() {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_YELLOW_IMAGE);
-        return imageIcon.getImage();    }
+        return imageIcon.getImage();
+    }
+
+    public Image getClosedChestImage() {
+        return chestSprites[0];
+    }
+
+    public Image getOpenChestImage() {
+        return chestSprites[2];
+    }
+
+    public Image getTrapImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.TRAP_FILELOCATION);
+        return imageIcon.getImage();
+    }
 }
