@@ -32,7 +32,7 @@
                 },
                 "Mana": 0,
                 "XP": 0,
-                "Gold": 9000,
+                "Gold": 100,
                 "Equipment": {
                   "Hotbar": {
                     "Items": []
@@ -47,7 +47,9 @@
         ],
         "Locations": [
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -55,7 +57,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -63,7 +67,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -73,7 +79,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -83,7 +91,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -93,7 +103,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -103,7 +115,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -113,7 +127,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -123,7 +139,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -133,7 +151,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -141,7 +161,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -149,7 +171,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -157,7 +181,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -165,7 +191,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -173,7 +201,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -181,7 +211,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -189,7 +221,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -197,7 +231,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -207,7 +243,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -217,7 +255,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -225,7 +265,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -233,7 +275,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -241,7 +285,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -249,7 +295,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -257,7 +305,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -265,7 +315,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -273,7 +325,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -281,7 +335,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -289,7 +345,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -297,7 +355,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -305,7 +365,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -313,7 +375,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -321,7 +385,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -331,7 +397,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -341,7 +409,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -351,7 +421,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -361,7 +433,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -371,7 +445,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -381,7 +457,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -391,7 +469,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -399,7 +479,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -407,7 +489,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -415,7 +499,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -423,7 +509,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -431,7 +519,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -439,7 +529,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -447,7 +539,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -457,7 +551,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -467,7 +563,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 1,
             "Items": [
@@ -477,7 +575,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -485,7 +585,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -493,7 +595,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -501,7 +605,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -509,7 +615,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -517,7 +625,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -525,7 +635,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -533,7 +645,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -541,7 +655,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -549,7 +665,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -557,7 +675,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -565,7 +685,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -573,7 +695,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -581,7 +705,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -589,7 +715,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -597,7 +725,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -605,7 +735,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -613,7 +745,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -623,7 +757,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -633,7 +769,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -643,7 +781,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -651,7 +791,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -659,7 +801,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -667,7 +811,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -675,7 +821,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -683,7 +831,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -691,7 +841,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -699,7 +851,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -707,7 +861,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -715,7 +871,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -723,7 +881,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -731,7 +891,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -739,7 +901,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -747,7 +911,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -755,7 +921,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -763,7 +931,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -771,7 +941,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -779,7 +951,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -789,7 +963,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -799,7 +975,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -809,7 +987,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -817,7 +997,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -838,7 +1020,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -846,7 +1030,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -854,7 +1040,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -862,7 +1050,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -870,7 +1060,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -878,7 +1070,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -886,7 +1080,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -894,7 +1090,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -951,7 +1149,9 @@
         ],
         "Locations": [
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -959,7 +1159,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -967,7 +1169,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -975,7 +1179,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -983,7 +1189,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -991,7 +1199,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -999,7 +1209,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1007,7 +1219,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1015,7 +1229,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1023,7 +1239,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1031,7 +1249,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1039,7 +1259,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1047,7 +1269,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1055,7 +1279,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1063,7 +1289,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1071,7 +1299,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1079,7 +1309,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1087,7 +1319,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1095,7 +1329,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1103,7 +1339,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1111,7 +1349,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 1,
             "Items": [],
@@ -1119,7 +1359,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1127,7 +1369,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1135,7 +1379,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1143,7 +1389,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1151,7 +1399,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1159,7 +1409,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1167,7 +1419,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1175,7 +1429,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1183,7 +1439,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1191,7 +1449,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1199,7 +1459,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1207,7 +1469,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -1217,7 +1481,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1225,7 +1491,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1233,7 +1501,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1241,7 +1511,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1249,7 +1521,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1257,7 +1531,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1265,7 +1541,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1273,7 +1551,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1281,7 +1561,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1289,7 +1571,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1297,7 +1581,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1305,7 +1591,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1313,7 +1601,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1321,7 +1611,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1329,7 +1621,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1337,7 +1631,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 1,
             "Items": [],
@@ -1345,7 +1641,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1353,7 +1651,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1361,7 +1661,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1369,7 +1671,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1377,7 +1681,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1385,7 +1691,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1406,7 +1714,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1414,7 +1724,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1422,7 +1734,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1430,7 +1744,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1438,7 +1754,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1446,7 +1764,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1454,7 +1774,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1462,7 +1784,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1470,7 +1794,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1478,7 +1804,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1486,7 +1814,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1504,7 +1834,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1512,7 +1844,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1520,7 +1854,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1528,7 +1864,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1536,7 +1874,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1544,7 +1884,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1552,7 +1894,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1560,7 +1904,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1568,7 +1914,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1576,7 +1924,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1584,7 +1934,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1592,7 +1944,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1600,7 +1954,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1608,7 +1964,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1616,7 +1974,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1624,7 +1984,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1632,7 +1994,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1640,7 +2004,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1648,7 +2014,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1656,7 +2024,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1664,7 +2034,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1672,7 +2044,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1680,7 +2054,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1688,7 +2064,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1696,7 +2074,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1704,7 +2084,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1712,7 +2094,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1720,7 +2104,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1728,7 +2114,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1736,7 +2124,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1744,7 +2134,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1909,7 +2301,9 @@
         ],
         "Locations": [
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1917,7 +2311,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1925,7 +2321,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1933,7 +2331,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1941,7 +2341,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1949,7 +2351,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1957,7 +2361,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1965,7 +2371,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1973,7 +2381,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1981,7 +2391,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1989,7 +2401,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -1997,7 +2411,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2005,7 +2421,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2013,7 +2431,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2021,7 +2441,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2029,7 +2451,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2037,7 +2461,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2045,7 +2471,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2053,7 +2481,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2061,7 +2491,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2069,7 +2501,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2077,7 +2511,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2085,7 +2521,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2093,7 +2531,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2101,7 +2541,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2109,7 +2551,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2117,7 +2561,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2125,7 +2571,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2133,7 +2581,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2141,7 +2591,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2149,7 +2601,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2157,7 +2611,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2165,7 +2621,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2173,7 +2631,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2181,7 +2641,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2189,7 +2651,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2197,7 +2661,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2205,7 +2671,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2213,7 +2681,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2221,7 +2691,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2229,7 +2701,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2237,7 +2711,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2245,7 +2721,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2253,7 +2731,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2261,7 +2741,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2269,7 +2751,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2277,7 +2761,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2285,7 +2771,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2293,7 +2781,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 1,
             "Items": [],
@@ -2301,7 +2791,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2309,7 +2801,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2317,7 +2811,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2325,7 +2821,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2333,7 +2831,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2341,7 +2841,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2362,7 +2864,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2370,7 +2874,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2378,7 +2884,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2386,7 +2894,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2394,7 +2904,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2402,7 +2914,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2410,7 +2924,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2418,7 +2934,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2426,7 +2944,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2434,7 +2954,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2442,7 +2964,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -2452,7 +2976,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2460,7 +2986,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2468,7 +2996,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2476,7 +3006,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2484,7 +3016,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2492,7 +3026,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2500,7 +3036,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2508,7 +3046,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2516,7 +3056,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2524,7 +3066,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2532,7 +3076,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2540,7 +3086,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2548,7 +3096,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2556,7 +3106,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2564,7 +3116,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2572,7 +3126,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2580,7 +3136,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2588,7 +3146,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2596,7 +3156,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2604,7 +3166,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2612,7 +3176,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2620,7 +3186,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2628,7 +3196,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2636,7 +3206,9 @@
             "Y": 9
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2657,7 +3229,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2665,7 +3239,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2673,7 +3249,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2681,7 +3259,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2689,7 +3269,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2697,7 +3279,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2705,7 +3289,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2713,7 +3299,9 @@
             "Y": 8
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2839,7 +3427,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2847,7 +3437,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2855,7 +3447,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2863,7 +3457,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2871,7 +3467,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2879,7 +3477,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2887,7 +3487,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2895,7 +3497,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2923,7 +3527,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2931,7 +3537,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2939,7 +3547,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2947,7 +3557,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2955,7 +3567,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2963,7 +3577,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2971,7 +3587,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -2979,7 +3597,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3007,7 +3627,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3015,7 +3637,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
@@ -3025,7 +3649,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3033,7 +3659,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3041,7 +3669,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3049,7 +3679,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3057,7 +3689,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3065,7 +3699,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3093,7 +3729,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3101,7 +3739,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3109,7 +3749,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3117,7 +3759,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3125,7 +3769,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3133,7 +3779,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3141,7 +3789,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3149,7 +3799,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 1,
             "Items": [],
@@ -3177,7 +3829,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3185,7 +3839,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3193,7 +3849,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3201,7 +3859,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3222,7 +3882,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3230,7 +3892,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3238,7 +3902,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3266,7 +3932,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3274,7 +3942,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3282,7 +3952,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3290,7 +3962,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3298,7 +3972,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3306,7 +3982,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3324,21 +4002,23 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
-            "Terrain": "ICE",
-            "Obstacle": 0,
-            "Items": [],
-            "X": 6,
-            "Y": 8
-          },
-          {
             "AreaEffect": {
-            	"Type":"TRANSACTION"
+            	"Type": ""
             },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
             "X": 6,
+            "Y": 8
+          },
+          {
+            "AreaEffect": {
+            	"Type":"TRANSACTION"
+            },
+            "Terrain": "ICE",
+            "Obstacle": 0,
+            "Items": [],
+            "X": 6,
             "Y": 9
           },
           {
@@ -3352,7 +4032,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3360,7 +4042,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3368,7 +4052,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3376,7 +4062,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3384,7 +4072,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3392,7 +4082,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3400,7 +4092,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3408,7 +4102,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3436,7 +4132,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3444,7 +4142,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3452,7 +4152,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3460,7 +4162,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3468,7 +4172,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3476,7 +4182,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3484,7 +4192,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3492,7 +4202,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3520,7 +4232,9 @@
             "Y": 0
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3528,7 +4242,9 @@
             "Y": 1
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3536,7 +4252,9 @@
             "Y": 2
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3544,7 +4262,9 @@
             "Y": 3
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3552,7 +4272,9 @@
             "Y": 4
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3560,7 +4282,9 @@
             "Y": 5
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3568,7 +4292,9 @@
             "Y": 6
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
@@ -3576,7 +4302,9 @@
             "Y": 7
           },
           {
-            "AreaEffect": {},
+            "AreaEffect": {
+            	"Type": ""
+            },
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [],
