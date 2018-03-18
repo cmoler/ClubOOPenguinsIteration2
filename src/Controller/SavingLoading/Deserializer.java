@@ -133,10 +133,10 @@ public class Deserializer {
         String color = entityClass.getString("color");
         JSONObject shopMap = entityClass.getJSONObject("ShopMap");
         String mapID = shopMap.getString("MapID");
-        int x = shopMap.getInt("X");
-        int y= shopMap.getInt("Y");
+        int i = shopMap.getInt("I");
+        int j= shopMap.getInt("J");
 
-        ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, y, x);
+        ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j);
         switch (npcState){
             case "aggro":
                 shopKeepNPC.pissOff();
