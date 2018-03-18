@@ -1,4 +1,4 @@
-package View.AreaView.ItemView;
+package View.AreaView;
 
 
 import Configs.AreaSizes;

@@ -1,15 +1,10 @@
 package View.AreaView;
 
 
-import Configs.ImagesInfo;
-import Model.Item.Item;
 import Model.Map.Location;
-import View.AreaView.ItemView.ItemView;
 import View.Viewport;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LocationView extends Viewport {
 

@@ -31,7 +31,7 @@ import Model.Item.TakeableItem.StaffItem.*;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.*;
 
 import View.AreaView.*;
-import View.AreaView.ItemView.ItemView;
+import View.AreaView.ItemView;
 import View.StatusView.StatusViewPort;
 
 import View.Viewport;
