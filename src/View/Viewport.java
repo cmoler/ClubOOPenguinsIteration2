@@ -106,7 +106,7 @@ public class Viewport extends JPanel {
             clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
             clip.start();
         } catch (Exception e) {
-            System.out.println();
+
         }
     }
 }
