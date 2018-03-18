@@ -103,12 +103,15 @@ public class Deserializer {
         }
         Map map = new Map(locations);
 
+        World.getWorld().addMap(map.getMapID(), map);
+        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(mapID));
+
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
         for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
 
             Entity currEntity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
-            int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("X");
-            int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("Y");
+            int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("LocationX");
+            int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("LocationY");
 
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
