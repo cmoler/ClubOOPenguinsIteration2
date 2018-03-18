@@ -29,6 +29,10 @@ public class Player extends Entity implements Saveable{
     }
 
     public Player(Role role, EntityType type, int skillPointsAvailable){
+        this.role = role;
+        role.setEntity(this);
+        super.setEntityType(type);
+        name = "Player";
         skillPointsUsed = skillPointsPerLevel*getLevel() - skillPointsAvailable;
     }
 
