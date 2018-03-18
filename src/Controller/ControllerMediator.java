@@ -3,11 +3,13 @@ package Controller;
 import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.Serializer;
 import Controller.States.*;
+import Model.Updateable;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
 import Controller.Input.Input;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,6 +29,8 @@ public class ControllerMediator {
 
     private GameBuilder gameBuilder;
 
+    private List<Updateable> updateables;
+
     private Viewport viewport;
     private StatusViewPort statusViewPort;
     private MenuViewPort menuViewPort;
@@ -38,6 +42,7 @@ public class ControllerMediator {
     // initial load
     public ControllerMediator(){
         gameBuilder = new GameBuilder();
+        updateables = gameBuilder.getUpdateables();
         getViewsFromBuilder();
         loadStates();
         attachInputToViews();
@@ -70,6 +75,9 @@ public class ControllerMediator {
 
         @Override
         public void run() {
+            for(int i = 0; i < updateables.size(); ++i){
+                updateables.get(i).update();
+            }
             if(viewport != null) viewport.repaint();
             if(menuViewPort != null) menuViewPort.repaint();
         }
