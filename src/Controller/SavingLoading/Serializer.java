@@ -127,6 +127,7 @@ public class Serializer implements Saver{
 
         locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
+        locationJSON.put("Obstacle", location.hasObstacle());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
             itemList.add(location.getItems().get(i).getName());
@@ -193,7 +194,7 @@ public class Serializer implements Saver{
 //        for(int i = 0; i < equipment.getEquippedItems().size(); i++) {
 //            itemsList.add(equipment.getEquippedItems().get(i).save(this));
 //        }
-//        equipmentJSON.put("Items", new JSONArray(itemsList));
+        equipmentJSON.put("Items", new JSONArray(itemsList));
         return equipmentJSON;
     }
 
@@ -412,7 +413,13 @@ public class Serializer implements Saver{
 
     @Override
     public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
-        return chestInteractiveItem.getName();
+        if(chestInteractiveItem.isOpened()){
+            return chestInteractiveItem.getName()+"Open";
+        }
+        else {
+            return chestInteractiveItem.getName()+"Closed";
+        }
+
     }
 
     public JSONObject getWorld() {
