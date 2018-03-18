@@ -5,7 +5,6 @@ import Model.Item.Item;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
-import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -32,8 +31,6 @@ public abstract class Entity {
     private int visibleRange = 5;
     // map is in World
 
-
-    //TODO Add Role interact on move
 
     public EntityType getEntityType(){
         return entityType;
@@ -181,14 +178,11 @@ public abstract class Entity {
 
     public void setLocation(Location location){
         this.location = location;
+        notifyView();
     }
 
     public void setEntityType(EntityType entityType) {
         this.entityType = entityType;
-    }
-
-    public void accept(Visitor v){
-        v.visitEntity(this);
     }
 
     public void attach(Viewport viewport){

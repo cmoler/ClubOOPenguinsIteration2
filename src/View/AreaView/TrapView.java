@@ -1,5 +1,7 @@
 package View.AreaView;
 
+import Configs.AreaSizes;
+import Configs.ImagesInfo;
 import Model.Map.AreaEffect.TrapAreaEffect;
 import View.Viewport;
 
@@ -15,14 +17,15 @@ public class TrapView extends Viewport {
     }
 
     @Override
-    public void draw(Graphics2D graphics2D){
+    public void draw(Graphics2D graphics2D, int x, int y) {
         if(drawTrap){
-            
+            graphics2D.drawImage(ImagesInfo.TRAP_IMAGE, x* AreaSizes.TERRAIN_WIDTH, y* AreaSizes.TERRAIN_HEIGHT,
+                AreaSizes.AREA_EFFECT_WIDTH, AreaSizes.AREA_EFFECT_HEIGHT,this );
         }
     }
 
     @Override
     public void update(){
-
+        drawTrap = trap.isVisible();
     }
 }

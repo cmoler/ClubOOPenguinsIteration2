@@ -10,9 +10,9 @@ public interface ImagesInfo {
     public static final String AVATAR_SHEET_RED = "resources/images/playerSprites/redPenguin.png";
     public static final String AVATAR_SHEET_NINJA = "resources/images/playerSprites/Penguin_Chat_3_Ninja_spritesheet.png";
 
-    public static final String NPC_BLUE_FILELOCATION = "resources/images/clubPenguinEnemies/blackPuffle.png":
-    public static final String NPC_RED_FILELOCATION = "resources/images/clubPenguinEnemies/greenPuffle.png":
-    public static final String NPC_YELLOW_FILELOCATION = "resources/images/clubPenguinEnemies/chickenPuffle.png":
+    public static final String NPC_BLUE_FILELOCATION = "resources/images/clubPenguinEnemies/blackPuffle.png";
+    public static final String NPC_RED_FILELOCATION = "resources/images/clubPenguinEnemies/greenPuffle.png";
+    public static final String NPC_YELLOW_FILELOCATION = "resources/images/clubPenguinEnemies/chickenPuffle.png";
 
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/aoe/Red_AOE.png";
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/aoe/Green_AOE.png";
@@ -32,6 +32,9 @@ public interface ImagesInfo {
     public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/terrain/SkullCrossBone.png";
     public static final String GOLD_STAR_FILELOCATION = "resources/images/terrain/goldstar.png";
 
+    public static final String TRAP_FILELOCATION = "resources/images/Beartrap.png";
+    public static final String CHEST_FILELOCAITON = "resources/images/chest.png";
+
     public static final String GLACIER_FILELOCATION = "resources/images/terrain/glacier.png";
 
     public static final String INCREASE_SKILL_ICON = "resources/images/IncreaseSkillIcon.png";
@@ -41,6 +44,10 @@ public interface ImagesInfo {
     public static final Image NPC_BLUE_IMAGE = SpriteParser.getSpriteParser().getNPCBlueImage();
     public static final Image NPC_RED_IMAGE = SpriteParser.getSpriteParser().getNPCRedImage();
     public static final Image NPC_YELLOW_IMAGE = SpriteParser.getSpriteParser().getNPCYellowImage();
+
+    public static final Image TRAP_IMAGE = SpriteParser.getSpriteParser().getTrapImage();
+    public static final Image CHEST_OPEN_IMAGE = SpriteParser.getSpriteParser().getOpenChestImage();
+    public static final Image CHEST_CLOSED_IMAGE = SpriteParser.getSpriteParser().getClosedChestImage();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
     public static final Image WATER_IMAGE = SpriteParser.getSpriteParser().getWaterImage();

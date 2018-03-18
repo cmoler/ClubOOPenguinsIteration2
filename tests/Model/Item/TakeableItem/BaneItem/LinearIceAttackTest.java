@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LinearIceAttackTest {
 
-    @Test
+    /*@Test
     public void testUse(){
 
         Map map = new Map(10,10);
@@ -53,6 +53,6 @@ class LinearIceAttackTest {
         }
         assertEquals(90, npc.getHealth(), "NPC hit with a LinearIceAttack");
 
-    }
+    }*/
 
 }

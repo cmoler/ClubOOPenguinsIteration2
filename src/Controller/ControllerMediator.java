@@ -3,11 +3,14 @@ package Controller;
 import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.Serializer;
 import Controller.States.*;
+import Model.UpdateList;
+import Model.Updateable;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
 import Controller.Input.Input;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -70,6 +73,7 @@ public class ControllerMediator {
 
         @Override
         public void run() {
+            UpdateList.getInstance().update();
             if(viewport != null) viewport.repaint();
             if(menuViewPort != null) menuViewPort.repaint();
         }

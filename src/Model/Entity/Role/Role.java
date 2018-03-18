@@ -51,6 +51,10 @@ public abstract class Role implements Saveable{
         return observation.getPoints();
     }
 
+    public Observation ObservationSkill(){
+        return observation;
+    }
+
     private void addBindWounds(int points){
         bindWounds.addPoints(points);
     }

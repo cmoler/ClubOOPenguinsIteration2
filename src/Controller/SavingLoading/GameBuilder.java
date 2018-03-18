@@ -7,6 +7,7 @@ import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Entity.Skill.Skill;
 import Model.Map.World;
+import Model.Updateable;
 import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
 import View.StatusView.EquipmentView;
@@ -18,6 +19,7 @@ import View.Viewport;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 
 public class GameBuilder {
 
@@ -89,6 +91,8 @@ public class GameBuilder {
         return null;
     }
 
+    public Role getPlayerRole() { return null; }
+
     public World getWorld() {
         return World.getWorld();
     }
@@ -106,4 +110,5 @@ public class GameBuilder {
     public KeyBindings getKeyBindings() {
         return keyBindings;
     }
+
 }

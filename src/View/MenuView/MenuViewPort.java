@@ -21,9 +21,9 @@ public abstract class MenuViewPort extends Viewport {
 
     public JButton ConfigureButton(JButton btn, String btnFn) {
         //Styling to make button invisible
-//        btn.setBorderPainted(false);
-//        btn.setContentAreaFilled(false);
-//        btn.setOpaque(false);
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setOpaque(false);
         btn.setPreferredSize(new Dimension(TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT));
         btn.setToolTipText(btnFn);
         return btn;

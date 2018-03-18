@@ -22,16 +22,8 @@ public class Slot {
     }
 
     public void loadTo(GameBuilder gameBuilder){
-        FileReader fileReader;
-        String source;
-        try {
-            fileReader = new FileReader(new File(savePath));
-            source = ""+ fileReader.read(); //todo: read files correctly this isnt correct
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        GameLoader gameLoader = new GameLoader(gameBuilder);
+        gameLoader.load(savePath);
 
     }
 
