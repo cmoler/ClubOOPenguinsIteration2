@@ -3,6 +3,8 @@ package Model.Map;
 import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.Terrain.Ice;
+import Model.UpdateList;
+import Model.Updateable;
 import Model.Visitor.Visitor;
 import View.Viewport;
 
@@ -12,7 +14,7 @@ import java.util.List;
 
 import static Model.Map.Direction.*;
 
-public class Map {
+public class Map implements Updateable {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
     public Location[][] getLocations() {
@@ -59,6 +61,7 @@ public class Map {
         numCols = this.locations[0].length;
         this.defaultLocation = defaultLocation;
         setAdjacencyList();
+        UpdateList.getInstance().add(this);
     }
 
     //Create x by y map for testing
@@ -217,5 +220,13 @@ public class Map {
         for (Viewport viewport : observers){
             viewport.update();
         }
+    }
+
+    public void update(){
+        updateEntityLocations();
+    }
+
+    public boolean isDone(){
+        return false;
     }
 }
