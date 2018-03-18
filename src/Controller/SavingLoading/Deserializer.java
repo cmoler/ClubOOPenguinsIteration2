@@ -6,6 +6,7 @@ import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.*;
+import Model.Item.Item;
 import Model.Item.TakeableItem.Armor.Body;
 import Model.Item.TakeableItem.Armor.Helmet;
 import Model.Item.TakeableItem.Armor.Leg;
@@ -45,6 +46,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.awt.geom.Area;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Deserializer {
 
@@ -160,9 +163,18 @@ public class Deserializer {
             areaEffect = new TrapAreaEffect();
         }
         else {
-
+            areaEffect = new TransactionAreaEffect();
         }
 
+        List<Item> items = new ArrayList<>();
+        JSONArray jsonItems = location.getJSONArray("Items");
+        for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
+            String itemType = jsonItems.getString(itemIndex);
+            TakeableItem takeableItem = parseItem(itemType);
+            items.add(takeableItem);
+        }
+
+        
         /*
         private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
