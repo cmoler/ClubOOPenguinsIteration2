@@ -69,13 +69,25 @@ public class AreaViewPort extends Viewport {
                 int moveY = colCount / 2 + 1 - y;
                 JButton getIndex = getButtonIndex(x, y);
 
+                JList<JLabel> entityInfo = new JList<>();
+
                 //Get player location
                 Location location = player.getLocation();
-                String type = player.getRole().ObservationSkill().getEntityType(location, moveX, moveY);
-                String maxHealth = Integer.toString(player.getRole().ObservationSkill().getEntityMaxHealth(location, moveX, moveY));
-                String health = Integer.toString(player.getRole().ObservationSkill().getEntityHealth(location, moveX, moveY));
-                String level = Integer.toString(player.getRole().ObservationSkill().getEntityLevel(location, moveX, moveY));
+                JLabel type = new JLabel("Type: " + player.getRole().ObservationSkill().getEntityType(location, moveX, moveY));
+                JLabel maxHealth = new JLabel("Maximum Health: " + Integer.toString(player.getRole().ObservationSkill().getEntityMaxHealth(location, moveX, moveY)));
+                JLabel health = new JLabel("Health: " + Integer.toString(player.getRole().ObservationSkill().getEntityHealth(location, moveX, moveY)));
+                JLabel level = new JLabel("Level: " + Integer.toString(player.getRole().ObservationSkill().getEntityLevel(location, moveX, moveY)));
 
+                entityInfo.add(type);
+                entityInfo.add(maxHealth);
+                entityInfo.add(health);
+                entityInfo.add(level);
+
+                entityInfo.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+
+                add(entityInfo);
+
+                setVisible(true);
 
                 getTopLevelAncestor().requestFocus();
             }
