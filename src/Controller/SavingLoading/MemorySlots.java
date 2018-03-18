@@ -9,9 +9,9 @@ public class MemorySlots {
     List<Slot> slots = new ArrayList<>();
     GameBuilder gameBuilder;
     int selectedSlot;
-    final static int SMASHER = Commons.MAX_SAVE_SLOTS + 1;
-    final static int SUMMONER = Commons.MAX_SAVE_SLOTS + 2;
-    final static int SNEAK= Commons.MAX_SAVE_SLOTS + 3;
+    final static int SMASHER = Commons.MAX_SAVE_SLOTS ;
+    final static int SUMMONER = Commons.MAX_SAVE_SLOTS + 1;
+    final static int SNEAK= Commons.MAX_SAVE_SLOTS + 2;
     public MemorySlots(GameBuilder gameBuilder) {
         selectedSlot = 0;
         this.gameBuilder = gameBuilder;
