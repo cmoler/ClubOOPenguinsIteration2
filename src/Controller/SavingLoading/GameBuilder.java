@@ -108,8 +108,5 @@ public class GameBuilder {
     public KeyBindings getKeyBindings() {
         return keyBindings;
     }
-
-    public List<Updateable> getUpdateables() {
-        return updateables;
-    }
+    
 }

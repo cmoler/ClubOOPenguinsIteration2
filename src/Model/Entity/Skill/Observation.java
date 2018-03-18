@@ -18,6 +18,11 @@ public class Observation extends Skill {
         probablity = points * 9 + 9;
     }
 
+    public Observation(){
+        super();
+        probablity = 0 * 9 + 9;
+    }
+
     private Location goToTile(Location location, int moveX, int moveY) {
         if(moveX < 0) {
             moveX = Math.abs(moveX);

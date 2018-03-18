@@ -67,18 +67,14 @@ public class AreaViewPort extends Viewport {
             public void actionPerformed(ActionEvent actionEvent) {
                 int moveX = rowCount / 2 + 1 - x;
                 int moveY = colCount / 2 + 1 - y;
-
-                //Need a way to pass current observation skill
-                Observation ob = new Observation(5);
-
                 JButton getIndex = getButtonIndex(x, y);
 
                 //Get player location
                 Location location = player.getLocation();
-                String type = ob.getEntityType(location, moveX, moveY);
-                String maxHealth = Integer.toString(ob.getEntityMaxHealth(location, moveX, moveY));
-                String health = Integer.toString(ob.getEntityHealth(location, moveX, moveY));
-                String level = Integer.toString(ob.getEntityLevel(location, moveX, moveY));
+                String type = player.getRole().ObservationSkill().getEntityType(location, moveX, moveY);
+                String maxHealth = Integer.toString(player.getRole().ObservationSkill().getEntityMaxHealth(location, moveX, moveY));
+                String health = Integer.toString(player.getRole().ObservationSkill().getEntityHealth(location, moveX, moveY));
+                String level = Integer.toString(player.getRole().ObservationSkill().getEntityLevel(location, moveX, moveY));
 
 
                 getTopLevelAncestor().requestFocus();

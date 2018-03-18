@@ -42,7 +42,6 @@ public class ControllerMediator {
     // initial load
     public ControllerMediator(){
         gameBuilder = new GameBuilder();
-        updateables = gameBuilder.getUpdateables();
         getViewsFromBuilder();
         loadStates();
         attachInputToViews();

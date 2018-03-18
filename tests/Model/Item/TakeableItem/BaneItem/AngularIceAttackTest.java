@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AngularIceAttackTest {
 
-    @Test
+    /*@Test
     public void testUse() {
 
         Map map = new Map(10,10);
@@ -62,5 +62,5 @@ class AngularIceAttackTest {
         assertEquals(90, npc2.getHealth(), "NPC hit with AngularIceAttack");
         assertEquals(95, npc3.getHealth(), "NPC hit with AngularIceAttack");
         assertEquals(100, npc4.getHealth(), "NPC not hit");
-    }
+    }*/
 }

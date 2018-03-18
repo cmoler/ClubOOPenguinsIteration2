@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BrassKnucklesTest {
 
-    @Test
+    /*@Test
     public void testUse() {
 
         Map map = new Map(10,10);
@@ -50,6 +50,6 @@ class BrassKnucklesTest {
         }
         assertEquals(65, npc1.getHealth(), "NPC got smacked with BrassKnuckles a bunch of times");
 
-    }
+    }*/
 
 }
