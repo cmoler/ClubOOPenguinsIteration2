@@ -79,7 +79,7 @@ public class Deserializer {
         Location[][] locations = new Location[rows][cols];
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
-            locations[location.getxCoordinate()][location.getyCoordinate()] = location;
+            locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
         Map map = new Map(locations);
 
