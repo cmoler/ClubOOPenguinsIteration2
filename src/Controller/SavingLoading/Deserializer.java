@@ -129,41 +129,8 @@ public class Deserializer {
     private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
         int skillPointsAvailable = EntityClass.getInt("SkillPoints");
         JSONObject roleJSON = EntityClass.getJSONObject("Role");
-        int bindWoundsLevel = roleJSON.getInt("BindWoundsLevel");
-        int bargainLevel = roleJSON.getInt("BargainLevel");
-        int observationLevel = roleJSON.getInt("ObservationLevel");
-        JSONObject roleType = roleJSON.getJSONObject("Role");
 
-        BindWounds bindWounds = new BindWounds(bindWoundsLevel);
-        Bargain bargain = new Bargain(bargainLevel);
-        Observation observation = new Observation(observationLevel);
-
-        Role role = null;
-
-        switch(roleType.getString("RoleName")){
-            case "Smasher":
-                OneHandedWeapon oneHandedWeapon = new OneHandedWeapon(roleType.getInt("OneHandedWeaponLevel"));
-                TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon(roleType.getInt("TwoHandedWeaponLevel"));
-                Brawl brawl = new Brawl(roleType.getInt("BrawlLevel"));
-                role = new Smasher(bindWounds, bargain, observation, oneHandedWeapon, twoHandedWeapon, brawl);
-                break;
-            case "Sneak":
-                PickPocket pickPocket = new PickPocket(roleType.getInt("PickPocketLevel"));
-                DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap(roleType.getInt("DetectAndRemoveTrapLevel"));
-                Creep creep = new Creep(roleType.getInt("CreepLevel"));
-                RangedWeapon rangedWeapon = new RangedWeapon(roleType.getInt("RangedWeaponLevel"));
-                role = new Sneak(bindWounds, bargain, observation, pickPocket, detectAndRemoveTrap, creep, rangedWeapon);
-                break;
-            case "Summoner":
-                Enchantment enchantment = new Enchantment(roleType.getInt("EnchantmentLevel"));
-                Boon boon = new Boon(roleType.getInt("BoonLevel"));
-                Bane bane = new Bane(roleType.getInt("BaneLevel"));
-                Staff staff = new Staff((roleType.getInt("StaffLevel")));
-                role = new Summoner(bindWounds, bargain, observation, enchantment, boon, bane, staff);
-                break;
-            default:
-                break;
-        }
+        Role role = deserializeRole(roleJSON);
 
         Player player = new Player(role, type, skillPointsAvailable);
 
