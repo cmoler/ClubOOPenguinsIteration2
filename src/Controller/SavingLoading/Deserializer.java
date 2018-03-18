@@ -105,6 +105,9 @@ public class Deserializer {
         int cols = mapJSON.getInt("Cols");
 
         JSONArray locationsJSON = mapJSON.getJSONArray("Locations");
+        MapView mapView = new MapView();
+        currentMapView = mapView;
+
         Location[][] locations = new Location[rows][cols];
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
@@ -125,8 +128,8 @@ public class Deserializer {
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
 
-        MapView mapView = new MapView();
-        currentMapView = mapView;
+
+
         mapViews.put(map, mapView);
 
         return map;
