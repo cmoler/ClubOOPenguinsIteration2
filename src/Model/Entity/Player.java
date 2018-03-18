@@ -18,12 +18,14 @@ public class Player extends Entity implements Saveable{
         this.role = role;
         role.setEntity(this);
         super.setEntityType(EntityType.ICE);// default EntityType
+        name = "player";
     }
 
     public Player(Role role, EntityType type){
         this.role = role;
         role.setEntity(this);
         super.setEntityType(type);
+        name = "player";
     }
 
     public Player(Role role, EntityType type, int skillPointsAvailable){

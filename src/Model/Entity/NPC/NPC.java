@@ -20,7 +20,9 @@ public class NPC extends Entity implements Updateable{
     private String color;
 
     public NPC(String color) {
-
+        this.color = color;
+        name = "npc";
+        talkString = "Hello World!";
     }
 
     public void talk(){
@@ -92,6 +94,9 @@ public class NPC extends Entity implements Updateable{
         }
     }
 
+    public void setPlayer(Player player){
+        this.player = player;
+    }
 
     public String getColor() {
         return color;
