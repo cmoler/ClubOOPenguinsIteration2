@@ -7,6 +7,7 @@ import Model.Entity.NPC.NPCState.*;
 import java.util.Random;
 
 import Model.Entity.Player;
+import Model.UpdateList;
 import Model.Updateable;
 import Model.Entity.NPC.NPCState.AggroState;
 import Model.Entity.NPC.NPCState.FriendlyState;
@@ -25,6 +26,7 @@ public class NPC extends Entity implements Updateable{
         this.color = color;
         name = "NPC";
         talkString = "Hello World!";
+        UpdateList.getInstance().add(this);
     }
 
     public void talk(){

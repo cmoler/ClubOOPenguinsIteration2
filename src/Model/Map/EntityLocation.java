@@ -1,6 +1,7 @@
 package Model.Map;
 
 import Model.Entity.Entity;
+import Model.Updateable;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 
-public class EntityLocation {
+public class EntityLocation{
 
     private HashMap<Location, Entity> entityLocations;
 
