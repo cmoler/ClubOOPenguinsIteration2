@@ -17,8 +17,9 @@ public class NPC extends Entity implements Updateable{
     protected Player player;
     private boolean wantToTalk;
     private String talkString;
+    private String color;
 
-    public NPC() {
+    public NPC(String color) {
 
     }
 
@@ -92,4 +93,7 @@ public class NPC extends Entity implements Updateable{
     }
 
 
+    public String getColor() {
+        return color;
+    }
 }

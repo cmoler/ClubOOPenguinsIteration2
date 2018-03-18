@@ -15,6 +15,7 @@ public class SwordHands extends BrawlingItem {
     public SwordHands(){
         super();
         this.name = "swordHands";
+        this.color = "yellow";
     }
 
     private double damageAmount = 0.75; // gets multiplied by skill level

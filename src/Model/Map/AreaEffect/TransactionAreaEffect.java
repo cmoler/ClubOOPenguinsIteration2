@@ -3,13 +3,14 @@ package Model.Map.AreaEffect;
 import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Item.TakeableItem.TakeableItem;
+import Model.Item.TakeableItem.TakeableItemGenerator;
 
 public class TransactionAreaEffect extends OneShotAreaEffect {
 
     TakeableItem shopItem;
 
-    public TransactionAreaEffect(TakeableItem item){
-        shopItem = item;
+    public TransactionAreaEffect(){
+        shopItem = TakeableItemGenerator.getTakeableItemGenerator().getRandomItem();
     }
 
 
@@ -18,7 +19,8 @@ public class TransactionAreaEffect extends OneShotAreaEffect {
         Player player = (Player) entity;
         if (player.getGold() > shopItem.getValue()){
             player.takeItem(shopItem);
-            player.modifyGold(-shopItem.getValue());
+            int itemCost = shopItem.getValue()-player.getBargain();
+            player.modifyGold(-itemCost);
             setActive(false);
         }
     }

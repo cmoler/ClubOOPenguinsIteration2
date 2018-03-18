@@ -73,6 +73,10 @@ public class Player extends Entity implements Saveable{
         this.gold += gold;
     }
 
+    public int getBargain(){
+        return role.getBargain();
+    }
+
     public boolean canIncrementSkill(){
         if(getLevel()*skillPointsPerLevel > skillPointsUsed)
             return true;

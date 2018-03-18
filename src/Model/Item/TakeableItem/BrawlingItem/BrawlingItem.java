@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.BrawlingItem;
 
 import Model.Entity.Entity;
+import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
 import Model.Item.TakeableItem.TakeableItem;
@@ -14,6 +15,7 @@ import Model.Utilites.Time;
 public abstract class BrawlingItem extends UseableItem {
 
     private double lastUse;
+    protected String color;
 
     public BrawlingItem(){
         super();
@@ -38,7 +40,10 @@ public abstract class BrawlingItem extends UseableItem {
             Map currentMap = World.getWorld().getCurrentMap();
             if(currentMap.entityAtLocation(locationOfTarget) != null){
                 Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-                entityAtTarget.takeDamage( (int)(getDamageAmount()*brawlSkillLevel) );
+
+                if(this.color == ((NPC)entityAtTarget).getColor())
+                    entityAtTarget.takeDamage( (int)(getDamageAmount()*brawlSkillLevel) * 2);
+                else entityAtTarget.takeDamage( (int)(getDamageAmount()*brawlSkillLevel));
             }
 
             lastUse = Time.currentInSeconds();

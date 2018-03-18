@@ -17,6 +17,7 @@ public class BlueLightsaber extends OneHandedWeaponItem{
     public BlueLightsaber(){
         super();
         this.name = "blueLightsaber";
+        this.color = "blue";
     }
 
     private double damageAmount = 1.0; // gets multiplied by skill level

@@ -15,6 +15,7 @@ public class JeweledCutlass extends TwoHandedWeaponItem{
     public JeweledCutlass(){
         super();
         this.name = "jeweledCutlass";
+        this.color = "yellow";
     }
 
     private double damageAmount = 2.0; // gets multiplied by skill level

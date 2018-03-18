@@ -15,6 +15,7 @@ public class ThunderBlade extends OneHandedWeaponItem{
     public ThunderBlade(){
         super();
         this.name = "thunderBlade";
+        this.color = "yellow";
     }
 
     private double damageAmount = 1.5; // gets multiplied by skill level

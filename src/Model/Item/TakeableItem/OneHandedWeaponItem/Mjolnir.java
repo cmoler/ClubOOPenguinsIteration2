@@ -15,6 +15,7 @@ public class Mjolnir extends OneHandedWeaponItem{
     public Mjolnir(){
         super();
         this.name = "mjolnir";
+        this.color = "red";
     }
 
     private double damageAmount = 1.25; // gets multiplied by skill level

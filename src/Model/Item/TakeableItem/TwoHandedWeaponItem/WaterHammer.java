@@ -15,6 +15,7 @@ public class WaterHammer extends TwoHandedWeaponItem{
     public WaterHammer(){
         super();
         this.name = "waterHammer";
+        this.color = "red";
     }
 
     private double damageAmount = 1.75; // gets multiplied by skill level

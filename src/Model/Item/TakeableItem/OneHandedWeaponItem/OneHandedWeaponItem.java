@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.OneHandedWeaponItem;
 
 import Model.Entity.Entity;
+import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Skill.OneHandedWeapon;
@@ -15,7 +16,7 @@ import Model.Utilites.Time;
 public abstract class OneHandedWeaponItem extends UseableItem {
 
     private double lastUse;
-
+    protected String color;
     public OneHandedWeaponItem(){
         super();
     }
@@ -39,8 +40,10 @@ public abstract class OneHandedWeaponItem extends UseableItem {
             Map currentMap = World.getWorld().getCurrentMap();
             if(currentMap.entityAtLocation(locationOfTarget) != null){
                 Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-                entityAtTarget.takeDamage( (int)(getDamageAmount()*oneHandedWeaponSkillLevel) );
-            }
+
+                if(this.color == ((NPC)entityAtTarget).getColor())
+                    entityAtTarget.takeDamage( (int)(getDamageAmount()*oneHandedWeaponSkillLevel) * 2);
+                else entityAtTarget.takeDamage( (int)(getDamageAmount()*oneHandedWeaponSkillLevel));              }
 
             lastUse = Time.currentInSeconds();
         }
