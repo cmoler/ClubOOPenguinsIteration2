@@ -9,7 +9,7 @@ import Model.Item.TakeableItem.UseableItem;
 public class ChestInteractiveItem extends InteractiveItem {
 
     private TakeableItem chestLoot;
-    boolean isOpened;
+    private boolean isOpened;
 
     public ChestInteractiveItem(TakeableItem item, boolean isOpened){
         name = "chestInteractiveItem";
@@ -25,6 +25,10 @@ public class ChestInteractiveItem extends InteractiveItem {
             entity.takeItem(chestLoot);
             isOpened = true;
         }
+    }
+
+    public boolean isOpened(){
+        return isOpened;
     }
 
     @Override
