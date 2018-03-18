@@ -99,6 +99,7 @@ public class Serializer implements Saver{
         entityJSON.put("Level", entity.getLevel());
         entityJSON.put("Location", saveLocation(entity.getLocation()));
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
+        entityJSON.put("EntityType", entity.getEntityType().toString());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
         return entityJSON;
@@ -139,7 +140,7 @@ public class Serializer implements Saver{
     private JSONObject saveAreaEffect(AreaEffect areaEffect){
         JSONObject areaEffectJSON = new JSONObject();
         areaEffectJSON.put("Type", areaEffect.getAreaEffectType());
-        if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
+        if(areaEffect.getAreaEffectType() == AreaEffectType.){
             areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
             areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
             areaEffectJSON.put("Y", ((TeleportAreaEffect) areaEffect).getY());
@@ -190,11 +191,10 @@ public class Serializer implements Saver{
     private JSONObject saveEquipment(Equipment equipment) {
         JSONObject equipmentJSON = new JSONObject();
         equipmentJSON.put("Hotbar", saveHotbar(equipment.getHotbarItems()));
-        ArrayList<String> itemsList = new ArrayList<>();
-//        for(int i = 0; i < equipment.getEquippedItems().size(); i++) {
-//            itemsList.add(equipment.getEquippedItems().get(i).save(this));
-//        }
-        equipmentJSON.put("Items", new JSONArray(itemsList));
+        equipmentJSON.put("Head", equipment.getHead().save(this));
+        equipmentJSON.put("Body", equipment.getBody().save(this));
+        equipmentJSON.put("Legs", equipment.getLegs().save(this));
+        equipmentJSON.put("Ring", equipment.getRing().save(this));
         return equipmentJSON;
     }
 

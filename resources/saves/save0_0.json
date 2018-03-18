@@ -1,0 +1,50 @@
+{"Player" : {
+  "Role" : {"BindWoundsLevel" : 2, "BargainLevel":2, "ObservationLevel": 3, "Role" : {"RoleName" : "Smasher", "OneHandedWeaponLevel" : 2, "TwoHandedWeaponLevel" : 2, "BrawlLevel" : 2 }},
+  "Level" : 2,
+  "Location": {"AreaEffect": {"Type" :  "HEAL"},
+  "Terrain" : "ICE",
+  "Obstacle" : 0},
+  "Inventory" : {"Items" : ["Key", "Key"]},
+  "Equipment" : {"Hotbar" : {"Items" : ["Mjolnir"]},
+  "Head" : "helmet?" ,
+  "Body" : "chest",
+  "Legs" : "legs",
+  "Ring" : "ring"},
+  "EntityType" : "ICE",
+  "HP" : 2,
+  "MaxHP" : 100,
+  "Mana" : 100,
+  "XP" : 32,
+  "Gold" : 9000
+},
+
+"World" : { "CurrentMap" : 0 ,
+  "Maps" : [{"mapID" : "3213",
+    "Rows" : 2,
+    "Cols": 2,
+    "EntityLocations": {"Pairs": [{"Entity": {"Level" : 2,
+    "Location": {"AreaEffect": {"Type" :  "HEAL"},
+    "Terrain" : "ICE",
+    "Obstacle" : 0},
+    "Inventory" : {"Items" : ["Key", "Key"]},
+    "EntityType" : "ICE",
+    "HP" : 2,
+    "MaxHP" : 100} ,
+    "LocationX":0, "LocationY":0}]},
+    "Locations": [
+      {"AreaEffect": {"Type" :  "HEAL"},
+      "Terrain" : "ICE",
+      "Obstacle" : 0},
+      {"AreaEffect": {"Type" :  "HEAL"},
+      "Terrain" : "ICE",
+      "Obstacle" : 0},
+
+      {"AreaEffect": {"Type" :  "HEAL"},
+      "Terrain" : "ICE",
+      "Obstacle" : 0},
+      {"AreaEffect": {"Type" :  "HEAL"},
+      "Terrain" : "ICE",
+      "Obstacle" : 0} ]
+    }]
+  }
+}
