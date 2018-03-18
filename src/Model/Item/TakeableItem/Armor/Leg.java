@@ -6,18 +6,20 @@ import Model.Item.TakeableItem.WearableItem;
 
 public class Leg extends WearableItem {
 
+    private int defenceIncrease = 75;
+
     public Leg(){
         super();
         this.name = "legs";
     }
     @Override
     public void putOn(Player player) {
-
+        player.modifyDefense(defenceIncrease);
     }
 
     @Override
     public void takeOff(Player player) {
-
+        player.modifyDefense(-defenceIncrease);
     }
 
     @Override
