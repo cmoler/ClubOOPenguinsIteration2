@@ -25,7 +25,7 @@ public abstract class Entity {
     private int experience = 0;
     private int level = 1; // default level
     private double defense = 0;
-    private Inventory inventory = new Inventory(this);
+    private Inventory inventory = new Inventory();
     private Location location;
     private boolean intentToMove = false;
     private int visibleRange = 5;

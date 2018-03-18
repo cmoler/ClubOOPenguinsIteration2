@@ -125,12 +125,12 @@ public class Serializer implements Saver{
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
         JSONObject areaEffectJSON = new JSONObject();
-
-        locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
         locationJSON.put("Obstacle", location.hasObstacle());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
+
+        locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
             itemList.add(location.getItems().get(i).getName());
         }
         locationJSON.put("Items", itemList);

@@ -16,7 +16,6 @@ public class ChestInteractiveItem extends InteractiveItem {
         name = "chestInteractiveItem";
         this.isOpened = isOpened;
         chestLoot = TakeableItemGenerator.getTakeableItemGenerator().getRandomItem();
-
     }
 
     public boolean isOpened() {
@@ -33,10 +32,6 @@ public class ChestInteractiveItem extends InteractiveItem {
                 isOpened = true;
             }
         }
-    }
-
-    public boolean isOpened(){
-        return isOpened;
     }
 
     @Override
