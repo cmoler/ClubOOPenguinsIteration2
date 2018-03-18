@@ -15,11 +15,9 @@ import javax.swing.*;
 
 public class AreaViewPort extends Viewport {
 
-    private final List<JButton> btnList = new ArrayList<JButton>();
+    private final List<JButton> btnList = new ArrayList<>();
     private int rowCount = Commons.SCREEN_HEIGHT / AreaSizes.TERRAIN_HEIGHT;
     private int colCount = Commons.SCREEN_WIDTH / AreaSizes.TERRAIN_WIDTH;
-    private int gridSize = 0;
-    private int playerPos = 0;
 
     public AreaViewPort() {
 
@@ -34,18 +32,14 @@ public class AreaViewPort extends Viewport {
 
         for(int i = 0; i < rowCount; i++) {
             for(int j = 0; j < colCount; j++) {
-                //Printing row and column number for testing purposes
                 JButton btn = createButton(i, j);
-/*
-//Styling to make button invisible
-btn.setBorderPainted(false);
-btn.setContentAreaFilled(false);
-btn.setToolTipText("Click to move");
-*/
                 btnList.add(btn);
                 buttonGrid.add(btn);
             }
         }
+
+        buttonGrid.setOpaque(false);
+
         add(buttonGrid);
         setVisible(true);
     }
@@ -53,20 +47,33 @@ btn.setToolTipText("Click to move");
     private JButton createButton(int x, int y) {
         JButton btn = new JButton(String.valueOf(x) + ", " + String.valueOf(y));
 
+        //Printing x and y values for testing purposes
+        System.out.println("Observing " + String.valueOf(x) + ", " + String.valueOf(y));
+
         //Styling to make button invisible
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
-        btn.setToolTipText("Click to move");
+        btn.setOpaque(false);
+        btn.setToolTipText("Click to observe");
 
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                int moveX = rowCount / 2 + 1 - x;
+                int moveY = colCount / 2 + 1 - y;
+
+                //Need a way to pass current observation skill
+                Observation ob = new Observation(5);
+
                 JButton getIndex = getButtonIndex(x, y);
+
+                //Get player location
+
                 getTopLevelAncestor().requestFocus();
             }
         });
+
         return btn;
     }
 
-}
 
