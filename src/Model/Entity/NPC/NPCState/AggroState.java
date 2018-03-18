@@ -2,6 +2,7 @@ package Model.Entity.NPC.NPCState;
 
 import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
+import Model.Map.AreaEffect.AreaEffectType;
 import Model.Map.AreaEffect.TeleportAreaEffect;
 import Model.Map.Direction;
 import Model.Map.Location;
@@ -65,7 +66,7 @@ public class AggroState implements NPCState {
 
                     //if unvisited and within range, add to queue
                     if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= npc.getVisibleRange()
-                            && !(toVisit.location.getAreaEffect() instanceof TeleportAreaEffect)) {
+                            && toVisit.location.getAreaEffect().getAreaEffectType() != AreaEffectType.TELEPORT) {
                         queue.add(toVisit);
                     }
                     // if in queue and current path cost is cheaper, update path and cost in existing node
