@@ -356,6 +356,7 @@ public class Deserializer {
         }
         else{
             areaEffect = null;
+            areaEffectView = null;
         }
 
 
