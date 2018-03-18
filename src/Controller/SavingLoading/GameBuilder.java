@@ -31,6 +31,7 @@ public class GameBuilder {
     private KeyBindings keyBindings;
 
     //VIEWS
+    private Viewport viewport;
     private AreaViewPort areaViewport;
     private MainMenuView menuViewPort;
     private StatusViewPort statusViewPort;
@@ -98,5 +99,13 @@ public class GameBuilder {
 
     public StatusViewPort getStatusViewPort() {
         return statusViewPort;
+    }
+
+    public Viewport getViewport() {
+        return viewport;
+    }
+
+    public void setViewport(Viewport viewport) {
+        this.viewport = viewport;
     }
 }

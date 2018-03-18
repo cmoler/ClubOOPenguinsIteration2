@@ -22,7 +22,7 @@ public class Viewport extends JPanel {
     public Viewport() {
         setFocusable(true);
         setDoubleBuffered(true);
-        LoopMusic();
+        //LoopMusic();
     }
 
     public int getLocationX() {
@@ -102,9 +102,9 @@ public class Viewport extends JPanel {
         this.add(currentMapView);
     }
 
-    private void LoopMusic() {
+/*    private void LoopMusic() {
         Media hit = new Media(new File("resources/music/music.mp3").toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
-    }
+    }*/
 }

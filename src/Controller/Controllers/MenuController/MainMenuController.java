@@ -103,4 +103,7 @@ public class MainMenuController extends MenuController{
         }
     }
 
+    public void loadGame() {
+        controllerMediator.load();
+    }
 }
