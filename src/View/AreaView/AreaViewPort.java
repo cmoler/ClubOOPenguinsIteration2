@@ -22,7 +22,15 @@ public class AreaViewPort extends Viewport {
 
     private Player player;
 
+    public AreaViewPort() {
+
+    }
+
     public AreaViewPort(Player player) {
+        this.player = player;
+    }
+
+    public void setPlayer(Player player) {
         this.player = player;
     }
 

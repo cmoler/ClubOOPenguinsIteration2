@@ -29,8 +29,10 @@ import Model.Item.TakeableItem.RangedWeaponItem.*;
 import Model.Item.TakeableItem.StaffItem.*;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.*;
 
+import View.AreaView.AreaViewPort;
 import View.StatusView.StatusViewPort;
 
+import View.Viewport;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -44,6 +46,10 @@ public class Deserializer {
     private GameBuilder gameBuilder;
     private Player player;
     private List<NPC> NPCs;
+
+    private Viewport viewport = new Viewport();
+    private AreaViewPort areaViewPort = new AreaViewPort();
+
 
     public Deserializer(GameBuilder gameBuilder, JSONObject saveFileJSON){
         this.saveFileJSON = saveFileJSON;
@@ -323,8 +329,6 @@ public class Deserializer {
     }
 
     private void deserializeEquipment(JSONObject equipment, Player player){
-
-        //TODO - check on .equals("")
 
         Equipment newEquipment = player.getEquipment();
 

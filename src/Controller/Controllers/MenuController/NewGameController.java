@@ -17,9 +17,13 @@ public class NewGameController extends MenuController {
         this.parent = parent;
     }
 
-    public void select(){
-        String fileName = Commons.SAVE_FOLDER + Commons.SAVE_NAME + Commons.DEFAULT_SAVE;
-        //gameBuilder.loadGame(fileName);
+    @Override
+    public void select() {
+        switch(verticalSelection){
+            case 0: gameBuilder.getMemorySlots().loadDefaultGameSmasher(); break;
+            case 1: gameBuilder.getMemorySlots().loadDefaultGameSneak(); break;
+            case 2: gameBuilder.getMemorySlots().loadDefaultGameSummoner(); break;
+        }
     }
 
     protected void correctUpDownParameters() {

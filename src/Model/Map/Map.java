@@ -5,7 +5,6 @@ import Model.Item.Item;
 import Model.Map.Terrain.Ice;
 import Model.UpdateList;
 import Model.Updateable;
-import Model.Visitor.Visitor;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -194,10 +193,6 @@ public class Map implements Updateable {
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
-
-    public void accept(Visitor v){
-        v.visitMap(this);
-    }
 
     public void attach(Viewport viewport) {
         observers.add(viewport);
