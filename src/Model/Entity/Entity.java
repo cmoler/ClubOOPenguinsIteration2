@@ -74,7 +74,7 @@ public abstract class Entity {
     }
 
     public void modifyDefense(double defense){
-        this.defense = defense;
+        this.defense += defense;
     }
 
     private boolean canLevelUp(){

@@ -65,6 +65,8 @@ public class Player extends Entity implements Saveable{
         return mana;
     }
 
+    public void setMaxMana(int maxMana) { role.setMaxMana(maxMana);}
+
     public int getMaxMana() { return role.getMaxMana(); }
 
     public void addMana(int mana){
