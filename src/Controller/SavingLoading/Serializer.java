@@ -48,6 +48,7 @@ import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Item.TakeableItem.UseableItem;
 import Model.Map.AreaEffect.AreaEffect;
+import Model.Map.AreaEffect.AreaEffectType;
 import Model.Map.AreaEffect.TeleportAreaEffect;
 import Model.Map.EntityLocation;
 import javafx.util.Pair;
@@ -137,7 +138,7 @@ public class Serializer implements Saver{
     private JSONObject saveAreaEffect(AreaEffect areaEffect){
         JSONObject areaEffectJSON = new JSONObject();
         areaEffectJSON.put("Type", areaEffect.getAreaEffectType());
-        if(areaEffect instanceof TeleportAreaEffect){
+        if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
             areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
             areaEffectJSON.put("I", ((TeleportAreaEffect) areaEffect).getMapID());
             areaEffectJSON.put("J", ((TeleportAreaEffect) areaEffect).getMapID());
