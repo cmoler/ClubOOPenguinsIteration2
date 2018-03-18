@@ -361,7 +361,7 @@ public class Deserializer {
 
 
         //OBSTACLE DESERIALIZATION
-        boolean obstacle = locationJSON.getBoolean("Obstacle");
+        boolean obstacle = locationJSON.getInt("Obstacle") == 1;
 
 
         //ITEMS DESERIALIZATION
