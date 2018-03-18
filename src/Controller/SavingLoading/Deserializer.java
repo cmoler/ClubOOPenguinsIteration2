@@ -1,5 +1,6 @@
 package Controller.SavingLoading;
 
+import Configs.ImagesInfo;
 import Model.Entity.*;
 import Model.Entity.NPC.NPC;
 import Model.Entity.NPC.ShopKeepNPC;
@@ -281,14 +282,19 @@ public class Deserializer {
         //TERRAIN DESERIALIZATION
         Terrain terrain;
         String terrainType = locationJSON.getString("Terrain");
+
+        TerrainView terrainView;
         if(terrainType.equals("ICE")){
             terrain = new Ice();
+            terrainView = new TerrainView(ImagesInfo.ICE_IMAGE);
         }
         else if(terrainType.equals("GLACIER")){
             terrain = new Glacier();
+            terrainView = new TerrainView(ImagesInfo.GLACIER_IMAGE);
         }
         else{
             terrain = new Water();
+            terrainView = new TerrainView(ImagesInfo.WATER_IMAGE);
         }
 
 
@@ -296,29 +302,50 @@ public class Deserializer {
         AreaEffect areaEffect;
         JSONObject areaEffectJSON = locationJSON.getJSONObject("AreaEffect");
         String areaEffectType = areaEffectJSON.getString("Type");
+        Viewport areaEffectView;
+
         if(areaEffectType.equals("DAMAGE")){
             areaEffect = new DamageAreaEffect();
+
+            areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_DAMAGE_IMAGE);
+
         }
         else if(areaEffectType.equals("HEAL")){
             areaEffect = new HealAreaEffect();
+
+            areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_HEAL_IMAGE);
+            DecalView decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
+            areaEffectView.add(decalView);
         }
         else if(areaEffectType.equals("KILL")){
             areaEffect = new KillAreaEffect();
+
+            areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_KILL_IMAGE);
+            DecalView decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
+            areaEffectView.add(decalView);
         }
         else if(areaEffectType.equals("LEVELUP")){
             areaEffect = new LevelUpAreaEffect();
+
+            areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_LEVELUP_IMAGE);
+            DecalView decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
+            areaEffectView.add(decalView);
         }
         else if(areaEffectType.equals("TELEPORT")){
             String mapID = areaEffectJSON.getString("mapID");
             int X = areaEffectJSON.getInt("X");
             int Y = areaEffectJSON.getInt("Y");
             areaEffect = new TeleportAreaEffect(mapID,X,Y);
+
+            areaEffectView = new AreaEffectView(ImagesInfo.ITEM_TELEPORTER_IMAGE);
         }
         else if(areaEffectType.equals("TRAP")){
             areaEffect = new TrapAreaEffect();
+            areaEffectView = new TrapView((TrapAreaEffect) areaEffect);
         }
         else {
             areaEffect = new TransactionAreaEffect();
+            areaEffectView = new TransactionAreaEffectView((TransactionAreaEffect) areaEffect);
         }
 
 
@@ -349,6 +376,12 @@ public class Deserializer {
         LocationView locationView = new LocationView(location, location.getxCoordinate(), location.getyCoordinate());
         for(ItemView itemView : itemViews){
             locationView.add(itemView);
+        }
+        locationView.add(areaEffectView);
+        locationView.add(terrainView);
+
+        if(obstacle){
+            locationView.add(new ObstacleView(ImagesInfo.OBSTACLE_IMAGE));
         }
 
         return location;
