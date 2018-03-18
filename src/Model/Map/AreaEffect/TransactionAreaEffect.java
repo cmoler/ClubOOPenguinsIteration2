@@ -7,12 +7,15 @@ import Model.Item.TakeableItem.TakeableItemGenerator;
 
 public class TransactionAreaEffect extends OneShotAreaEffect {
 
-    TakeableItem shopItem;
+    private TakeableItem shopItem;
 
     public TransactionAreaEffect(){
         shopItem = TakeableItemGenerator.getTakeableItemGenerator().getRandomItem();
     }
 
+    public TakeableItem getShopItem() {
+        return shopItem;
+    }
 
     @Override
     protected void affect(Entity entity) {
