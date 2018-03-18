@@ -75,22 +75,28 @@ public class Deserializer {
         int rows = mapJSON.getInt("Rows");
         int cols = mapJSON.getInt("Cols");
 
-        JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
-        for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
-            Entity entity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
-        }
-
         JSONArray locationsJSON = mapJSON.getJSONArray("Locations");
         Location[][] locations = new Location[rows][cols];
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
             locations[location.getxCoordinate()][location.getyCoordinate()] = location;
         }
+        Map map = new Map(locations);
 
-        return new Map(locations);
+        JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
+        for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
+
+            Entity currEntity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
+            int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("X");
+            int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("Y");
+
+            map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
+        }
+
+        return map;
     }
 
-    public Entity deserializeEntity(){
+    public Entity deserializeEntity(JSONObject entityJSON){
 
         JSONObject playerJSON = saveFileJSON.getJSONObject("Player");
 
@@ -232,9 +238,6 @@ public class Deserializer {
         return location;
     }
 
-    private EntityLocation deserializeEntityLocation(JSONObject entityLocation){
-
-    }
 
     private Inventory deserializeInventory(JSONObject inventory){
         Inventory inventoryModel = new Inventory();
