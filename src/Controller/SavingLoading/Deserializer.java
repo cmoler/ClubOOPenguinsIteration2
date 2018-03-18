@@ -39,15 +39,15 @@ import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
 import Model.Map.AreaEffect.*;
+import Model.Map.EntityLocation;
 import Model.Map.Location;
 import Model.Map.Terrain.*;
 import Model.Map.World;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Deserializer {
 
@@ -55,10 +55,23 @@ public class Deserializer {
 
     public Deserializer(JSONObject saveFileJSON){
         this.saveFileJSON = saveFileJSON;
+
+        deserializeWorld(saveFileJSON.getJSONObject("World"));
     }
 
-    public void deserializeWorld(){
+    public void deserializeWorld(JSONObject worldJSON){
         World world = World.getWorld();
+
+        JSONArray mapsJSON = worldJSON.getJSONArray("Maps");
+
+        for(int mapIndex = 0; mapIndex < mapsJSON.length(); mapsJSON.length()){
+            deserializeMap(mapsJSON.getJSONObject(mapIndex));
+        }
+
+    }
+
+    private Map deserializeMap(JSONObject map){
+
     }
 
     public Player deserializePlayer(){
@@ -90,6 +103,7 @@ public class Deserializer {
             return EntityType.WATER;
         }
     }
+
 
     private Role deserializeRole(JSONObject playerRoleJSON){
 
@@ -193,6 +207,10 @@ public class Deserializer {
 
 
         return new Location(terrain, obstacle, areaEffect, items);
+    }
+
+    private EntityLocation deserializeEntityLocation(JSONObject entityLocation){
+
     }
 
     private Inventory deserializeInventory(JSONObject inventory){
