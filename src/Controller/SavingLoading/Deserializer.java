@@ -192,8 +192,21 @@ public class Deserializer {
         return inventoryModel;
     }
 
-    private Equipment deserializeEquipment(JSONObject equipment){
+    private Equipment deserializeEquipment(JSONObject equipment, Player player){
+        Equipment newEquipment = new Equipment(player);
 
+        JSONObject hotbar = equipment.getJSONObject("Hotbar");
+        JSONArray hotbarItems = hotbar.getJSONArray("Items");
+        for (int i = 0; i < hotbarItems.length(); i++) {
+            TakeableItem item = parseItem(hotbarItems.getString(i));
+            newEquipment.equip(item);
+        }
+        JSONObject head;
+        JSONObject body;
+        JSONObject legs;
+        JSONObject ring;
+
+        return newEquipment;
     }
 
     private TakeableItem parseItem(String itemName){
