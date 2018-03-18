@@ -213,13 +213,24 @@ public class Deserializer {
         JSONObject hotbar = equipment.getJSONObject("Hotbar");
         JSONArray hotbarItems = hotbar.getJSONArray("Items");
         for (int i = 0; i < hotbarItems.length(); i++) {
-            TakeableItem item = parseItem(hotbarItems.getString(i));
-            newEquipment.equip(item);
+            newEquipment.equip(parseItem(hotbarItems.getString(i)));
         }
-        JSONObject head;
-        JSONObject body;
-        JSONObject legs;
-        JSONObject ring;
+        String head = equipment.getString("Head");
+        if(!head.equals("none")) {
+            newEquipment.equip(parseItem(head));
+        }
+        String body = equipment.getString("Body");
+        if(!body.equals("none")) {
+            newEquipment.equip(parseItem(body));
+        }
+        String legs = equipment.getString("Legs");
+        if(!legs.equals("none")) {
+            newEquipment.equip(parseItem(legs));
+        }
+        String ring = equipment.getString("Ring");
+        if(!ring.equals("none")) {
+            newEquipment.equip(parseItem(ring));
+        }
 
         return newEquipment;
     }
