@@ -70,12 +70,12 @@ public class SpriteParser {
     }
 
     public Image getInteractiveItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ITERACTIVE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.KEY_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getOneShotItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ONESHOT_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.BURGER_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -85,7 +85,7 @@ public class SpriteParser {
     }
 
     public Image getTeleporterItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TELEPORTER_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PORTAL_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -322,7 +322,7 @@ public class SpriteParser {
     private void getChestSprites(){
         BufferedImage bigImg = null;
         try {
-            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCAITON));
+            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCATION));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -372,6 +372,51 @@ public class SpriteParser {
 
     public Image getTrapImage() {
         ImageIcon imageIcon = new ImageIcon(ImagesInfo.TRAP_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getCharmImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.CHARM_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEAL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseLevelImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_LEVEL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseMaxHealthImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_MAX_HEALTH_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSeppukuImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SEPPUKU_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSleepImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SLEEP_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getExpPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.EXP_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealthPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEALTH_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getManaPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.MANA_POTION_FILELOCATION);
         return imageIcon.getImage();
     }
 }
