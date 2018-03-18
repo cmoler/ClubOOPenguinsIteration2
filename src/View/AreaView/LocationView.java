@@ -42,6 +42,8 @@ public class LocationView extends Viewport {
         }
     }
 
+    //TODO UNCOMMENT THIS
+
 //    //Readd Items that are still on it
 //    public void addItemViews(){
 //

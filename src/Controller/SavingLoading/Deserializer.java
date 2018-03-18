@@ -31,6 +31,7 @@ import Model.Item.TakeableItem.StaffItem.*;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.*;
 
 import View.AreaView.*;
+import View.AreaView.ItemView.ItemView;
 import View.StatusView.StatusViewPort;
 
 import View.Viewport;
@@ -131,12 +132,9 @@ public class Deserializer {
 
         Entity entity;
 
-        int currEntityX = entityJSON.getInt("X");
-        int currEntityY = entityJSON.getInt("Y");
-
         switch (name) {
             case "Player":
-                entity = deserializePlayer(entityClass, entityType, currEntityX, currEntityY);
+                entity = deserializePlayer(entityClass, entityType);
                 break;
             case "NPC":
                 entity = deserializeNPC(entityClass, entityType);
@@ -155,7 +153,7 @@ public class Deserializer {
         return entity;
     }
 
-    private Entity deserializePlayer(JSONObject EntityClass, EntityType type, int x, int y) {
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
         int skillPointsAvailable = EntityClass.getInt("SkillPoints");
         JSONObject roleJSON = EntityClass.getJSONObject("Role");
 
@@ -337,11 +335,13 @@ public class Deserializer {
 
         //ITEMS DESERIALIZATION
         List<Item> items = new ArrayList<>();
+        List<ItemView> itemViews = new ArrayList<>();
         JSONArray jsonItems = locationJSON.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
             String itemType = jsonItems.getString(itemIndex);
             Item item = parseItem(itemType);
             items.add(item);
+            itemViews.add(new ItemView(itemType));
         }
 
         //X,Y DESERIALIZATION
@@ -351,6 +351,12 @@ public class Deserializer {
         Location location = new Location(terrain, obstacle, areaEffect, items);
         location.setxCoordinate(X);
         location.setyCoordinate(Y);
+
+
+        LocationView locationView = new LocationView(location, location.getxCoordinate(), location.getyCoordinate());
+        for(ItemView itemView : itemViews){
+            locationView.add(itemView);
+        }
 
         return location;
     }
