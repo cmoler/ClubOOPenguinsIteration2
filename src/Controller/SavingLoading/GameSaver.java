@@ -19,7 +19,7 @@ public class GameSaver {
         saveJSON.put("World", serializer.getWorld());
 
         try {
-            FileWriter fileWriter = new FileWriter(new File(filepath));
+            FileWriter fileWriter = new FileWriter(new File("resources/saves/" + filepath));
             fileWriter.write(saveJSON.toString());
         } catch (IOException e) {
             e.printStackTrace();
