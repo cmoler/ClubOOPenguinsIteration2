@@ -69,6 +69,7 @@ public class AreaViewPort extends Viewport {
 
                 //Get player location
 
+
                 getTopLevelAncestor().requestFocus();
             }
         });

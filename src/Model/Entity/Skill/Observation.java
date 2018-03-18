@@ -9,6 +9,7 @@ import Model.Map.EntityLocation;
 import java.util.ArrayList;
 
 public class Observation extends Skill {
+
     public Observation(int points){
         super(points);
     }
@@ -87,7 +88,10 @@ public class Observation extends Skill {
 
         EntityLocation el =  new EntityLocation();
 
-        return el.getEntityAtLocation(location).getEntityType().toString();
+        if(el != null)
+            return el.getEntityAtLocation(location).getEntityType().toString();
+        else
+            return "There isn't anything here";
     }
 
 
