@@ -5,12 +5,14 @@ import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
+import Model.Entity.Skill.Skill;
 import Model.Map.World;
 import View.AreaView.AreaViewPort;
 import View.MenuView.MainMenuView;
 import View.StatusView.EquipmentView;
 import View.StatusView.InventoryView;
 import View.StatusView.SkillsView;
+import View.StatusView.StatusViewPort;
 import View.Viewport;
 
 import java.io.FileNotFoundException;
@@ -19,14 +21,23 @@ import java.io.FileWriter;
 
 public class GameBuilder {
 
-    private String saveGameDirectory;
-
+    //GAMEFRAME
     private OOPenguinGameFrame gameFrame;
+
+    //KEYBINDINGS & SAVESLOTS
+    private MemorySlots memorySlots;
+    private KeyBindings keyBindings;
+
+    //VIEWS
     private Viewport areaViewport;
     private MainMenuView menuViewPort;
-    private MemorySlots memorySlots;
+    private StatusViewPort statusViewPort;
+    private InventoryView inventoryView;
+    private SkillsView skillsView;
+    private EquipmentView equipmentView;
 
-    private KeyBindings keyBindings;
+
+    private Player player;
 
     public GameBuilder(){
         menuViewPort = new MainMenuView();
@@ -36,6 +47,26 @@ public class GameBuilder {
         memorySlots = new MemorySlots(this);
 
         keyBindings = new KeyBindings();
+    }
+
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+
+    public void setInventoryView(InventoryView inventoryView){
+        this.inventoryView = inventoryView;
+    }
+
+    public void setSkillsView(SkillsView skillsView){
+        this.skillsView = skillsView;
+    }
+
+    public void setEquipmentView(EquipmentView equipmentView){
+        this.equipmentView = equipmentView;
+    }
+
+    public void setStatusViewPort(StatusViewPort statusViewPort){
+        this.statusViewPort = statusViewPort;
     }
 
     public MemorySlots getMemorySlots(){return memorySlots;}
@@ -58,7 +89,9 @@ public class GameBuilder {
         return null;
     }
 
-    public World getWorld() {return null;}
+    public World getWorld() {
+        return World.getWorld();
+    }
 
     public Inventory getInventory(){
         return null;

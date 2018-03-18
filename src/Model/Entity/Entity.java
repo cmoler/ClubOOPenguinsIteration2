@@ -22,7 +22,7 @@ public abstract class Entity {
     private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
-    private Direction directionFacing;
+    private Direction directionFacing = Direction.N;
     private int experience = 0;
     private int level = 1; // default level
     private double defense = 0;
@@ -74,7 +74,7 @@ public abstract class Entity {
     }
 
     public void modifyDefense(double defense){
-        this.defense = defense;
+        this.defense += defense;
     }
 
     private boolean canLevelUp(){
