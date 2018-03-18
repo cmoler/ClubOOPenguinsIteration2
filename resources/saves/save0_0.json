@@ -793,11 +793,21 @@
             	"X": 5,
             	"Y": 5
             },
-            "Terrain": "ICE",
-            "Obstacle": 0,
-            "Items": [],
-            "X": 9,
-            "Y": 1
+            "EntityType": "ICE",
+            "HP": 2,
+            "MaxHP": 100,
+            "LocationX": 3,
+            "LocationY": 1,
+            "EntityClass": {
+              "Name": "ShopKeepNPC",
+              "NPCState": "aggro",
+              "Color": "blue",
+              "ShopMap": {
+                "MapID": "1234",
+                "I": 3,
+                "J": 3
+              }
+            }
           },
           {
             "AreaEffect": {},

@@ -1,6 +1,7 @@
 package Model.Entity.NPC;
 
 import Model.Entity.Entity;
+import Model.Entity.EntityType;
 import Model.Entity.NPC.NPCState.*;
 
 import java.util.Random;
@@ -19,7 +20,8 @@ public class NPC extends Entity implements Updateable{
     private String talkString;
     private String color;
 
-    public NPC(String color) {
+    public NPC(String color, EntityType entityType) {
+        super.setEntityType(entityType);
         this.color = color;
         name = "NPC";
         talkString = "Hello World!";
@@ -100,5 +102,9 @@ public class NPC extends Entity implements Updateable{
 
     public String getColor() {
         return color;
+    }
+
+    public String getState(){
+        return npcState.getType();
     }
 }

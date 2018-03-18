@@ -73,6 +73,14 @@ public abstract class Entity {
         }
     }
 
+    public void setHealth(int health){
+        this.health = health;
+    }
+
+    public void setInventory(Inventory inventory){
+        this.inventory = inventory;
+    }
+
     public void modifyDefense(double defense){
         this.defense += defense;
     }

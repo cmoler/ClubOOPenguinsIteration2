@@ -9,8 +9,6 @@ import java.util.*;
 
 public class EnemyState implements NPCState {
 
-
-
     @Override
     public void move(NPC npc, Player player) {
 
@@ -19,6 +17,11 @@ public class EnemyState implements NPCState {
             return;
         }
 
+    }
+
+    @Override
+    public String getType() {
+        return "enemy";
     }
 
     private boolean playerInRange(NPC npc, Player player) {

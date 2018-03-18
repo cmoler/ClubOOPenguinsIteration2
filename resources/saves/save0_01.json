@@ -16,7 +16,7 @@
             },
             "EntityType": "ICE",
             "HP": 2,
-            "MaxHP": 100,
+		  "MaxHP": 100,
             "LocationX": 0,
             "LocationY": 0,
             "EntityClass": {

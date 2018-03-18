@@ -24,6 +24,11 @@ public class AggroState implements NPCState {
 
     }
 
+    @Override
+    public String getType() {
+        return "aggro";
+    }
+
     private ArrayList<Direction> uniformCostSearch(NPC npc, Player player) {
         Location start = npc.getLocation();
         Location goal = player.getLocation();
