@@ -94,8 +94,8 @@ public class MainMenuView extends MenuViewPort {
 
 
         buttonGrid.setOpaque(false);
-        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 190));
+//        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
 
         this.add(buttonGrid);
 
@@ -117,7 +117,7 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void drawMainMenu(Graphics2D graphics2D){
-        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 35;
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 28;
         int startY = Commons.SCREEN_HEIGHT/4;
 
         graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
@@ -138,12 +138,12 @@ public class MainMenuView extends MenuViewPort {
         Image background = null;
 
         try {
-            background = ImageIO.read(new File("resources/images/Menu_Back.jpg"));
+            //background = ImageIO.read(new File("resources/images/Menu_Back.jpg"));
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        graphics2D.drawImage(background);
+        //graphics2D.drawImage(background, 0, 0 , Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
 
         int selectionBoxX = startX;
         int selectionBoxY = startY + selectedY*TextBoxInfo.TEXTBOX_HEIGHT;
