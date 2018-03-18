@@ -147,7 +147,7 @@ public class SkillsState implements ControllerState {
     }
 
     private void increaseCurrent() {
-        skillsController.incrememntSkill();
+        skillsController.incrementSkill();
     }
 
     private void scrollLeft() {

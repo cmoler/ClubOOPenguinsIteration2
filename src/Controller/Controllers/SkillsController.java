@@ -16,7 +16,7 @@ public class SkillsController implements Controller{
 
     }
 
-    public void incrememntSkill() {
+    public void incrementSkill() {
         role.increaseSkill(1);
     }
 

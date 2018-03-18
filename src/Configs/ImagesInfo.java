@@ -33,7 +33,7 @@ public interface ImagesInfo {
     public static final String GOLD_STAR_FILELOCATION = "resources/images/terrain/goldstar.png";
 
     public static final String TRAP_FILELOCATION = "resources/images/Beartrap.png";
-    public static final String CHEST_FILELOCAITON = "resoucres/images/chest.png";
+    public static final String CHEST_FILELOCAITON = "resources/images/chest.png";
 
     public static final String GLACIER_FILELOCATION = "resources/images/terrain/glacier.png";
 

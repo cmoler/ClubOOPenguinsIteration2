@@ -348,17 +348,17 @@ public class SpriteParser {
     }
 
     public Image getNPCBlueImage() {
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_BLUE_IMAGE);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_BLUE_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getNPCRedImage() {
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_RED_IMAGE);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_RED_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getNPCYellowImage() {
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_YELLOW_IMAGE);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_YELLOW_FILELOCATION);
         return imageIcon.getImage();
     }
 

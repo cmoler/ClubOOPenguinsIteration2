@@ -87,7 +87,7 @@ public class TakeableItemGenerator {
             case 22:
                 return new SnowShuriken();
             case 23:
-                return new Staff();
+                return new StaffItem();
             case 24:
                 return new InquisitorLightsaber();
             case 25:
