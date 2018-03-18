@@ -12,10 +12,12 @@ public class ShopKeepNPC extends NPC {
     private int locationI;
     private int locationJ;
 
-    public ShopKeepNPC(String mapID, int locationI, int locationJ) {
+    public ShopKeepNPC(String color, String mapID, int locationI, int locationJ) {
+        super(color);
         this.mapID = mapID;
         this.locationI = locationI;
         this.locationJ = locationJ;
+        this.name = "ShopKeepNPC";
     }
 
     public void openShop(){

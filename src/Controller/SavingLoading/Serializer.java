@@ -239,9 +239,9 @@ public class Serializer implements Saver{
 
     private JSONObject saveHotbar(List<TakeableItem> items){
         JSONObject hotbarJSON = new JSONObject();
-        ArrayList<String> itemsList = new ArrayList<>();
+        JSONArray itemsList = new JSONArray();
         for(int i =0; i < items.size(); i++) {
-            itemsList.add(items.get(i).save(this));
+            itemsList.put(items.get(i).save(this));
         }
         hotbarJSON.put("Items", new JSONArray(itemsList));
         return hotbarJSON;
