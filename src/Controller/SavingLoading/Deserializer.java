@@ -185,7 +185,7 @@ public class Deserializer {
         JSONArray items = inventory.getJSONArray("Items");
         for(int i = 0; i < items.length(); ++i){
             Object item = items.get(i);
-            TakeableItem takeableItem = parseItem(((TakeableItem)item).getName());
+            TakeableItem takeableItem = parseItem(item.toString());
             inventoryModel.addItem(takeableItem);
         }
 
