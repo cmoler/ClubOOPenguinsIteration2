@@ -4,6 +4,7 @@ package View.StatusView;
 import Model.Entity.Entity;
 import Model.Entity.Equipment;
 import Model.Entity.Inventory;
+import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import View.Viewport;
 
@@ -15,12 +16,12 @@ public class StatusViewPort extends Viewport {
 
     private int currentView = 2;
 
-    public StatusViewPort(Entity entity, Equipment equipment, Inventory inventory, Role role){
-        add(new StatsView(entity));
-        add(new HotBarView(equipment));
-        add(new EquipmentView(equipment));
-        add(new InventoryView(inventory));
-        add(new SkillsView(role));
+    public StatusViewPort(Player player){
+        add(new StatsView(player));
+        add(new HotBarView(player.getEquipment()));
+        add(new EquipmentView(player.getEquipment()));
+        add(new InventoryView(player.getInventory()));
+        add(new SkillsView(player.getRole()));
     }
 
     @Override

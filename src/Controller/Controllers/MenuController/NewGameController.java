@@ -21,8 +21,9 @@ public class NewGameController extends MenuController {
     public void select() {
         switch(verticalSelection){
             case 0: gameBuilder.getMemorySlots().loadDefaultGameSmasher(); break;
-            case 1: gameBuilder.getMemorySlots().loadDefaultGameSneak(); break;
-            case 2: gameBuilder.getMemorySlots().loadDefaultGameSummoner(); break;
+            case 1: gameBuilder.getMemorySlots().loadDefaultGameSummoner(); break;
+            case 2: gameBuilder.getMemorySlots().loadDefaultGameSneak(); break;
+
         }
     }
 

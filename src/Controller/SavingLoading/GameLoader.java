@@ -20,7 +20,7 @@ public class GameLoader {
     }
 
     public void load(String savePath){
-        File file = new File(savePath);
+        File file = new File("resources/saves/" + savePath);
 
         String saveFileContent = null;
         try {
@@ -31,6 +31,6 @@ public class GameLoader {
         JSONObject saveFileJSON = new JSONObject(saveFileContent);
 
         Deserializer deserializer = new Deserializer(gameBuilder, saveFileJSON);
-        
+
     }
 }

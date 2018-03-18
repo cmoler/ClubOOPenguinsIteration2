@@ -75,8 +75,10 @@ public class Viewport extends JPanel {
     }
 
     public void add(Viewport viewport) {
-        viewport.parent = this;
-        children.add(viewport);
+        if(viewport != null) {
+            viewport.parent = this;
+            children.add(viewport);
+        }
     }
 
     public void remove(Viewport viewport) {

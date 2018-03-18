@@ -6,7 +6,46 @@
         "mapID": "0001",
         "Rows": 10,
         "Cols": 10,
-        "Entities": [],
+        "Entities": [
+          {
+              "Inventory": {
+                "Items": []
+              },
+              "EntityType": "ICE",
+              "HP": 100,
+              "MaxHP": 100,
+              "LocationX": 5,
+              "LocationY": 5,
+              "EntityClass": {
+                "Name": "Player",
+                "SkillPoints": 5,
+                "Role": {
+                  "BindWoundsLevel": 20,
+                  "BargainLevel": 20,
+                  "ObservationLevel": 3,
+                  "Role": {
+                    "RoleName": "Summoner",
+                    "BaneLevel": 20,
+                    "BoonLevel": 20,
+                    "EnchantmentLevel": 20,
+                    "StaffLevel": 20
+                  }
+                },
+                "Mana": 100,
+                "XP": 0,
+                "Gold": 100,
+                "Equipment": {
+                  "Hotbar": {
+                    "Items": []
+                  },
+                  "Head": "",
+                  "Body": "",
+                  "Legs": "",
+                  "Ring": ""
+                }
+              }
+          }
+        ],
         "Locations": [
           {
             "AreaEffect": {

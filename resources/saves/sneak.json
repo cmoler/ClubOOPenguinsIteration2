@@ -6,7 +6,46 @@
         "mapID": "0001",
         "Rows": 10,
         "Cols": 10,
-        "Entities": [],
+        "Entities": [
+          {
+              "Inventory": {
+                "Items": []
+              },
+              "EntityType": "ICE",
+              "HP": 100,
+              "MaxHP": 100,
+              "LocationX": 5,
+              "LocationY": 5,
+              "EntityClass": {
+                "Name": "Player",
+                "SkillPoints": 5,
+                "Role": {
+                  "BindWoundsLevel": 20,
+                  "BargainLevel": 20,
+                  "ObservationLevel": 3,
+                  "Role": {
+                    "RoleName": "Sneak",
+                    "CreepLevel": 20,
+                    "DetectAndRemoveTrapLevel": 20,
+                    "PickPocketLevel": 20,
+                    "RangedWeaponLevel": 20
+                  }
+                },
+                "Mana": 0,
+                "XP": 0,
+                "Gold": 100,
+                "Equipment": {
+                  "Hotbar": {
+                    "Items": []
+                  },
+                  "Head": "",
+                  "Body": "",
+                  "Legs": "",
+                  "Ring": ""
+                }
+              }
+          }
+        ],
         "Locations": [
           {
             "AreaEffect": {
