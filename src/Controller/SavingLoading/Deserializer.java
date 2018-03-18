@@ -279,11 +279,11 @@ public class Deserializer {
         return inventoryModel;
     }
 
-    private Equipment deserializeEquipment(JSONObject equipment, Player player){
+    private void deserializeEquipment(JSONObject equipment, Player player){
 
         //TODO - check on .equals("")
 
-        Equipment newEquipment = new Equipment(player);
+        Equipment newEquipment = player.getEquipment();
 
         JSONObject hotbar = equipment.getJSONObject("Hotbar");
         JSONArray hotbarItems = hotbar.getJSONArray("Items");
@@ -307,7 +307,6 @@ public class Deserializer {
             newEquipment.equip(parseItem(ring));
         }
 
-        return newEquipment;
     }
 
     private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
