@@ -1,5 +1,6 @@
 package Controller.SavingLoading;
 
+import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
@@ -102,8 +103,46 @@ public class Serializer implements Saver{
         entityJSON.put("EntityType", entity.getEntityType().toString());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
+
+        //Save either as player or as NPC
+        if (entity.getName() == "npc") {
+            entityJSON.put("Name", "npc");
+            saveNPC((NPC) entity, entityJSON);
+        }
+        else{
+            entityJSON.put("Name", "player");
+            savePlayer((Player) entity, entityJSON);
+        }
+
         return entityJSON;
     }
+
+
+    public void savePlayer(Player player, JSONObject entityJSON) {
+
+        //TODO save player stuff
+
+
+//        this.player.put("Role", saveRole(player.getRole()));
+//        this.player.put("Level", player.getLevel());
+//        this.player.put("Location", saveLocation(player.getLocation()));
+//        this.player.put("Inventory", saveInventory(player.getInventory()));
+//        this.player.put("Equipment", saveEquipment(player.getEquipment()));
+//        this.player.put("EntityType", player.getEntityType().toString());
+//        this.player.put("HP", player.getHealth());
+//        this.player.put("MaxHP", player.getMaxHealth());
+//        this.player.put("Mana", player.getMana());
+//        this.player.put("XP", player.getExperience());
+//        this.player.put("Gold", player.getGold());
+    }
+
+    public void saveNPC(NPC npc, JSONObject entityJSON){
+
+        //TODO save NPC stuff
+
+    }
+
+
 
     private JSONObject saveMap(Map map) {
         JSONObject mapJSON = new JSONObject();

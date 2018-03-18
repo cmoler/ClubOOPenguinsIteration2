@@ -18,6 +18,7 @@ public abstract class Entity {
     private List<Viewport> observers = new ArrayList<Viewport>();
 
 
+    protected String name;
     private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
@@ -138,6 +139,10 @@ public abstract class Entity {
         if(level < finalLevel)
             return ExperienceForLevel.get(level + 1);
         else return -1;
+    }
+
+    public String getName(){
+        return name;
     }
 
     public int getExperienceForCurrentLevel(){
