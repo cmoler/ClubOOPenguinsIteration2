@@ -74,6 +74,7 @@ public class Deserializer {
         gameBuilder.setStatusViewPort(statusViewPort);
         gameBuilder.setAreaViewport(areaViewPort);
         gameBuilder.setPlayer(player);
+        gameBuilder.setViewport(viewport);
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -107,9 +108,6 @@ public class Deserializer {
         int cols = mapJSON.getInt("Cols");
 
         JSONArray locationsJSON = mapJSON.getJSONArray("Locations");
-        MapView mapView = new MapView();
-        currentMapView = mapView;
-
         Location[][] locations = new Location[rows][cols];
         MapView mapView = new MapView();
         currentMapView = mapView;

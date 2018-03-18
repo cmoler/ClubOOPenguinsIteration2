@@ -79,6 +79,8 @@ public class Inventory {
         return selectedY;
     }
 
+    public int getSelectedIndex() { return selectedX + ( selectedY * selectedX ); }
+
     public void scrollHorizontal(int i){
         selectedX += i;
         if(selectedX < 0) selectedX = 7;

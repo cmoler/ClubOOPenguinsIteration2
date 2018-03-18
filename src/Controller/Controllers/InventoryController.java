@@ -24,8 +24,24 @@ public class InventoryController implements Controller{
         areaViewPort.requestFocus();
     }
 
-    public void equipItem(int indexOfItemInInventory){
-        TakeableItem item = inventory.getItem(indexOfItemInInventory);
+    public void equipItem() {
+        TakeableItem item = inventory.removeItem(inventory.getSelectedIndex());
         equipment.equip(item);
+    }
+
+    public void scrollLeft() {
+        inventory.scrollHorizontal(-1);
+    }
+
+    public void scrollRight() {
+        inventory.scrollHorizontal(1);
+    }
+
+    public void scrollUp() {
+        inventory.scrollVeritical(-1);
+    }
+
+    public void scrollDown() {
+        inventory.scrollVeritical(1);
     }
 }
