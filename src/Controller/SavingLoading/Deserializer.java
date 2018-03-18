@@ -65,6 +65,8 @@ public class Deserializer {
         viewport.add(areaViewPort);
 
         deserializeWorld(saveFileJSON.getJSONObject("World"));
+
+        gameBuilder.setStatusViewPort(new StatusViewPort(player));
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -78,9 +80,6 @@ public class Deserializer {
 
         setNPC(this.NPCs, this.player);
         worldView = new WorldView(mapViews);
-
-        worldView = new WorldView(mapViews);
-
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -126,12 +125,9 @@ public class Deserializer {
 
         Entity entity;
 
-        int currEntityX = entityJSON.getInt("X");
-        int currEntityY = entityJSON.getInt("Y");
-
         switch (name) {
             case "Player":
-                entity = deserializePlayer(entityClass, entityType, currEntityX, currEntityY);
+                entity = deserializePlayer(entityClass, entityType);
                 break;
             case "NPC":
                 entity = deserializeNPC(entityClass, entityType);
@@ -150,7 +146,7 @@ public class Deserializer {
         return entity;
     }
 
-    private Entity deserializePlayer(JSONObject EntityClass, EntityType type, int x, int y) {
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
         int skillPointsAvailable = EntityClass.getInt("SkillPoints");
         JSONObject roleJSON = EntityClass.getJSONObject("Role");
 
@@ -164,8 +160,7 @@ public class Deserializer {
 
         deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
 
-        PlayerView playerView = new PlayerView(player, player.getLocation().getxCoordinate(),
-                player.getLocation().getyCoordinate(), player.getRole().getRoleType().name());
+        PlayerView playerView = new PlayerView(player);
         currentMapView.add(playerView);
 
         this.player = player;
