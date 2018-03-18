@@ -31,6 +31,6 @@ public class GameLoader {
         JSONObject saveFileJSON = new JSONObject(saveFileContent);
 
         Deserializer deserializer = new Deserializer(gameBuilder, saveFileJSON);
-        
+
     }
 }

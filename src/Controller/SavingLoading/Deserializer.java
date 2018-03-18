@@ -31,6 +31,7 @@ import Model.Item.TakeableItem.StaffItem.*;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.*;
 
 import View.AreaView.*;
+import View.AreaView.ItemView.ItemView;
 import View.StatusView.StatusViewPort;
 
 import View.Viewport;
@@ -64,8 +65,6 @@ public class Deserializer {
         viewport.add(areaViewPort);
 
         deserializeWorld(saveFileJSON.getJSONObject("World"));
-
-        gameBuilder.setStatusViewPort(new StatusViewPort(player, player.getEquipment(), player.getInventory(), player.getRole()));
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -334,11 +333,13 @@ public class Deserializer {
 
         //ITEMS DESERIALIZATION
         List<Item> items = new ArrayList<>();
+        List<ItemView> itemViews = new ArrayList<>();
         JSONArray jsonItems = locationJSON.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
             String itemType = jsonItems.getString(itemIndex);
             Item item = parseItem(itemType);
             items.add(item);
+            itemViews.add(new ItemView(itemType));
         }
 
         //X,Y DESERIALIZATION
@@ -348,6 +349,12 @@ public class Deserializer {
         Location location = new Location(terrain, obstacle, areaEffect, items);
         location.setxCoordinate(X);
         location.setyCoordinate(Y);
+
+
+        LocationView locationView = new LocationView(location, location.getxCoordinate(), location.getyCoordinate());
+        for(ItemView itemView : itemViews){
+            locationView.add(itemView);
+        }
 
         return location;
     }
