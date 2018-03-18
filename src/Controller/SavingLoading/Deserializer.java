@@ -9,6 +9,7 @@ import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.*;
 
+import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Map.*;
 import Model.Map.AreaEffect.*;
 
@@ -112,9 +113,12 @@ public class Deserializer {
 
         Entity entity;
 
+        int currEntityX = entityJSON.getInt("X");
+        int currEntityY = entityJSON.getInt("Y");
+
         switch (name) {
             case "Player":
-                entity = deserializePlayer(entityClass, entityType);
+                entity = deserializePlayer(entityClass, entityType, currEntityX, currEntityY);
                 break;
             case "NPC":
                 entity = deserializeNPC(entityClass, entityType);
@@ -133,7 +137,7 @@ public class Deserializer {
         return entity;
     }
 
-    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type, int x, int y) {
         int skillPointsAvailable = EntityClass.getInt("SkillPoints");
         JSONObject roleJSON = EntityClass.getJSONObject("Role");
 
@@ -307,8 +311,8 @@ public class Deserializer {
         JSONArray jsonItems = locationJSON.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
             String itemType = jsonItems.getString(itemIndex);
-            TakeableItem takeableItem = parseItem(itemType);
-            items.add(takeableItem);
+            Item item = parseItem(itemType);
+            items.add(item);
         }
 
         //X,Y DESERIALIZATION
@@ -328,7 +332,7 @@ public class Deserializer {
         JSONArray items = inventory.getJSONArray("Items");
         for(int i = 0; i < items.length(); ++i){
             Object item = items.get(i);
-            TakeableItem takeableItem = parseItem(item.toString());
+            TakeableItem takeableItem = (TakeableItem) parseItem(item.toString());
             inventoryModel.addItem(takeableItem);
         }
 
@@ -342,30 +346,30 @@ public class Deserializer {
         JSONObject hotbar = equipment.getJSONObject("Hotbar");
         JSONArray hotbarItems = hotbar.getJSONArray("Items");
         for (int i = 0; i < hotbarItems.length(); i++) {
-            newEquipment.equip(parseItem(hotbarItems.getString(i)));
+            newEquipment.equip((TakeableItem) parseItem(hotbarItems.getString(i)));
         }
         String head = equipment.getString("Head");
         if(!head.equals("")) {
-            newEquipment.equip(parseItem(head));
+            newEquipment.equip((TakeableItem) parseItem(head));
         }
         String body = equipment.getString("Body");
         if(!body.equals("")) {
-            newEquipment.equip(parseItem(body));
+            newEquipment.equip((TakeableItem) parseItem(body));
         }
         String legs = equipment.getString("Legs");
         if(!legs.equals("")) {
-            newEquipment.equip(parseItem(legs));
+            newEquipment.equip((TakeableItem) parseItem(legs));
         }
         String ring = equipment.getString("Ring");
         if(!ring.equals("")) {
-            newEquipment.equip(parseItem(ring));
+            newEquipment.equip((TakeableItem) parseItem(ring));
         }
 
     }
 
 
 
-    private TakeableItem parseItem(String itemName){
+    private Item parseItem(String itemName){
         switch(itemName){
             case "body":
                 return new Body();
@@ -427,6 +431,10 @@ public class Deserializer {
                 return new ManaPotion();
             case "xpPotion":
                 return new XPPotion();
+            case "chestInteractiveItemOpen":
+                return new ChestInteractiveItem(true);
+            case "chestInteractiveItemClosed":
+                return new ChestInteractiveItem(false);
             default:
                 return new Key();
         }
