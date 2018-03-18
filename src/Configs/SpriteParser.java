@@ -70,12 +70,12 @@ public class SpriteParser {
     }
 
     public Image getInteractiveItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ITERACTIVE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.KEY_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getOneShotItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ONESHOT_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.BURGER_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -85,7 +85,7 @@ public class SpriteParser {
     }
 
     public Image getTeleporterItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TELEPORTER_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PORTAL_FILELOCATION);
         return imageIcon.getImage();
     }
 

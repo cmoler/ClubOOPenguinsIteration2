@@ -40,6 +40,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class Deserializer {
@@ -79,7 +80,13 @@ public class Deserializer {
         }
 
         setNPC(this.NPCs, this.player);
-        worldView = new WorldView(mapViews);
+
+        Iterator<Map> maps = mapViews.keySet().iterator();
+
+        while (maps.hasNext()) {
+            Map currentMap = maps.next();
+            mapViews.get(currentMap).setEntity(player);
+        }
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -161,7 +168,7 @@ public class Deserializer {
         deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
 
         PlayerView playerView = new PlayerView(player);
-        currentMapView.add(playerView);
+        areaViewPort.add(playerView);
 
         this.player = player;
         return player;

@@ -42,6 +42,8 @@ public class LocationView extends Viewport {
         }
     }
 
+    //TODO UNCOMMENT THIS
+
 //    //Readd Items that are still on it
 //    public void addItemViews(){
 //
@@ -50,10 +52,10 @@ public class LocationView extends Viewport {
 //        for (int i = 0; i<items.size(); i++){
 //            switch (items.get(i).getItemType()){
 //                case ONESHOT:
-//                    itemViews.add(new ItemView(ImagesInfo.ITEM_ONESHOT_IMAGE));
+//                    itemViews.add(new ItemView(ImagesInfo.BURGER_IMAGE));
 //                    break;
 //                case INTERACTIVE:
-//                    itemViews.add(new ItemView(ImagesInfo.ITEM_ITERACTIVE_IMAGE));
+//                    itemViews.add(new ItemView(ImagesInfo.KEY_IMAGE));
 //                    break;
 //                case TAKEABLE:
 //                    itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
