@@ -6,6 +6,7 @@ import Configs.ImagesInfo;
 import Configs.SpriteParser;
 import Model.Entity.Entity;
 import Model.Entity.NPC.NPC;
+import Model.Entity.Player;
 import Model.Map.Direction;
 import View.Viewport;
 
@@ -16,12 +17,13 @@ public class NPCView extends Viewport {
 
     private Image avatarImage;
     private NPC npc;
+    private Player player;
     private int x;
     private int y;
     private String role;
     private Direction directionFacing;
 
-    public NPCView(NPC npc, int x, int y){
+    public NPCView(NPC npc){
         this.npc = npc;
         switch (npc.getColor()){
             case "blue":
@@ -35,18 +37,17 @@ public class NPCView extends Viewport {
                 break;
         }
         npc.attach(this);
+        this.player = npc.getPlayer();
         directionFacing = npc.getDirectionFacing();
-        this.x = x;
-        this.y = y;
     }
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        int renderX = (x) * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4;
-        int renderY = (y) * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT/4;
-
-        graphics2D.drawImage(avatarImage, renderX, renderY,
-                AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT,this );
+        if(0 < x && x < Commons.SCREEN_WIDTH &&
+                0 < y && y < Commons.SCREEN_HEIGHT) {
+            graphics2D.drawImage(avatarImage, x, y,
+                    AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT, this);
+        }
     }
 
     @Override
@@ -58,5 +59,13 @@ public class NPCView extends Viewport {
     @Override
     public void update(){
         directionFacing = npc.getDirectionFacing();
+        int playerX = player.getLocation().getxCoordinate();
+        int playerY = player.getLocation().getyCoordinate();
+
+        int NPCX = npc.getLocation().getxCoordinate();
+        int NPCY = npc.getLocation().getyCoordinate();
+
+        this.x = (NPCX - playerX) * AreaSizes.TERRAIN_WIDTH;
+        this.y = (NPCY - playerY) * AreaSizes.TERRAIN_HEIGHT;
     }
 }

@@ -100,6 +100,10 @@ public class NPC extends Entity implements Updateable{
         this.player = player;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
     public String getColor() {
         return color;
     }
