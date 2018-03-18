@@ -3,7 +3,6 @@ package View.AreaView;
 
 import Configs.AreaSizes;
 import Configs.Commons;
-import Configs.ImagesInfo;
 import Configs.SpriteParser;
 import Model.Entity.Entity;
 import Model.Map.Direction;
@@ -18,13 +17,15 @@ public class AvatarView extends Viewport {
     private Entity entity;
     private int x;
     private int y;
+    private String role;
     private Direction directionFacing;
 
-    public AvatarView(Entity entity, int x, int y){
+    public AvatarView(Entity entity, int x, int y, String role){
         this.entity = entity;
+        this.role = role;
         entity.attach(this);
         directionFacing = entity.getDirectionFacing();
-        avatarImage = SpriteParser.getSpriteParser().getAvatarImage(directionFacing);
+        avatarImage = SpriteParser.getSpriteParser().getAvatarImage_BLUE(directionFacing);
         this.x = x;
         this.y = y;
 
@@ -53,7 +54,8 @@ public class AvatarView extends Viewport {
     public void draw(Graphics2D graphics2D) {
         int renderX = (x) * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4;
         int renderY = (y) * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT/4;
-       graphics2D.drawImage(avatarImage, renderX, renderY,
+
+        graphics2D.drawImage(avatarImage, renderX, renderY,
                AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT,this );
     }
 
@@ -62,13 +64,20 @@ public class AvatarView extends Viewport {
         return null;
     }
 
-    public void setAvatarImage(Image e){
-        this.avatarImage = e;
-    }
 
     @Override
     public void update(){
         directionFacing = entity.getDirectionFacing();
-        avatarImage = SpriteParser.getSpriteParser().getAvatarImage(directionFacing);
+        switch (role){
+            case "Smasher":
+                avatarImage = SpriteParser.getSpriteParser().getAvatarImage_RED(directionFacing);
+                break;
+            case "Sneak":
+                avatarImage = SpriteParser.getSpriteParser().getAvatarImage_NINJA(directionFacing);
+                break;
+            case "Summoner":
+                avatarImage = SpriteParser.getSpriteParser().getAvatarImage_BLUE(directionFacing);
+                break;
+        }
     }
 }

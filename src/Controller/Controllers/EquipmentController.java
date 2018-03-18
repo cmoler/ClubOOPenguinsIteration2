@@ -8,7 +8,7 @@ public class EquipmentController implements Controller{
     private Equipment equipment;
 
     public EquipmentController(GameBuilder gameBuilder){
-        equipment = gameBuilder.getEquipment();
+        this.equipment = gameBuilder.getEquipment();
     }
 
     @Override

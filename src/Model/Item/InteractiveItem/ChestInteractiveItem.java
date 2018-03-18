@@ -1,5 +1,6 @@
 package Model.Item.InteractiveItem;
 
+import Controller.SavingLoading.Saver;
 import Model.Entity.Player;
 import Model.Item.Item;
 import Model.Item.TakeableItem.TakeableItem;
@@ -26,4 +27,8 @@ public class ChestInteractiveItem extends InteractiveItem {
         }
     }
 
+    @Override
+    public String save(Saver saver) {
+        return saver.saveChestInteractiveItem(this);
+    }
 }

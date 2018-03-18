@@ -3,12 +3,14 @@ package View.MenuView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
-import com.sun.prism.image.ViewPort;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 
 public class MainMenuView extends MenuViewPort {
@@ -17,8 +19,7 @@ public class MainMenuView extends MenuViewPort {
 
     private int currentSubMenu = -1;
 
-    private int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 35;
-    private int startY = Commons.SCREEN_HEIGHT/4;
+    JPanel buttonGrid;
 
 
     public MainMenuView(){
@@ -28,11 +29,16 @@ public class MainMenuView extends MenuViewPort {
         add(new OptionsView());
         add(new ExitGameView());
 
-        ClickableMenu();
+        clickableMenu();
     }
 
-    public void ClickableMenu() {
-        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+    private void killButtons(JPanel buttons) {
+        this.remove(buttons);
+    }
+
+    private void clickableMenu() {
+        buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+
         //Display numbers for testing
         JButton ngBtn = ConfigureButton(new JButton(" "), "New Game");
         JButton sgBtn = ConfigureButton(new JButton(" "), "Save Game");
@@ -103,16 +109,6 @@ public class MainMenuView extends MenuViewPort {
 
     }
 
-    public JButton ConfigureButton(JButton btn, String btnFn) {
-        //Styling to make button invisible
-        btn.setBorderPainted(false);
-        btn.setContentAreaFilled(false);
-        btn.setOpaque(false);
-        btn.setPreferredSize(new Dimension(TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT));
-        btn.setToolTipText(btnFn);
-        return btn;
-    }
-
     @Override
     public void draw(Graphics2D graphics2D) {
         if(currentSubMenu == -1) drawMainMenu(graphics2D);
@@ -121,6 +117,9 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void drawMainMenu(Graphics2D graphics2D){
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 35;
+        int startY = Commons.SCREEN_HEIGHT/4;
+
         graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("New Game", (startX), (startY+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
@@ -136,6 +135,16 @@ public class MainMenuView extends MenuViewPort {
         graphics2D.drawRect(startX, startY + 4*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("Exit Game", (startX), (startY + 4*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
+        Image background = null;
+
+        try {
+            background = ImageIO.read(new File("resources/images/Menu_Back.jpg"));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        graphics2D.drawImage(background);
+
         int selectionBoxX = startX;
         int selectionBoxY = startY + selectedY*TextBoxInfo.TEXTBOX_HEIGHT;
 
@@ -144,6 +153,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void returnToMenu(){
         currentSubMenu = -1;
+        clickableMenu();
     }
 
     public NewGameView getNewGameView(){
@@ -152,6 +162,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterNewGameView(){
         currentSubMenu = 0;
+        killButtons(buttonGrid);
     }
 
 
@@ -161,6 +172,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterSaveGameView(){
         currentSubMenu = 1;
+        killButtons(buttonGrid);
     }
 
 
@@ -171,6 +183,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterLoadGameView(){
         currentSubMenu = 2;
+        killButtons(buttonGrid);
     }
 
 
@@ -180,6 +193,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterOptionsView(){
         currentSubMenu = 3;
+        killButtons(buttonGrid);
     }
 
 
@@ -189,5 +203,6 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterExitGameView(){
         currentSubMenu = 4;
+        killButtons(buttonGrid);
     }
 }

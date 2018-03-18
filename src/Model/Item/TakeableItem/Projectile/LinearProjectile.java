@@ -88,9 +88,4 @@ public class LinearProjectile implements Projectile {
                 done = true;
         }
     }
-
-    @Override
-    public String save(Saver saver) {
-        return saver.saveLinearProjectile(this);
-    }
 }

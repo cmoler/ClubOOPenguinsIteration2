@@ -17,7 +17,7 @@ public class NewGameController extends MenuController {
 
     public void select(){
         String fileName = Commons.SAVE_FOLDER + Commons.SAVE_NAME + Commons.DEFAULT_SAVE;
-        gameBuilder.loadGame(fileName);
+        //gameBuilder.loadGame(fileName);
     }
 
     protected void correctUpDownParameters() {
@@ -26,8 +26,7 @@ public class NewGameController extends MenuController {
     }
 
     protected void correctLeftRightParameters() {
-        if(horizontalSelection < 0) horizontalSelection = 1;
-        else if(horizontalSelection > 1) horizontalSelection = 0;
+
     }
 
 }
