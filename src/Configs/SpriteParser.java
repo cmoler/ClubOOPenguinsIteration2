@@ -12,6 +12,9 @@ import java.io.IOException;
 public class SpriteParser {
 
     public static SpriteParser spriteParser = null;
+    private Image NPCBlueImage;
+    private Image NPCRedImage;
+    private Image NPCYellowImage;
 
     private SpriteParser(){
         getSprites();
@@ -317,4 +320,15 @@ public class SpriteParser {
         }
     }
 
+    public Image getNPCBlueImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_BLUE_IMAGE);
+        return imageIcon.getImage();    }
+
+    public Image getNPCRedImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_RED_IMAGE);
+        return imageIcon.getImage();    }
+
+    public Image getNPCYellowImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_YELLOW_IMAGE);
+        return imageIcon.getImage();    }
 }

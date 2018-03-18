@@ -5,26 +5,27 @@ import Configs.AreaSizes;
 import Configs.Commons;
 import Configs.SpriteParser;
 import Model.Entity.Entity;
+import Model.Entity.Player;
 import Model.Map.Direction;
 import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class AvatarView extends Viewport {
+public class PlayerView extends Viewport {
 
     private Image avatarImage;
-    private Entity entity;
+    private Player player;
     private int x;
     private int y;
     private String role;
     private Direction directionFacing;
 
-    public AvatarView(Entity entity, int x, int y, String role){
-        this.entity = entity;
+    public PlayerView(Player player, int x, int y, String role){
+        this.player = player;
         this.role = role;
-        entity.attach(this);
-        directionFacing = entity.getDirectionFacing();
+        player.attach(this);
+        directionFacing = player.getDirectionFacing();
         avatarImage = SpriteParser.getSpriteParser().getAvatarImage_BLUE(directionFacing);
         this.x = x;
         this.y = y;
@@ -32,8 +33,8 @@ public class AvatarView extends Viewport {
         calculatePlayerOffset();
     }
 
-    public Entity getEntity() {
-        return entity;
+    public Player getPlayer() {
+        return player;
     }
 
     private void calculatePlayerOffset(){
@@ -67,7 +68,7 @@ public class AvatarView extends Viewport {
 
     @Override
     public void update(){
-        directionFacing = entity.getDirectionFacing();
+        directionFacing = player.getDirectionFacing();
         switch (role){
             case "Smasher":
                 avatarImage = SpriteParser.getSpriteParser().getAvatarImage_RED(directionFacing);
