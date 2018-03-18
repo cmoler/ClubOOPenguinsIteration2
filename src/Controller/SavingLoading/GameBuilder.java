@@ -31,13 +31,9 @@ public class GameBuilder {
     private KeyBindings keyBindings;
 
     //VIEWS
-    private Viewport areaViewport;
+    private AreaViewPort areaViewport;
     private MainMenuView menuViewPort;
     private StatusViewPort statusViewPort;
-    private InventoryView inventoryView;
-    private SkillsView skillsView;
-    private EquipmentView equipmentView;
-
 
     private Player player;
 
@@ -64,33 +60,43 @@ public class GameBuilder {
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
 
     public AreaViewPort getAreaViewport(){
-        return null;
+        return areaViewport;
+    }
+
+    public void setAreaViewport(AreaViewPort areaViewport){
+        this.areaViewport = areaViewport;
     }
 
     public MainMenuView getMainMenuViewport() { return menuViewPort; }
 
     public Player getPlayer(){
-        return null;
+        return player;
     }
 
-    public Role getPlayerRole() { return null; }
+    public Role getPlayerRole() {
+        if(player != null) player.getRole();
+        return null;
+    }
 
     public World getWorld() {
         return World.getWorld();
     }
 
     public Inventory getInventory(){
+        if(player != null) player.getInventory();
         return null;
     }
 
     public Equipment getEquipment(){
+        if(player != null) player.getEquipment();
         return null;
     }
-
-    public Role getSkills() { return null; }
 
     public KeyBindings getKeyBindings() {
         return keyBindings;
     }
 
+    public StatusViewPort getStatusViewPort() {
+        return statusViewPort;
+    }
 }

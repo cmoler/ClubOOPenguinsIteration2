@@ -72,6 +72,8 @@ public class Deserializer {
         statusViewPort = new StatusViewPort(player);
         viewport.add(statusViewPort);
         gameBuilder.setStatusViewPort(statusViewPort);
+        gameBuilder.setAreaViewport(areaViewPort);
+        gameBuilder.setPlayer(player);
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -109,6 +111,9 @@ public class Deserializer {
         currentMapView = mapView;
 
         Location[][] locations = new Location[rows][cols];
+        MapView mapView = new MapView();
+        currentMapView = mapView;
+
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
@@ -127,8 +132,6 @@ public class Deserializer {
 
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
-
-
 
         mapViews.put(map, mapView);
 
@@ -401,7 +404,7 @@ public class Deserializer {
         for(ItemView itemView : itemViews){
             locationView.add(itemView);
         }
-        
+
         locationView.add(areaEffectView);
         locationView.add(decalView);
         locationView.add(terrainView);

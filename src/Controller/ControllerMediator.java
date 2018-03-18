@@ -50,6 +50,7 @@ public class ControllerMediator {
 
     private void getViewsFromBuilder(){
         menuViewPort = gameBuilder.getMainMenuViewport();
+        statusViewPort = gameBuilder.getStatusViewPort();
         gameFrame = gameBuilder.getGameFrame();
     }
 
