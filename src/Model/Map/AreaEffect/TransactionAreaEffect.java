@@ -32,8 +32,4 @@ public class TransactionAreaEffect extends OneShotAreaEffect {
     public AreaEffectType getAreaEffectType() {
         return AreaEffectType.TRANSACTION;
     }
-
-    public TakeableItem getShopItem() {
-        return shopItem;
-    }
 }
