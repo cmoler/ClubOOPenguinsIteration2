@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 
 public class MainMenuView extends MenuViewPort {
@@ -117,13 +118,23 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void drawMainMenu(Graphics2D graphics2D){
+        Image background = null;
+
+        try {
+            background = ImageIO.read(new File("resources/images/menu_back.png"));
+        } catch (IOException e) {
+            System.out.println("Exception when loading image: " + e);
+        }
+
+        graphics2D.drawImage(background, 0, 0 , Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
+
         int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 28;
         int startY = Commons.SCREEN_HEIGHT/4;
 
         graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("New Game", (startX), (startY+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
-        graphics2D.drawRect(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        graphics2D.fillRect(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("Save Game", (startX), (startY + TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
         graphics2D.drawRect(startX, startY + 2*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
@@ -134,16 +145,6 @@ public class MainMenuView extends MenuViewPort {
 
         graphics2D.drawRect(startX, startY + 4*TextBoxInfo.TEXTBOX_HEIGHT, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("Exit Game", (startX), (startY + 4*TextBoxInfo.TEXTBOX_HEIGHT+TextBoxInfo.TEXTBOX_HEIGHT/4));
-
-        Image background = null;
-
-        try {
-            //background = ImageIO.read(new File("resources/images/Menu_Back.jpg"));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        //graphics2D.drawImage(background, 0, 0 , Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
 
         int selectionBoxX = startX;
         int selectionBoxY = startY + selectedY*TextBoxInfo.TEXTBOX_HEIGHT;

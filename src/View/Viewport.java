@@ -22,7 +22,7 @@ public class Viewport extends JPanel {
     public Viewport() {
         setFocusable(true);
         setDoubleBuffered(true);
-        LoopMusic();
+//        LoopMusic();
     }
 
     public int getLocationX() {
