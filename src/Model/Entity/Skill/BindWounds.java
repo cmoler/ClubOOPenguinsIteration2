@@ -9,6 +9,10 @@ public class BindWounds extends Skill {
     private double secondsPerUseBeforeDividedBySkill = 60;
     private int healing = 20;
 
+    public BindWounds(){
+        super();
+    }
+
     public BindWounds(int points){
         super(points);
     }

@@ -2,15 +2,30 @@ package Model.Entity.Role;
 
 import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
-import Model.Entity.Skill.Brawl;
-import Model.Entity.Skill.OneHandedWeapon;
-import Model.Entity.Skill.TwoHandedWeapon;
+import Model.Entity.Skill.*;
 
 public class Smasher extends Role {
 
-    private OneHandedWeapon oneHandedWeapon = new OneHandedWeapon();
-    private TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon();
-    private Brawl brawl = new Brawl();
+    private OneHandedWeapon oneHandedWeapon;
+    private TwoHandedWeapon twoHandedWeapon;
+    private Brawl brawl;
+
+    public Smasher(){
+        super();
+        oneHandedWeapon = new OneHandedWeapon();
+        twoHandedWeapon = new TwoHandedWeapon();
+        brawl = new Brawl();
+        setMaxMana(20);
+    }
+
+    public Smasher(BindWounds bindWounds, Bargain bargain, Observation observation, OneHandedWeapon oneHandedWeapon, TwoHandedWeapon twoHandedWeapon, Brawl brawl){
+        super(bindWounds, bargain, observation);
+        this.oneHandedWeapon = oneHandedWeapon;
+        this.twoHandedWeapon = twoHandedWeapon;
+        this.brawl = brawl;
+        setMaxMana(20);
+    }
+
 
     public int getOneHandedWeapon(){
         return oneHandedWeapon.getPoints();
