@@ -7,12 +7,14 @@ import View.MenuView.NewGameView;
 public class NewGameController extends MenuController {
 
     private NewGameView newGameView;
+    private MainMenuController parent;
     GameBuilder gameBuilder;
 
     public NewGameController(GameBuilder gameBuilder, MainMenuController parent) {
         newGameView = gameBuilder.getMainMenuViewport().getNewGameView();
         this.gameBuilder = gameBuilder;
         setMenuViewPort(newGameView);
+        this.parent = parent;
     }
 
     public void select(){
