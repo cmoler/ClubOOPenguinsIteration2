@@ -15,6 +15,7 @@ public class BrassKnuckles extends BrawlingItem {
     public BrassKnuckles(){
         super();
         this.name = "brassKnuckles";
+        this.color = "red";
     }
 
     private double damageAmount = 0.25; // gets multiplied by skill level

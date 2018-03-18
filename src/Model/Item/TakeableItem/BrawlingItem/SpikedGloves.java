@@ -15,6 +15,7 @@ public class SpikedGloves extends BrawlingItem {
     public SpikedGloves(){
         super();
         this.name = "spikedGloves";
+        this.color = "blue";
     }
 
     private double damageAmount = 0.50; // gets multiplied by skill level

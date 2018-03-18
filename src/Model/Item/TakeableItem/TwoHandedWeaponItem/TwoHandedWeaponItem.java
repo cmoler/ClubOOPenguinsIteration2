@@ -1,6 +1,7 @@
 package Model.Item.TakeableItem.TwoHandedWeaponItem;
 
 import Model.Entity.Entity;
+import Model.Entity.NPC.NPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Skill.TwoHandedWeapon;
@@ -17,6 +18,7 @@ import java.nio.file.attribute.UserDefinedFileAttributeView;
 public abstract class TwoHandedWeaponItem extends UseableItem {
 
     private double lastUse;
+    protected String color;
 
     public TwoHandedWeaponItem(){
         super();
@@ -41,8 +43,9 @@ public abstract class TwoHandedWeaponItem extends UseableItem {
             Map currentMap = World.getWorld().getCurrentMap();
             if(currentMap.entityAtLocation(locationOfTarget) != null){
                 Entity entityAtTarget = currentMap.entityAtLocation(locationOfTarget);
-                entityAtTarget.takeDamage( (int)(getDamageAmount()*twoHandedWeaponSkillLevel) );
-            }
+                if(this.color == ((NPC)entityAtTarget).getColor())
+                    entityAtTarget.takeDamage( (int)(getDamageAmount()*twoHandedWeaponSkillLevel) * 2);
+                else entityAtTarget.takeDamage( (int)(getDamageAmount()*twoHandedWeaponSkillLevel));            }
 
             lastUse = Time.currentInSeconds();
         }
