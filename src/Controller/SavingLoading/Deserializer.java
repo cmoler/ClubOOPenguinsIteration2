@@ -279,8 +279,11 @@ public class Deserializer {
         return inventoryModel;
     }
 
-    private Equipment deserializeEquipment(JSONObject equipment, Player player){
-        Equipment newEquipment = new Equipment(player);
+    private void deserializeEquipment(JSONObject equipment, Player player){
+
+        //TODO - check on .equals("")
+
+        Equipment newEquipment = player.getEquipment();
 
         JSONObject hotbar = equipment.getJSONObject("Hotbar");
         JSONArray hotbarItems = hotbar.getJSONArray("Items");
@@ -288,23 +291,78 @@ public class Deserializer {
             newEquipment.equip(parseItem(hotbarItems.getString(i)));
         }
         String head = equipment.getString("Head");
-        if(!head.equals("none")) {
+        if(!head.equals("")) {
             newEquipment.equip(parseItem(head));
         }
         String body = equipment.getString("Body");
-        if(!body.equals("none")) {
+        if(!body.equals("")) {
             newEquipment.equip(parseItem(body));
         }
         String legs = equipment.getString("Legs");
-        if(!legs.equals("none")) {
+        if(!legs.equals("")) {
             newEquipment.equip(parseItem(legs));
         }
         String ring = equipment.getString("Ring");
-        if(!ring.equals("none")) {
+        if(!ring.equals("")) {
             newEquipment.equip(parseItem(ring));
         }
 
-        return newEquipment;
+    }
+
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
+        int skillPointsAvailable = EntityClass.getInt("SkillPoints");
+        JSONObject roleJSON = EntityClass.getJSONObject("Role");
+        int bindWoundsLevel = roleJSON.getInt("BindWoundsLevel");
+        int bargainLevel = roleJSON.getInt("BargainLevel");
+        int observationLevel = roleJSON.getInt("ObservationLevel");
+        JSONObject roleType = roleJSON.getJSONObject("Role");
+
+        BindWounds bindWounds = new BindWounds(bindWoundsLevel);
+        Bargain bargain = new Bargain(bargainLevel);
+        Observation observation = new Observation(observationLevel);
+
+        Role role = new Role() {
+            @Override
+            public void save(Saver saver) {
+
+            }
+        };
+
+        switch(roleType.getString("RoleName")){
+            case "Smasher":
+                OneHandedWeapon oneHandedWeapon = new OneHandedWeapon(roleType.getInt("OneHandedWeaponLevel"));
+                TwoHandedWeapon twoHandedWeapon = new TwoHandedWeapon(roleType.getInt("TwoHandedWeaponLevel"));
+                Brawl brawl = new Brawl(roleType.getInt("BrawlLevel"));
+                role = new Smasher(bindWounds, bargain, observation, oneHandedWeapon, twoHandedWeapon, brawl);
+                break;
+            case "Sneak":
+                PickPocket pickPocket = new PickPocket(roleType.getInt("PickPocketLevel"));
+                DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap(roleType.getInt("DetectAndRemoveTrapLevel"));
+                Creep creep = new Creep(roleType.getInt("CreepLevel"));
+                RangedWeapon rangedWeapon = new RangedWeapon(roleType.getInt("RangedWeaponLevel"));
+                role = new Sneak(bindWounds, bargain, observation, pickPocket, detectAndRemoveTrap, creep, rangedWeapon);
+                break;
+            case "Summoner":
+                Enchantment enchantment = new Enchantment(roleType.getInt("EnchantmentLevel"));
+                Boon boon = new Boon(roleType.getInt("BoonLevel"));
+                Bane bane = new Bane(roleType.getInt("BaneLevel"));
+                Staff staff = new Staff((roleType.getInt("StaffLevel")));
+                role = new Summoner(bindWounds, bargain, observation, enchantment, boon, bane, staff);
+                break;
+            default:
+                break;
+        }
+
+        Player player = new Player(role, type, skillPointsAvailable);
+
+        player.addMana(EntityClass.getInt("Mana"));
+        player.gainExperience(EntityClass.getInt("XP"));
+        player.modifyGold(EntityClass.getInt("Gold"));
+
+        deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
+
+        return player;
+
     }
 
     private TakeableItem parseItem(String itemName){
