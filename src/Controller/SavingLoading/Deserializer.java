@@ -1,6 +1,8 @@
 package Controller.SavingLoading;
 
 import Model.Entity.*;
+import Model.Entity.NPC.NPCState.NPCState;
+import Model.Entity.NPC.ShopKeepNPC;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
@@ -120,6 +122,32 @@ public class Deserializer {
         }
     }
 
+    private Entity deserializeShopKeepNPC(JSONObject entityClass, EntityType entityType){
+        String npcState = entityClass.getString("NPCState");
+        String color = entityClass.getString("color");
+        JSONObject shopMap = entityClass.getJSONObject("ShopMap");
+        String mapID = shopMap.getString("MapID");
+        int x = shopMap.getInt("X");
+        int y= shopMap.getInt("Y");
+
+        ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, y, x);
+        switch (npcState){
+            case "aggro":
+                shopKeepNPC.pissOff();
+                break;
+            case "enemy":
+                shopKeepNPC.pissOff();
+                break;
+            case "sleep":
+                shopKeepNPC.fallAsleep();
+                break;
+            case "friendly":
+                shopKeepNPC.beFriends();
+                break;
+        }
+
+        return shopKeepNPC;
+    }
 
     private Role deserializeRole(JSONObject playerRoleJSON){
 
