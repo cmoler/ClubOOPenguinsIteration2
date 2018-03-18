@@ -5,7 +5,6 @@ import View.Viewport;
 import Configs.AreaSizes;
 import Configs.Commons;
 import Model.Map.Location;
-import Model.Entity.Skill.Observation;
 
 import java.awt.*;
 import java.awt.event.*;
