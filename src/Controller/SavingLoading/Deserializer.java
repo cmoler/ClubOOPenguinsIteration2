@@ -79,9 +79,6 @@ public class Deserializer {
 
         setNPC(this.NPCs, this.player);
         worldView = new WorldView(mapViews);
-
-        worldView = new WorldView(mapViews);
-
     }
 
     private Map deserializeMap(JSONObject mapJSON){
