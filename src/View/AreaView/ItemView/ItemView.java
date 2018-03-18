@@ -72,11 +72,11 @@ public class ItemView extends Viewport {
             case "radialIceAttack":
                 return ImagesInfo.PROJECTILE_LINEARICEATTACK;
             case "heal":
-                return
+                return ImagesInfo.HEAL_IMAGE;
             case "increaseMaxHealth":
-                return
+                return ImagesInfo.INCREASE_MAX_HEALTH_IMAGE;
             case "increaseLevel":
-                return
+                return ImagesInfo.INCREASE_LEVEL_IMAGE;
             case "brassKnuckles":
                 return SpriteParser.getSpriteParser().getItemFromName("brassKnuckles");
             case "spikedGloves":
@@ -84,11 +84,11 @@ public class ItemView extends Viewport {
             case "swordHands":
                 return SpriteParser.getSpriteParser().getItemFromName("swordHands");
             case "charm":
-                return
+                return ImagesInfo.CHARM_IMAGE;
             case "sleep":
-                return
+                return ImagesInfo.SLEEP_IMAGE;
             case "seppuku":
-                return
+                return ImagesInfo.SEPPUKU_IMAGE;
             case "key":
                 return ImagesInfo.KEY_IMAGE;
             case "blueLightsaber":
@@ -112,11 +112,11 @@ public class ItemView extends Viewport {
             case "waterHammer":
                 return SpriteParser.getSpriteParser().getItemFromName("waterHammer");
             case "healthPotion":
-                return
+                return ImagesInfo.HEALTH_POTION_IMAGE;
             case "manaPotion":
-                return
+                return ImagesInfo.MANA_POTION_IMAGE;
             case "xpPotion":
-                return
+                return ImagesInfo.EXP_POTION_IMAGE;
             case "chestInteractiveItemOpen":
                 return ImagesInfo.CHEST_OPEN_IMAGE;
             case "chestInteractiveItemClosed":
