@@ -3,6 +3,7 @@ package Controller;
 import Controller.SavingLoading.GameBuilder;
 import Controller.SavingLoading.Serializer;
 import Controller.States.*;
+import Model.UpdateList;
 import Model.Updateable;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
@@ -28,8 +29,6 @@ public class ControllerMediator {
     private KeyBindingState keyBindingState;
 
     private GameBuilder gameBuilder;
-
-    private List<Updateable> updateables;
 
     private Viewport viewport;
     private StatusViewPort statusViewPort;
@@ -74,9 +73,7 @@ public class ControllerMediator {
 
         @Override
         public void run() {
-            for(int i = 0; i < updateables.size(); ++i){
-                updateables.get(i).update();
-            }
+            UpdateList.getInstance().update();
             if(viewport != null) viewport.repaint();
             if(menuViewPort != null) menuViewPort.repaint();
         }

@@ -91,6 +91,8 @@ public class GameBuilder {
         return null;
     }
 
+    public Role getPlayerRole() { return null; }
+
     public World getWorld() {
         return World.getWorld();
     }
@@ -108,5 +110,5 @@ public class GameBuilder {
     public KeyBindings getKeyBindings() {
         return keyBindings;
     }
-    
+
 }
