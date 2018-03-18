@@ -43,11 +43,11 @@ import Model.Map.EntityLocation;
 import Model.Map.Location;
 import Model.Map.Terrain.*;
 import Model.Map.World;
+import Model.Map.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Deserializer {
 
@@ -70,7 +70,26 @@ public class Deserializer {
 
     }
 
-    private Map deserializeMap(JSONObject map){
+    private Map deserializeMap(JSONObject mapJSON){
+        String mapID = mapJSON.getString("mapID");
+        int rows = mapJSON.getInt("Rows");
+        int cols = mapJSON.getInt("Cols");
+
+
+
+        JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
+        for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
+            Entity entity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
+        }
+
+        JSONArray locationsJSON = mapJSON.getJSONArray("Locations");
+        Location[][] locations = new Location[rows][cols];
+        for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
+            Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
+            locations[location.getxCoordinate()][location.getyCoordinate()] = location;
+        }
+
+        return new Map(locations);
 
     }
 
