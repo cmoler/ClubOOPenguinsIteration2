@@ -33,9 +33,16 @@ public interface ImagesInfo {
     public static final String GOLD_STAR_FILELOCATION = "resources/images/terrain/goldstar.png";
 
     public static final String TRAP_FILELOCATION = "resources/images/Beartrap.png";
-    public static final String CHEST_FILELOCAITON = "resources/images/chest.png";
+    public static final String CHEST_FILELOCATION = "resources/images/chest.png";
 
     public static final String GLACIER_FILELOCATION = "resources/images/terrain/glacier.png";
+
+    public static final String CHARM_FILELOCATION = "resources/images/magic/charm.png";
+    public static final String HEAL_FILELOCATION = "resources/images/magic/heal.png";
+    public static final String INCREASE_LEVEL_FILELOCATION = "resources/images/magic/increaseLevel.png";
+    public static final String INCREASE_MAX_HEALTH_FILELOCATION = "resources/images/magic/increaseMaxHealth.png";
+    public static final String SEPPUKU_FILELOCATION = "resources/images/magic/seppuku.png";
+    public static final String SLEEP_FILELOCATION = "resources/images/magic/sleep.png";
 
     public static final String INCREASE_SKILL_ICON = "resources/images/IncreaseSkillIcon.png";
 
@@ -72,5 +79,12 @@ public interface ImagesInfo {
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
     public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();
     public static final Image GOLD_STAR_IMAGE = SpriteParser.getSpriteParser().getGoldStarImage();
+
+    public static final Image CHARM_IMAGE = SpriteParser.getSpriteParser().getCharmImage();
+    public static final Image HEAL_IMAGE = SpriteParser.getSpriteParser().getHealImage();
+    public static final Image INCREASE_LEVEL_IMAGE = SpriteParser.getSpriteParser().getIncreaseLevelImage();
+    public static final Image INCREASE_MAX_HEALTH_IMAGE = SpriteParser.getSpriteParser().getIncreaseMaxHealthImage();
+    public static final Image SEPPUKU_IMAGE = SpriteParser.getSpriteParser().getSeppukuImage();
+    public static final Image SLEEP_IMAGE = SpriteParser.getSpriteParser().getSleepImage();
 
 }
