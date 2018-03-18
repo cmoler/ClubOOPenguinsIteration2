@@ -12,12 +12,12 @@ public class GameSaver {
         this.gameBuilder = gameBuilder;
     }
 
-    void save(String filepath){
+    public void save(String filepath){
         JSONObject saveJSON = new JSONObject();
         Serializer serializer = new Serializer();
         //gameBuilder.getPlayer().save(serializer);
         gameBuilder.getWorld().save(serializer);
-        saveJSON.put("Player", serializer.getPlayer());
+        //saveJSON.put("Player", serializer.getPlayer());
         saveJSON.put("World", serializer.getWorld());
 
         try {
