@@ -330,8 +330,6 @@ public class Deserializer {
 
     private void deserializeEquipment(JSONObject equipment, Player player){
 
-        //TODO - check on .equals("")
-
         Equipment newEquipment = player.getEquipment();
 
         JSONObject hotbar = equipment.getJSONObject("Hotbar");

@@ -80,7 +80,6 @@ public class Serializer implements Saver{
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
         entityJSON.put("Level", entity.getLevel());
-        entityJSON.put("Location", saveLocation(entity.getLocation()));//TODO: Change
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
         entityJSON.put("EntityType", entity.getEntityType().toString());
         entityJSON.put("HP", entity.getHealth());
@@ -460,7 +459,7 @@ public class Serializer implements Saver{
     }
 
     @Override
-    public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
+   public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
         if(chestInteractiveItem.isOpened()){
             return chestInteractiveItem.getName()+"Open";
         }
