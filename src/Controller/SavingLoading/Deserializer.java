@@ -350,9 +350,12 @@ public class Deserializer {
             areaEffect = new TrapAreaEffect();
             areaEffectView = new TrapView((TrapAreaEffect) areaEffect);
         }
-        else {
+        else if(areaEffectType.equals("TRANSACTION")){
             areaEffect = new TransactionAreaEffect();
             areaEffectView = new TransactionAreaEffectView((TransactionAreaEffect) areaEffect);
+        }
+        else{
+            areaEffect = null;
         }
 
 
