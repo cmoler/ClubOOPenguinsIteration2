@@ -140,6 +140,7 @@ public class Deserializer {
 
         deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
 
+        this.player = player;
         return player;
 
     }
@@ -150,6 +151,7 @@ public class Deserializer {
         NPC npc = new NPC(color, entityType);
         deserializeNPCState(entityClass, npc);
 
+        NPCs.add(npc);
         return npc;
     }
 
@@ -163,6 +165,7 @@ public class Deserializer {
         ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j, entityType);
         deserializeNPCState(entityClass, shopKeepNPC);
 
+        NPCs.add(shopKeepNPC);
         return shopKeepNPC;
     }
 
