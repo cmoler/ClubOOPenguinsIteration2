@@ -16,7 +16,7 @@ public class ProjectileView extends Viewport {
 
     private MapView parent;
     private ProjectileCapableItem item;
-    private String appearance; // possibilities: "Linear Ice", "Angular Ice", "Radial Ice", "Pizza", "Snow"
+    private String appearance = "Linear Ice"; // possibilities: "Linear Ice", "Angular Ice", "Radial Ice", "Pizza", "Snow"
 
     private List<Integer> xLocations;
     private List<Integer> yLocations;
@@ -41,19 +41,19 @@ public class ProjectileView extends Viewport {
     }
 
     public void draw(Graphics2D graphics2D, int x, int y) {
-//        Image image = ImagesInfo.PROJECTILE_LINEARICEATTACK;
-////        if(appearance.equals("Angular Ice"))
-////            image = ImagesInfo.PROJECTILE_ANGULARICEATTACK;
-////        else if(appearance.equals("Radial Ice"))
-////            image = ImagesInfo.PROJECTILE_RADIALICEATTACK;
-////        else if(appearance.equals("Pizza"))
-////            image = ImagesInfo.PROJECTILE_PIZZA;
-////        else if(appearance.equals("Snow"))
-//            //
-//        for(int i=0; i< xLocations.size(); i++){
-//            Pair<Integer, Integer> location = parent.calculateScreenXY(xLocations.get(i), yLocations.get(i));
-//            graphics2D.drawImage(image, location.getKey(), location.getValue(),
-//                    AreaSizes.PROJECTILE_WIDTH, AreaSizes.PROJECTILE_HEIGHT,this );
-//        }
+        Image image = ImagesInfo.PROJECTILE_LINEARICEATTACK;
+        if(appearance.equals("Angular Ice"))
+            image = ImagesInfo.PROJECTILE_ANGULARICEATTACK;
+        else if(appearance.equals("Radial Ice"))
+            image = ImagesInfo.PROJECTILE_RADIALICEATTACK;
+        else if(appearance.equals("Pizza"))
+            image = ImagesInfo.PROJECTILE_PIZZA;
+        else if(appearance.equals("Snow"))
+            //
+        for(int i=0; i< xLocations.size(); i++){
+            Pair<Integer, Integer> location = parent.calculateScreenXY(xLocations.get(i), yLocations.get(i));
+            graphics2D.drawImage(image, location.getKey(), location.getValue(),
+                    AreaSizes.PROJECTILE_WIDTH, AreaSizes.PROJECTILE_HEIGHT,this );
+        }
     }
 }

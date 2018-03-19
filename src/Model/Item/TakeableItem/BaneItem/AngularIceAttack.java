@@ -42,7 +42,7 @@ public class AngularIceAttack extends BaneItem {
 
         Projectile projectile = new AngularProjectile(damageAmount*baneSkillLevel,
                 angularDecreaseFactor*baneSkillLevel, speed, locationOfEntity,
-                directionFacing, "Ice");
+                directionFacing, "Angular Ice");
 
         super.addProjectile(projectile);
 
