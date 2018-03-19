@@ -34,6 +34,8 @@ public class ControllerMediator {
     private StatusViewPort statusViewPort;
     private MenuViewPort menuViewPort;
 
+    private boolean load = false;
+
     private Input input;
 
     private Timer timer;
@@ -45,6 +47,7 @@ public class ControllerMediator {
         loadStates();
         attachInputToViews();
         changeToMenuState();
+        startTimer();
     }
 
     private void getViewsFromBuilder(){
@@ -81,14 +84,14 @@ public class ControllerMediator {
         attachInputToViews();
         attachViewsToGameFrame();
         changeToEntityState();
-        startTimer();
+        load = true;
     }
 
     private class ScheduleTask extends TimerTask {
 
         @Override
         public void run() {
-            UpdateList.getInstance().update();
+            if(load) UpdateList.getInstance().update();
             if(viewport != null) viewport.repaint();
             if(menuViewPort != null) menuViewPort.repaint();
         }
