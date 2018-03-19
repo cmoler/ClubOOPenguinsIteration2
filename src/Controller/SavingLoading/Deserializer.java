@@ -11,6 +11,7 @@ import Model.Entity.Role.Summoner;
 import Model.Entity.Skill.*;
 
 import Model.Item.InteractiveItem.ChestInteractiveItem;
+import Model.Item.TakeableItem.Projectile.Projectile;
 import Model.Map.*;
 import Model.Map.AreaEffect.*;
 
@@ -135,7 +136,7 @@ public class Deserializer {
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
 
             //System.out.println("DESERIALIZING LOCATION");
-            Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
+            Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex), mapView);
             //System.out.println("FINISHED DESERIALIZING A LOCATION");
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
@@ -330,7 +331,7 @@ public class Deserializer {
 
     }
 
-    private Location deserializeLocation(JSONObject locationJSON){
+    private Location deserializeLocation(JSONObject locationJSON, MapView mapView){
 
         //TERRAIN DESERIALIZATION
         Terrain terrain;
@@ -411,10 +412,11 @@ public class Deserializer {
         //ITEMS DESERIALIZATION
         List<Item> items = new ArrayList<>();
         List<ItemView> itemViews = new ArrayList<>();
+        List<ProjectileView> projectileViews = new ArrayList<>();
         JSONArray jsonItems = locationJSON.getJSONArray("Items");
         for(int itemIndex = 0; itemIndex < jsonItems.length(); itemIndex++){
             String itemType = jsonItems.getString(itemIndex);
-            Item item = parseItem(itemType);
+            Item item = parseItem(itemType, mapView);
             items.add(item);
             itemViews.add(new ItemView(itemType));
         }
@@ -452,7 +454,7 @@ public class Deserializer {
         JSONArray items = inventory.getJSONArray("Items");
         for(int i = 0; i < items.length(); ++i){
             Object item = items.get(i);
-            TakeableItem takeableItem = (TakeableItem) parseItem(item.toString());
+            TakeableItem takeableItem = (TakeableItem) parseItem(item.toString(), null);
             inventoryModel.addItem(takeableItem);
         }
 
@@ -466,30 +468,31 @@ public class Deserializer {
         JSONObject hotbar = equipment.getJSONObject("Hotbar");
         JSONArray hotbarItems = hotbar.getJSONArray("Items");
         for (int i = 0; i < hotbarItems.length(); i++) {
-            newEquipment.equip((TakeableItem) parseItem(hotbarItems.getString(i)));
+            newEquipment.equip((TakeableItem) parseItem(hotbarItems.getString(i), null));
         }
         String head = equipment.getString("Head");
         if(!head.equals("")) {
-            newEquipment.equip((TakeableItem) parseItem(head));
+            newEquipment.equip((TakeableItem) parseItem(head, null));
         }
         String body = equipment.getString("Body");
         if(!body.equals("")) {
-            newEquipment.equip((TakeableItem) parseItem(body));
+            newEquipment.equip((TakeableItem) parseItem(body, null));
         }
         String legs = equipment.getString("Legs");
         if(!legs.equals("")) {
-            newEquipment.equip((TakeableItem) parseItem(legs));
+            newEquipment.equip((TakeableItem) parseItem(legs, null));
         }
         String ring = equipment.getString("Ring");
         if(!ring.equals("")) {
-            newEquipment.equip((TakeableItem) parseItem(ring));
+            newEquipment.equip((TakeableItem) parseItem(ring, null));
         }
 
     }
 
 
 
-    private Item parseItem(String itemName){
+    private Item parseItem(String itemName, MapView mapView){
+        ProjectileCapableItem item;
         switch(itemName){
             case "body":
                 return new Body();
@@ -500,11 +503,17 @@ public class Deserializer {
             case "ring":
                 return new Ring();
             case "angularIceAttack":
-                return new AngularIceAttack();
+                item = new AngularIceAttack();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "linearIceAttack":
-                return new LinearIceAttack();
+                item = new LinearIceAttack();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "radialIceAttack":
-                return new RadialIceBomb();
+                item = new RadialIceBomb();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "heal":
                 return new Heal();
             case "increaseMaxHealth":
@@ -532,11 +541,17 @@ public class Deserializer {
             case "thunderBlade":
                 return new ThunderBlade();
             case "pizza":
-                return new Pizza();
+                item = new Pizza();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "snowLauncher":
-                return new SnowLauncher();
+                item = new SnowLauncher();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "snowShuriken":
-                return new SnowShuriken();
+                item = new SnowShuriken();
+                mapView.add(new ProjectileView(item, mapView));
+                return item;
             case "staffItem":
                 return new StaffItem();
             case "inquisitorLightsaber":

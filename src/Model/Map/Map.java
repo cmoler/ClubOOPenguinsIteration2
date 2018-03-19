@@ -184,7 +184,6 @@ public class Map implements Updateable {
         return defaultLocation;
     }
 
-
     public Location getLocationXY(int x, int y) {
         return locations[y][x];
     }
