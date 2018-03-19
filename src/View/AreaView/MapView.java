@@ -47,7 +47,8 @@ public class MapView extends Viewport {
         this.entity = entity;
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
-            if(mapIterator.currentItem() == entity.getLocation()){
+            if(mapIterator.currentItem()
+                    == entity.getLocation()){
                 initialI = mapIterator.getI();
                 initialJ = mapIterator.getJ();
             }

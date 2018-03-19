@@ -17,10 +17,12 @@ public class GameSaver {
         Serializer serializer = new Serializer();
         gameBuilder.getWorld().save(serializer);
         saveJSON.put("World", serializer.getWorld());
+        System.out.println(saveJSON.toString());
 
         try {
             FileWriter fileWriter = new FileWriter(new File(filepath));
-            fileWriter.write(saveJSON.toString());
+            fileWriter.write(saveJSON.toString(1));
+            fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
