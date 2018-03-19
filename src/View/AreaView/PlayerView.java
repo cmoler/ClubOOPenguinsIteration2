@@ -25,6 +25,7 @@ public class PlayerView extends Viewport {
         player.attach(this);
         directionFacing = player.getDirectionFacing();
         avatarImage = SpriteParser.getSpriteParser().getAvatarImage_BLUE(directionFacing);
+        update();
     }
 
     public Player getPlayer() {

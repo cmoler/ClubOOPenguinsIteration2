@@ -75,7 +75,7 @@ public class GameBuilder {
     }
 
     public Role getPlayerRole() {
-        if(player != null) player.getRole();
+        if(player != null) return player.getRole();
         return null;
     }
 
@@ -84,12 +84,12 @@ public class GameBuilder {
     }
 
     public Inventory getInventory(){
-        if(player != null) player.getInventory();
+        if(player != null) return player.getInventory();
         return null;
     }
 
     public Equipment getEquipment(){
-        if(player != null) player.getEquipment();
+        if(player != null) return player.getEquipment();
         return null;
     }
 
