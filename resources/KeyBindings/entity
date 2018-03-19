@@ -54,15 +54,15 @@
        <key>53</key>
    </Bind>
    <Bind type="bindWounds">
-       <key>50</key>
+       <key>66</key>
    </Bind>
    <Bind type="removeTrap">
-       <key>51</key>
+       <key>82</key>
    </Bind>
    <Bind type="creep">
-       <key>52</key>
+       <key>86</key>
    </Bind>
    <Bind type="pickPocket">
-       <key>53</key>
+       <key>80</key>
    </Bind>
 </class>

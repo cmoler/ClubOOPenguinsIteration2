@@ -51,7 +51,7 @@ public class PlayerController implements Controller {
 
     public void removeTrap() {
         if(player.getRole().getRoleType() == RoleType.Sneak){
-            ((Sneak)player.getRole()).();
+            //((Sneak)player.getRole()).();
         }
     }
 

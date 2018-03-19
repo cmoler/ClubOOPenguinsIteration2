@@ -50,8 +50,6 @@ public abstract class MenuController implements Controller {
 
     @Override
     public void setActive() {
-        menuViewPort.setVisible(true);
         //areaViewPort.setVisible(false);
-        menuViewPort.requestFocus();
     }
 }
