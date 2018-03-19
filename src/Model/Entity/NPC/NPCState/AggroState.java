@@ -18,14 +18,25 @@ public class AggroState implements NPCState {
         ArrayList<Direction> path = bfs(npc, player);
 
         System.out.println("PATH SIZE IN MOVE AGGROSTATE" + path.size());
-        if (!path.isEmpty()) {
-            npc.move(path.get(0));
-            System.out.println(path.get(0));
+
+        if (playerInRange(npc, player)){
+            if (!path.isEmpty()) {
+                npc.move(path.get(0));
+                System.out.println(path.get(0));
+            }
         }
         else {
             npc.setNpcState(new EnemyState());
         }
 
+
+
+    }
+
+    private boolean playerInRange(NPC npc, Player player) {
+
+        ArrayList<Direction> path = bfs(npc, player);
+        return path.size() <= npc.getVisibleRange();
     }
 
     @Override

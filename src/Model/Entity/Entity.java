@@ -29,7 +29,7 @@ public abstract class Entity {
     private Inventory inventory = new Inventory();
     private Location location;
     private boolean intentToMove = false;
-    private int visibleRange = 5;
+    private int visibleRange = 3;
     // map is in World
 
 
