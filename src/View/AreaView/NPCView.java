@@ -59,6 +59,11 @@ public class NPCView extends Viewport {
                     AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT, this);
         }
 
+        if(npc.isTalking())
+            graphics2D.drawString("" + npc.getTalkString(), x * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4,
+                    y * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT / 4);
+
+
     }
 
     @Override
