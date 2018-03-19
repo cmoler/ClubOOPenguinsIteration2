@@ -50,6 +50,8 @@ public class Map implements Updateable {
         numCols = this.locations[0].length;
         this.defaultLocation = locations[numRows / 2][numCols / 2];
         setAdjacencyList();
+        UpdateList.getInstance().add(this);
+        System.out.println("map added to updatelist");
     }
 
     //Default Location is specified
@@ -60,7 +62,6 @@ public class Map implements Updateable {
         numCols = this.locations[0].length;
         this.defaultLocation = defaultLocation;
         setAdjacencyList();
-        UpdateList.getInstance().add(this);
     }
 
     //Create x by y map for testing
