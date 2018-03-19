@@ -59,7 +59,7 @@ public class ItemView extends Viewport {
         switch(itemName){
             case "body":
                 return SpriteParser.getSpriteParser().getItemFromName("chest");
-            case "helmet":
+            case "head":
                 return SpriteParser.getSpriteParser().getItemFromName("helmet");
             case "legs":
                 return SpriteParser.getSpriteParser().getItemFromName("legs");
