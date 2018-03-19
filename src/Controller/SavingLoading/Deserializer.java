@@ -53,6 +53,7 @@ public class Deserializer {
     private Player player;
     private List<NPC> NPCs;
     private List<NPCView> NPCViews;
+    private List<ProjectileView> projectileCapableItems = new ArrayList<>();
 
     private Viewport viewport = new Viewport();
     private HashMap<Map,MapView> mapViews = new HashMap<>();
@@ -146,16 +147,6 @@ public class Deserializer {
             //System.out.println("FINISHED DESERIALIZING A LOCATION");
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
-            if(location.getyCoordinate() >= 6 && location.getyCoordinate() <= 8 && location.getxCoordinate() >= 7 && location.getxCoordinate() <= 9 ){
-                System.out.println("LOCATION AT 0,4 has the following items: ");
-
-                int row = location.getyCoordinate();
-                int col = location.getxCoordinate();
-
-                for(int i = 0; i < locations[row][col].getItems().size(); i++){
-                    System.out.println(locations[row][col].getItems().get(i).getName());
-                }
-            }
 
         }
 
@@ -213,7 +204,7 @@ public class Deserializer {
                 entity = null;
         }
 
-        entity.modifyMaxHealth(maxHP - 100);
+        entity.modifyMaxHealth(100);
         entity.setHealth(HP);
         entity.setInventory(inventory);
 

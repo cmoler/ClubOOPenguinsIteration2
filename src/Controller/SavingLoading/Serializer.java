@@ -67,7 +67,7 @@ public class Serializer implements Saver{
     JSONObject playerRole = new JSONObject();
 
     public void serializeWorld(World world) {
-        this.world.put("CurrentMap", world.getCurrentMap());
+        this.world.put("CurrentMap", world.getCurrentMap().getMapID());
 
         ArrayList<JSONObject> mapJSONS = new ArrayList<>();
         for (String str: world.getMaps().keySet() ) {
@@ -79,7 +79,6 @@ public class Serializer implements Saver{
 
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
-        entityJSON.put("Level", entity.getLevel());
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
         entityJSON.put("EntityType", entity.getEntityType().name());
         entityJSON.put("HP", entity.getHealth());
@@ -106,6 +105,7 @@ public class Serializer implements Saver{
     public JSONObject savePlayer(Player player) {
         JSONObject playerJSON = new JSONObject();
 
+        playerJSON.put("Name", "Player");
         playerJSON.put("Role", saveRole(player.getRole()));
         playerJSON.put("SkillPoints", player.getSkillPointsAvailable());
         playerJSON.put("Equipment", saveEquipment(player.getEquipment()));
@@ -119,7 +119,7 @@ public class Serializer implements Saver{
     public JSONObject saveNPC(NPC npc){
         JSONObject NPCJSON = new JSONObject();
 
-        NPCJSON.put("Name", npc.getName());
+        NPCJSON.put("Name", "NPC");
         NPCJSON.put("NPCState", npc.getState());
         NPCJSON.put("Color", npc.getColor());
 
@@ -129,13 +129,13 @@ public class Serializer implements Saver{
     public JSONObject saveShopKeeper(ShopKeepNPC shopKeepNPC){
         JSONObject shopKeepNPCJSON = new JSONObject();
 
-        shopKeepNPCJSON.put("Name", shopKeepNPC.getName());
+        shopKeepNPCJSON.put("Name", "ShopKeepNPC");
         shopKeepNPCJSON.put("NPCState", shopKeepNPC.getState());
-
+        shopKeepNPCJSON.put("Color", shopKeepNPC.getColor());
         JSONObject shopMapJSON = new JSONObject();
         shopMapJSON.put("MapID", shopKeepNPC.getMapID());
-        shopMapJSON.put("I", shopKeepNPC.getLocationI());
-        shopMapJSON.put("J", shopKeepNPC.getLocationJ());
+        shopMapJSON.put("X", shopKeepNPC.getLocationI());
+        shopMapJSON.put("Y", shopKeepNPC.getLocationJ());
 
         shopKeepNPCJSON.put("ShopMap", shopMapJSON );
 
@@ -146,10 +146,10 @@ public class Serializer implements Saver{
 
     private JSONObject saveMap(Map map) {
         JSONObject mapJSON = new JSONObject();
-        mapJSON.put("MapID", map.getMapID());
+        mapJSON.put("mapID", map.getMapID());
         mapJSON.put("Rows", map.getRows());
         mapJSON.put("Cols", map.getCols());
-        mapJSON.put("EntityLocations:", saveEntityLocation(map.getEntityLocationList()));
+        mapJSON.put("Entities", saveEntityLocation(map.getEntityLocationList()));
         Location locations[][] = map.getLocations();
         ArrayList<JSONObject> locationsJSONObjects = new ArrayList<>();
         for(int i = 0; i < locations.length; i++ ){
@@ -164,9 +164,10 @@ public class Serializer implements Saver{
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
-        locationJSON.put("Obstacle", location.hasObstacle());
+        locationJSON.put("Obstacle", (location.hasObstacle() ? 1 : 0));
         locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
         locationJSON.put("X", location.getxCoordinate());
+        locationJSON.put("Y", location.getyCoordinate());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
 
@@ -190,21 +191,15 @@ public class Serializer implements Saver{
         return areaEffectJSON;
     }
 
-    private JSONObject saveEntityLocation(EntityLocation entityLocation){
+    private JSONArray saveEntityLocation(EntityLocation entityLocation){
         //get entitylocationlist hashmap list or iterator
-        JSONObject entityLocationJSON = new JSONObject();
         ArrayList<JSONObject> entityLocationList = new ArrayList<>();
         ArrayList<Pair> entityLocationPair = entityLocation.getAssociations();
         for (int i = 0; i < entityLocationPair.size(); i++){
             Entity entity = (Entity) entityLocationPair.get(i).getValue();
-            Location location = (Location) entityLocationPair.get(i).getKey();
-            JSONObject pairJSON = new JSONObject();
-            pairJSON.put("Entity", saveEntity(entity));
-            pairJSON.put("LocationX", location.getxCoordinate());
-            pairJSON.put("LocationY", location.getyCoordinate());
-            entityLocationList.add(pairJSON);
+            entityLocationList.add(saveEntity(entity));
         }
-        entityLocationJSON.put("Pairs", new JSONArray(entityLocationList));
+        JSONArray entityLocationJSON = new JSONArray(entityLocationList);
         return entityLocationJSON;
     }
 

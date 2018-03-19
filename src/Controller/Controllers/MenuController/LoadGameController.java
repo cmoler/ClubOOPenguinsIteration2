@@ -10,6 +10,7 @@ public class LoadGameController extends MainMenuController {
     private LoadGameView loadGameView;
     GameBuilder gameBuilder;
     MemorySlots memorySlots;
+    MainMenuController parent;
 
     public LoadGameController(GameBuilder gameBuilder, MainMenuController parent) {
         this.gameBuilder = gameBuilder;
@@ -17,6 +18,7 @@ public class LoadGameController extends MainMenuController {
         loadGameView = gameBuilder.getMainMenuViewport().getLoadGameView();
         setMenuViewPort(loadGameView);
         loadGameView.setSlots(memorySlots);
+        this.parent = parent;
 
     }
 
@@ -32,6 +34,7 @@ public class LoadGameController extends MainMenuController {
 
     public void select(){
         memorySlots.loadOnSelected();
+        parent.loadGame();
     }
 
 }

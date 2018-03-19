@@ -60,7 +60,7 @@
               "LocationY": 0,
               "EntityClass": {
                 "Name": "NPC",
-                "NPCState": "friendly",
+                "NPCState": "aggro",
                 "Color": "yellow"
               }
           }
@@ -554,7 +554,9 @@
             },
             "Terrain": "ICE",
             "Obstacle": 0,
-            "Items": [],
+            "Items": [
+              "linearIceAttack"
+            ],
             "X": 4,
             "Y": 5
           },
@@ -565,7 +567,7 @@
             "Terrain": "ICE",
             "Obstacle": 0,
             "Items": [
-            	"linearIceAttack"
+            	"angularIceAttack"
             ],
             "X": 4,
             "Y": 6
