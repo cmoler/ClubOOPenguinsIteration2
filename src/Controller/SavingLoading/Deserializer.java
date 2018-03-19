@@ -204,7 +204,7 @@ public class Deserializer {
                 entity = null;
         }
 
-        entity.modifyMaxHealth(100);
+        entity.setMaxHealth(maxHP);
         entity.setHealth(HP);
         entity.setInventory(inventory);
 
