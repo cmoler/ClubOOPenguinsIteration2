@@ -496,7 +496,7 @@ public class Deserializer {
         switch(itemName){
             case "body":
                 return new Body();
-            case "helmet":
+            case "head":
                 return new Helmet();
             case "legs":
                 return new Leg();
