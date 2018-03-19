@@ -7,14 +7,15 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 public class EntityLocation{
 
-    private HashMap<Location, Entity> entityLocations;
+    private ConcurrentHashMap<Location, Entity> entityLocations;
 
     public EntityLocation() {
-        entityLocations = new HashMap<>();
+        entityLocations = new ConcurrentHashMap<>();
     }
 
     public Entity getEntityAtLocation(Location location) {
@@ -27,7 +28,7 @@ public class EntityLocation{
     }
 
     public void removeEntityLocation(Location location) {
-        entityLocations.remove(entityLocations.get(location));
+        entityLocations.remove(location);
     }
 
     public void updateEntityLocations() {
