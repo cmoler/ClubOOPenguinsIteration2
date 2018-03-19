@@ -54,7 +54,7 @@ public class EquipmentView extends Viewport {
             graphics2D.drawImage(selectedImage, selectedX, selectedY,
                     EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
         }
-        else{
+        else if(selectedArmor.getValue() > 0){
             // over the head/body/legs
             int selectedX = EQUIPMENT_X;
             int selectedY = EquipmentSizes.EQUIPMENT_WIDTH * selectedArmor.getValue();
