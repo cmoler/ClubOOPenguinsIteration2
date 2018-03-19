@@ -18,8 +18,8 @@ public class ProjectileView extends Viewport {
     private ProjectileCapableItem item;
     private String appearance = "Linear Ice"; // possibilities: "Linear Ice", "Angular Ice", "Radial Ice", "Pizza", "Snow"
 
-    private List<Integer> xLocations;
-    private List<Integer> yLocations;
+    private List<Integer> xLocations = new ArrayList<Integer>();
+    private List<Integer> yLocations = new ArrayList<Integer>();
 
     public ProjectileView(ProjectileCapableItem item, MapView parent){
         this.item = item;
@@ -27,8 +27,8 @@ public class ProjectileView extends Viewport {
     }
 
     public void update() {
-        xLocations = new ArrayList<Integer>();
-        yLocations = new ArrayList<Integer>();
+        xLocations.clear();
+        yLocations.clear();
         List<Projectile> projectiles = item.getProjectiles();
         for (Projectile projectile : projectiles){
             appearance = projectile.getAppearanceType();
@@ -41,6 +41,9 @@ public class ProjectileView extends Viewport {
     }
 
     public void draw(Graphics2D graphics2D, int x, int y) {
+
+        update();
+
         Image image = ImagesInfo.PROJECTILE_LINEARICEATTACK;
         if(appearance.equals("Angular Ice"))
             image = ImagesInfo.PROJECTILE_ANGULARICEATTACK;
@@ -48,12 +51,16 @@ public class ProjectileView extends Viewport {
             image = ImagesInfo.PROJECTILE_RADIALICEATTACK;
         else if(appearance.equals("Pizza"))
             image = ImagesInfo.PROJECTILE_PIZZA;
-        else if(appearance.equals("Snow"))
-            //
-        for(int i=0; i< xLocations.size(); i++){
+//        else if(appearance.equals("Snow"))
+//            //
+        for(int i=0; i < xLocations.size(); i++){
             Pair<Integer, Integer> location = parent.calculateScreenXY(xLocations.get(i), yLocations.get(i));
-            graphics2D.drawImage(image, location.getKey(), location.getValue(),
+            graphics2D.drawImage(image, location.getKey()*AreaSizes.TERRAIN_WIDTH, location.getValue()*AreaSizes.TERRAIN_HEIGHT,
                     AreaSizes.PROJECTILE_WIDTH, AreaSizes.PROJECTILE_HEIGHT,this );
         }
+    }
+
+    public boolean done(){
+        return true;
     }
 }

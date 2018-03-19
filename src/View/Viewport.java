@@ -2,6 +2,7 @@ package View;
 
 import Model.Map.Direction;
 import View.AreaView.MapView;
+import View.AreaView.ProjectileView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -102,5 +103,9 @@ public class Viewport extends JPanel {
     public void updateMap(MapView lastMapView, MapView currentMapView) {
         this.remove(lastMapView);
         this.add(currentMapView);
+    }
+
+    public boolean done(){
+        return false;
     }
 }
