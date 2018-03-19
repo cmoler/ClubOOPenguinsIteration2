@@ -76,6 +76,12 @@ public class Player extends Entity{
 
     public void addMana(int mana){
         this.mana += mana;
+        if (this.mana > getMaxMana()){
+            this.mana = getMaxMana();
+        }
+        if (this.mana < 0){
+            this.mana = 0;
+        }
     }
 
     public int getGold() {
