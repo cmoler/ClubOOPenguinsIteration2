@@ -143,7 +143,7 @@ public class Deserializer {
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
         for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
 
-            Entity currEntity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
+            Entity currEntity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex), map);
             int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("LocationX");
             int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("LocationY");
 
@@ -157,7 +157,7 @@ public class Deserializer {
     }
 
 
-    private Entity deserializeEntity(JSONObject entityJSON){
+    private Entity deserializeEntity(JSONObject entityJSON, Map map){
 
         Inventory inventory = deserializeInventory(entityJSON.getJSONObject("Inventory"));
         EntityType entityType = deserializeEntityType(entityJSON);
@@ -167,11 +167,14 @@ public class Deserializer {
         JSONObject entityClass = entityJSON.getJSONObject("EntityClass");
         String name = entityClass.getString("Name");
 
+        int locationX = entityJSON.getInt("LocationX");
+        int locationY = entityJSON.getInt("LocationY");
+
         Entity entity;
 
         switch (name) {
             case "Player":
-                entity = deserializePlayer(entityClass, entityType);
+                entity = deserializePlayer(entityClass, entityType, map, locationX, locationY);
                 break;
             case "NPC":
                 entity = deserializeNPC(entityClass, entityType);
@@ -190,13 +193,13 @@ public class Deserializer {
         return entity;
     }
 
-    private Entity deserializePlayer(JSONObject EntityClass, EntityType type) {
+    private Entity deserializePlayer(JSONObject EntityClass, EntityType type, Map map, int x, int y) {
         int skillPointsAvailable = EntityClass.getInt("SkillPoints");
         JSONObject roleJSON = EntityClass.getJSONObject("Role");
 
         Role role = deserializeRole(roleJSON);
 
-        Player player = new Player(role, type, skillPointsAvailable);
+        Player player = new Player(role, type, skillPointsAvailable, map.getLocationXY(x,y));
 
         player.addMana(EntityClass.getInt("Mana"));
         player.gainExperience(EntityClass.getInt("XP"));

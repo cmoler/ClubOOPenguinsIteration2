@@ -28,12 +28,13 @@ public class Player extends Entity{
         name = "Player";
     }
 
-    public Player(Role role, EntityType type, int skillPointsAvailable){
+    public Player(Role role, EntityType type, int skillPointsAvailable, Location initialLocation){
         this.role = role;
         role.setEntity(this);
         super.setEntityType(type);
         name = "Player";
         skillPointsUsed = skillPointsPerLevel*getLevel() - skillPointsAvailable;
+        super.setLocation(initialLocation);
     }
 
     public void touchItems(){
