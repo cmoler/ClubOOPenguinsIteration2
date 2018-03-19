@@ -107,9 +107,7 @@ public class ControllerMediator {
 
     public void changeToMenuState(){
         input.setActiveState(menuState);
-        menuViewPort.setVisible(true);
-        viewport.setVisible(false);
-        menuViewPort.requestFocus();
+        menuState.setActive();
         activeState = menuState;
     }
 
