@@ -101,6 +101,7 @@ public class Equipment {
 
     public void useItem(int index){
         if (hotbar.getItem(index) != null) {
+            System.out.println("item used");
             TakeableItem item = hotbar.getItem(index);
             ((UseableItem) item).use(this.entity, this.entity.getLocation());
         }
