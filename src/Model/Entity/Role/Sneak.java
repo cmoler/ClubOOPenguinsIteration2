@@ -85,7 +85,7 @@ public class Sneak extends Role {
         for (Direction dir : Direction.values()){
             Location adjLocation = location.getAdjacentAt(dir);
             AreaEffect areaEffect = adjLocation.getAreaEffect();
-            if (areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
+            if (areaEffect != null && areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
                 ((TrapAreaEffect) areaEffect).setVisible(detectChance);
             }
         }
