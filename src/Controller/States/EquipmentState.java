@@ -80,10 +80,10 @@ public class EquipmentState implements ControllerState {
                                     getTextContent()), () -> openSkills());
                             break;
                         case "unEquipItem":
-//                            keyBinding.put(Integer.parseInt(eElement.
-//                                    getElementsByTagName("key").
-//                                    item(0).
-//                                    getTextContent()), () -> unEquipItem());
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> unEquip());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
@@ -97,6 +97,11 @@ public class EquipmentState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> scrollRight());
                             break;
+                        case "useItem":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> useItem());
                     }
                 }
 
@@ -136,24 +141,20 @@ public class EquipmentState implements ControllerState {
         controllerMediator.changeToSkillsState();
     }
 
-    private void unEquipUsableItem() {
-        // TODO
-//        equipmentController.unEquipUsableItem(); // needs index
-    }
-
-    private void upEquipWearableItem(){
-        // TODO
-//        equipmentController.unEquipWearableItem(); // needs index
-    }
-
     private void scrollLeft() {
-        // TODO
+        equipmentController.scrollLeft();
     }
 
     private void scrollRight() {
-        // TODO
+        equipmentController.scrollRight();
     }
 
+    private void unEquip(){
+        equipmentController.unEquip();
+    }
 
+    private void useItem(){
+        equipmentController.useItem();
+    }
 
 }

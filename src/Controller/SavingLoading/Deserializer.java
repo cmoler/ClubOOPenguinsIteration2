@@ -94,6 +94,9 @@ public class Deserializer {
 
         setNPC(this.NPCs, this.player);
 
+        String currentMapID = worldJSON.getString("CurrentMap");
+        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(currentMapID));
+
         Iterator<Map> maps = mapViews.keySet().iterator();
 
         while (maps.hasNext()) {
@@ -101,8 +104,7 @@ public class Deserializer {
             mapViews.get(currentMap).setEntity(player);
         }
 
-        String currentMap = worldJSON.getString("CurrentMap");
-        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(currentMap));
+
 
         worldView = new WorldView(mapViews);
 
@@ -135,6 +137,7 @@ public class Deserializer {
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
         Map map = new Map(locations);
+        map.setMapID(mapID);
         World.getWorld().addMap(map.getMapID(), map);
 
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
