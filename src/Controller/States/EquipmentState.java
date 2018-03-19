@@ -38,7 +38,7 @@ public class EquipmentState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/equipment");
+        File entityKeyBindings = new File("resources/KeyBindings/equipment.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;

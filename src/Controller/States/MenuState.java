@@ -42,7 +42,7 @@ public class MenuState implements ControllerState {
     @Override
     public void loadKeyBindings() {
 
-        File entityKeyBindings = new File("resources/KeyBindings/menu");
+        File entityKeyBindings = new File("resources/KeyBindings/menu.xml");
 
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

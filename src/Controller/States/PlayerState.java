@@ -39,7 +39,7 @@ public class PlayerState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/entity");
+        File entityKeyBindings = new File("resources/KeyBindings/entity.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;

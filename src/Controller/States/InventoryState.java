@@ -39,7 +39,7 @@ public class InventoryState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/inventory");
+        File entityKeyBindings = new File("resources/KeyBindings/inventory.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
