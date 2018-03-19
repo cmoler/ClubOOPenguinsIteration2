@@ -74,7 +74,11 @@ public class Deserializer {
         System.out.println("Finished deserializng.");
 
         statusViewPort = new StatusViewPort(player);
+        PlayerView playerView = new PlayerView(player);
+        areaViewPort.add(playerView);
+        player.attach(playerView);
         viewport.add(statusViewPort);
+
         gameBuilder.setStatusViewPort(statusViewPort);
         gameBuilder.setAreaViewport(areaViewPort);
         gameBuilder.setPlayer(player);
@@ -204,10 +208,6 @@ public class Deserializer {
         player.modifyGold(EntityClass.getInt("Gold"));
 
         deserializeEquipment(EntityClass.getJSONObject("Equipment"), player);
-
-        PlayerView playerView = new PlayerView(player);
-        areaViewPort.add(playerView);
-        player.attach(playerView);
 
         this.player = player;
         return player;
