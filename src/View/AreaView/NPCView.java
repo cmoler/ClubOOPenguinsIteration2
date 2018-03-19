@@ -59,14 +59,16 @@ public class NPCView extends Viewport {
 
     @Override
     public void update(){
-        directionFacing = npc.getDirectionFacing();
-        int playerX = player.getLocation().getxCoordinate();
-        int playerY = player.getLocation().getyCoordinate();
+        if (player != null){
+            directionFacing = npc.getDirectionFacing();
+            int playerX = player.getLocation().getxCoordinate();
+            int playerY = player.getLocation().getyCoordinate();
 
-        int NPCX = npc.getLocation().getxCoordinate();
-        int NPCY = npc.getLocation().getyCoordinate();
+            int NPCX = npc.getLocation().getxCoordinate();
+            int NPCY = npc.getLocation().getyCoordinate();
 
-        this.x = (NPCX - playerX) * AreaSizes.TERRAIN_WIDTH;
-        this.y = (NPCY - playerY) * AreaSizes.TERRAIN_HEIGHT;
+            this.x = (NPCX - playerX) * AreaSizes.TERRAIN_WIDTH;
+            this.y = (NPCY - playerY) * AreaSizes.TERRAIN_HEIGHT;
+        }
     }
 }

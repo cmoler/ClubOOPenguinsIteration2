@@ -97,12 +97,10 @@ public class Deserializer {
         String currentMapID = worldJSON.getString("CurrentMap");
         World.getWorld().changeCurrentMapTo(World.getWorld().getMap(currentMapID));
 
-        Iterator<Map> maps = mapViews.keySet().iterator();
 
-        while (maps.hasNext()) {
-            Map currentMap = maps.next();
-            mapViews.get(currentMap).setEntity(player);
-        }
+
+        MapView currentMapView = mapViews.get(World.getWorld().getCurrentMap());
+        currentMapView.setEntity(player);
 
 
 
@@ -209,6 +207,7 @@ public class Deserializer {
 
         PlayerView playerView = new PlayerView(player);
         areaViewPort.add(playerView);
+        player.attach(playerView);
 
         this.player = player;
         return player;
