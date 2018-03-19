@@ -101,6 +101,9 @@ public class Deserializer {
             mapViews.get(currentMap).setEntity(player);
         }
 
+        String currentMap = worldJSON.getString("CurrentMap");
+        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(currentMap));
+
         worldView = new WorldView(mapViews);
 
         areaViewPort.add(worldView);
@@ -132,9 +135,7 @@ public class Deserializer {
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
         Map map = new Map(locations);
-
         World.getWorld().addMap(map.getMapID(), map);
-        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(mapID));
 
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
         for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
