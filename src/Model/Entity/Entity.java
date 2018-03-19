@@ -5,6 +5,7 @@ import Model.Item.Item;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
+import Model.Map.World;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -179,6 +180,10 @@ public abstract class Entity {
 
     public void setLocation(Location location){
         this.location = location;
+        if (World.getWorld().getCurrentMap() != null){
+            System.out.println("Current MAP" + World.getWorld().getCurrentMap().getMapID());
+            System.out.println("Current location" + this.getLocation());
+        }
         notifyView();
     }
 
