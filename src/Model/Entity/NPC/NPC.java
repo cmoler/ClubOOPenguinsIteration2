@@ -71,8 +71,11 @@ public class NPC extends Entity implements Updateable{
 
     @Override
     public void update(){
-        if(Time.currentInSeconds() > lastMove + secondsPerMove)
-            npcState.move(this, player );
+        if(Time.currentInSeconds() > lastMove + secondsPerMove) {
+            npcState.move(this, player);
+            System.out.println("npc move");
+            lastMove = Time.currentInSeconds();
+        }
     }
 
     @Override
