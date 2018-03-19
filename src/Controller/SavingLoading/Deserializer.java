@@ -140,10 +140,10 @@ public class Deserializer {
             //System.out.println("FINISHED DESERIALIZING A LOCATION");
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
-            if(location.getyCoordinate() == 4 && location.getxCoordinate() == 0){
+            if(location.getyCoordinate() == 8 && location.getxCoordinate() == 1){
                 System.out.println("LOCATION AT 0,4 has the following items: ");
-                for(int i = 0; i < locations[4][0].getItems().size(); i++){
-                    System.out.println(locations[4][0].getItems().get(i).getName());
+                for(int i = 0; i < locations[8][1].getItems().size(); i++){
+                    System.out.println(locations[8][1].getItems().get(i).getName());
                 }
             }
 
