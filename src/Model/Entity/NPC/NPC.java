@@ -96,6 +96,7 @@ public class NPC extends Entity implements Updateable{
             player.modifyGold(100);
             player.gainExperience(50);
         }
+        notifyView();
 
     }
 

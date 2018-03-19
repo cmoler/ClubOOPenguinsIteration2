@@ -54,9 +54,10 @@ public class NPCView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(avatarImage, x * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4, y * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT / 4,
+        if(!npc.isDone()) {
+            graphics2D.drawImage(avatarImage, x * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH / 4, y * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT / 4,
                     AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT, this);
-
+        }
 
     }
 
@@ -68,6 +69,6 @@ public class NPCView extends Viewport {
 
     @Override
     public void update(){
-
+        if(npc.isDone()) parent.remove(this);
     }
 }
