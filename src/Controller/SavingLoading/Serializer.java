@@ -88,10 +88,10 @@ public class Serializer implements Saver{
         entityJSON.put("LocationY", entity.getLocation().getyCoordinate());
         //Save either as player or as NPC
         JSONObject classJSON;
-        if (entity.getName().equals("npc")) {
+        if (entity.getName().equals("NPC")) {
             classJSON = saveNPC((NPC) entity);
         }
-        else if (entity.getName().equals("shopkeeper")){
+        else if (entity.getName().equals("ShopKeepNPC")){
             classJSON = saveShopKeeper((ShopKeepNPC) entity);
         }
         else {
@@ -178,11 +178,14 @@ public class Serializer implements Saver{
 
     private JSONObject saveAreaEffect(AreaEffect areaEffect){
         JSONObject areaEffectJSON = new JSONObject();
-        areaEffectJSON.put("Type", nullChecker(areaEffect.getAreaEffectType()));
-        if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
-            areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
-            areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
-            areaEffectJSON.put("Y", ((TeleportAreaEffect) areaEffect).getY());
+
+        areaEffectJSON.put("Type", nullChecker(areaEffect));
+        if (areaEffect != null){
+            if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
+                areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
+                areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
+                areaEffectJSON.put("Y", ((TeleportAreaEffect) areaEffect).getY());
+            }
         }
         return areaEffectJSON;
     }
@@ -193,8 +196,8 @@ public class Serializer implements Saver{
         ArrayList<JSONObject> entityLocationList = new ArrayList<>();
         ArrayList<Pair> entityLocationPair = entityLocation.getAssociations();
         for (int i = 0; i < entityLocationPair.size(); i++){
-            Entity entity = (Entity) entityLocationPair.get(i).getKey();
-            Location location = (Location) entityLocationPair.get(i).getValue();
+            Entity entity = (Entity) entityLocationPair.get(i).getValue();
+            Location location = (Location) entityLocationPair.get(i).getKey();
             JSONObject pairJSON = new JSONObject();
             pairJSON.put("Entity", saveEntity(entity));
             pairJSON.put("LocationX", location.getxCoordinate());
@@ -218,8 +221,8 @@ public class Serializer implements Saver{
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
         ArrayList<String> items = new ArrayList<>();
-        for(int i = 0;inventory.getIterator().hasNext();i++, inventory.getIterator().next()){
-            items.add(inventory.getIterator().getCurrent().save(this));
+        for(Inventory.InventoryIterator inventoryIterator = inventory.getIterator();inventoryIterator.hasNext();inventoryIterator.next()){
+            items.add(inventoryIterator.getCurrent().save(this));
         }
         inventoryJSON.put("Items", new JSONArray(items));
         return inventoryJSON;
@@ -244,20 +247,20 @@ public class Serializer implements Saver{
         }
     }
 
-    private String nullChecker(AreaEffectType object){
-        if(object == null){
+    private String nullChecker(AreaEffect areaEffect){
+        if(areaEffect == null){
             return "";
         }
         else{
-            return object.name();
+            return areaEffect.getAreaEffectType().name();
         }
     }
 
     private JSONObject saveHotbar(List<TakeableItem> items){
         JSONObject hotbarJSON = new JSONObject();
-        JSONArray itemsList = new JSONArray();
+        ArrayList<String> itemsList = new ArrayList<>();
         for(int i =0; i < items.size(); i++) {
-            itemsList.put(items.get(i).save(this));
+            itemsList.add(items.get(i).save(this));
         }
         hotbarJSON.put("Items", new JSONArray(itemsList));
         return hotbarJSON;
