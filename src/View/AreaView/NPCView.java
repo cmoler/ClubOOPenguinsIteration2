@@ -38,6 +38,7 @@ public class NPCView extends Viewport {
         }
         npc.attach(this);
         this.player = npc.getPlayer();
+        if(player!= null) update();
         directionFacing = npc.getDirectionFacing();
     }
 
