@@ -48,9 +48,21 @@
        <key>51</key>
    </Bind>
    <Bind type="slot4">
-       <key>10</key>
+       <key>52</key>
    </Bind>
    <Bind type="slot5">
        <key>53</key>
+   </Bind>
+   <Bind type="bindWounds">
+       <key>66</key>
+   </Bind>
+   <Bind type="removeTrap">
+       <key>82</key>
+   </Bind>
+   <Bind type="creep">
+       <key>86</key>
+   </Bind>
+   <Bind type="pickPocket">
+       <key>80</key>
    </Bind>
 </class>

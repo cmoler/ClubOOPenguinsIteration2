@@ -7,6 +7,7 @@ import Model.Entity.NPC.NPCState.*;
 import java.util.Random;
 
 import Model.Entity.Player;
+import Model.Map.World;
 import Model.UpdateList;
 import Model.Updateable;
 import Model.Entity.NPC.NPCState.AggroState;
@@ -85,6 +86,8 @@ public class NPC extends Entity implements Updateable{
             lastMove = Time.currentInSeconds();
             if(talkTimer > 0)
                 talkTimer--;
+            else
+                talking = false;
         }
     }
 
@@ -105,6 +108,7 @@ public class NPC extends Entity implements Updateable{
         else {
             player.modifyGold(100);
             player.gainExperience(50);
+            World.getWorld().getCurrentMap().removeEntityLocation(this.getLocation());
         }
         notifyView();
 
