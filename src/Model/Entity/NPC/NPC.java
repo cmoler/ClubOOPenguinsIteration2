@@ -42,7 +42,7 @@ public class NPC extends Entity implements Updateable{
             //Display talkString
             System.out.println(talkString);
             talking = true;
-            talkTimer = 10;
+            talkTimer = 5;
         }
         else{
             pissOff();
@@ -108,7 +108,6 @@ public class NPC extends Entity implements Updateable{
         else {
             player.modifyGold(100);
             player.gainExperience(50);
-            World.getWorld().getCurrentMap().removeEntityLocation(this.getLocation());
         }
         notifyView();
 

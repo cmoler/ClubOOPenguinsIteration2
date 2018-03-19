@@ -20,9 +20,9 @@ public class MemorySlots {
         for (int i = 0; i < Commons.MAX_SAVE_SLOTS; i++) {
             slots.add(new Slot(Commons.SAVE_FOLDER + i + ".json"));
         }
-        slots.add(new Slot("smasher.json")); //5
-        slots.add(new Slot("summoner.json")); //6
-        slots.add(new Slot("sneak.json")); //7
+        slots.add(new Slot(Commons.SAVE_FOLDER + "smasher.json")); //5
+        slots.add(new Slot(Commons.SAVE_FOLDER + "summoner.json")); //6
+        slots.add(new Slot(Commons.SAVE_FOLDER + "sneak.json")); //7
     }
 
     public void selectPrevious(){

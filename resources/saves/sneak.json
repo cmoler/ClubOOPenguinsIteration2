@@ -49,7 +49,7 @@
         "Locations": [
           {
             "AreaEffect": {
-            	"Type": ""
+            	"Type": "TRAP"
             },
             "Terrain": "ICE",
             "Obstacle": 0,
