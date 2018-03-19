@@ -1,1 +1,3477 @@
-{"World":{"Maps":[{"Cols":10,"Locations":[{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":true,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["charm"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":9,"Y":1,"mapID":"0001"},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"HEAL"},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":true,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":5,"Y":5,"mapID":"0003"},"Terrain":"ICE","X":9,"Items":[]}],"EntityLocations:":{"Pairs":[{"Entity":{"EntityType":"ICE","LocationY":1,"LocationX":1,"EntityClass":{"Color":"yellow","NPCState":"friendly","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":["helmet","ring","charm","blueLightsaber"]}},"LocationY":1,"LocationX":1},{"Entity":{"EntityType":"ICE","LocationY":9,"LocationX":1,"EntityClass":{"NPCState":"friendly","ShopMap":{"I":5,"J":5,"MapID":"1000"},"Name":"ShopKeepNPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":9,"LocationX":1}]},"MapID":"0002","Rows":10},{"Cols":10,"Locations":[{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":5,"Y":5,"mapID":"0002"},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":9,"Y":9,"mapID":"0002"},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":["pizza"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":true,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]}],"EntityLocations:":{"Pairs":[{"Entity":{"EntityType":"ICE","LocationY":2,"LocationX":0,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":2,"LocationX":0},{"Entity":{"EntityType":"ICE","LocationY":2,"LocationX":9,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":2,"LocationX":9},{"Entity":{"EntityType":"ICE","LocationY":0,"LocationX":2,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":0,"LocationX":2},{"Entity":{"EntityType":"ICE","LocationY":4,"LocationX":9,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":4,"LocationX":9},{"Entity":{"EntityType":"ICE","LocationY":0,"LocationX":0,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":0,"LocationX":0},{"Entity":{"EntityType":"ICE","LocationY":0,"LocationX":4,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":0,"LocationX":4},{"Entity":{"EntityType":"ICE","LocationY":0,"LocationX":6,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":0,"LocationX":6},{"Entity":{"EntityType":"ICE","LocationY":0,"LocationX":8,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":0,"LocationX":8},{"Entity":{"EntityType":"ICE","LocationY":4,"LocationX":0,"EntityClass":{"Color":"red","NPCState":"enemy","Name":"NPC"},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":4,"LocationX":0}]},"MapID":"0003","Rows":10},{"Cols":10,"Locations":[{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":5,"Y":5,"mapID":"0002"},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["brassKnuckles"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["charm"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["spikedGloves"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["sleep"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["swordHands"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["seppuku"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["blueLightsaber"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["heal"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["mjolnir"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["increaseMaxHealth"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":["linearIceAttack"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":["pizza"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":["healthPotion"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["thunderBlade"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":["waterHammer"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["increaseLevel"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":["radialIceAttack"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":["snowLauncher"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":["manaPotion"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":["jeweledCutlass"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":["inquisitorLightsaber"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["angularIceAttack"]},{"Obstacle":true,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":["key"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":["snowShuriken"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":["xpPotion"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]}],"EntityLocations:":{"Pairs":[{"Entity":{"EntityType":"ICE","LocationY":5,"LocationX":5,"EntityClass":{"Role":{"Role":{"RoleName":"Smasher","BrawlLevel":20,"OneHandedWeaponLevel":20,"TwoHandedWeaponLevel":20},"BargainLevel":20,"BindWoundsLevel":20,"ObservationLevel":3},"Gold":100,"Mana":0,"Equipment":{"Legs":"","Head":"","Ring":"","Hotbar":{"Items":[]},"Body":""},"XP":0,"SkillPoints":5},"MaxHP":100,"HP":100,"Level":1,"Inventory":{"Items":[]}},"LocationY":5,"LocationX":5}]},"MapID":"0001","Rows":10},{"Cols":10,"Locations":[{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":true,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":["charm"]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TELEPORT","X":5,"Y":5,"mapID":"0002"},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":6,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":7,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":8,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":9,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":"TRANSACTION"},"Terrain":"ICE","X":0,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":1,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":2,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":3,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":4,"Items":[]},{"Obstacle":false,"AreaEffect":{"Type":""},"Terrain":"ICE","X":5,"Items"
+{"World": {
+ "Maps": [
+  {
+   "Cols": 10,
+   "Locations": [
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 2,
+     "Items": ["charm"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 9,
+      "Y": 1,
+      "mapID": "0001"
+     },
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "HEAL"},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 5,
+      "Y": 5,
+      "mapID": "0003"
+     },
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 9,
+     "Items": []
+    }
+   ],
+   "mapID": "0002",
+   "Rows": 10,
+   "Entities": [
+    {
+     "EntityType": "ICE",
+     "LocationY": 1,
+     "LocationX": 1,
+     "EntityClass": {
+      "Color": "yellow",
+      "NPCState": "friendly",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": [
+      "key",
+      "ring",
+      "charm",
+      "blueLightsaber"
+     ]}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 9,
+     "LocationX": 1,
+     "EntityClass": {
+      "Color": "blue",
+      "NPCState": "friendly",
+      "ShopMap": {
+       "X": 5,
+       "Y": 5,
+       "MapID": "1000"
+      },
+      "Name": "ShopKeepNPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    }
+   ]
+  },
+  {
+   "Cols": 10,
+   "Locations": [
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 5,
+      "Y": 5,
+      "mapID": "0002"
+     },
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 9,
+      "Y": 9,
+      "mapID": "0002"
+     },
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 6,
+     "Items": ["pizza"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 9,
+     "Items": []
+    }
+   ],
+   "mapID": "0003",
+   "Rows": 10,
+   "Entities": [
+    {
+     "EntityType": "ICE",
+     "LocationY": 2,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 2,
+     "LocationX": 9,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 4,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 4,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 6,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 2,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 8,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 4,
+     "LocationX": 9,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    }
+   ]
+  },
+  {
+   "Cols": 10,
+   "Locations": [
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 5,
+      "Y": 5,
+      "mapID": "0002"
+     },
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 2,
+     "Items": ["brassKnuckles"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 2,
+     "Items": ["charm"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 3,
+     "Items": ["spikedGloves"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 3,
+     "Items": ["sleep"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 4,
+     "Items": ["swordHands"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 4,
+     "Items": ["seppuku"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 5,
+     "Items": ["blueLightsaber"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 5,
+     "Items": ["heal"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 6,
+     "Items": ["mjolnir"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 6,
+     "Items": ["increaseMaxHealth"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 6,
+     "Items": ["linearIceAttack"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 6,
+     "Items": ["healthPotion"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 7,
+     "Items": ["thunderBlade"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 7,
+     "Items": ["waterHammer"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 7,
+     "Items": ["increaseLevel"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 7,
+     "Items": ["radialIceAttack"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 7,
+     "Items": ["manaPotion"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 8,
+     "Items": ["jeweledCutlass"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 8,
+     "Items": ["inquisitorLightsaber"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 8,
+     "Items": ["angularIceAttack"]
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 8,
+     "Items": ["key"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 8,
+     "Items": ["snowShuriken"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 8,
+     "Items": ["xpPotion"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 9,
+     "Items": []
+    }
+   ],
+   "mapID": "0001",
+   "Rows": 10,
+   "Entities": [
+    {
+     "EntityType": "ICE",
+     "LocationY": 7,
+     "LocationX": 6,
+     "EntityClass": {
+      "Role": {
+       "Role": {
+        "RoleName": "Smasher",
+        "BrawlLevel": 20,
+        "OneHandedWeaponLevel": 20,
+        "TwoHandedWeaponLevel": 20
+       },
+       "BargainLevel": 20,
+       "BindWoundsLevel": 20,
+       "ObservationLevel": 3
+      },
+      "Gold": 100,
+      "Mana": 0,
+      "Equipment": {
+       "Legs": "",
+       "Head": "",
+       "Ring": "",
+       "Hotbar": {"Items": []},
+       "Body": ""
+      },
+      "XP": 0,
+      "SkillPoints": 5,
+      "Name": "Player"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": [
+      "pizza",
+      "snowLauncher"
+     ]}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "yellow",
+      "NPCState": "friendly",
+      "Name": "NPC"
+     },
+     "MaxHP": 200,
+     "HP": 100,
+     "Inventory": {"Items": [
+      "key",
+      "ring",
+      "charm",
+      "blueLightsaber"
+     ]}
+    }
+   ]
+  },
+  {
+   "Cols": 10,
+   "Locations": [
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 0,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 1,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 2,
+     "Items": ["charm"]
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 2,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 3,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 4,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {
+      "Type": "TELEPORT",
+      "X": 5,
+      "Y": 5,
+      "mapID": "0002"
+     },
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 5,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 6,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "HEAL"},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 7,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 1,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": ""},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 8,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 0,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 1,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 2,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 3,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 4,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 5,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 6,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 7,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 8,
+     "Y": 9,
+     "Items": []
+    },
+    {
+     "Obstacle": 0,
+     "AreaEffect": {"Type": "TRANSACTION"},
+     "Terrain": "ICE",
+     "X": 9,
+     "Y": 9,
+     "Items": []
+    }
+   ],
+   "mapID": "1000",
+   "Rows": 10,
+   "Entities": []
+  }
+ ],
+ "CurrentMap": "0001"
+}}

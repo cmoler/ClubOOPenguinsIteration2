@@ -39,6 +39,9 @@ public class World implements Saveable{
     }
 
     public void teleportEntity(Entity entity, Map nextMap, Location nextLocation){
+        System.out.println("current map:" + currentMap.getMapID());
+        System.out.println("teleport to:" + nextMap.getMapID());
+        System.out.println("teleport to next loction:" + nextLocation);
         currentMap.removeEntityLocation(entity.getLocation());
         nextMap.setEntityLocation(nextLocation, entity);
     }

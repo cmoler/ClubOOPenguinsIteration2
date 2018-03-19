@@ -20,7 +20,7 @@ public class GameLoader {
     }
 
     public void load(String savePath){
-        File file = new File("resources/saves/" + savePath);
+        File file = new File(savePath);
 
         String saveFileContent = null;
         try {
