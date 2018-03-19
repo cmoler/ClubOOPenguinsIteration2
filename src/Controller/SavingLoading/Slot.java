@@ -20,7 +20,6 @@ public class Slot {
         GameSaver saver = new GameSaver(gameBuilder);
         saver.save(savePath);
         System.out.println("saving... to : " + savePath);
-        System.exit(0);
     }
 
     public void loadTo(GameBuilder gameBuilder){
