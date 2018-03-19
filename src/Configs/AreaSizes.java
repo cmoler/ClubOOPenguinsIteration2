@@ -20,7 +20,7 @@ public interface AreaSizes {
     public static final int DECAL_WIDTH = 45;
     public static final int DECAL_HEIGHT = 45;
 
-    public static final int PROJECTILE_WIDTH = 15;
-    public static final int PROJECTILE_HEIGHT = 15;
+    public static final int PROJECTILE_WIDTH = 45;
+    public static final int PROJECTILE_HEIGHT = 45;
 
 }
