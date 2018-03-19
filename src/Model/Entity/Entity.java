@@ -178,7 +178,7 @@ public abstract class Entity {
 
     public void setLocation(Location location){
         this.location = location;
-//        notifyView();
+        notifyView();
     }
 
     public void setEntityType(EntityType entityType) {

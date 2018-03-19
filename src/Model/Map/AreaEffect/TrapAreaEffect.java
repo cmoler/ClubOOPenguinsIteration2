@@ -1,11 +1,16 @@
 package Model.Map.AreaEffect;
 
 import Model.Entity.Entity;
+import View.AreaView.TrapView;
+import View.Viewport;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class TrapAreaEffect extends OneShotAreaEffect{
     boolean isVisible;
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
 
     public TrapAreaEffect() {
@@ -32,10 +37,21 @@ public class TrapAreaEffect extends OneShotAreaEffect{
     protected void affect(Entity entity) {
         entity.takeDamage(entity.getMaxHealth()/2);
         setActive(false);
+        notifyView();
     }
 
     @Override
     public AreaEffectType getAreaEffectType() {
         return AreaEffectType.TRAP;
+    }
+
+    public void attach(TrapView trapView) {
+        observers.add(trapView);
+    }
+
+    public void notifyView(){
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 }
