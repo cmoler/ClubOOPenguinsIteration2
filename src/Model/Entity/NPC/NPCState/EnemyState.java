@@ -12,13 +12,17 @@ public class EnemyState implements NPCState {
     @Override
     public void move(NPC npc, Player player) {
 
-        if (playerInRange(npc, player)) {
+        if(true){
             npc.setNpcState(new AggroState());
-            return;
         }
-        else {
-            npc.move(Direction.E);
-        }
+
+        //if (playerInRange(npc, player)) {
+        //    npc.setNpcState(new AggroState());
+        //    return;
+        //}
+        //else {
+            //npc.move(Direction.E);
+        //}
 
     }
 
