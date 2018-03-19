@@ -30,7 +30,7 @@ public class LinearIceAttack extends BaneItem {
     protected void apply(Location locationOfEntity, Direction directionFacing, int baneSkillLevel) {
         Projectile projectile = new LinearProjectile(damageAmount*baneSkillLevel,
                 linearDecreaseFactor*baneSkillLevel,
-                speed, locationOfEntity, directionFacing,"Ice");
+                speed, locationOfEntity, directionFacing,"Linear Ice");
 
         super.addProjectile(projectile);
     }

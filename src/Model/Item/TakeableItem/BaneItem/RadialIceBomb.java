@@ -42,7 +42,7 @@ public class RadialIceBomb extends BaneItem {
 
         Projectile projectile = new RadialProjectile(damageAmount*baneSkillLevel,
                 radialDecreaseFactor*baneSkillLevel, speed,
-                locationOfEntity, "Ice");
+                locationOfEntity, "Radial Ice");
 
         super.addProjectile(projectile);
     }
