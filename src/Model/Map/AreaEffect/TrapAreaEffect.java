@@ -37,6 +37,7 @@ public class TrapAreaEffect extends OneShotAreaEffect{
     protected void affect(Entity entity) {
         entity.takeDamage(entity.getMaxHealth()/2);
         setActive(false);
+        isVisible = true;
         notifyView();
     }
 
