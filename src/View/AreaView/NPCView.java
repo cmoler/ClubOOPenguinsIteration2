@@ -69,6 +69,6 @@ public class NPCView extends Viewport {
 
     @Override
     public void update(){
-        if(npc.isDone()) parent.remove(this);
+
     }
 }
