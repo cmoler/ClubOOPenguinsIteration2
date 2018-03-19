@@ -70,9 +70,9 @@ public class AggroState implements NPCState {
                     toVisit.path.add(direction);
 
                     //if unvisited and within range, add to queue
-                    if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= npc.getVisibleRange()
-                            && toVisit.location.getAreaEffect().getAreaEffectType() != AreaEffectType.TELEPORT) {
-                        queue.add(toVisit);
+                    if (!queue.contains(toVisit) && !visited.contains(toVisit) && toVisit.cost <= npc.getVisibleRange()) {
+                        if( toVisit.location.getAreaEffect() != null && toVisit.location.getAreaEffect().getAreaEffectType() != AreaEffectType.TELEPORT)
+                            queue.add(toVisit);
                     }
                     // if in queue and current path cost is cheaper, update path and cost in existing node
                     else if (queue.contains(toVisit)) {
