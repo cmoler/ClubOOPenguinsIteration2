@@ -60,7 +60,7 @@ public class Deserializer {
     private MapView currentMapView;
     private WorldView worldView;
     private StatusViewPort statusViewPort;
-    private AreaViewPort areaViewPort = new AreaViewPort(player);
+    private AreaViewPort areaViewPort = new AreaViewPort();
 
 
     public Deserializer(GameBuilder gameBuilder, JSONObject saveFileJSON){
@@ -86,6 +86,8 @@ public class Deserializer {
         gameBuilder.setAreaViewport(areaViewPort);
         gameBuilder.setPlayer(player);
         gameBuilder.setViewport(viewport);
+        areaViewPort.ButtonGrid(player);
+
     }
 
     public void deserializeWorld(JSONObject worldJSON){

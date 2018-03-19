@@ -19,8 +19,8 @@ public class AreaViewPort extends Viewport {
     private int rowCount = Commons.SCREEN_HEIGHT / AreaSizes.TERRAIN_HEIGHT;
     private int colCount = Commons.SCREEN_WIDTH / AreaSizes.TERRAIN_WIDTH;
 
-    public AreaViewPort(Player player) {
-        ButtonGrid(player);
+    public AreaViewPort() {
+//        ButtonGrid(player);
     }
 
     private JButton getButtonIndex(int x, int y) {
@@ -35,15 +35,16 @@ public class AreaViewPort extends Viewport {
                 JButton btn = createButton(i, j, player);
                 btnList.add(btn);
                 buttonGrid.add(btn);
+                add(btn);
             }
         }
 
 //        buttonGrid.setOpaque(false);
 
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        buttonGrid.setLayout(new FlowLayout(FlowLayout.CENTER, AreaSizes.TERRAIN_WIDTH, AreaSizes.TERRAIN_HEIGHT));
 
         add(buttonGrid);
-        setVisible(true);
+        buttonGrid.setVisible(true);
     }
 
     private JButton createButton(int x, int y, Player player) {

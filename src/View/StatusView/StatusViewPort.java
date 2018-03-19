@@ -9,12 +9,13 @@ import Model.Entity.Role.Role;
 import View.Viewport;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 
 public class StatusViewPort extends Viewport {
 
-
     private int currentView = 2;
+    private ArrayList<String> list = new ArrayList<>();
 
     public StatusViewPort(Player player){
         add(new StatsView(player));
@@ -39,6 +40,9 @@ public class StatusViewPort extends Viewport {
                 children.get(4).draw(graphics2D);
                 break;
         }
+        for(int i = 0; i < list.size(); ++i){
+            graphics2D.drawString(list.get(i), 10, 30 * i);
+        }
     }
 
     public void switchToEquipment(){
@@ -53,4 +57,7 @@ public class StatusViewPort extends Viewport {
         currentView = 3;
     }
 
+    public void drawObservation(ArrayList<String> list) {
+        this.list = list;
+    }
 }

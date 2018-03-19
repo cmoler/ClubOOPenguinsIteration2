@@ -9,6 +9,8 @@ import Model.Map.Location;
 import Model.Saveable;
 import javafx.beans.Observable;
 
+import java.util.ArrayList;
+
 public abstract class Role implements Saveable{
 
     protected Player entity;
@@ -70,6 +72,8 @@ public abstract class Role implements Saveable{
     public void bindWounds(){
         bindWounds.use(this.entity);
     }
+
+    public ArrayList<String> observation() {return observation.use(this.entity); }
 
     public void scroll(int i){
         selected += i;

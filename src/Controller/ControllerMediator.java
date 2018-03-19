@@ -5,6 +5,7 @@ import Controller.SavingLoading.Serializer;
 import Controller.States.*;
 import Model.UpdateList;
 import Model.Updateable;
+import View.AreaView.AreaViewPort;
 import View.MenuView.MenuViewPort;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
@@ -35,6 +36,7 @@ public class ControllerMediator {
     private Viewport viewport;
     private StatusViewPort statusViewPort;
     private MenuViewPort menuViewPort;
+    private AreaViewPort areaViewPort;
 
     private boolean load = false;
 
@@ -53,6 +55,7 @@ public class ControllerMediator {
     }
 
     private void getViewsFromBuilder(){
+        areaViewPort = gameBuilder.getAreaViewport();
         menuViewPort = gameBuilder.getMainMenuViewport();
         statusViewPort = gameBuilder.getStatusViewPort();
         viewport = gameBuilder.getViewport();

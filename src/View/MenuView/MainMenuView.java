@@ -36,7 +36,7 @@ public class MainMenuView extends MenuViewPort {
         add(new OptionsView());
         add(new ExitGameView());
 
-        LoopMusic();
+//        LoopMusic();
 
         mainClickableMenu();
     }
@@ -46,6 +46,8 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void mainClickableMenu() {
+        System.out.println("Clickable Menu");
+
         mainButtonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
 
         //Display numbers for testing
@@ -103,10 +105,9 @@ public class MainMenuView extends MenuViewPort {
 
 
         mainButtonGrid.setOpaque(false);
-//        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
+        setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
 
-        this.add(mainButtonGrid);
+        add(mainButtonGrid);
 
         setVisible(true);
     }
@@ -231,9 +232,9 @@ public class MainMenuView extends MenuViewPort {
 
     private void LoopMusic() {
         try {
-             //Clip clip = AudioSystem.getClip();
-             //clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
-             //clip.loop(Clip.LOOP_CONTINUOUSLY);
+             Clip clip = AudioSystem.getClip();
+             clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
+             clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (Exception exc) {
             exc.printStackTrace(System.out);
         }

@@ -39,6 +39,7 @@ public class GameBuilder {
     private Player player;
 
     public GameBuilder(){
+        areaViewport = new AreaViewPort();
         menuViewPort = new MainMenuView();
         gameFrame = new OOPenguinGameFrame();
         gameFrame.add(menuViewPort);

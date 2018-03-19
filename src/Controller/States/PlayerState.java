@@ -188,6 +188,13 @@ public class PlayerState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> pickPocket());
                             break;
+                        case "observation":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> observation());
+                            break;
+
                     }
                 }
 
@@ -202,6 +209,10 @@ public class PlayerState implements ControllerState {
         }
 
 
+    }
+
+    private void observation() {
+        playerController.observation();
     }
 
     private void bindWounds() {

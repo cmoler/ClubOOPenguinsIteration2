@@ -65,4 +65,8 @@
    <Bind type="pickPocket">
        <key>80</key>
    </Bind>
+  <Bind type="observation">
+      <key>79</key>
+  </Bind>
+
 </class>
