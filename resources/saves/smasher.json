@@ -43,6 +43,26 @@
                   "Ring": ""
                 }
               }
+          },
+          {
+              "Inventory": {
+                "Items": [
+                  "helmet",
+                  "ring",
+                  "charm",
+                  "blueLightsaber"
+                ]
+              },
+              "EntityType": "ICE",
+              "HP": 100,
+              "MaxHP": 100,
+              "LocationX": 0,
+              "LocationY": 0,
+              "EntityClass": {
+                "Name": "NPC",
+                "NPCState": "friendly",
+                "Color": "yellow"
+              }
           }
         ],
         "Locations": [
