@@ -45,13 +45,11 @@ public class StatsView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         //Portion of HP
-        int dynamicHealthWidth = (ENTITY_HEALTH_WIDTH * player.getMaxHealth()) / 100;
         double percentHP = 1 - player.getHealth()/(double) player.getMaxHealth();
-        int hprectSize = (int) (percentHP * dynamicHealthWidth);
+        int hprectSize = (int) (percentHP * ENTITY_HEALTH_WIDTH);
 
-        int dynamicManaWidth = (ENTITY_MANA_WIDTH * player.getMaxMana()) / player.getMaxMana();
         double percentMANA = 1 - player.getMana() / (double) player.getMaxMana();
-        int manaRectSize = (int) (percentMANA * dynamicManaWidth);
+        int manaRectSize = (int) (percentMANA * ENTITY_MANA_WIDTH);
 
         //Needed XP vars
         double expNeeded = (double) player.getExperienceForNextLevel();
@@ -83,17 +81,17 @@ public class StatsView extends Viewport {
 
         //HPBAR
         graphics2D.setColor(new Color(0, 0, 0));
-        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, dynamicHealthWidth, ENTITY_HEALTH_HEIGHT);
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH, ENTITY_HEALTH_HEIGHT);
         graphics2D.setColor(new Color(233, 3, 3));
-        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, dynamicHealthWidth - hprectSize, ENTITY_HEALTH_HEIGHT );
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH - hprectSize, ENTITY_HEALTH_HEIGHT );
         graphics2D.setColor(new Color(255, 255, 255));
         graphics2D.drawString("" + player.getHealth() + " / " + player.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y +( ENTITY_HEALTH_HEIGHT/2));
 
         //MANABAR
         graphics2D.setColor(new Color(0,0,0));
-        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth, ENTITY_MANA_HEIGHT);
+        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, ENTITY_MANA_WIDTH, ENTITY_MANA_HEIGHT);
         graphics2D.setColor(new Color(16,90,209));
-        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth - manaRectSize, ENTITY_MANA_HEIGHT);
+        graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, ENTITY_MANA_WIDTH - manaRectSize, ENTITY_MANA_HEIGHT);
         graphics2D.setColor(new Color(255, 255, 255));
         graphics2D.drawString("" + player.getMana() + " / " + player.getMaxMana(), ENTITY_MANA_X + (ENTITY_MANA_WIDTH/2), ENTITY_MANA_Y + (ENTITY_MANA_HEIGHT/2));
 

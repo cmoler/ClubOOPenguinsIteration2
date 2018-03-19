@@ -29,7 +29,7 @@ public abstract class Entity {
     private Inventory inventory = new Inventory();
     private Location location;
     private boolean intentToMove = false;
-    private int visibleRange = 5;
+    private int visibleRange = 3;
     // map is in World
 
 
@@ -71,6 +71,10 @@ public abstract class Entity {
         if (this.health > maxHealth) {
             this.health = maxHealth;
         }
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public void setHealth(int health){

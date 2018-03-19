@@ -1,10 +1,14 @@
 package View.AreaView;
 
 
+import Configs.ImagesInfo;
+import Model.Item.Item;
 import Model.Map.Location;
 import View.Viewport;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 
 public class LocationView extends Viewport {
 
@@ -39,33 +43,21 @@ public class LocationView extends Viewport {
 
     //TODO UNCOMMENT THIS
 
-//    //Readd Items that are still on it
-//    public void addItemViews(){
-//
-//        List<Item> items = location.getItems();
-//        List<ItemView> itemViews = new ArrayList<ItemView>();
-//        for (int i = 0; i<items.size(); i++){
-//            switch (items.get(i).getItemType()){
-//                case ONESHOT:
-//                    itemViews.add(new ItemView(ImagesInfo.BURGER_IMAGE));
-//                    break;
-//                case INTERACTIVE:
-//                    itemViews.add(new ItemView(ImagesInfo.KEY_IMAGE));
-//                    break;
-//                case TAKEABLE:
-//                    itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
-//                    break;
-//                case TELEPORTER:
-//                    itemViews.add(new ItemView(ImagesInfo.ITEM_TELEPORTER_IMAGE));
-//                    break;
-//            }
-//        }
-//
-//        for(ItemView itemView: itemViews){
-//            children.add(itemView);
-//        }
-//
-//    }
+    //Readd Items that are still on it
+    public void addItemViews(){
+
+        java.util.List<Item> items = location.getItems();
+        java.util.List<ItemView> itemViews = new ArrayList<ItemView>();
+
+        for (int i = 0; i<items.size(); i++){
+            itemViews.add(new ItemView(items.get(i).getName()));
+            }
+
+        for(ItemView itemView: itemViews){
+            children.add(itemView);
+        }
+
+    }
 
 
     @Override
@@ -81,12 +73,12 @@ public class LocationView extends Viewport {
     public Location getTerrainLocation() {
         return location;
     }
-//
-//    @Override
-//    public void update(){
-//        removeItemViews();
-//        addItemViews();
-//        repaint();
-//    }
+
+    @Override
+    public void update(){
+        removeItemViews();
+        addItemViews();
+        repaint();
+    }
 
 }

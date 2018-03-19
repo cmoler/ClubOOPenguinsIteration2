@@ -53,6 +53,7 @@ public class Deserializer {
     private Player player;
     private List<NPC> NPCs;
     private List<NPCView> NPCViews;
+    private List<ProjectileView> projectileCapableItems = new ArrayList<>();
 
     private Viewport viewport = new Viewport();
     private HashMap<Map,MapView> mapViews = new HashMap<>();
@@ -203,7 +204,7 @@ public class Deserializer {
                 entity = null;
         }
 
-        entity.modifyMaxHealth(100);
+        entity.setMaxHealth(maxHP);
         entity.setHealth(HP);
         entity.setInventory(inventory);
 
