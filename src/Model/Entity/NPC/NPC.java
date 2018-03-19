@@ -108,7 +108,6 @@ public class NPC extends Entity implements Updateable{
         else {
             player.modifyGold(100);
             player.gainExperience(50);
-            World.getWorld().getCurrentMap().removeEntityLocation(this.getLocation());
         }
         notifyView();
 

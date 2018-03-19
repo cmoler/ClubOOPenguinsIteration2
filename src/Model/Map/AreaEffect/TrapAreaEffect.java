@@ -32,7 +32,9 @@ public class TrapAreaEffect extends OneShotAreaEffect{
     }
 
     public void deactivate(){
+        isVisible = false;
         location.setAreaEffect(null);
+        notifyView();
     }
 
     @Override
