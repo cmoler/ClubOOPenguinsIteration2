@@ -53,31 +53,31 @@ public class Equipment {
         if (selected < equipmentSize){
             TakeableItem item = hotbar.getItem(selected);
             hotbar.remove(item);
-            this.entity.getInventory().addItem(item);
+            this.entity.takeItem(item);
             return true;
         }
         else if(selected == 5){
             WearableItem item = armor.getArmor("head");
             armor.unequip(item);
-            this.entity.getInventory().addItem(item);
+            this.entity.takeItem(item);
             return true;
         }
         else if(selected == 6){
             WearableItem item = armor.getArmor("body");
             armor.unequip(item);
-            this.entity.getInventory().addItem(item);
+            this.entity.takeItem(item);
             return true;
         }
         else if(selected == 7){
             WearableItem item = armor.getArmor("legs");
             armor.unequip(item);
-            this.entity.getInventory().addItem(item);
+            this.entity.takeItem(item);
             return true;
         }
         else if(selected == 8){
             WearableItem item = armor.getArmor("ring");
             armor.unequip(item);
-            this.entity.getInventory().addItem(item);
+            this.entity.takeItem(item);
             return true;
         }
         return false;
