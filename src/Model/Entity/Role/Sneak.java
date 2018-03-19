@@ -76,6 +76,8 @@ public class Sneak extends Role {
         creep.use(this.entity);
     }
 
+    public void removeTrap() {detectAndRemoveTrap.use(this.entity);}
+
     @Override
     public void activateTrait(Location location){
 

@@ -36,11 +36,11 @@ public class AggroState implements NPCState {
         PriorityQueue<PathCostNode> queue = new PriorityQueue<PathCostNode>(10, new Comparator<PathCostNode>() {
             @Override
             public int compare(PathCostNode node1, PathCostNode node2) {
-                if(node1.cost > node2.cost){
+                if(node1.cost < node2.cost){
                     return 1;
                 }
 
-                else if (node1.cost < node2.cost){
+                else if (node1.cost > node2.cost){
                     return -1;
                 }
                 return 0;
