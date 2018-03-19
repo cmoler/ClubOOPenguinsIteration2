@@ -23,6 +23,7 @@ public class MainMenuController extends MenuController{
 
     public MainMenuController(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.mainMenuView = gameBuilder.getMainMenuViewport();
+        this.areaViewPort = gameBuilder.getAreaViewport();
         setMenuViewPort(this.mainMenuView);
         this.controllerMediator = controllerMediator;
 

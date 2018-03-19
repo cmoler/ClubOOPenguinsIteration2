@@ -15,8 +15,8 @@ public class InventoryController implements Controller{
 
     public InventoryController(GameBuilder gameBuilder){
         this.areaViewPort = gameBuilder.getViewport();
-        inventory = gameBuilder.getInventory();
-        equipment = gameBuilder.getEquipment();
+        this.inventory = gameBuilder.getInventory();
+        this.equipment = gameBuilder.getEquipment();
     }
 
     @Override
