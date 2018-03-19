@@ -246,7 +246,7 @@ public class SpriteParser {
         final int width = 37;
         final int height = 40;
         final int rows = 1;
-        final int cols = 7;
+        final int cols = 8;
         avatarSprites_BLUE = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
@@ -274,7 +274,7 @@ public class SpriteParser {
         final int width = 37;
         final int height = 40;
         final int rows = 1;
-        final int cols = 7;
+        final int cols = 8;
         avatarSprites_RED = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)

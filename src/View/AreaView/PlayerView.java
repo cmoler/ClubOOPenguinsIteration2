@@ -37,8 +37,8 @@ public class PlayerView extends Viewport {
         double DESIRED_PLAYER_X_RATIO = 265.0f/768.0f;
         double DESIRED_PLAYER_Y_RATIO = 165.0f/501.0f;
 
-        int DESIRED_PLAYER_X = (int)DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH;
-        int DESIRED_PLAYER_Y = (int)DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT;
+        int DESIRED_PLAYER_X = (int)(DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH);
+        int DESIRED_PLAYER_Y = (int)(DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT);
 
         graphics2D.drawImage(avatarImage, DESIRED_PLAYER_X, DESIRED_PLAYER_Y,
                AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT,this );

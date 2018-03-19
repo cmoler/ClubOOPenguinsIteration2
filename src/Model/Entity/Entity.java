@@ -102,6 +102,7 @@ public abstract class Entity {
             directionFacing = direction;
 
         }
+        notifyView();
     }
 
     public boolean getIntentToMove(){
