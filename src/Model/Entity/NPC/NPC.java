@@ -85,6 +85,8 @@ public class NPC extends Entity implements Updateable{
             lastMove = Time.currentInSeconds();
             if(talkTimer > 0)
                 talkTimer--;
+            else
+                talking = false;
         }
     }
 
