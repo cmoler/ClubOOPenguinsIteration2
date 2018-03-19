@@ -13,6 +13,7 @@ public class TrapView extends Viewport {
     private boolean drawTrap = false;
 
     public TrapView(TrapAreaEffect trap){
+        trap.attach(this);
         this.trap = trap;
     }
 

@@ -4,6 +4,12 @@ import Model.Entity.Entity;
 import Model.Entity.Player;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.TakeableItemGenerator;
+import View.AreaView.TransactionAreaEffectView;
+import View.AreaView.TrapView;
+import View.Viewport;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionAreaEffect extends OneShotAreaEffect {
 
@@ -17,6 +23,8 @@ public class TransactionAreaEffect extends OneShotAreaEffect {
         return shopItem;
     }
 
+    private List<Viewport> observers = new ArrayList<Viewport>();
+
     @Override
     protected void affect(Entity entity) {
         Player player = (Player) entity;
@@ -26,10 +34,22 @@ public class TransactionAreaEffect extends OneShotAreaEffect {
             player.modifyGold(-itemCost);
             setActive(false);
         }
+        notifyView();
     }
 
     @Override
     public AreaEffectType getAreaEffectType() {
         return AreaEffectType.TRANSACTION;
+    }
+
+    public void attach(TransactionAreaEffectView transactionAreaEffectView) {
+        observers.add(transactionAreaEffectView);
+    }
+
+
+    public void notifyView(){
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 }
