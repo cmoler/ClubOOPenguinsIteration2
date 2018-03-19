@@ -53,10 +53,12 @@ public class Deserializer {
     private Player player;
     private List<NPC> NPCs;
     private List<NPCView> NPCViews;
-    private List<ProjectileView> projectileCapableItems = new ArrayList<>();
+    private List<ProjectileView> projectileViews = new ArrayList<>();
 
     private Viewport viewport = new Viewport();
     private HashMap<Map,MapView> mapViews = new HashMap<>();
+    private List<Map> mapList = new ArrayList<>();
+    private List<MapView> mapViewList = new ArrayList<>();
     private MapView currentMapView;
     private WorldView worldView;
     private StatusViewPort statusViewPort;
@@ -117,13 +119,18 @@ public class Deserializer {
 /*        MapView currentMapView = mapViews.get(World.getWorld().getCurrentMap());
         currentMapView.setEntity(player);*/
 
-
-
         worldView = new WorldView(mapViews);
 
         areaViewPort.add(worldView);
 
         viewport.add(areaViewPort);
+
+        for(int j=0; j < mapList.size(); j++){
+            for(ProjectileView p : projectileViews){
+                p.addParent(mapViewList.get(j));
+                p.addMap(mapList.get(j));
+            }
+        }
     }
 
     private Map deserializeMap(JSONObject mapJSON){
@@ -173,6 +180,8 @@ public class Deserializer {
         mapViews.put(map, mapView);
 
         System.out.println("FINISHED DESERIALIZING A MAP");
+        mapViewList.add(mapView);
+        mapList.add(map);
         return map;
     }
 
@@ -514,15 +523,15 @@ public class Deserializer {
                 return new Ring();
             case "angularIceAttack":
                 item = new AngularIceAttack();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "linearIceAttack":
                 item = new LinearIceAttack();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "radialIceAttack":
                 item = new RadialIceBomb();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "heal":
                 return new Heal();
@@ -552,15 +561,15 @@ public class Deserializer {
                 return new ThunderBlade();
             case "pizza":
                 item = new Pizza();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "snowLauncher":
                 item = new SnowLauncher();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "snowShuriken":
                 item = new SnowShuriken();
-                currentMapView.add(new ProjectileView(item, currentMapView));
+                projectileViews.add(new ProjectileView(item));
                 return item;
             case "staffItem":
                 return new StaffItem();
