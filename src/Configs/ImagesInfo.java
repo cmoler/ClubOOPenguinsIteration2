@@ -24,7 +24,7 @@ public interface ImagesInfo {
     public static final String PORTAL_FILELOCATION = "resources/images/clubPenguinItems/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
     public static final String PROJECTILE_LINEARICEATTACKFILELOCATION = "resources/images/magic/linearIceAttack.png";
-    public static final String PROJECTILE_ANGULARICEATTACKFILELOCATION = "resources/images/magic/anglularIceAttack.png";
+    public static final String PROJECTILE_ANGULARICEATTACKFILELOCATION = "resources/images/magic/angularIceAttack.png";
     public static final String PROJECTILE_RADIALICEATTACKFILELOCATION = "resources/images/magic/radialIceAttack.png";
     public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment/pizza.png";
 
