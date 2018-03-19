@@ -138,6 +138,7 @@ public class Deserializer {
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
+
         Map map = new Map(locations);
         map.setMapID(mapID);
         World.getWorld().addMap(map.getMapID(), map);
@@ -249,6 +250,7 @@ public class Deserializer {
     private void setNPC(List<NPC> NPCs, Player player){
         for (NPC npc : NPCs) {
             npc.setPlayer(player);
+            npc.notifyView();
         }
     }
 
