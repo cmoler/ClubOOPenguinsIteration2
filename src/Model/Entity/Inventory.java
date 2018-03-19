@@ -83,8 +83,11 @@ public class Inventory {
 
     public void scrollHorizontal(int i){
         selectedX += i;
+        if(items.size() < 7 && selectedX < 0) selectedX = items.size();
+        if(items.size() < selectedX ) selectedX = items.size();
         if(selectedX < 0) selectedX = 7;
         else if(selectedX > 7) selectedX = 0;
+        notifyView();
     }
 
     public void scrollVeritical(int i){
@@ -93,6 +96,7 @@ public class Inventory {
 
         if(selectedY < 0) selectedY = numberOfColumns;
         else if(selectedY > numberOfColumns) selectedY = 0;
+        notifyView();
     }
 
     public void attach(Viewport viewport){
