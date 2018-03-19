@@ -59,7 +59,7 @@ public class Deserializer {
     private MapView currentMapView;
     private WorldView worldView;
     private StatusViewPort statusViewPort;
-    private AreaViewPort areaViewPort = new AreaViewPort();
+    private AreaViewPort areaViewPort = new AreaViewPort(player);
 
 
     public Deserializer(GameBuilder gameBuilder, JSONObject saveFileJSON){

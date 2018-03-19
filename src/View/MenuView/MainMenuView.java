@@ -11,7 +11,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -22,7 +21,12 @@ public class MainMenuView extends MenuViewPort {
 
     private int currentSubMenu = -1;
 
-    JPanel buttonGrid;
+    private JPanel mainButtonGrid;
+    private JPanel ngButtonGrid;
+    private JPanel sgButtonGrid;
+    private JPanel lgButtonGrid;
+    private JPanel opButtonGrid;
+    private JPanel egButtonGrid;
 
 
     public MainMenuView(){
@@ -32,24 +36,24 @@ public class MainMenuView extends MenuViewPort {
         add(new OptionsView());
         add(new ExitGameView());
 
-        clickableMenu();
-
         LoopMusic();
+
+        mainClickableMenu();
     }
 
     private void killButtons(JPanel buttons) {
         this.remove(buttons);
     }
 
-    private void clickableMenu() {
-        buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+    private void mainClickableMenu() {
+        mainButtonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
 
         //Display numbers for testing
-        JButton ngBtn = ConfigureButton(new JButton(" "), "New Game");
-        JButton sgBtn = ConfigureButton(new JButton(" "), "Save Game");
-        JButton lgBtn = ConfigureButton(new JButton(" "), "Load Game");
-        JButton opBtn = ConfigureButton(new JButton(" "), "Options");
-        JButton egBtn = ConfigureButton(new JButton(" "), "Exit Game");
+        JButton ngBtn = ConfigureButton(new JButton("1"), "New Game");
+        JButton sgBtn = ConfigureButton(new JButton("2"), "Save Game");
+        JButton lgBtn = ConfigureButton(new JButton("3"), "Load Game");
+        JButton opBtn = ConfigureButton(new JButton("4"), "Options");
+        JButton egBtn = ConfigureButton(new JButton("5"), "Exit Game");
 
         ngBtn.addActionListener(new ActionListener() {
             @Override
@@ -91,28 +95,42 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        buttonGrid.add(ngBtn);
-        buttonGrid.add(sgBtn);
-        buttonGrid.add(lgBtn);
-        buttonGrid.add(opBtn);
-        buttonGrid.add(egBtn);
+        mainButtonGrid.add(ngBtn);
+        mainButtonGrid.add(sgBtn);
+        mainButtonGrid.add(lgBtn);
+        mainButtonGrid.add(opBtn);
+        mainButtonGrid.add(egBtn);
 
 
-        buttonGrid.setOpaque(false);
+        mainButtonGrid.setOpaque(false);
 //        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
 
-        this.add(buttonGrid);
+        this.add(mainButtonGrid);
 
-//        add(ngBtn);
-//        add(sgBtn);
-//        add(lgBtn);
-//        add(opBtn);
-//        add(egBtn);
-        
         setVisible(true);
+    }
+
+    private void ngClickableMenu() {
 
     }
+
+    private void sgClickableMenu() {
+
+    }
+
+    private void lgClickableMenu() {
+
+    }
+
+    private void opClickableMenu() {
+
+    }
+
+    private void egClickableMenu() {
+
+    }
+
 
     @Override
     public void draw(Graphics2D graphics2D) {
@@ -158,7 +176,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void returnToMenu(){
         currentSubMenu = -1;
-        clickableMenu();
+        mainClickableMenu();
     }
 
     public NewGameView getNewGameView(){
@@ -167,7 +185,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterNewGameView(){
         currentSubMenu = 0;
-        killButtons(buttonGrid);
+//        killButtons(mainButtonGrid);
     }
 
 
@@ -177,7 +195,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterSaveGameView(){
         currentSubMenu = 1;
-        killButtons(buttonGrid);
+//        killButtons(mainButtonGrid);
     }
 
 
@@ -188,7 +206,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterLoadGameView(){
         currentSubMenu = 2;
-        killButtons(buttonGrid);
+//        killButtons(mainButtonGrid);
     }
 
 
@@ -198,7 +216,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterOptionsView(){
         currentSubMenu = 3;
-        killButtons(buttonGrid);
+//        killButtons(mainButtonGrid);
     }
 
 
@@ -208,16 +226,17 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterExitGameView(){
         currentSubMenu = 4;
-        killButtons(buttonGrid);
+//        killButtons(mainButtonGrid);
     }
 
     private void LoopMusic() {
         try {
-           // Clip clip = AudioSystem.getClip();
-           // clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
-           // clip.loop(Clip.LOOP_CONTINUOUSLY);
+             Clip clip = AudioSystem.getClip();
+             clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
+             clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (Exception exc) {
             exc.printStackTrace(System.out);
         }
     }
 }
+

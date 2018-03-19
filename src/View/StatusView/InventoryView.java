@@ -40,7 +40,7 @@ public class InventoryView extends Viewport {
                 Image itemImage = parseItem(inventoryIterator.getCurrent().getName());
                 int x = (startX) + ITEM_WIDTH*j;
                 int y = (startY) + ITEM_HEIGHT*i;
-                graphics2D.drawImage(itemImage, x, y, ITEM_WIDTH, ITEM_WIDTH, this);
+                graphics2D.drawImage(itemImage, x, y, ITEM_WIDTH, ITEM_HEIGHT, this);
             }
         }
 
