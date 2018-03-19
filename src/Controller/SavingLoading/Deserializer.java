@@ -67,7 +67,11 @@ public class Deserializer {
 
         viewport.add(areaViewPort);
 
+        System.out.println("Beginning to deserialize world");
+
         deserializeWorld(saveFileJSON.getJSONObject("World"));
+
+        System.out.println("Finished deserializng.");
 
         statusViewPort = new StatusViewPort(player);
         viewport.add(statusViewPort);
@@ -82,9 +86,11 @@ public class Deserializer {
 
         JSONArray mapsJSON = worldJSON.getJSONArray("Maps");
 
-        for(int mapIndex = 0; mapIndex < mapsJSON.length(); mapsJSON.length()){
+        System.out.println("Deserializng MAPS");
+        for(int mapIndex = 0; mapIndex < mapsJSON.length(); mapIndex++){
             deserializeMap(mapsJSON.getJSONObject(mapIndex));
         }
+        System.out.println("Finished Deserializing MAPS");
 
         setNPC(this.NPCs, this.player);
 
@@ -103,7 +109,12 @@ public class Deserializer {
     }
 
     private Map deserializeMap(JSONObject mapJSON){
+
+        System.out.println("DESERIALZING A MAP");
+
         String mapID = mapJSON.getString("mapID");
+
+        System.out.println("MAP ID"  + mapID);
         int rows = mapJSON.getInt("Rows");
         int cols = mapJSON.getInt("Cols");
 
@@ -113,7 +124,11 @@ public class Deserializer {
         currentMapView = mapView;
 
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
+
+            //System.out.println("DESERIALIZING LOCATION");
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
+            //System.out.println("FINISHED DESERIALIZING A LOCATION");
+
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
         Map map = new Map(locations);
@@ -133,6 +148,7 @@ public class Deserializer {
 
         mapViews.put(map, mapView);
 
+        System.out.println("FINISHED DESERIALIZING A MAP");
         return map;
     }
 
@@ -194,7 +210,7 @@ public class Deserializer {
 
     private Entity deserializeNPC(JSONObject entityClass, EntityType entityType){
 
-        String color = entityClass.getString("color");
+        String color = entityClass.getString("Color");
         NPC npc = new NPC(color, entityType);
         deserializeNPCState(entityClass, npc);
 
@@ -207,11 +223,11 @@ public class Deserializer {
     }
 
     private Entity deserializeShopKeepNPC(JSONObject entityClass, EntityType entityType){
-        String color = entityClass.getString("color");
+        String color = entityClass.getString("Color");
         JSONObject shopMap = entityClass.getJSONObject("ShopMap");
         String mapID = shopMap.getString("MapID");
-        int i = shopMap.getInt("I");
-        int j= shopMap.getInt("J");
+        int i = shopMap.getInt("Y");
+        int j = shopMap.getInt("X");
 
         ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j, entityType);
         deserializeNPCState(entityClass, shopKeepNPC);
