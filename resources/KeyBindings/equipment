@@ -20,4 +20,7 @@
    <Bind type="scrollRight">
        <key>39</key>
    </Bind>
+   <Bind type="useItem">
+          <key>13</key>
+      </Bind>
 </class>

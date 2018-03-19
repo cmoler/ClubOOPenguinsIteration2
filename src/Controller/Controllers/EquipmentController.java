@@ -16,12 +16,19 @@ public class EquipmentController implements Controller{
 
     }
 
-    public void unEquipUsableItem(int indexOfItemInInventory){
-        equipment.unEquipUsableItem(indexOfItemInInventory);
+    public void scrollLeft(){
+        equipment.scrollLeft();
     }
 
-    public void unEquipWearableItem(String armorType){
-        equipment.unEquipWearableItem(armorType);
+    public void scrollRight(){
+        equipment.scrollRight();
     }
 
+    public void useItem(){
+        equipment.useItem();
+    }
+
+    public void unEquip(){
+        equipment.unEquip();
+    }
 }
