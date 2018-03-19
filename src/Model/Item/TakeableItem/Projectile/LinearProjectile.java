@@ -75,6 +75,7 @@ public class LinearProjectile implements Projectile {
             done = true;
             return;
         }
+        Location temp = locationOn;
         locationOn = locationOn.getAdjacentAt(directionHeading);
         if(currentMap.entityAtLocation(locationOn) != null){
             Entity entityAtTarget = currentMap.entityAtLocation(locationOn);

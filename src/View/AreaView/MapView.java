@@ -74,6 +74,11 @@ public class MapView extends Viewport {
                 child.draw(graphics2D,location.getKey() ,location.getValue());
             }
         }
+        for(Viewport child: children) {
+            if (child.done()) {
+                child.draw(graphics2D, 0, 0);
+            }
+        }
     }
 
     @Override
