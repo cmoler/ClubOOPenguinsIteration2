@@ -93,6 +93,8 @@ public class NPC extends Entity implements Updateable{
 
     @Override
     public boolean isDone() {
+        if(getHealth() <= 0)
+            talking = false;
         return getHealth() <= 0;
     }
 
