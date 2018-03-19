@@ -43,8 +43,18 @@ public class NPCView extends Viewport {
     }
 
     @Override
+    public int getLocationX(){
+        return npc.getLocation().getxCoordinate();
+    }
+
+    @Override
+    public int getLocationY(){
+        return npc.getLocation().getyCoordinate();
+    }
+
+    @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(avatarImage, x * AreaSizes.TERRAIN_WIDTH, y * AreaSizes.TERRAIN_WIDTH,
+        graphics2D.drawImage(avatarImage, x * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4, y * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT / 4,
                     AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT, this);
 
 
