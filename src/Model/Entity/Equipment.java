@@ -153,6 +153,21 @@ public class Equipment {
         return selected;
     }
 
+    public Pair<Integer,Integer> getSelectedArmor() {
+        switch (selected){
+            case 4:
+                return new Pair<>(0,0);
+            case 5:
+                return new Pair<>(0,1);
+            case 6:
+                return new Pair<>(0,2);
+            case 7:
+                return new Pair<>(0,3);
+            default:
+                return new Pair<>(-1,-1);
+        }
+    }
+
     private class WearableItems{
         private WearableItem head = null;
         private WearableItem legs = null;
