@@ -36,7 +36,7 @@ public class MainMenuView extends MenuViewPort {
         add(new OptionsView());
         add(new ExitGameView());
 
-//        LoopMusic();
+        LoopMusic();
 
         mainClickableMenu();
     }
