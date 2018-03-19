@@ -43,12 +43,21 @@ public class NPCView extends Viewport {
     }
 
     @Override
-    public void draw(Graphics2D graphics2D) {
-        if(0 < x && x < Commons.SCREEN_WIDTH &&
-                0 < y && y < Commons.SCREEN_HEIGHT) {
-            graphics2D.drawImage(avatarImage, x, y,
+    public int getLocationX(){
+        return npc.getLocation().getxCoordinate();
+    }
+
+    @Override
+    public int getLocationY(){
+        return npc.getLocation().getyCoordinate();
+    }
+
+    @Override
+    public void draw(Graphics2D graphics2D, int x, int y) {
+        graphics2D.drawImage(avatarImage, x * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4, y * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT / 4,
                     AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT, this);
-        }
+
+
     }
 
     @Override
@@ -59,17 +68,6 @@ public class NPCView extends Viewport {
 
     @Override
     public void update(){
-        if(player == null) this.player = npc.getPlayer();
-        if (player != null){
-            directionFacing = npc.getDirectionFacing();
-            int playerX = player.getLocation().getxCoordinate();
-            int playerY = player.getLocation().getyCoordinate();
 
-            int NPCX = npc.getLocation().getxCoordinate();
-            int NPCY = npc.getLocation().getyCoordinate();
-
-            this.x = (NPCX - playerX) * AreaSizes.TERRAIN_WIDTH;
-            this.y = (NPCY - playerY) * AreaSizes.TERRAIN_HEIGHT;
-        }
     }
 }
