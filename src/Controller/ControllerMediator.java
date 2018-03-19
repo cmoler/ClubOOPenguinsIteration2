@@ -45,7 +45,6 @@ public class ControllerMediator {
         loadStates();
         attachInputToViews();
         changeToMenuState();
-        startTimer();
     }
 
     private void getViewsFromBuilder(){
@@ -82,6 +81,7 @@ public class ControllerMediator {
         attachInputToViews();
         attachViewsToGameFrame();
         changeToEntityState();
+        startTimer();
     }
 
     private class ScheduleTask extends TimerTask {
