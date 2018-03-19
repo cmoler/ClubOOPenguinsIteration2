@@ -18,6 +18,7 @@ public class AreaViewPort extends Viewport {
     private final List<JButton> btnList = new ArrayList<>();
     private int rowCount = Commons.SCREEN_HEIGHT / AreaSizes.TERRAIN_HEIGHT;
     private int colCount = Commons.SCREEN_WIDTH / AreaSizes.TERRAIN_WIDTH;
+    private JPanel buttonGrid = null;
 
     public AreaViewPort() {
 //        ButtonGrid(player);
@@ -28,7 +29,7 @@ public class AreaViewPort extends Viewport {
     }
 
     public void ButtonGrid(Player player) {
-        JPanel buttonGrid = new JPanel(new GridLayout(rowCount, colCount, 0, 0));
+        buttonGrid = new JPanel(new GridLayout(rowCount, colCount, 0, 0));
 
         for (int i = 0; i < rowCount; i++) {
             for (int j = 0; j < colCount; j++) {

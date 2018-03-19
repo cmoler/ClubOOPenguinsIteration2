@@ -86,7 +86,7 @@ public class Deserializer {
         gameBuilder.setAreaViewport(areaViewPort);
         gameBuilder.setPlayer(player);
         gameBuilder.setViewport(viewport);
-        areaViewPort.ButtonGrid(player);
+//        areaViewPort.ButtonGrid(player);
 
     }
 
