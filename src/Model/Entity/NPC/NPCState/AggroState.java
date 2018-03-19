@@ -56,15 +56,15 @@ public class AggroState implements NPCState {
             visited.add(currentNode);
 
             //if the player has been found in the visible range, return the optimal path
-            if (currentNode.location == goal) {
-                solution = queue.peek().path;
+            if (currentNode.location.getxCoordinate() == goal.getxCoordinate() && currentNode.location.getyCoordinate() == goal.getyCoordinate()) {
+                solution = currentNode.path;
                 return solution;
-
             }
 
             for (Direction direction : Direction.values()) {
                 Location nextLocation = currentNode.location.getAdjacentAt(direction);
                 if (nextLocation != null && nextLocation.moveAllowed(npc)) {
+
                     //increment path and cost for new node
                     PathCostNode toVisit = new PathCostNode(nextLocation, currentNode.path, currentNode.cost + 1);
                     toVisit.path.add(direction);

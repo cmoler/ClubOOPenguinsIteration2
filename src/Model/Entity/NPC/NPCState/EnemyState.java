@@ -16,6 +16,9 @@ public class EnemyState implements NPCState {
             npc.setNpcState(new AggroState());
             return;
         }
+        else {
+            npc.move(Direction.E);
+        }
 
     }
 
@@ -38,7 +41,7 @@ public class EnemyState implements NPCState {
             visited.add(currentNode);
 
             //if the player has been found in the visible range
-            if (currentNode.location == goal) {
+            if (currentNode.location.getxCoordinate() == goal.getxCoordinate() && currentNode.location.getyCoordinate() == goal.getyCoordinate()) {
                 return true;
 
             }
