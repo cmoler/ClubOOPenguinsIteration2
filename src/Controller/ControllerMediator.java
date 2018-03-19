@@ -107,27 +107,35 @@ public class ControllerMediator {
 
     public void changeToMenuState(){
         input.setActiveState(menuState);
-        menuState.setActive();
+        menuViewPort.setVisible(true);
+        viewport.setVisible(false);
+        menuViewPort.requestFocus();
         activeState = menuState;
     }
 
     public void changeToInventoryState(){
         input.setActiveState(inventoryState);
-        inventoryState.setActive();
+        viewport.setVisible(true);
+        menuViewPort.setVisible(false);
+        viewport.requestFocus();
         statusViewPort.switchToInventory();
         activeState = inventoryState;
     }
 
     public void changeToEquipmentState(){
         input.setActiveState(equipmentState);
-        equipmentState.setActive();
+        viewport.setVisible(true);
+        menuViewPort.setVisible(false);
+        viewport.requestFocus();
         statusViewPort.switchToEquipment();
         activeState = equipmentState;
     }
 
     public void changeToSkillsState(){
         input.setActiveState(skillsState);
-        skillsState.setActive();
+        viewport.setVisible(true);
+        menuViewPort.setVisible(false);
+        viewport.requestFocus();
         statusViewPort.switchToSkills();
         activeState = skillsState;
     }
