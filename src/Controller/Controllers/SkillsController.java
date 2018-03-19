@@ -3,14 +3,15 @@ package Controller.Controllers;
 import Controller.SavingLoading.GameBuilder;
 import Model.Entity.Role.Role;
 import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class SkillsController implements Controller{
 
     private Role role;
-    private AreaViewPort areaViewPort;
+    private Viewport areaViewPort;
 
     public SkillsController(GameBuilder gameBuilder){
-        this.areaViewPort = gameBuilder.getAreaViewport();
+        this.areaViewPort = gameBuilder.getViewport();
         role = gameBuilder.getPlayerRole();
     }
 

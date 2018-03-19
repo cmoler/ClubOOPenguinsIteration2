@@ -6,7 +6,7 @@
        <key>85</key>
    </Bind>
    <Bind type="openInventory">
-      <key>73</key>
+      <key>10</key>
    </Bind>
    <Bind type="exitSkills">
       <key>74</key>

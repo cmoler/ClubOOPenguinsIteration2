@@ -99,7 +99,9 @@ public class ControllerMediator {
 
     public void changeToEntityState(){
         input.setActiveState(entityState);
-        entityState.setActive();
+        viewport.setVisible(true);
+        menuViewPort.setVisible(false);
+        viewport.requestFocus();
         activeState = entityState;
     }
 

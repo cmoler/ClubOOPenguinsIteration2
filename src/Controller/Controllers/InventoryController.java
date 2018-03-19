@@ -5,15 +5,16 @@ import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Item.TakeableItem.TakeableItem;
 import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class InventoryController implements Controller{
 
     private Inventory inventory;
     private Equipment equipment;
-    private AreaViewPort areaViewPort;
+    private Viewport areaViewPort;
 
     public InventoryController(GameBuilder gameBuilder){
-        this.areaViewPort = gameBuilder.getAreaViewport();
+        this.areaViewPort = gameBuilder.getViewport();
         inventory = gameBuilder.getInventory();
         equipment = gameBuilder.getEquipment();
     }

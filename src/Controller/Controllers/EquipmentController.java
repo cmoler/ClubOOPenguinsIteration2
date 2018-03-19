@@ -3,14 +3,15 @@ package Controller.Controllers;
 import Controller.SavingLoading.GameBuilder;
 import Model.Entity.Equipment;
 import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class EquipmentController implements Controller{
 
     private Equipment equipment;
-    private AreaViewPort areaViewPort;
+    private Viewport areaViewPort;
 
     public EquipmentController(GameBuilder gameBuilder){
-        this.areaViewPort = gameBuilder.getAreaViewport();
+        this.areaViewPort = gameBuilder.getViewport();
         this.equipment = gameBuilder.getEquipment();
     }
 

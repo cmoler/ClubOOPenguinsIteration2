@@ -7,15 +7,16 @@ import Model.Entity.Equipment;
 import Model.Entity.Player;
 import Model.Map.Direction;
 import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class PlayerController implements Controller {
 
     Player player;
     Equipment equipment;
-    private AreaViewPort areaViewPort;
+    private Viewport areaViewPort;
 
     public PlayerController(GameBuilder gameBuilder){
-        this.areaViewPort = gameBuilder.getAreaViewport();
+        this.areaViewPort = gameBuilder.getViewport();
         player = gameBuilder.getPlayer();
         equipment = gameBuilder.getEquipment();
     }
