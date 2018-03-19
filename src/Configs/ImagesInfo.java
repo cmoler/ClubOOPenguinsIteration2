@@ -28,9 +28,9 @@ public interface ImagesInfo {
     public static final String PROJECTILE_RADIALICEATTACKFILELOCATION = "resources/images/magic/radialIceAttack.png";
     public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment/pizza.png";
 
-    public static final String EXP_POTION_FILELOCATION = "resources/images/equipment/expPotion.png";
-    public static final String HEALTH_POTION_FILELOCATION = "resources/images/equipment/healthPotion.png";
-    public static final String MANA_POTION_FILELOCATION = "resources/images/equipment/manaPotion.png";
+    public static final String EXP_POTION_FILELOCATION = "resources/images/clubPenguinItems/expPotion.png";
+    public static final String HEALTH_POTION_FILELOCATION = "resources/images/clubPenguinItems/healthPotion.png";
+    public static final String MANA_POTION_FILELOCATION = "resources/images/clubPenguinItems/manaPotion.png";
 
     public static final String RED_CROSS_FILELOCATION = "resources/images/terrain/RedCross.png";
     public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/terrain/SkullCrossBone.png";

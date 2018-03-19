@@ -10,7 +10,7 @@ public class Body extends WearableItem {
 
     public Body(){
         super();
-        this.name = "chest";
+        this.name = "body";
     }
     @Override
     public void putOn(Player player) {

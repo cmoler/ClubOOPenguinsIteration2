@@ -66,7 +66,6 @@ public class Deserializer {
         this.saveFileJSON = saveFileJSON;
         this.gameBuilder = gameBuilder;
         NPCs = new ArrayList<>();
-        NPCViews = new ArrayList<>();
 
         viewport.add(areaViewPort);
 
@@ -125,6 +124,7 @@ public class Deserializer {
     }
 
     private Map deserializeMap(JSONObject mapJSON){
+        NPCViews = new ArrayList<>();
 
         System.out.println("DESERIALZING A MAP");
 
@@ -146,10 +146,14 @@ public class Deserializer {
             //System.out.println("FINISHED DESERIALIZING A LOCATION");
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
-            if(location.getyCoordinate() == 8 && location.getxCoordinate() == 1){
+            if(location.getyCoordinate() >= 6 && location.getyCoordinate() <= 8 && location.getxCoordinate() >= 7 && location.getxCoordinate() <= 9 ){
                 System.out.println("LOCATION AT 0,4 has the following items: ");
-                for(int i = 0; i < locations[8][1].getItems().size(); i++){
-                    System.out.println(locations[8][1].getItems().get(i).getName());
+
+                int row = location.getyCoordinate();
+                int col = location.getxCoordinate();
+
+                for(int i = 0; i < locations[row][col].getItems().size(); i++){
+                    System.out.println(locations[row][col].getItems().get(i).getName());
                 }
             }
 
@@ -509,7 +513,7 @@ public class Deserializer {
         switch(itemName){
             case "body":
                 return new Body();
-            case "helmet":
+            case "head":
                 return new Helmet();
             case "legs":
                 return new Leg();

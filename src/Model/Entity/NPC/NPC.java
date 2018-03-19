@@ -12,6 +12,7 @@ import Model.Updateable;
 import Model.Entity.NPC.NPCState.AggroState;
 import Model.Entity.NPC.NPCState.FriendlyState;
 import Model.Entity.NPC.NPCState.NPCState;
+import Model.Utilites.Time;
 
 public class NPC extends Entity implements Updateable{
 
@@ -20,6 +21,9 @@ public class NPC extends Entity implements Updateable{
     private boolean wantToTalk;
     private String talkString;
     private String color;
+
+    private double secondsPerMove = 1;
+    private double lastMove = Time.currentInSeconds();
 
     public NPC(String color, EntityType entityType) {
         super.setEntityType(entityType);
@@ -67,7 +71,8 @@ public class NPC extends Entity implements Updateable{
 
     @Override
     public void update(){
-        npcState.move(this, player );
+        if(Time.currentInSeconds() > lastMove + secondsPerMove)
+            npcState.move(this, player );
     }
 
     @Override
