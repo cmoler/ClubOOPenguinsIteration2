@@ -61,6 +61,13 @@ public class MapView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D){
+        MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
+        for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
+            if(mapIterator.currentItem() == entity.getLocation()){
+                offsetI = mapIterator.getI() - initialI;
+                offsetJ = mapIterator.getJ() - initialJ;
+            }
+        }
         for(Viewport child: children){
             Pair<Integer, Integer> location = calculateScreenXY(child.getLocationX(), child.getLocationY());
             if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
@@ -71,13 +78,7 @@ public class MapView extends Viewport {
 
     @Override
     public void update(){
-        MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
-        for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
-            if(mapIterator.currentItem() == entity.getLocation()){
-                offsetI = mapIterator.getI() - initialI;
-                offsetJ = mapIterator.getJ() - initialJ;
-            }
-        }
+
     }
 
 }

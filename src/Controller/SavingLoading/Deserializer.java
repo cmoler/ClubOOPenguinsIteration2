@@ -421,14 +421,14 @@ public class Deserializer {
 
 
         LocationView locationView = new LocationView(location, location.getxCoordinate(), location.getyCoordinate());
+
+        
+        locationView.add(terrainView);
+        locationView.add(areaEffectView);
+        locationView.add(decalView);
         for(ItemView itemView : itemViews){
             locationView.add(itemView);
         }
-
-        locationView.add(areaEffectView);
-        locationView.add(decalView);
-        locationView.add(terrainView);
-
         currentMapView.add(locationView);
 
         if(obstacle){
