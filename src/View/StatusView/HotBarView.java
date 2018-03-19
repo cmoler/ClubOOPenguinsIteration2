@@ -29,8 +29,10 @@ public class HotBarView extends Viewport {
             //draw square
             graphics2D.drawRect(HOT_BAR_X * i, HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT);
             //draw image for item
-            Image itemImage = SpriteParser.getSpriteParser().getItemFromName(equipment.getSlot(i).getName());
-            graphics2D.drawImage(itemImage, HOT_BAR_X + i * HotBarSizes.HOT_BAR_WIDTH, HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+            if (equipment.getSlot(i) != null){
+                Image itemImage = SpriteParser.getSpriteParser().getItemFromName(equipment.getSlot(i).getName());
+                graphics2D.drawImage(itemImage, HOT_BAR_X + i * HotBarSizes.HOT_BAR_WIDTH, HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+            }
             graphics2D.drawString(Integer.toString(i), HOT_BAR_X + i * HotBarSizes.HOT_BAR_WIDTH, HOT_BAR_Y);
         }
     }
