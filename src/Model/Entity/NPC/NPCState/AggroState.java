@@ -36,11 +36,11 @@ public class AggroState implements NPCState {
         PriorityQueue<PathCostNode> queue = new PriorityQueue<PathCostNode>(10, new Comparator<PathCostNode>() {
             @Override
             public int compare(PathCostNode node1, PathCostNode node2) {
-                if(node1.cost > node2.cost){
+                if(node1.cost < node2.cost){
                     return 1;
                 }
 
-                else if (node1.cost < node2.cost){
+                else if (node1.cost > node2.cost){
                     return -1;
                 }
                 return 0;
@@ -56,15 +56,15 @@ public class AggroState implements NPCState {
             visited.add(currentNode);
 
             //if the player has been found in the visible range, return the optimal path
-            if (currentNode.location == goal) {
-                solution = queue.peek().path;
+            if (currentNode.location.getxCoordinate() == goal.getxCoordinate() && currentNode.location.getyCoordinate() == goal.getyCoordinate()) {
+                solution = currentNode.path;
                 return solution;
-
             }
 
             for (Direction direction : Direction.values()) {
                 Location nextLocation = currentNode.location.getAdjacentAt(direction);
                 if (nextLocation != null && nextLocation.moveAllowed(npc)) {
+
                     //increment path and cost for new node
                     PathCostNode toVisit = new PathCostNode(nextLocation, currentNode.path, currentNode.cost + 1);
                     toVisit.path.add(direction);

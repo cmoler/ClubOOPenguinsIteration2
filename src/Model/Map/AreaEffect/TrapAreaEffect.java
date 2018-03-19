@@ -22,21 +22,27 @@ public class TrapAreaEffect extends OneShotAreaEffect{
         int chance = random.nextInt(100);
         if (chance < detectChance ) {
             isVisible = true;
+            notifyView();
         }
     }
+
 
     public boolean isVisible() {
         return isVisible;
     }
 
     public void deactivate(){
+        isVisible = false;
         location.setAreaEffect(null);
+        notifyView();
     }
 
     @Override
     protected void affect(Entity entity) {
         entity.takeDamage(entity.getMaxHealth()/2);
+        isVisible = true;
         setActive(false);
+        isVisible = true;
         notifyView();
     }
 
@@ -47,6 +53,10 @@ public class TrapAreaEffect extends OneShotAreaEffect{
 
     public void attach(TrapView trapView) {
         observers.add(trapView);
+    }
+
+    public void detach(Viewport viewport){
+        observers.remove(viewport);
     }
 
     public void notifyView(){

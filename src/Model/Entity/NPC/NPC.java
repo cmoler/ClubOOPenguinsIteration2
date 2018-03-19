@@ -7,6 +7,7 @@ import Model.Entity.NPC.NPCState.*;
 import java.util.Random;
 
 import Model.Entity.Player;
+import Model.Map.World;
 import Model.UpdateList;
 import Model.Updateable;
 import Model.Entity.NPC.NPCState.AggroState;
@@ -18,7 +19,8 @@ public class NPC extends Entity implements Updateable{
 
     private NPCState npcState;
     protected Player player;
-    private boolean wantToTalk;
+    private boolean talking;
+    private int talkTimer;
     private String talkString;
     private String color;
 
@@ -39,11 +41,19 @@ public class NPC extends Entity implements Updateable{
         if (chance < 80 ){
             //Display talkString
             System.out.println(talkString);
+            talking = true;
+            talkTimer = 5;
         }
         else{
             pissOff();
         }
     }
+
+    public boolean isTalking() {
+        return talking;
+    }
+
+    public String getTalkString() { return talkString; }
 
     public void beFriends(){
         NPCState friendlyState = new FriendlyState();
@@ -73,14 +83,17 @@ public class NPC extends Entity implements Updateable{
     public void update(){
         if(Time.currentInSeconds() > lastMove + secondsPerMove) {
             npcState.move(this, player);
-            System.out.println("npc move");
             lastMove = Time.currentInSeconds();
+            if(talkTimer > 0)
+                talkTimer--;
+            else
+                talking = false;
         }
     }
 
     @Override
     public boolean isDone() {
-        return false;
+        return getHealth() <= 0;
     }
 
 
@@ -96,6 +109,7 @@ public class NPC extends Entity implements Updateable{
             player.modifyGold(100);
             player.gainExperience(50);
         }
+        notifyView();
 
     }
 

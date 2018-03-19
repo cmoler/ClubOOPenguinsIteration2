@@ -16,7 +16,6 @@ public class Equipment {
     private List<Viewport> observers;
 
     private Player entity;
-    private Inventory inventory;
     private UsableItems hotbar;
     private WearableItems armor;
 
@@ -26,7 +25,6 @@ public class Equipment {
 
     public Equipment(Player entity) {
         this.entity = entity;
-        this.inventory = entity.getInventory();
         hotbar = new UsableItems(equipmentSize);
         armor = new WearableItems();
         observers = new ArrayList<>();
@@ -35,7 +33,7 @@ public class Equipment {
     public boolean equip(TakeableItem item){
         if (item.canEquip(this.entity)) {
             if (hotbar.add(item)) {
-                inventory.removeItem(item);
+                this.entity.getInventory().removeItem(item);
                 notifyView();
                 return true;
             }
@@ -43,7 +41,7 @@ public class Equipment {
                 return false;
         } else if(item.canWear()){
             if(armor.equip((WearableItem)item)){
-                inventory.removeItem(item);
+                this.entity.getInventory().removeItem(item);
                 notifyView();
                 return true;
             }
@@ -55,26 +53,31 @@ public class Equipment {
         if (selected < equipmentSize){
             TakeableItem item = hotbar.getItem(selected);
             hotbar.remove(item);
+            this.entity.getInventory().addItem(item);
             return true;
         }
         else if(selected == 5){
             WearableItem item = armor.getArmor("head");
             armor.unequip(item);
+            this.entity.getInventory().addItem(item);
             return true;
         }
         else if(selected == 6){
             WearableItem item = armor.getArmor("body");
             armor.unequip(item);
+            this.entity.getInventory().addItem(item);
             return true;
         }
         else if(selected == 7){
             WearableItem item = armor.getArmor("legs");
             armor.unequip(item);
+            this.entity.getInventory().addItem(item);
             return true;
         }
         else if(selected == 8){
             WearableItem item = armor.getArmor("ring");
             armor.unequip(item);
+            this.entity.getInventory().addItem(item);
             return true;
         }
         return false;
@@ -98,6 +101,7 @@ public class Equipment {
 
     public void useItem(int index){
         if (hotbar.getItem(index) != null) {
+            System.out.println("item used");
             TakeableItem item = hotbar.getItem(index);
             ((UseableItem) item).use(this.entity, this.entity.getLocation());
         }

@@ -164,6 +164,30 @@ public class PlayerState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> slot5());
                             break;
+                        case "bindWounds":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> bindWounds());
+                            break;
+                        case "removeTrap":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> removeTrap());
+                            break;
+                        case "creep":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> creep());
+                            break;
+                        case "pickPocket":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> pickPocket());
+                            break;
                     }
                 }
 
@@ -178,6 +202,22 @@ public class PlayerState implements ControllerState {
         }
 
 
+    }
+
+    private void bindWounds() {
+        playerController.bindWounds();
+    }
+
+    private void removeTrap() {
+        playerController.removeTrap();
+    }
+
+    private void creep() {
+        playerController.creep();
+    }
+
+    private void pickPocket() {
+        playerController.pickPocket();
     }
 
     @Override

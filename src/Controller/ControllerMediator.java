@@ -30,6 +30,8 @@ public class ControllerMediator {
 
     private GameBuilder gameBuilder;
 
+    private boolean menu = true;
+
     private Viewport viewport;
     private StatusViewPort statusViewPort;
     private MenuViewPort menuViewPort;
@@ -92,12 +94,13 @@ public class ControllerMediator {
         @Override
         public void run() {
             if(load) UpdateList.getInstance().update();
-            if(viewport != null) viewport.repaint();
-            if(menuViewPort != null) menuViewPort.repaint();
+            if(viewport != null && !menu) viewport.repaint();
+            if(menuViewPort != null && menu) menuViewPort.repaint();
         }
     }
 
     public void changeToEntityState(){
+        menu = false;
         input.setActiveState(entityState);
         viewport.setVisible(true);
         menuViewPort.setVisible(false);
@@ -107,11 +110,16 @@ public class ControllerMediator {
 
     public void changeToMenuState(){
         input.setActiveState(menuState);
-        menuState.setActive();
+        menuViewPort.setVisible(true);
+        menu = true;
+        //viewport.setVisible(false);
+        //statusViewPort.setVisible(false);
+        menuViewPort.requestFocus();
         activeState = menuState;
     }
 
     public void changeToInventoryState(){
+        menu = false;
         input.setActiveState(inventoryState);
         viewport.setVisible(true);
         menuViewPort.setVisible(false);
@@ -121,6 +129,7 @@ public class ControllerMediator {
     }
 
     public void changeToEquipmentState(){
+        menu = false;
         input.setActiveState(equipmentState);
         viewport.setVisible(true);
         menuViewPort.setVisible(false);
@@ -130,6 +139,7 @@ public class ControllerMediator {
     }
 
     public void changeToSkillsState(){
+        menu = false;
         input.setActiveState(skillsState);
         viewport.setVisible(true);
         menuViewPort.setVisible(false);

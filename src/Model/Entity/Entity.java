@@ -45,8 +45,10 @@ public abstract class Entity {
         if(defense > 0)
             damage = (int)(((double)damage) * defense/100);
         health -= damage;
-        if (health < 0)
+        if (health < 0){
             health = 0;
+            World.getWorld().getCurrentMap().removeEntityLocation(this.getLocation());
+        }
         notifyView();
     }
 
@@ -101,7 +103,6 @@ public abstract class Entity {
         }
         else {
             directionFacing = direction;
-
         }
         notifyView();
     }

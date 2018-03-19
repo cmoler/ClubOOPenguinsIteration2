@@ -32,6 +32,9 @@ public class StatsView extends Viewport {
     private final int ENTITY_LEVEL_WIDTH = 200;
     private final int ENTITY_LEVEL_HEIGHT = 200;
 
+    private final int ENTITY_GOLD_X = (int) (Commons.SCREEN_WIDTH * 380.0/765.0);
+    private final int ENTITY_GOLD_Y = (int) (Commons.SCREEN_HEIGHT * 370.0/501.0);
+
     private Player player;
 
     public StatsView(Entity entity){
@@ -93,6 +96,13 @@ public class StatsView extends Viewport {
         graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth - manaRectSize, ENTITY_MANA_HEIGHT);
         graphics2D.setColor(new Color(255, 255, 255));
         graphics2D.drawString("" + player.getMana() + " / " + player.getMaxMana(), ENTITY_MANA_X + (ENTITY_MANA_WIDTH/2), ENTITY_MANA_Y + (ENTITY_MANA_HEIGHT/2));
+
+        //GOLD
+        graphics2D.setColor(new Color(0, 0, 0));
+        graphics2D.setFont(new Font("Calibri",2,35));
+        graphics2D.drawString("GOLD", ENTITY_GOLD_X, ENTITY_GOLD_Y);
+        graphics2D.setColor(new Color(180, 160, 0));
+        graphics2D.drawString("" + player.getGold(), ENTITY_GOLD_X, ENTITY_GOLD_Y + 40);
 
         //level indicator
         //graphics2D.setColor(new Color(200, 200, 200));
