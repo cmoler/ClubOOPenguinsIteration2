@@ -9,9 +9,12 @@ import Model.Entity.Skill.Observation;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 public class AreaViewPort extends Viewport {
@@ -91,6 +94,5 @@ public class AreaViewPort extends Viewport {
 
         return btn;
     }
-
 
 }

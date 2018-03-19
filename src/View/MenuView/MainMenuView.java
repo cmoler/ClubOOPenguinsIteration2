@@ -5,6 +5,8 @@ import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,6 +33,8 @@ public class MainMenuView extends MenuViewPort {
         add(new ExitGameView());
 
         clickableMenu();
+
+        LoopMusic();
     }
 
     private void killButtons(JPanel buttons) {
@@ -205,5 +209,15 @@ public class MainMenuView extends MenuViewPort {
     public void enterExitGameView(){
         currentSubMenu = 4;
         killButtons(buttonGrid);
+    }
+
+    private void LoopMusic() {
+        try {
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception exc) {
+            exc.printStackTrace(System.out);
+        }
     }
 }
