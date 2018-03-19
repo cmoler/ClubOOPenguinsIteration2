@@ -121,6 +121,7 @@ public class SkillsView extends Viewport {
         }
 
         //draw selector
+        highlighterY = SKILL_Y + (role.getSelected() * SkillsSizes.SKILL_ROW_HEIGHT);
         graphics2D.drawImage(selectedImage, highlighterX, highlighterY, SkillsSizes.SKILL_BUTTON_SIZE, SkillsSizes.SKILL_BUTTON_SIZE, this);
 
     }
@@ -132,7 +133,6 @@ public class SkillsView extends Viewport {
 
     @Override
     public void update(){
-        highlighterY = SKILL_Y + SKILL_Y + (role.getSelected() * SkillsSizes.SKILL_ROW_HEIGHT);
         repaint();
     }
 }
