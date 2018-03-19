@@ -36,6 +36,8 @@ public class SkillsView extends Viewport {
         int pointsAvailable = player.getSkillPointsAvailable();
         int rowNumber = 0;
 
+        graphics2D.setFont(new Font("Calibri",2,20));
+
         graphics2D.drawString("Points:", SKILL_COLUMN_X, SKILL_Y + (rowNumber * SkillsSizes.SKILL_ROW_HEIGHT));
         graphics2D.drawString("" + pointsAvailable, BUTTON_COLUMN_X, SKILL_Y + (rowNumber * SkillsSizes.SKILL_ROW_HEIGHT));
         ++rowNumber;

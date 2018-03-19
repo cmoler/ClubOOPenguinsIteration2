@@ -46,7 +46,7 @@ public class StatsView extends Viewport {
         double percentHP = 1 - player.getHealth()/(double) player.getMaxHealth();
         int hprectSize = (int) (percentHP * dynamicHealthWidth);
 
-        int dynamicManaWidth = (ENTITY_MANA_WIDTH * player.getMaxMana()) / 100;
+        int dynamicManaWidth = (ENTITY_MANA_WIDTH * player.getMaxMana()) / player.getMaxMana();
         double percentMANA = 1 - player.getMana() / (double) player.getMaxMana();
         int manaRectSize = (int) (percentMANA * dynamicManaWidth);
 
@@ -92,7 +92,7 @@ public class StatsView extends Viewport {
         graphics2D.setColor(new Color(16,90,209));
         graphics2D.fillRect(ENTITY_MANA_X, ENTITY_MANA_Y, dynamicManaWidth - manaRectSize, ENTITY_MANA_HEIGHT);
         graphics2D.setColor(new Color(255, 255, 255));
-        graphics2D.drawString("" + player.getMana() + " / " + player.getMaxMana(), ENTITY_MANA_X + (ENTITY_MANA_WIDTH/2), ENTITY_MANA_Y + (ENTITY_EXP_HEIGHT/2));
+        graphics2D.drawString("" + player.getMana() + " / " + player.getMaxMana(), ENTITY_MANA_X + (ENTITY_MANA_WIDTH/2), ENTITY_MANA_Y + (ENTITY_MANA_HEIGHT/2));
 
         //level indicator
         //graphics2D.setColor(new Color(200, 200, 200));
