@@ -28,10 +28,6 @@ public class EquipmentController implements Controller{
         equipment.scrollRight();
     }
 
-    public void useItem(){
-        equipment.useItem();
-    }
-
     public void unEquip(){
         equipment.unEquip();
     }

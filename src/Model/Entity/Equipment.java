@@ -80,6 +80,10 @@ public class Equipment {
         return false;
     }
 
+    public boolean unEquip(TakeableItem item){
+        return hotbar.remove(item);
+    }
+
     public TakeableItem getSlot(int index) {
         return hotbar.getItem(index);
     }
@@ -92,12 +96,10 @@ public class Equipment {
         return hotbar.getItems();
     }
 
-    public void useItem(){
-        if (selected < equipmentSize) {
-            if (hotbar.getItem(selected) != null) {
-                TakeableItem item = hotbar.getItem(selected);
-                ((UseableItem) item).use(this.entity, this.entity.getLocation());
-            }
+    public void useItem(int index){
+        if (hotbar.getItem(index) != null) {
+            TakeableItem item = hotbar.getItem(index);
+            ((UseableItem) item).use(this.entity, this.entity.getLocation());
         }
     }
 

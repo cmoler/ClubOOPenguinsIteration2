@@ -97,11 +97,6 @@ public class EquipmentState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> scrollRight());
                             break;
-                        case "useItem":
-                            keyBinding.put(Integer.parseInt(eElement.
-                                    getElementsByTagName("key").
-                                    item(0).
-                                    getTextContent()), () -> useItem());
                     }
                 }
 
@@ -151,10 +146,6 @@ public class EquipmentState implements ControllerState {
 
     private void unEquip(){
         equipmentController.unEquip();
-    }
-
-    private void useItem(){
-        equipmentController.useItem();
     }
 
 }
