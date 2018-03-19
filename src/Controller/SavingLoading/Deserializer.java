@@ -51,6 +51,7 @@ public class Deserializer {
     private GameBuilder gameBuilder;
     private Player player;
     private List<NPC> NPCs;
+    private List<NPCView> NPCViews;
 
     private Viewport viewport = new Viewport();
     private HashMap<Map,MapView> mapViews = new HashMap<>();
@@ -64,6 +65,7 @@ public class Deserializer {
         this.saveFileJSON = saveFileJSON;
         this.gameBuilder = gameBuilder;
         NPCs = new ArrayList<>();
+        NPCViews = new ArrayList<>();
 
         viewport.add(areaViewPort);
 
@@ -153,6 +155,10 @@ public class Deserializer {
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
 
+        for(int i = 0; i < NPCViews.size(); ++i){
+            mapView.add(NPCViews.get(i));
+        }
+
         mapViews.put(map, mapView);
 
         System.out.println("FINISHED DESERIALIZING A MAP");
@@ -224,7 +230,7 @@ public class Deserializer {
         NPCs.add(npc);
 
         NPCView npcView = new NPCView(npc);
-        currentMapView.add(npcView);
+        NPCViews.add(npcView);
 
         return npc;
     }
@@ -242,7 +248,7 @@ public class Deserializer {
         NPCs.add(shopKeepNPC);
 
         NPCView npcView = new NPCView(shopKeepNPC);
-        currentMapView.add(npcView);
+        NPCViews.add(npcView);
 
         return shopKeepNPC;
     }
