@@ -37,10 +37,19 @@ public class PlayerView extends Viewport {
         double DESIRED_PLAYER_X_RATIO = 265.0f/768.0f;
         double DESIRED_PLAYER_Y_RATIO = 165.0f/501.0f;
 
-        int DESIRED_PLAYER_X = (int)(DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH);
-        int DESIRED_PLAYER_Y = (int)(DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT);
+        double DESIRED_PLAYER_X = DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH;
+        double DESIRED_PLAYER_Y = DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT;
 
-        graphics2D.drawImage(avatarImage, DESIRED_PLAYER_X, DESIRED_PLAYER_Y,
+        int DESIRED_PLAYER_X_TILE = (int)(DESIRED_PLAYER_X / AreaSizes.TERRAIN_WIDTH);
+        int DESIRED_PLAYER_Y_TILE = (int)(DESIRED_PLAYER_Y / AreaSizes.TERRAIN_HEIGHT);
+
+        int x = DESIRED_PLAYER_X_TILE;
+        int y = DESIRED_PLAYER_Y_TILE;
+
+        int renderX = (x) * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4;
+        int renderY = (y) * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT/4;
+
+        graphics2D.drawImage(avatarImage, renderX, renderY,
                AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT,this );
     }
 
