@@ -23,8 +23,9 @@ public class NewGameController extends MenuController {
             case 0: gameBuilder.getMemorySlots().loadDefaultGameSmasher(); break;
             case 1: gameBuilder.getMemorySlots().loadDefaultGameSummoner(); break;
             case 2: gameBuilder.getMemorySlots().loadDefaultGameSneak(); break;
-
         }
+
+        parent.loadGame();
     }
 
     protected void correctUpDownParameters() {

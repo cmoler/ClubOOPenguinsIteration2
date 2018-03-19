@@ -24,7 +24,6 @@ public class Slot {
     public void loadTo(GameBuilder gameBuilder){
         GameLoader gameLoader = new GameLoader(gameBuilder);
         gameLoader.load(savePath);
-
     }
 
     public int getGameTime() {

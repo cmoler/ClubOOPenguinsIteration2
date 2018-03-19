@@ -56,6 +56,7 @@ public class Deserializer {
     private HashMap<Map,MapView> mapViews = new HashMap<>();
     private MapView currentMapView;
     private WorldView worldView;
+    private StatusViewPort statusViewPort;
     private AreaViewPort areaViewPort = new AreaViewPort();
 
 
@@ -66,9 +67,18 @@ public class Deserializer {
 
         viewport.add(areaViewPort);
 
+        System.out.println("Beginning to deserialize world");
+
         deserializeWorld(saveFileJSON.getJSONObject("World"));
 
-        gameBuilder.setStatusViewPort(new StatusViewPort(player));
+        System.out.println("Finished deserializng.");
+
+        statusViewPort = new StatusViewPort(player);
+        viewport.add(statusViewPort);
+        gameBuilder.setStatusViewPort(statusViewPort);
+        gameBuilder.setAreaViewport(areaViewPort);
+        gameBuilder.setPlayer(player);
+        gameBuilder.setViewport(viewport);
     }
 
     public void deserializeWorld(JSONObject worldJSON){
@@ -76,9 +86,11 @@ public class Deserializer {
 
         JSONArray mapsJSON = worldJSON.getJSONArray("Maps");
 
-        for(int mapIndex = 0; mapIndex < mapsJSON.length(); mapsJSON.length()){
+        System.out.println("Deserializng MAPS");
+        for(int mapIndex = 0; mapIndex < mapsJSON.length(); mapIndex++){
             deserializeMap(mapsJSON.getJSONObject(mapIndex));
         }
+        System.out.println("Finished Deserializing MAPS");
 
         setNPC(this.NPCs, this.player);
 
@@ -88,35 +100,56 @@ public class Deserializer {
             Map currentMap = maps.next();
             mapViews.get(currentMap).setEntity(player);
         }
+
+        String currentMap = worldJSON.getString("CurrentMap");
+        World.getWorld().changeCurrentMapTo(World.getWorld().getMap(currentMap));
+
+        worldView = new WorldView(mapViews);
+
+        areaViewPort.add(worldView);
+
+        viewport.add(areaViewPort);
     }
 
     private Map deserializeMap(JSONObject mapJSON){
+
+        System.out.println("DESERIALZING A MAP");
+
         String mapID = mapJSON.getString("mapID");
+
+        System.out.println("MAP ID"  + mapID);
         int rows = mapJSON.getInt("Rows");
         int cols = mapJSON.getInt("Cols");
 
         JSONArray locationsJSON = mapJSON.getJSONArray("Locations");
         Location[][] locations = new Location[rows][cols];
+        MapView mapView = new MapView();
+        currentMapView = mapView;
+
         for(int locationIndex = 0; locationIndex < locationsJSON.length(); locationIndex++){
+
+            //System.out.println("DESERIALIZING LOCATION");
             Location location = deserializeLocation(locationsJSON.getJSONObject(locationIndex));
+            //System.out.println("FINISHED DESERIALIZING A LOCATION");
+
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
         }
         Map map = new Map(locations);
+        World.getWorld().addMap(map.getMapID(), map);
 
         JSONArray entitiesJSON  = mapJSON.getJSONArray("Entities");
         for(int entityIndex = 0; entityIndex < entitiesJSON.length(); entityIndex++){
 
             Entity currEntity = deserializeEntity(entitiesJSON.getJSONObject(entityIndex));
-            int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("X");
-            int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("Y");
+            int currEntityX = entitiesJSON.getJSONObject(entityIndex).getInt("LocationX");
+            int currEntityY = entitiesJSON.getJSONObject(entityIndex).getInt("LocationY");
 
             map.setEntityLocation(locations[currEntityY][currEntityX], currEntity);
         }
 
-        MapView mapView = new MapView();
-        currentMapView = mapView;
         mapViews.put(map, mapView);
 
+        System.out.println("FINISHED DESERIALIZING A MAP");
         return map;
     }
 
@@ -178,7 +211,7 @@ public class Deserializer {
 
     private Entity deserializeNPC(JSONObject entityClass, EntityType entityType){
 
-        String color = entityClass.getString("color");
+        String color = entityClass.getString("Color");
         NPC npc = new NPC(color, entityType);
         deserializeNPCState(entityClass, npc);
 
@@ -191,11 +224,11 @@ public class Deserializer {
     }
 
     private Entity deserializeShopKeepNPC(JSONObject entityClass, EntityType entityType){
-        String color = entityClass.getString("color");
+        String color = entityClass.getString("Color");
         JSONObject shopMap = entityClass.getJSONObject("ShopMap");
         String mapID = shopMap.getString("MapID");
-        int i = shopMap.getInt("I");
-        int j= shopMap.getInt("J");
+        int i = shopMap.getInt("Y");
+        int j = shopMap.getInt("X");
 
         ShopKeepNPC shopKeepNPC = new ShopKeepNPC(color, mapID, i, j, entityType);
         deserializeNPCState(entityClass, shopKeepNPC);
@@ -309,7 +342,8 @@ public class Deserializer {
         AreaEffect areaEffect;
         JSONObject areaEffectJSON = locationJSON.getJSONObject("AreaEffect");
         String areaEffectType = areaEffectJSON.getString("Type");
-        Viewport areaEffectView;
+        Viewport areaEffectView = null;
+        DecalView decalView = null;
 
         if(areaEffectType.equals("DAMAGE")){
             areaEffect = new DamageAreaEffect();
@@ -321,22 +355,19 @@ public class Deserializer {
             areaEffect = new HealAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_HEAL_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
         }
         else if(areaEffectType.equals("KILL")){
             areaEffect = new KillAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_KILL_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
         }
         else if(areaEffectType.equals("LEVELUP")){
             areaEffect = new LevelUpAreaEffect();
 
             areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_LEVELUP_IMAGE);
-            DecalView decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
-            areaEffectView.add(decalView);
+            decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
         }
         else if(areaEffectType.equals("TELEPORT")){
             String mapID = areaEffectJSON.getString("mapID");
@@ -388,8 +419,12 @@ public class Deserializer {
         for(ItemView itemView : itemViews){
             locationView.add(itemView);
         }
+
         locationView.add(areaEffectView);
+        locationView.add(decalView);
         locationView.add(terrainView);
+
+        currentMapView.add(locationView);
 
         if(obstacle){
             locationView.add(new ObstacleView(ImagesInfo.OBSTACLE_IMAGE));

@@ -45,11 +45,12 @@ public class ControllerMediator {
         loadStates();
         attachInputToViews();
         changeToMenuState();
-        startTimer();
     }
 
     private void getViewsFromBuilder(){
         menuViewPort = gameBuilder.getMainMenuViewport();
+        statusViewPort = gameBuilder.getStatusViewPort();
+        viewport = gameBuilder.getViewport();
         gameFrame = gameBuilder.getGameFrame();
     }
 
@@ -67,6 +68,20 @@ public class ControllerMediator {
         input = new Input(activeState);
         gameFrame.addKeyListener(input);
         menuViewPort.addKeyListener(input);
+    }
+
+    private void attachViewsToGameFrame(){
+        gameFrame.add(viewport);
+        viewport.addKeyListener(input);
+    }
+
+    public void load() {
+        getViewsFromBuilder();
+        loadStates();
+        attachInputToViews();
+        attachViewsToGameFrame();
+        changeToEntityState();
+        startTimer();
     }
 
     private class ScheduleTask extends TimerTask {

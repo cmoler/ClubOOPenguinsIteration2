@@ -31,13 +31,10 @@ public class GameBuilder {
     private KeyBindings keyBindings;
 
     //VIEWS
-    private Viewport areaViewport;
+    private Viewport viewport;
+    private AreaViewPort areaViewport;
     private MainMenuView menuViewPort;
     private StatusViewPort statusViewPort;
-    private InventoryView inventoryView;
-    private SkillsView skillsView;
-    private EquipmentView equipmentView;
-
 
     private Player player;
 
@@ -55,18 +52,6 @@ public class GameBuilder {
         this.player = player;
     }
 
-    public void setInventoryView(InventoryView inventoryView){
-        this.inventoryView = inventoryView;
-    }
-
-    public void setSkillsView(SkillsView skillsView){
-        this.skillsView = skillsView;
-    }
-
-    public void setEquipmentView(EquipmentView equipmentView){
-        this.equipmentView = equipmentView;
-    }
-
     public void setStatusViewPort(StatusViewPort statusViewPort){
         this.statusViewPort = statusViewPort;
     }
@@ -76,39 +61,51 @@ public class GameBuilder {
     public OOPenguinGameFrame getGameFrame() { return gameFrame; }
 
     public AreaViewPort getAreaViewport(){
-        return null;
+        return areaViewport;
     }
 
-    public EquipmentView getEquipmentView() { return null; }
-
-    public InventoryView getInventoryView() { return null; }
+    public void setAreaViewport(AreaViewPort areaViewport){
+        this.areaViewport = areaViewport;
+    }
 
     public MainMenuView getMainMenuViewport() { return menuViewPort; }
 
-    public SkillsView getSkillsView() { return null; }
-
     public Player getPlayer(){
-        return null;
+        return player;
     }
 
-    public Role getPlayerRole() { return null; }
+    public Role getPlayerRole() {
+        if(player != null) player.getRole();
+        return null;
+    }
 
     public World getWorld() {
         return World.getWorld();
     }
 
     public Inventory getInventory(){
+        if(player != null) player.getInventory();
         return null;
     }
 
     public Equipment getEquipment(){
+        if(player != null) player.getEquipment();
         return null;
     }
-
-    public Role getSkills() { return null; }
 
     public KeyBindings getKeyBindings() {
         return keyBindings;
     }
 
+    public StatusViewPort getStatusViewPort() {
+        return statusViewPort;
+    }
+
+    public Viewport getViewport() {
+        return viewport;
+    }
+
+    public void setViewport(Viewport viewport) {
+        this.viewport = viewport;
+    }
 }

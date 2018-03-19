@@ -2,6 +2,8 @@ package View;
 
 import Model.Map.Direction;
 import View.AreaView.MapView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +22,7 @@ public class Viewport extends JPanel {
     public Viewport() {
         setFocusable(true);
         setDoubleBuffered(true);
-        LoopMusic();
+        //LoopMusic();
     }
 
     public int getLocationX() {
@@ -100,13 +102,9 @@ public class Viewport extends JPanel {
         this.add(currentMapView);
     }
 
-    private void LoopMusic() {
-        try {
-            Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
-            clip.start();
-        } catch (Exception e) {
-            System.out.println();
-        }
-    }
+/*    private void LoopMusic() {
+        Media hit = new Media(new File("resources/music/music.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+    }*/
 }

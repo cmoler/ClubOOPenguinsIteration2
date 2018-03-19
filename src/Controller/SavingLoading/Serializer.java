@@ -81,7 +81,7 @@ public class Serializer implements Saver{
         JSONObject entityJSON = new JSONObject();
         entityJSON.put("Level", entity.getLevel());
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
-        entityJSON.put("EntityType", entity.getEntityType().toString());
+        entityJSON.put("EntityType", entity.getEntityType().name());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
         entityJSON.put("LocationX", entity.getLocation().getxCoordinate());
@@ -163,7 +163,6 @@ public class Serializer implements Saver{
 
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
-        JSONObject areaEffectJSON = new JSONObject();
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
         locationJSON.put("Obstacle", location.hasObstacle());
         locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
@@ -179,7 +178,7 @@ public class Serializer implements Saver{
 
     private JSONObject saveAreaEffect(AreaEffect areaEffect){
         JSONObject areaEffectJSON = new JSONObject();
-        areaEffectJSON.put("Type", areaEffect.getAreaEffectType());
+        areaEffectJSON.put("Type", nullChecker(areaEffect.getAreaEffectType()));
         if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
             areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
             areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
@@ -242,6 +241,15 @@ public class Serializer implements Saver{
         }
         else{
             return object.save(this);
+        }
+    }
+
+    private String nullChecker(AreaEffectType object){
+        if(object == null){
+            return "";
+        }
+        else{
+            return object.name();
         }
     }
 
