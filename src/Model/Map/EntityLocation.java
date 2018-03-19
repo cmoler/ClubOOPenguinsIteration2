@@ -28,7 +28,7 @@ public class EntityLocation{
     }
 
     public void removeEntityLocation(Location location) {
-        entityLocations.remove(entityLocations.get(location));
+        entityLocations.remove(location);
     }
 
     public void updateEntityLocations() {
