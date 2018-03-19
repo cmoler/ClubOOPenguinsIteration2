@@ -59,6 +59,7 @@ public class NPCView extends Viewport {
 
     @Override
     public void update(){
+        if(player == null) this.player = npc.getPlayer();
         if (player != null){
             directionFacing = npc.getDirectionFacing();
             int playerX = player.getLocation().getxCoordinate();
