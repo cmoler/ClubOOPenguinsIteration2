@@ -82,7 +82,7 @@
             },
             "Terrain": "ICE",
             "Obstacle": 0,
-            "Items": [],
+            "Items": ["head", "body", "legs", "ring"],
             "X": 0,
             "Y": 1
           },
