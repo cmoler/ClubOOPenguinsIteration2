@@ -26,8 +26,9 @@ public class InventoryController implements Controller{
     }
 
     public void equipItem() {
-        TakeableItem item = inventory.removeItem(inventory.getSelectedIndex());
-        equipment.equip(item);
+        TakeableItem item = inventory.getItem(inventory.getSelectedIndex());
+        if(equipment.equip(item))
+            inventory.removeItem(item);
     }
 
     public void scrollLeft() {
