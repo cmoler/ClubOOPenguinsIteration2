@@ -140,6 +140,13 @@ public class Deserializer {
             //System.out.println("FINISHED DESERIALIZING A LOCATION");
 
             locations[location.getyCoordinate()][location.getxCoordinate()] = location;
+            if(location.getyCoordinate() == 4 && location.getxCoordinate() == 0){
+                System.out.println("LOCATION AT 0,4 has the following items: ");
+                for(int i = 0; i < locations[4][0].getItems().size(); i++){
+                    System.out.println(locations[4][0].getItems().get(i).getName());
+                }
+            }
+
         }
 
         Map map = new Map(locations);
