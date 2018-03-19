@@ -181,8 +181,8 @@ public abstract class Entity {
     public void setLocation(Location location){
         this.location = location;
         if (World.getWorld().getCurrentMap() != null){
-            System.out.println("Current MAP" + World.getWorld().getCurrentMap().getMapID());
-            System.out.println("Current location" + this.getLocation());
+            System.out.println("Current MAP: " + World.getWorld().getCurrentMap().getMapID());
+            System.out.println("Current location: " + this.getLocation().getxCoordinate() + ", " + this.getLocation().getyCoordinate());
         }
         notifyView();
     }
