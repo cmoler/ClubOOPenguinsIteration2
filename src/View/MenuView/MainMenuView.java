@@ -176,7 +176,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void returnToMenu(){
         currentSubMenu = -1;
-        mainClickableMenu();
+        mainButtonGrid.setVisible(true);
     }
 
     public NewGameView getNewGameView(){
@@ -185,7 +185,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterNewGameView(){
         currentSubMenu = 0;
-//        killButtons(mainButtonGrid);
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -195,7 +195,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterSaveGameView(){
         currentSubMenu = 1;
-//        killButtons(mainButtonGrid);
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -206,7 +206,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterLoadGameView(){
         currentSubMenu = 2;
-//        killButtons(mainButtonGrid);
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -216,7 +216,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterOptionsView(){
         currentSubMenu = 3;
-//        killButtons(mainButtonGrid);
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -226,7 +226,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterExitGameView(){
         currentSubMenu = 4;
-//        killButtons(mainButtonGrid);
+        mainButtonGrid.setVisible(false);
     }
 
     private void LoopMusic() {
