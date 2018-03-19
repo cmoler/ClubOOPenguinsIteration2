@@ -66,7 +66,6 @@ public class Deserializer {
         this.saveFileJSON = saveFileJSON;
         this.gameBuilder = gameBuilder;
         NPCs = new ArrayList<>();
-        NPCViews = new ArrayList<>();
 
         viewport.add(areaViewPort);
 
@@ -125,6 +124,7 @@ public class Deserializer {
     }
 
     private Map deserializeMap(JSONObject mapJSON){
+        NPCViews = new ArrayList<>();
 
         System.out.println("DESERIALZING A MAP");
 
