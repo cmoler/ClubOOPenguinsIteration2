@@ -6,7 +6,7 @@ import Model.Entity.Role.Role;
 import Model.Map.Location;
 import Model.Saveable;
 
-public class Player extends Entity implements Saveable{
+public class Player extends Entity{
     private Role role;
     private int mana;
     private int gold;
@@ -18,12 +18,23 @@ public class Player extends Entity implements Saveable{
         this.role = role;
         role.setEntity(this);
         super.setEntityType(EntityType.ICE);// default EntityType
+        name = "Player";
     }
 
     public Player(Role role, EntityType type){
         this.role = role;
         role.setEntity(this);
         super.setEntityType(type);
+        name = "Player";
+    }
+
+    public Player(Role role, EntityType type, int skillPointsAvailable, Location initialLocation){
+        this.role = role;
+        role.setEntity(this);
+        super.setEntityType(type);
+        name = "Player";
+        skillPointsUsed = skillPointsPerLevel*getLevel() - skillPointsAvailable;
+        super.setLocation(initialLocation);
     }
 
     public void touchItems(){
@@ -59,10 +70,18 @@ public class Player extends Entity implements Saveable{
         return mana;
     }
 
+    public void setMaxMana(int maxMana) { role.setMaxMana(maxMana);}
+
     public int getMaxMana() { return role.getMaxMana(); }
 
     public void addMana(int mana){
         this.mana += mana;
+        if (this.mana > getMaxMana()){
+            this.mana = getMaxMana();
+        }
+        if (this.mana < 0){
+            this.mana = 0;
+        }
     }
 
     public int getGold() {
@@ -71,6 +90,10 @@ public class Player extends Entity implements Saveable{
 
     public void modifyGold(int gold){
         this.gold += gold;
+    }
+
+    public int getBargain(){
+        return role.getBargain();
     }
 
     public boolean canIncrementSkill(){
@@ -92,8 +115,4 @@ public class Player extends Entity implements Saveable{
         return equipment;
     }
 
-    @Override
-    public void save(Saver saver) {
-        saver.serializePlayer(this);
-    }
 }

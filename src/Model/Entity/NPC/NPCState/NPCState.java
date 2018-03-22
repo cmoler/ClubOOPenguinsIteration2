@@ -7,4 +7,5 @@ public interface NPCState {
 
     public void move(NPC npc, Player player);
 
+    public String getType();
 }

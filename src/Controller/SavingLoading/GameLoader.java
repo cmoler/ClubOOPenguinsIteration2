@@ -2,6 +2,7 @@ package Controller.SavingLoading;
 
 import Model.Entity.*;
 import Model.Entity.Role.Role;
+import Model.Entity.Role.Smasher;
 import Model.Map.Location;
 import Model.Map.World;
 import org.json.*;
@@ -12,42 +13,24 @@ import java.util.Scanner;
 
 public class GameLoader {
 
-    private Deserializer deserializer;
+    private GameBuilder gameBuilder;
 
-    private World world = World.getWorld();
-    private Player player;
-
-    public GameLoader(String filePath) throws FileNotFoundException{
-        try{
-
-            deserializer = new Deserializer(load(filePath));
-
-            //world is a singleton, so deserializer can access world
-            deserializer.deserializeWorld();
-
-            //deserialize gives back a Player object
-            player = deserializer.deserializePlayer();
-
-        } catch (FileNotFoundException fileNotFoundException){
-            throw fileNotFoundException;
-        }
+    public GameLoader(GameBuilder gameBuilder){
+        this.gameBuilder = gameBuilder;
     }
 
-    public Player getPlayer(){
-        return player;
-    }
+    public void load(String savePath){
+        File file = new File(savePath);
 
-    private JSONObject load(String filePath) throws FileNotFoundException {
+        String saveFileContent = null;
         try {
-
-            File saveFile = new File(filePath);
-            String saveFileContent = new Scanner(saveFile).useDelimiter("\\Z").next();
-            JSONObject saveFileJSON = new JSONObject(saveFileContent);
-
-            return  saveFileJSON;
-
-        } catch (FileNotFoundException fileNotFoundException) {
-            throw fileNotFoundException;
+            saveFileContent = new Scanner(file).useDelimiter("\\Z").next();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        JSONObject saveFileJSON = new JSONObject(saveFileContent);
+
+        Deserializer deserializer = new Deserializer(gameBuilder, saveFileJSON);
+
     }
 }

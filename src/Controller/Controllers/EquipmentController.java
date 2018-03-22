@@ -1,24 +1,35 @@
 package Controller.Controllers;
 
 import Controller.SavingLoading.GameBuilder;
+import Model.Entity.Equipment;
+import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class EquipmentController implements Controller{
 
-    public EquipmentController(GameBuilder gameBuilder){
+    private Equipment equipment;
+    private Viewport areaViewPort;
 
+    public EquipmentController(GameBuilder gameBuilder){
+        this.areaViewPort = gameBuilder.getViewport();
+        this.equipment = gameBuilder.getEquipment();
     }
 
     @Override
     public void setActive() {
-
+        areaViewPort.setVisible(true);
+        areaViewPort.requestFocus();
     }
 
-    public void unEquipUsableItem(int indexOfItemInInventory){
-        equipment.unEquipUsableItem(indexOfItemInInventory);
+    public void scrollLeft(){
+        equipment.scrollLeft();
     }
 
-    public void unEquipWearableItem(String armorType){
-        equipment.unEquipWearableItem(armorType);
+    public void scrollRight(){
+        equipment.scrollRight();
     }
 
+    public void unEquip(){
+        equipment.unEquip();
+    }
 }

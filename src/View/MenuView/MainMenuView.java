@@ -3,12 +3,16 @@ package View.MenuView;
 import Configs.Commons;
 import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
-import com.sun.prism.image.ViewPort;
 
+import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 
 public class MainMenuView extends MenuViewPort {
@@ -17,8 +21,12 @@ public class MainMenuView extends MenuViewPort {
 
     private int currentSubMenu = -1;
 
-    private int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 35;
-    private int startY = Commons.SCREEN_HEIGHT/4;
+    private JPanel mainButtonGrid;
+    private JPanel ngButtonGrid;
+    private JPanel sgButtonGrid;
+    private JPanel lgButtonGrid;
+    private JPanel opButtonGrid;
+    private JPanel egButtonGrid;
 
 
     public MainMenuView(){
@@ -28,11 +36,20 @@ public class MainMenuView extends MenuViewPort {
         add(new OptionsView());
         add(new ExitGameView());
 
-        ClickableMenu();
+        LoopMusic();
+
+        mainClickableMenu();
     }
 
-    public void ClickableMenu() {
-        JPanel buttonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+    private void killButtons(JPanel buttons) {
+        this.remove(buttons);
+    }
+
+    private void mainClickableMenu() {
+        System.out.println("Clickable Menu");
+
+        mainButtonGrid = new JPanel(new GridLayout(5, 1, 0, 0));
+
         //Display numbers for testing
         JButton ngBtn = ConfigureButton(new JButton(" "), "New Game");
         JButton sgBtn = ConfigureButton(new JButton(" "), "Save Game");
@@ -80,38 +97,41 @@ public class MainMenuView extends MenuViewPort {
             }
         });
 
-        buttonGrid.add(ngBtn);
-        buttonGrid.add(sgBtn);
-        buttonGrid.add(lgBtn);
-        buttonGrid.add(opBtn);
-        buttonGrid.add(egBtn);
+        mainButtonGrid.add(ngBtn);
+        mainButtonGrid.add(sgBtn);
+        mainButtonGrid.add(lgBtn);
+        mainButtonGrid.add(opBtn);
+        mainButtonGrid.add(egBtn);
 
 
-        buttonGrid.setOpaque(false);
-        buttonGrid.setBounds(100, 100, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 190));
+        mainButtonGrid.setOpaque(false);
+        setLayout(new FlowLayout(FlowLayout.CENTER, 0, 193));
 
-        this.add(buttonGrid);
+        add(mainButtonGrid);
 
-//        add(ngBtn);
-//        add(sgBtn);
-//        add(lgBtn);
-//        add(opBtn);
-//        add(egBtn);
-        
         setVisible(true);
+    }
+
+    private void ngClickableMenu() {
 
     }
 
-    public JButton ConfigureButton(JButton btn, String btnFn) {
-        //Styling to make button invisible
-        btn.setBorderPainted(false);
-        btn.setContentAreaFilled(false);
-        btn.setOpaque(false);
-        btn.setPreferredSize(new Dimension(TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT));
-        btn.setToolTipText(btnFn);
-        return btn;
+    private void sgClickableMenu() {
+
     }
+
+    private void lgClickableMenu() {
+
+    }
+
+    private void opClickableMenu() {
+
+    }
+
+    private void egClickableMenu() {
+
+    }
+
 
     @Override
     public void draw(Graphics2D graphics2D) {
@@ -121,6 +141,19 @@ public class MainMenuView extends MenuViewPort {
     }
 
     private void drawMainMenu(Graphics2D graphics2D){
+        Image background = null;
+
+        try {
+            background = ImageIO.read(new File("resources/images/menu_back.png"));
+        } catch (IOException e) {
+            System.out.println("Exception when loading image: " + e);
+        }
+
+        graphics2D.drawImage(background, 0, 0 , Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
+
+        int startX = Configs.Commons.SCREEN_WIDTH/2 - TextBoxInfo.TEXTBOX_WIDTH + 28;
+        int startY = Commons.SCREEN_HEIGHT/4;
+
         graphics2D.drawRect(startX, startY, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
         graphics2D.drawString("New Game", (startX), (startY+TextBoxInfo.TEXTBOX_HEIGHT/4));
 
@@ -144,6 +177,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void returnToMenu(){
         currentSubMenu = -1;
+        mainButtonGrid.setVisible(true);
     }
 
     public NewGameView getNewGameView(){
@@ -152,6 +186,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterNewGameView(){
         currentSubMenu = 0;
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -161,6 +196,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterSaveGameView(){
         currentSubMenu = 1;
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -171,6 +207,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterLoadGameView(){
         currentSubMenu = 2;
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -180,6 +217,7 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterOptionsView(){
         currentSubMenu = 3;
+        mainButtonGrid.setVisible(false);
     }
 
 
@@ -189,5 +227,17 @@ public class MainMenuView extends MenuViewPort {
 
     public void enterExitGameView(){
         currentSubMenu = 4;
+        mainButtonGrid.setVisible(false);
+    }
+
+    private void LoopMusic() {
+        try {
+             Clip clip = AudioSystem.getClip();
+             clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
+             clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception exc) {
+            exc.printStackTrace(System.out);
+        }
     }
 }
+

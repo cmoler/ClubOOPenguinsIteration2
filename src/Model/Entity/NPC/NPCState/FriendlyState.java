@@ -8,4 +8,9 @@ public class FriendlyState implements NPCState {
     public void move(NPC npc, Player player) {
 
     }
+
+    @Override
+    public String getType() {
+        return "friendly";
+    }
 }

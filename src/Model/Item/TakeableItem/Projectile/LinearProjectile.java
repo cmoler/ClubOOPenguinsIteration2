@@ -75,6 +75,7 @@ public class LinearProjectile implements Projectile {
             done = true;
             return;
         }
+        Location temp = locationOn;
         locationOn = locationOn.getAdjacentAt(directionHeading);
         if(currentMap.entityAtLocation(locationOn) != null){
             Entity entityAtTarget = currentMap.entityAtLocation(locationOn);
@@ -87,10 +88,5 @@ public class LinearProjectile implements Projectile {
             if(damageAmount <= 0 || locationOn.hasObstacle())
                 done = true;
         }
-    }
-
-    @Override
-    public String save(Saver saver) {
-        return saver.saveLinearProjectile(this);
     }
 }

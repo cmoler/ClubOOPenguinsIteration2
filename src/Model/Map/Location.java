@@ -150,4 +150,12 @@ public class Location {
     public boolean hasObstacle(){
         return obstacle;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Location)) return false;
+
+        Location otherLocation = (Location) obj;
+        return otherLocation.getyCoordinate() == this.getyCoordinate() && otherLocation.getxCoordinate() == this.getxCoordinate();
+    }
 }

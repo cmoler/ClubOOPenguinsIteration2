@@ -1,9 +1,6 @@
 package View.StatusView;
 
-import Configs.Commons;
-import Configs.EquipmentSizes;
-import Configs.ImagesInfo;
-import Configs.SpriteParser;
+import Configs.*;
 import Model.Entity.Equipment;
 import Model.Item.TakeableItem.WearableItem;
 import View.Viewport;
@@ -16,6 +13,8 @@ public class EquipmentView extends Viewport {
 
     private final int EQUIPMENT_X = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0));
     private final int EQUIPMENT_Y = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
+    private final int HOT_BAR_X = (int) (Commons.SCREEN_WIDTH * 170.0/765.0);
+    private final int HOT_BAR_Y = (int) (Commons.SCREEN_HEIGHT * 310.0/501.0);
 
     private Equipment equipment;
     private String head = null;
@@ -23,7 +22,7 @@ public class EquipmentView extends Viewport {
     private String legs = null;
     private String ring = null;
     private Image selectedImage = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
-    private Pair<Integer, Integer> selectedArmor;
+    private int selectedArmor;
 
     public EquipmentView(Equipment equipment){
         equipment.attach(this);
@@ -36,7 +35,7 @@ public class EquipmentView extends Viewport {
         else legs = null;
         if(equipment.getRing() != null) ring = equipment.getRing().getName();
         else ring = null;
-        selectedArmor = equipment.getSelectedArmor();
+        selectedArmor = equipment.getSelected();
     }
 
     @Override
@@ -46,21 +45,34 @@ public class EquipmentView extends Viewport {
         if(legs != null) drawLegs(graphics2D);
         if(ring != null) drawRing(graphics2D);
 
-        if(selectedArmor.getKey() > 0){
-            // if were to the right and over the ring slot
-            int selectedX = EQUIPMENT_X + EquipmentSizes.EQUIPMENT_WIDTH;
-            int selectedY = EQUIPMENT_Y + EquipmentSizes.EQUIPMENT_HEIGHT;
-
-            graphics2D.drawImage(selectedImage, selectedX, selectedY,
-                    EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
-        }
-        else{
-            // over the head/body/legs
-            int selectedX = EQUIPMENT_X;
-            int selectedY = EquipmentSizes.EQUIPMENT_WIDTH * selectedArmor.getValue();
-
-            graphics2D.drawImage(selectedImage, selectedX, selectedY,
-                    EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+        switch (selectedArmor){
+            case 0:
+                graphics2D.drawImage(selectedImage, HOT_BAR_X + (HotBarSizes.HOT_BAR_WIDTH * 0), HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+                break;
+            case 1:
+                graphics2D.drawImage(selectedImage, HOT_BAR_X + (HotBarSizes.HOT_BAR_WIDTH * 1), HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+                break;
+            case 2:
+                graphics2D.drawImage(selectedImage, HOT_BAR_X + (HotBarSizes.HOT_BAR_WIDTH * 2), HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+                break;
+            case 3:
+                graphics2D.drawImage(selectedImage, HOT_BAR_X + (HotBarSizes.HOT_BAR_WIDTH * 3), HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+                break;
+            case 4:
+                graphics2D.drawImage(selectedImage, HOT_BAR_X + (HotBarSizes.HOT_BAR_WIDTH * 4), HOT_BAR_Y, HotBarSizes.HOT_BAR_WIDTH, HotBarSizes.HOT_BAR_HEIGHT, this);
+                break;
+            case 5:
+                graphics2D.drawImage(selectedImage, EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+                break;
+            case 6:
+                graphics2D.drawImage(selectedImage, EQUIPMENT_X, EQUIPMENT_Y + EquipmentSizes.EQUIPMENT_HEIGHT, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+                break;
+            case 7:
+                graphics2D.drawImage(selectedImage, EQUIPMENT_X, EQUIPMENT_Y + EquipmentSizes.EQUIPMENT_HEIGHT * 2, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+                break;
+            case 8:
+                graphics2D.drawImage(selectedImage, EQUIPMENT_X + EquipmentSizes.EQUIPMENT_WIDTH, EQUIPMENT_Y + EquipmentSizes.EQUIPMENT_HEIGHT, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+                break;
         }
     }
 
@@ -68,7 +80,7 @@ public class EquipmentView extends Viewport {
         int helmetX = EQUIPMENT_X;
         int helmetY = EQUIPMENT_Y;
 
-        Image image = SpriteParser.getSpriteParser().getItemFromName(head);
+        Image image = SpriteParser.getSpriteParser().getItemFromName("helmet");
 
         graphics2D.drawImage(image, helmetX, helmetY, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
     }
@@ -77,7 +89,7 @@ public class EquipmentView extends Viewport {
         int bodyX = EQUIPMENT_X;
         int bodyY = EQUIPMENT_Y + EquipmentSizes.EQUIPMENT_HEIGHT;
 
-        Image image = SpriteParser.getSpriteParser().getItemFromName(body);
+        Image image = SpriteParser.getSpriteParser().getItemFromName("chest");
 
         graphics2D.drawImage(image, bodyX, bodyY, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
     }
@@ -116,6 +128,6 @@ public class EquipmentView extends Viewport {
         else legs = null;
         if(equipment.getRing() != null) ring = equipment.getRing().getSlot();
         else ring = null;
-        selectedArmor = equipment.getSelectedArmor();
+        selectedArmor = equipment.getSelected();
     }
 }

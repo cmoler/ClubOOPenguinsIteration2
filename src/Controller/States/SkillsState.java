@@ -39,7 +39,7 @@ public class SkillsState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/skills");
+        File entityKeyBindings = new File("resources/KeyBindings/skills.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
@@ -147,7 +147,7 @@ public class SkillsState implements ControllerState {
     }
 
     private void increaseCurrent() {
-
+        skillsController.incrementSkill();
     }
 
     private void scrollLeft() {
@@ -159,11 +159,11 @@ public class SkillsState implements ControllerState {
     }
 
     private void scrollUp() {
-
+        skillsController.scrollUp();
     }
 
     private void scrollDown() {
-
+        skillsController.scrollDown();
     }
 
 }

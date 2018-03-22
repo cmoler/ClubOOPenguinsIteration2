@@ -59,7 +59,7 @@ public class KeyBindingState implements ControllerState {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("resources/KeyBindings/"+bindingToChange));
+            StreamResult result = new StreamResult(new File("resources/KeyBindings/"+bindingToChange + ".xml"));
             transformer.transform(source, result);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

@@ -18,12 +18,9 @@ public class WorldView extends Viewport{
 
     @Override
     public void draw(Graphics2D graphics2D){
-        currentView.draw(graphics2D);
-    }
-
-    @Override
-    public void update(){
         currentView = mapViews.get(World.getWorld().getCurrentMap());
+        if(currentView != null) currentView.draw(graphics2D);
+        else update();
     }
 
 }

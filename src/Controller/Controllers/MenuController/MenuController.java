@@ -1,6 +1,7 @@
 package Controller.Controllers.MenuController;
 
 import Controller.Controllers.Controller;
+import View.AreaView.AreaViewPort;
 import View.MenuView.MenuViewPort;
 
 public abstract class MenuController implements Controller {
@@ -9,6 +10,7 @@ public abstract class MenuController implements Controller {
     protected int horizontalSelection = 0;
 
     protected MenuViewPort menuViewPort;
+    protected AreaViewPort areaViewPort;
 
     public abstract void select();
 
@@ -48,7 +50,6 @@ public abstract class MenuController implements Controller {
 
     @Override
     public void setActive() {
-        menuViewPort.setVisible(true);
-        menuViewPort.requestFocus();
+        //areaViewPort.setVisible(false);
     }
 }

@@ -23,6 +23,7 @@ public class MainMenuController extends MenuController{
 
     public MainMenuController(GameBuilder gameBuilder, ControllerMediator controllerMediator){
         this.mainMenuView = gameBuilder.getMainMenuViewport();
+        this.areaViewPort = gameBuilder.getAreaViewport();
         setMenuViewPort(this.mainMenuView);
         this.controllerMediator = controllerMediator;
 
@@ -34,7 +35,7 @@ public class MainMenuController extends MenuController{
     }
 
     public void exitSubMenu(){
-        System.out.println("Exit menu");
+        System.out.println("Exit menu.xml");
         mainMenuView.returnToMenu();
         this.activeSubMenu = null;
     }
@@ -103,4 +104,7 @@ public class MainMenuController extends MenuController{
         }
     }
 
+    public void loadGame() {
+        controllerMediator.load();
+    }
 }

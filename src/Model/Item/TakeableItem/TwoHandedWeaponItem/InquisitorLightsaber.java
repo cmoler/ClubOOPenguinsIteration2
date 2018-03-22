@@ -15,6 +15,7 @@ public class InquisitorLightsaber extends TwoHandedWeaponItem{
     public InquisitorLightsaber(){
         super();
         this.name = "inquisitorLightsaber";
+        this.color = "blue";
     }
 
     private double damageAmount = 2.25; // gets multiplied by skill level

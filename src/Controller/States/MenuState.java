@@ -42,7 +42,7 @@ public class MenuState implements ControllerState {
     @Override
     public void loadKeyBindings() {
 
-        File entityKeyBindings = new File("resources/KeyBindings/menu");
+        File entityKeyBindings = new File("resources/KeyBindings/menu.xml");
 
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -96,6 +96,12 @@ public class MenuState implements ControllerState {
                                     item(0).
                                     getTextContent()), () -> select());
                             break;
+                        case "goToEntity":
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> goToEntity());
+                            break;
                     }
                 }
             }
@@ -108,6 +114,10 @@ public class MenuState implements ControllerState {
             e.printStackTrace();
         }
 
+    }
+
+    private void goToEntity() {
+        controllerMediator.changeToEntityState();
     }
 
     @Override

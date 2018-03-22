@@ -6,18 +6,20 @@ import Model.Item.TakeableItem.WearableItem;
 
 public class Body extends WearableItem {
 
+    private int defenceIncrease = 100;
+
     public Body(){
         super();
-        this.name = "chest";
+        this.name = "body";
     }
     @Override
     public void putOn(Player player) {
-
+        player.modifyDefense(defenceIncrease);
     }
 
     @Override
     public void takeOff(Player player) {
-
+        player.modifyDefense(-defenceIncrease);
     }
 
     @Override

@@ -3,7 +3,8 @@ package Model.Map;
 import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.Terrain.Ice;
-import Model.Visitor.Visitor;
+import Model.UpdateList;
+import Model.Updateable;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static Model.Map.Direction.*;
 
-public class Map {
+public class Map implements Updateable {
 
     private List<Viewport> observers = new ArrayList<Viewport>();
     public Location[][] getLocations() {
@@ -49,6 +50,8 @@ public class Map {
         numCols = this.locations[0].length;
         this.defaultLocation = locations[numRows / 2][numCols / 2];
         setAdjacencyList();
+        UpdateList.getInstance().add(this);
+        System.out.println("map added to updatelist");
     }
 
     //Default Location is specified
@@ -87,7 +90,7 @@ public class Map {
         entityLocationList.setEntityLocation(location, entity);
     }
 
-    //Update entity location if they are flagged to move
+    //Update entity.xml location if they are flagged to move
     public void updateEntityLocations(){
         entityLocationList.updateEntityLocations();
     }
@@ -181,7 +184,6 @@ public class Map {
         return defaultLocation;
     }
 
-
     public Location getLocationXY(int x, int y) {
         return locations[y][x];
     }
@@ -191,10 +193,6 @@ public class Map {
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
-
-    public void accept(Visitor v){
-        v.visitMap(this);
-    }
 
     public void attach(Viewport viewport) {
         observers.add(viewport);
@@ -217,5 +215,13 @@ public class Map {
         for (Viewport viewport : observers){
             viewport.update();
         }
+    }
+
+    public void update(){
+        updateEntityLocations();
+    }
+
+    public boolean isDone(){
+        return false;
     }
 }

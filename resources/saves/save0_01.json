@@ -1,0 +1,68 @@
+{
+  "World": {
+    "CurrentMap": "3213",
+    "Maps": [
+      {
+        "mapID": "3213",
+        "Rows": 1,
+        "Cols": 1,
+        "Entities": [
+          {
+            "Inventory": {
+              "Items": [
+                "key",
+                "key"
+              ]
+            },
+            "EntityType": "ICE",
+            "HP": 2,
+		  "MaxHP": 100,
+            "LocationX": 0,
+            "LocationY": 0,
+            "EntityClass": {
+              "Name": "Player",
+              "SkillPoints": 5,
+              "Role": {
+                "BindWoundsLevel": 20,
+                "BargainLevel": 20,
+                "ObservationLevel": 3,
+                "Role": {
+                  "RoleName": "Smasher",
+                  "OneHandedWeaponLevel": 20,
+                  "TwoHandedWeaponLevel": 20,
+                  "BrawlLevel": 20
+                }
+              },
+              "Mana": 0,
+              "XP": 0,
+              "Gold": 100,
+              "Equipment": {
+                "Hotbar": {
+                  "Items": []
+                },
+                "Head": "",
+                "Body": "",
+                "Legs": "",
+                "Ring": ""
+              }
+            }
+          }
+        ],
+        "Locations": [
+          {
+            "AreaEffect": {
+              "Type": "HEAL"
+            },
+            "Terrain": "ICE",
+            "Obstacle": 0,
+            "Items": [
+              "Key"
+            ],
+            "X": 0,
+            "Y": 0
+          }
+        ]
+      }
+    ]
+  }
+}

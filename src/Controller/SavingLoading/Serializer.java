@@ -1,11 +1,13 @@
 package Controller.SavingLoading;
 
+import Model.Entity.NPC.NPC;
+import Model.Entity.NPC.ShopKeepNPC;
 import Model.Entity.Player;
 import Model.Entity.Role.Role;
 import Model.Entity.Role.Smasher;
 import Model.Entity.Role.Sneak;
 import Model.Entity.Role.Summoner;
-import Model.Entity.Skill.Staff;
+import Model.Item.InteractiveItem.ChestInteractiveItem;
 import Model.Item.InteractiveItem.InteractiveItem;
 import Model.Item.OneShotItem.GoldOneShotItem;
 import Model.Item.OneShotItem.HealingOneShotItem;
@@ -27,23 +29,25 @@ import Model.Item.TakeableItem.BrawlingItem.SwordHands;
 import Model.Item.TakeableItem.EnchantmentItem.Charm;
 import Model.Item.TakeableItem.EnchantmentItem.Insomnia;
 import Model.Item.TakeableItem.EnchantmentItem.Seppuku;
+import Model.Item.TakeableItem.Key.Key;
 import Model.Item.TakeableItem.OneHandedWeaponItem.BlueLightsaber;
 import Model.Item.TakeableItem.OneHandedWeaponItem.Mjolnir;
 import Model.Item.TakeableItem.OneHandedWeaponItem.ThunderBlade;
 import Model.Item.TakeableItem.Potion.HealthPotion;
 import Model.Item.TakeableItem.Potion.ManaPotion;
 import Model.Item.TakeableItem.Potion.XPPotion;
-import Model.Item.TakeableItem.Projectile.AngularProjectile;
-import Model.Item.TakeableItem.Projectile.LinearProjectile;
-import Model.Item.TakeableItem.Projectile.RadialProjectile;
 import Model.Item.TakeableItem.RangedWeaponItem.Pizza;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowLauncher;
 import Model.Item.TakeableItem.RangedWeaponItem.SnowShuriken;
+import Model.Item.TakeableItem.StaffItem.StaffItem;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.InquisitorLightsaber;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.JeweledCutlass;
 import Model.Item.TakeableItem.TwoHandedWeaponItem.WaterHammer;
-import Model.Item.TakeableItem.UseableItem;
+import Model.Item.TakeableItem.WearableItem;
+import Model.Map.AreaEffect.AreaEffect;
+import Model.Map.AreaEffect.AreaEffectType;
+import Model.Map.AreaEffect.TeleportAreaEffect;
 import Model.Map.EntityLocation;
 import javafx.util.Pair;
 import org.json.*;
@@ -60,51 +64,92 @@ import java.util.List;
 
 public class Serializer implements Saver{
     JSONObject world = new JSONObject();
-    JSONObject player = new JSONObject();
     JSONObject playerRole = new JSONObject();
 
-    public void serializePlayer(Player player) {
-        this.player.put("Class", saveClass(player.getRole()));
-        this.player.put("Level", player.getLevel());
-        this.player.put("Location", saveLocation(player.getLocation()));
-        this.player.put("Inventory", saveInventory(player.getInventory()));
-        this.player.put("Equipment", saveEquipment(player.getEquipment()));
-        this.player.put("EntityType", player.getEntityType());
-        this.player.put("HP", player.getHealth());
-        this.player.put("MaxHP", player.getMaxHealth());
-        this.player.put("Mana", player.getMana());
-//        this.player.put("MaxMana", player.getMaxMana());
-        this.player.put("XP", player.getExperience());
-        this.player.put("Gold", player.getGold());
-    }
-
     public void serializeWorld(World world) {
-        this.world.put("CurrentMap", world.getCurrentMap());
+        this.world.put("CurrentMap", world.getCurrentMap().getMapID());
 
         ArrayList<JSONObject> mapJSONS = new ArrayList<>();
         for (String str: world.getMaps().keySet() ) {
             mapJSONS.add(saveMap(world.getMap(str)));
         }
         this.world.put("Maps", new JSONArray(mapJSONS));
-
     }
+
 
     private JSONObject saveEntity(Entity entity){
         JSONObject entityJSON = new JSONObject();
-        entityJSON.put("Level", entity.getLevel());
-        entityJSON.put("Location", saveLocation(entity.getLocation()));
         entityJSON.put("Inventory", saveInventory(entity.getInventory()));
+        entityJSON.put("EntityType", entity.getEntityType().name());
         entityJSON.put("HP", entity.getHealth());
         entityJSON.put("MaxHP", entity.getMaxHealth());
+        entityJSON.put("LocationX", entity.getLocation().getxCoordinate());
+        entityJSON.put("LocationY", entity.getLocation().getyCoordinate());
+        //Save either as player or as NPC
+        JSONObject classJSON;
+        if (entity.getName().equals("NPC")) {
+            classJSON = saveNPC((NPC) entity);
+        }
+        else if (entity.getName().equals("ShopKeepNPC")){
+            classJSON = saveShopKeeper((ShopKeepNPC) entity);
+        }
+        else {
+            classJSON = savePlayer((Player) entity);
+        }
+        entityJSON.put("EntityClass", classJSON);
+
         return entityJSON;
     }
 
+
+    public JSONObject savePlayer(Player player) {
+        JSONObject playerJSON = new JSONObject();
+
+        playerJSON.put("Name", "Player");
+        playerJSON.put("Role", saveRole(player.getRole()));
+        playerJSON.put("SkillPoints", player.getSkillPointsAvailable());
+        playerJSON.put("Equipment", saveEquipment(player.getEquipment()));
+        playerJSON.put("Mana", player.getMana());
+        playerJSON.put("XP", player.getExperience());
+        playerJSON.put("Gold", player.getGold());
+
+        return playerJSON;
+    }
+
+    public JSONObject saveNPC(NPC npc){
+        JSONObject NPCJSON = new JSONObject();
+
+        NPCJSON.put("Name", "NPC");
+        NPCJSON.put("NPCState", npc.getState());
+        NPCJSON.put("Color", npc.getColor());
+
+        return NPCJSON;
+    }
+
+    public JSONObject saveShopKeeper(ShopKeepNPC shopKeepNPC){
+        JSONObject shopKeepNPCJSON = new JSONObject();
+
+        shopKeepNPCJSON.put("Name", "ShopKeepNPC");
+        shopKeepNPCJSON.put("NPCState", shopKeepNPC.getState());
+        shopKeepNPCJSON.put("Color", shopKeepNPC.getColor());
+        JSONObject shopMapJSON = new JSONObject();
+        shopMapJSON.put("MapID", shopKeepNPC.getMapID());
+        shopMapJSON.put("X", shopKeepNPC.getLocationI());
+        shopMapJSON.put("Y", shopKeepNPC.getLocationJ());
+
+        shopKeepNPCJSON.put("ShopMap", shopMapJSON );
+
+        return shopKeepNPCJSON;
+    }
+
+
+
     private JSONObject saveMap(Map map) {
         JSONObject mapJSON = new JSONObject();
-        mapJSON.put("MapID", map.getMapID());
+        mapJSON.put("mapID", map.getMapID());
         mapJSON.put("Rows", map.getRows());
         mapJSON.put("Cols", map.getCols());
-        mapJSON.put("EntityLocations:", saveEntityLocation(map.getEntityLocationList()));
+        mapJSON.put("Entities", saveEntityLocation(map.getEntityLocationList()));
         Location locations[][] = map.getLocations();
         ArrayList<JSONObject> locationsJSONObjects = new ArrayList<>();
         for(int i = 0; i < locations.length; i++ ){
@@ -118,64 +163,92 @@ public class Serializer implements Saver{
 
     private JSONObject saveLocation(Location location) {
         JSONObject locationJSON = new JSONObject();
-        locationJSON.put("AreaEffect",  ""+location.getAreaEffect().getAreaEffectType() );
         locationJSON.put("Terrain", ""+location.getTerrain().getTerrainType());
+        locationJSON.put("Obstacle", (location.hasObstacle() ? 1 : 0));
+        locationJSON.put("AreaEffect", saveAreaEffect(location.getAreaEffect()));
+        locationJSON.put("X", location.getxCoordinate());
+        locationJSON.put("Y", location.getyCoordinate());
         ArrayList<String> itemList = new ArrayList<>();
         for(int i = 0; i < location.getItems().size(); i++){
-//            itemList.add(location.getItems().get(i).getName());
+
+            itemList.add(location.getItems().get(i).getName());
         }
         locationJSON.put("Items", itemList);
         return locationJSON;
     }
 
-    private JSONObject saveEntityLocation(EntityLocation entityLocation){
+    private JSONObject saveAreaEffect(AreaEffect areaEffect){
+        JSONObject areaEffectJSON = new JSONObject();
+
+        areaEffectJSON.put("Type", nullChecker(areaEffect));
+        if (areaEffect != null){
+            if(areaEffect.getAreaEffectType() == AreaEffectType.TELEPORT){
+                areaEffectJSON.put("mapID", ((TeleportAreaEffect) areaEffect).getMapID());
+                areaEffectJSON.put("X", ((TeleportAreaEffect) areaEffect).getX());
+                areaEffectJSON.put("Y", ((TeleportAreaEffect) areaEffect).getY());
+            }
+        }
+        return areaEffectJSON;
+    }
+
+    private JSONArray saveEntityLocation(EntityLocation entityLocation){
         //get entitylocationlist hashmap list or iterator
-        JSONObject entityLocationJSON = new JSONObject();
         ArrayList<JSONObject> entityLocationList = new ArrayList<>();
         ArrayList<Pair> entityLocationPair = entityLocation.getAssociations();
         for (int i = 0; i < entityLocationPair.size(); i++){
-            Entity entity = (Entity) entityLocationPair.get(i).getKey();
-            Location location = (Location) entityLocationPair.get(i).getValue();
-            JSONObject pairJSON = new JSONObject();
-            pairJSON.put("Entity", saveEntity(entity));
-            pairJSON.put("Location", saveLocation(location));
-            entityLocationList.add(pairJSON);
+            Entity entity = (Entity) entityLocationPair.get(i).getValue();
+            entityLocationList.add(saveEntity(entity));
         }
-        entityLocationJSON.put("Pairs", new JSONArray(entityLocationList));
+        JSONArray entityLocationJSON = new JSONArray(entityLocationList);
         return entityLocationJSON;
     }
 
-    private JSONObject saveClass(Role role){
-        JSONObject classJSON = new JSONObject();
-        classJSON.put("BindWoundsLevel", role.getBindWounds());
-        classJSON.put("BargainLevel", role.getBargain());
-        classJSON.put("ObservationLevel", role.getObservation());
+    private JSONObject saveRole(Role role){
+        JSONObject roleJSON = new JSONObject();
+        roleJSON.put("BindWoundsLevel", role.getBindWounds());
+        roleJSON.put("BargainLevel", role.getBargain());
+        roleJSON.put("ObservationLevel", role.getObservation());
         role.save(this);
-        classJSON.put("Role", playerRole);
-        return classJSON;
+        roleJSON.put("Role", playerRole);
+        return roleJSON;
     }
 
-    //DANGER
     private JSONObject saveInventory(Inventory inventory) {
         JSONObject inventoryJSON = new JSONObject();
         ArrayList<String> items = new ArrayList<>();
-        for(int i = 0;inventory.getIterator().hasNext();i++, inventory.getIterator().next()){
-            items.add(inventory.getIterator().getCurrent().save(this));
+        for(Inventory.InventoryIterator inventoryIterator = inventory.getIterator();inventoryIterator.hasNext();inventoryIterator.next()){
+            items.add(inventoryIterator.getCurrent().save(this));
         }
-        inventoryJSON.put("Items:", new JSONArray(items));
+        inventoryJSON.put("Items", new JSONArray(items));
         return inventoryJSON;
     }
 
-    //DANGER
     private JSONObject saveEquipment(Equipment equipment) {
         JSONObject equipmentJSON = new JSONObject();
         equipmentJSON.put("Hotbar", saveHotbar(equipment.getHotbarItems()));
-        ArrayList<String> itemsList = new ArrayList<>();
-//        for(int i = 0; i < equipment.getEquippedItems().size(); i++) {
-//            itemsList.add(equipment.getEquippedItems().get(i).save(this));
-//        }
-//        equipmentJSON.put("Items", new JSONArray(itemsList));
+        equipmentJSON.put("Head", nullChecker(equipment.getHead()));
+        equipmentJSON.put("Body", nullChecker(equipment.getBody()));
+        equipmentJSON.put("Legs", nullChecker(equipment.getLegs()));
+        equipmentJSON.put("Ring", nullChecker(equipment.getRing()));
         return equipmentJSON;
+    }
+
+    private String nullChecker(WearableItem object){
+        if(object == null){
+            return "";
+        }
+        else{
+            return object.save(this);
+        }
+    }
+
+    private String nullChecker(AreaEffect areaEffect){
+        if(areaEffect == null){
+            return "";
+        }
+        else{
+            return areaEffect.getAreaEffectType().name();
+        }
     }
 
     private JSONObject saveHotbar(List<TakeableItem> items){
@@ -214,196 +287,195 @@ public class Serializer implements Saver{
         playerRole.put("RangedWeaponLevel", role.getRangedWeapon());
     }
 
+
+
     @Override
     public String saveInteractiveItem(InteractiveItem interactiveItem) {
-        return "InteractiveItem";
+        return interactiveItem.getName();
     }
 
     @Override
     public String saveGoldOneShotItem(GoldOneShotItem goldOneShotItem) {
-        return "GoldOneShotItem";
+        return goldOneShotItem.getName();
     }
 
     @Override
     public String saveHealingOneShotItem(HealingOneShotItem healingOneShotItem) {
-        return "HealingOneShotItem";
+        return healingOneShotItem.getName();
     }
 
     @Override
     public String saveManaOneShotItem(ManaOneShotItem manaOneShotItem) {
-        return "ManaOneShotItem";
+        return manaOneShotItem.getName();
     }
 
     @Override
     public String saveXPOneShotItem(XPOneShotItem xpOneShotItem) {
-        return "XPOneShotItem";
+        return xpOneShotItem.getName();
     }
 
     @Override
     public String saveBody(Body body) {
-        return "Body";
+        return body.getName();
     }
 
     @Override
     public String saveHelmet(Helmet helmet) {
-        return "Helmet";
+        return helmet.getName();
     }
 
     @Override
     public String saveLeg(Leg leg) {
-        return "Leg";
+        return leg.getName();
     }
 
     @Override
     public String saveRing(Ring ring) {
-        return "Ring";
+        return ring.getName();
     }
 
     @Override
     public String saveAngulariceAttack(AngularIceAttack angularIceAttack) {
-        return "AngularIceAttack";
+        return angularIceAttack.getName();
     }
 
     @Override
     public String saveLinearIceAttack(LinearIceAttack linearIceAttack) {
-        return "LinearIceAttack";
+        return linearIceAttack.getName();
     }
 
     @Override
     public String saveRadialIceBomb(RadialIceBomb radialIceBomb) {
-        return "RadialIceBomb";
+        return radialIceBomb.getName();
     }
 
     @Override
     public String saveHeal(Heal heal) {
-        return "Heal";
+        return heal.getName();
     }
 
     @Override
     public String saveIncreaseMaxHealth(IncreaseMaxHealth increaseMaxHealth) {
-        return "IncreaseMaxHealth";
+        return increaseMaxHealth.getName();
     }
 
     @Override
     public String saveIncreaseXP(IncreaseXP increaseXP) {
-        return "IncreaseXP";
+        return increaseXP.getName();
     }
 
     @Override
     public String saveBrassKnuckles(BrassKnuckles brassKnuckles) {
-        return "BrassKnuckles";
+        return brassKnuckles.getName();
     }
 
     @Override
     public String saveSpikedGloves(SpikedGloves spikedGloves) {
-        return "SpikedGloves";
+        return spikedGloves.getName();
     }
 
     @Override
     public String saveSwordHands(SwordHands swordHands) {
-        return "SwordHands";
+        return swordHands.getName();
     }
 
     @Override
     public String saveCharm(Charm charm) {
-        return "Charm";
+        return charm.getName();
     }
 
     @Override
     public String saveInsomnia(Insomnia insomnia) {
-        return "Insomnia";
+        return insomnia.getName();
     }
 
     @Override
     public String saveSeppuku(Seppuku seppuku) {
-        return "Seppuku";
+        return seppuku.getName();
     }
 
     @Override
     public String saveBlueLightSaber(BlueLightsaber blueLightsaber) {
-        return "BlueLightsaber";
+        return blueLightsaber.getName();
     }
 
     @Override
     public String saveMjolnir(Mjolnir mjolnir) {
-        return "Mjolnir";
+        return mjolnir.getName();
     }
 
     @Override
     public String saveThunderBlade(ThunderBlade thunderBlade) {
-        return "ThunderBlade";
+        return thunderBlade.getName();
     }
 
     @Override
     public String saveHealthPotion(HealthPotion healthPotion) {
-        return "HealthPotion";
+        return healthPotion.getName();
     }
 
     @Override
     public String saveManaPotion(ManaPotion manaPotion) {
-        return "ManaPotion";
+        return manaPotion.getName();
     }
 
     @Override
     public String saveXPPotion(XPPotion xpPotion) {
-        return "XPPotion";
-    }
-
-    @Override
-    public String saveAngularProjectile(AngularProjectile angularProjectile) {
-        return "AngularProjectile";
-    }
-
-    @Override
-    public String saveLinearProjectile(LinearProjectile linearProjectile) {
-        return "LinearProjectile";
-    }
-
-    @Override
-    public String saveRadialProjectile(RadialProjectile radialProjectile) {
-        return "RadialProjectile";
+        return xpPotion.getName();
     }
 
     @Override
     public String savePizza(Pizza pizza) {
-        return "Pizza";
+        return pizza.getName();
     }
 
     @Override
     public String saveSnowLauncher(SnowLauncher snowLauncher) {
-        return "SnowLauncher";
+        return snowLauncher.getName();
     }
 
     @Override
     public String saveSnowShuriken(SnowShuriken snowShuriken) {
-        return "SnowShuriken";
+        return snowShuriken.getName();
     }
 
     @Override
-    public String saveStaff(Staff staff) {
-        return "Staff";
+    public String saveStaff(StaffItem staff) {
+        return staff.getName();
     }
 
     @Override
     public String saveInquisitorLightsaber(InquisitorLightsaber inquisitorLightsaber) {
-        return "InquisitorLightsaber";
+        return inquisitorLightsaber.getName();
     }
 
     @Override
     public String saveJeweledCutlass(JeweledCutlass jeweledCutlass) {
-        return "JeweledCutlass";
+        return jeweledCutlass.getName();
     }
 
     @Override
     public String saveWaterHammer(WaterHammer waterHammer) {
-        return "WaterHammer";
+        return waterHammer.getName();
+    }
+
+    @Override
+    public String saveKey(Key key) {
+        return key.getName();
+    }
+
+    @Override
+   public String saveChestInteractiveItem(ChestInteractiveItem chestInteractiveItem) {
+        if(chestInteractiveItem.isOpened()){
+            return chestInteractiveItem.getName()+"Open";
+        }
+        else {
+            return chestInteractiveItem.getName()+"Closed";
+        }
+
     }
 
     public JSONObject getWorld() {
         return world;
-    }
-
-    public JSONObject getPlayer() {
-        return player;
     }
 }

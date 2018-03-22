@@ -33,7 +33,7 @@ public abstract class ContinualAreaEffect extends AreaEffect {
             totalEntitiesOn.getAndAdd(1);
             while (entity.getLocation() == location) {
                 affect(entity);
-//                System.out.println("Health: " + entity.getHealth()); // for testing
+//                System.out.println("Health: " + entity.xml.getHealth()); // for testing
                 try {
                     Thread.sleep(effectIntervalInSeconds * 1000);
                 } catch (InterruptedException e) {

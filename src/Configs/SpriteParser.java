@@ -26,11 +26,13 @@ public class SpriteParser {
 
     private BufferedImage[] tileSprites;
 
-    private BufferedImage[] avatarSprites;
+    private BufferedImage[] avatarSprites_BLUE;
+    private BufferedImage[] avatarSprites_RED;
     private BufferedImage[] avatarSprites_NINJA;
+    private BufferedImage[] chestSprites;
 
     public Image getItemFromName(String name){
-        ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
+        ImageIcon imageIcon = new ImageIcon("resources/images/equipment.xml/"+name+".png");
         return imageIcon.getImage();
     }
 
@@ -68,12 +70,12 @@ public class SpriteParser {
     }
 
     public Image getInteractiveItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ITERACTIVE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.KEY_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getOneShotItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ONESHOT_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.BURGER_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -83,7 +85,7 @@ public class SpriteParser {
     }
 
     public Image getTeleporterItemImage(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TELEPORTER_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.PORTAL_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -131,24 +133,46 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
-    public Image getAvatarImage(Direction direction){
+    public Image getAvatarImage_BLUE(Direction direction){
         switch (direction){
             case N:
-                return avatarSprites[4];
+                return avatarSprites_BLUE[4];
             case NE:
-                return avatarSprites[5];
+                return avatarSprites_BLUE[5];
             case E:
-                return avatarSprites[6];
+                return avatarSprites_BLUE[6];
             case SE:
-                return avatarSprites[7];
+                return avatarSprites_BLUE[7];
             case S:
-                return avatarSprites[0];
+                return avatarSprites_BLUE[0];
             case SW:
-                return avatarSprites[1];
+                return avatarSprites_BLUE[1];
             case W:
-                return avatarSprites[2];
+                return avatarSprites_BLUE[2];
             case NW:
-                return avatarSprites[3];
+                return avatarSprites_BLUE[3];
+        }
+        return null;
+    }
+
+    public Image getAvatarImage_RED(Direction direction){
+        switch (direction){
+            case N:
+                return avatarSprites_RED[4];
+            case NE:
+                return avatarSprites_RED[5];
+            case E:
+                return avatarSprites_RED[6];
+            case SE:
+                return avatarSprites_RED[7];
+            case S:
+                return avatarSprites_RED[0];
+            case SW:
+                return avatarSprites_RED[1];
+            case W:
+                return avatarSprites_RED[2];
+            case NW:
+                return avatarSprites_RED[3];
         }
         return null;
     }
@@ -158,27 +182,29 @@ public class SpriteParser {
             case N:
                 return avatarSprites_NINJA[3];
             case NE:
-                return avatarSprites[7];
+                return avatarSprites_NINJA[7];
             case E:
-                return avatarSprites[6];
+                return avatarSprites_NINJA[6];
             case SE:
-                return avatarSprites[5];
+                return avatarSprites_NINJA[5];
             case S:
-                return avatarSprites[4];
+                return avatarSprites_NINJA[4];
             case SW:
-                return avatarSprites[0];
+                return avatarSprites_NINJA[0];
             case W:
-                return avatarSprites[1];
+                return avatarSprites_NINJA[1];
             case NW:
-                return avatarSprites[2];
+                return avatarSprites_NINJA[2];
         }
         return null;
     }
 
     private void getSprites(){
         getTileSprites();
-        getAvatarSprites();
+        getAvatarSprites_BLUE();
+        getAvatarSprites_RED();
         getAvatarSprites_NINJA();
+        getChestSprites();
     }
 
     private void getTileSprites(){
@@ -209,10 +235,10 @@ public class SpriteParser {
         }
     }
 
-    private void getAvatarSprites(){
+    private void getAvatarSprites_BLUE(){
         BufferedImage bigImg = null;
         try {
-            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET));
+            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET_BLUE));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -220,14 +246,14 @@ public class SpriteParser {
         final int width = 37;
         final int height = 40;
         final int rows = 1;
-        final int cols = 7;
-        avatarSprites = new BufferedImage[rows * cols];
+        final int cols = 8;
+        avatarSprites_BLUE = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                avatarSprites[(i * cols) + j] = bigImg.getSubimage(
+                avatarSprites_BLUE[(i * cols) + j] = bigImg.getSubimage(
                         j * width,
                         i * height,
                         width,
@@ -236,6 +262,35 @@ public class SpriteParser {
             }
         }
     }
+
+    private void getAvatarSprites_RED(){
+        BufferedImage bigImg = null;
+        try {
+            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET_RED));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final int width = 37;
+        final int height = 40;
+        final int rows = 1;
+        final int cols = 8;
+        avatarSprites_RED = new BufferedImage[rows * cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                avatarSprites_RED[(i * cols) + j] = bigImg.getSubimage(
+                        j * width,
+                        i * height,
+                        width,
+                        height
+                );
+            }
+        }
+    }
+
     private void getAvatarSprites_NINJA(){
         BufferedImage bigImg = null;
         try {
@@ -264,4 +319,104 @@ public class SpriteParser {
         }
     }
 
+    private void getChestSprites(){
+        BufferedImage bigImg = null;
+        try {
+            bigImg = ImageIO.read(new File(ImagesInfo.CHEST_FILELOCATION));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final int width = 100;
+        final int height = 139;
+        final int rows = 1;
+        final int cols = 3;
+        chestSprites = new BufferedImage[rows * cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                chestSprites[(i * cols) + j] = bigImg.getSubimage(
+                        j * width,
+                        i * height,
+                        width,
+                        height
+                );
+            }
+        }
+    }
+
+    public Image getNPCBlueImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_BLUE_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getNPCRedImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_RED_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getNPCYellowImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.NPC_YELLOW_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getClosedChestImage() {
+        return chestSprites[0];
+    }
+
+    public Image getOpenChestImage() {
+        return chestSprites[2];
+    }
+
+    public Image getTrapImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.TRAP_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getCharmImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.CHARM_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEAL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseLevelImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_LEVEL_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getIncreaseMaxHealthImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.INCREASE_MAX_HEALTH_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSeppukuImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SEPPUKU_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSleepImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SLEEP_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getExpPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.EXP_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getHealthPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.HEALTH_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getManaPotionImage() {
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.MANA_POTION_FILELOCATION);
+        return imageIcon.getImage();
+    }
 }

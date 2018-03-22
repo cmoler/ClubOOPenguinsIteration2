@@ -47,7 +47,8 @@ public class MapView extends Viewport {
         this.entity = entity;
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
-            if(mapIterator.currentItem() == entity.getLocation()){
+            if(mapIterator.currentItem()
+                    == entity.getLocation()){
                 initialI = mapIterator.getI();
                 initialJ = mapIterator.getJ();
             }
@@ -61,16 +62,6 @@ public class MapView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D){
-        for(Viewport child: children){
-            Pair<Integer, Integer> location = calculateScreenXY(child.getLocationX(), child.getLocationY());
-            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
-                child.draw(graphics2D,location.getKey() ,location.getValue());
-            }
-        }
-    }
-
-    @Override
-    public void update(){
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
             if(mapIterator.currentItem() == entity.getLocation()){
@@ -78,6 +69,22 @@ public class MapView extends Viewport {
                 offsetJ = mapIterator.getJ() - initialJ;
             }
         }
+        for(Viewport child: children){
+            Pair<Integer, Integer> location = calculateScreenXY(child.getLocationX(), child.getLocationY());
+            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10 && child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ) {
+                child.draw(graphics2D,location.getKey() ,location.getValue());
+            }
+        }
+        for(Viewport child: children) {
+            if (child.done()) {
+                child.draw(graphics2D, 0, 0);
+            }
+        }
+    }
+
+    @Override
+    public void update(){
+
     }
 
 }

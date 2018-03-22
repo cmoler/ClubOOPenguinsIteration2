@@ -1,5 +1,6 @@
 package Model.Entity;
 
+import Configs.InventorySizes;
 import Model.Item.TakeableItem.TakeableItem;
 import View.Viewport;
 
@@ -19,7 +20,7 @@ public class Inventory {
         return new InventoryIterator();
     }
 
-    public Inventory(Entity entity) {
+    public Inventory() {
 
     }
 
@@ -79,18 +80,24 @@ public class Inventory {
         return selectedY;
     }
 
+    public int getSelectedIndex() { return selectedX + ( selectedY * selectedX ); }
+
     public void scrollHorizontal(int i){
         selectedX += i;
-        if(selectedX < 0) selectedX = 7;
-        else if(selectedX > 7) selectedX = 0;
+        if(items.size() < InventorySizes.INVENTORY_ROWS && selectedX < 0) selectedX = items.size();
+        if(items.size() < selectedX ) selectedX = items.size();
+        if(selectedX < 0) selectedX = InventorySizes.INVENTORY_ROWS;
+        else if(selectedX > InventorySizes.INVENTORY_ROWS) selectedX = 0;
+        notifyView();
     }
 
     public void scrollVeritical(int i){
         selectedY += i;
-        int numberOfColumns = (int)Math.ceil(((double)items.size())/7.0);
+        int numberOfColumns = (int)Math.ceil(((double)items.size())/InventorySizes.INVENTORY_COLUMNS);
 
         if(selectedY < 0) selectedY = numberOfColumns;
         else if(selectedY > numberOfColumns) selectedY = 0;
+        notifyView();
     }
 
     public void attach(Viewport viewport){

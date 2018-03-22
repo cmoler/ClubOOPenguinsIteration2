@@ -39,7 +39,7 @@ public class InventoryState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/inventory");
+        File entityKeyBindings = new File("resources/KeyBindings/inventory.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
@@ -148,22 +148,26 @@ public class InventoryState implements ControllerState {
 
     private void equipItem() {
         // TODO
-//        inventoryController.equipItem(); // needs index
+        inventoryController.equipItem();
     }
 
     private void scrollLeft() {
         // TODO
+        inventoryController.scrollLeft();
     }
 
     private void scrollRight() {
         // TODO
+        inventoryController.scrollRight();
     }
 
     private void scrollUp() {
         // TODO
+        inventoryController.scrollUp();
     }
 
     private void scrollDown() {
         // TODO
+        inventoryController.scrollDown();
     }
 }

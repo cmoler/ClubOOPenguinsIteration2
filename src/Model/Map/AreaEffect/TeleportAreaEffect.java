@@ -5,7 +5,7 @@ import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
 
-public class TeleportAreaEffect extends ContinualAreaEffect {
+public class TeleportAreaEffect extends OneShotAreaEffect {
 
     private String mapID;
     private int locationI;

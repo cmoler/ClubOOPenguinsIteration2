@@ -2,15 +2,21 @@ package View;
 
 import Model.Map.Direction;
 import View.AreaView.MapView;
+import View.AreaView.ProjectileView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.text.View;
 
 public class Viewport extends JPanel {
 
@@ -20,7 +26,6 @@ public class Viewport extends JPanel {
     public Viewport() {
         setFocusable(true);
         setDoubleBuffered(true);
-        LoopMusic();
     }
 
     public int getLocationX() {
@@ -73,8 +78,10 @@ public class Viewport extends JPanel {
     }
 
     public void add(Viewport viewport) {
-        viewport.parent = this;
-        children.add(viewport);
+        if (viewport != null) {
+            viewport.parent = this;
+            children.add(viewport);
+        }
     }
 
     public void remove(Viewport viewport) {
@@ -98,13 +105,7 @@ public class Viewport extends JPanel {
         this.add(currentMapView);
     }
 
-    private void LoopMusic() {
-        try {
-            Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(new File("resources/music/music.wav")));
-            clip.start();
-        } catch (Exception e) {
-            System.out.println();
-        }
+    public boolean done(){
+        return false;
     }
 }

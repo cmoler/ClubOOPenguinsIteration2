@@ -8,7 +8,7 @@ public class Helmet extends WearableItem{
 
     public Helmet(){
         super();
-        this.name = "helmet";
+        this.name = "head";
     }
 
     private double defenseIncrease = 50;

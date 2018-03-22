@@ -7,17 +7,25 @@ import View.MenuView.NewGameView;
 public class NewGameController extends MenuController {
 
     private NewGameView newGameView;
+    private MainMenuController parent;
     GameBuilder gameBuilder;
 
     public NewGameController(GameBuilder gameBuilder, MainMenuController parent) {
         newGameView = gameBuilder.getMainMenuViewport().getNewGameView();
         this.gameBuilder = gameBuilder;
         setMenuViewPort(newGameView);
+        this.parent = parent;
     }
 
-    public void select(){
-        String fileName = Commons.SAVE_FOLDER + Commons.SAVE_NAME + Commons.DEFAULT_SAVE;
-        gameBuilder.loadGame(fileName);
+    @Override
+    public void select() {
+        switch(verticalSelection){
+            case 0: gameBuilder.getMemorySlots().loadDefaultGameSmasher(); break;
+            case 1: gameBuilder.getMemorySlots().loadDefaultGameSummoner(); break;
+            case 2: gameBuilder.getMemorySlots().loadDefaultGameSneak(); break;
+        }
+
+        parent.loadGame();
     }
 
     protected void correctUpDownParameters() {
@@ -26,8 +34,7 @@ public class NewGameController extends MenuController {
     }
 
     protected void correctLeftRightParameters() {
-        if(horizontalSelection < 0) horizontalSelection = 1;
-        else if(horizontalSelection > 1) horizontalSelection = 0;
+
     }
 
 }

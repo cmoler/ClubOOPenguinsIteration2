@@ -22,6 +22,11 @@ public class SleepState implements NPCState {
         }
     }
 
+    @Override
+    public String getType() {
+        return "sleep";
+    }
+
 
 }
 

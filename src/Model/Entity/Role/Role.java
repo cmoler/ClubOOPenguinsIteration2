@@ -9,6 +9,8 @@ import Model.Map.Location;
 import Model.Saveable;
 import javafx.beans.Observable;
 
+import java.util.ArrayList;
+
 public abstract class Role implements Saveable{
 
     protected Player entity;
@@ -17,9 +19,21 @@ public abstract class Role implements Saveable{
     private Bargain bargain;
     private Observation observation;
 
-    private int maxMana = 50;
+    private int maxMana;
 
-    public Role(){}
+    public Role(){
+        bindWounds = new BindWounds();
+        bargain = new Bargain();
+        observation = new Observation();
+    }
+
+    public Role(BindWounds bindWounds, Bargain bargain, Observation observation){
+        this.bindWounds = bindWounds;
+        this.bargain = bargain;
+        this.observation = observation;
+    }
+
+
 
     public void setEntity(Player entity){
         this.entity = entity;
@@ -39,6 +53,10 @@ public abstract class Role implements Saveable{
         return observation.getPoints();
     }
 
+    public Observation ObservationSkill(){
+        return observation;
+    }
+
     private void addBindWounds(int points){
         bindWounds.addPoints(points);
     }
@@ -54,6 +72,8 @@ public abstract class Role implements Saveable{
     public void bindWounds(){
         bindWounds.use(this.entity);
     }
+
+    public ArrayList<String> observation() {return observation.use(this.entity); }
 
     public void scroll(int i){
         selected += i;
@@ -93,4 +113,8 @@ public abstract class Role implements Saveable{
     public void activateTrait(Location location){}
 
     public int getMaxMana() {return maxMana;}
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
 }

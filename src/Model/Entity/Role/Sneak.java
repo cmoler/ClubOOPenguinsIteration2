@@ -2,10 +2,7 @@ package Model.Entity.Role;
 
 import Controller.SavingLoading.Saver;
 import Model.Entity.Entity;
-import Model.Entity.Skill.Creep;
-import Model.Entity.Skill.DetectAndRemoveTrap;
-import Model.Entity.Skill.PickPocket;
-import Model.Entity.Skill.RangedWeapon;
+import Model.Entity.Skill.*;
 import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.AreaEffect.AreaEffectType;
 import Model.Map.AreaEffect.TrapAreaEffect;
@@ -14,10 +11,30 @@ import Model.Map.Location;
 
 public class Sneak extends Role {
 
-    private PickPocket pickPocket = new PickPocket();
-    private DetectAndRemoveTrap detectAndRemoveTrap = new DetectAndRemoveTrap();
-    private Creep creep = new Creep();
-    private RangedWeapon rangedWeapon = new RangedWeapon();
+    private PickPocket pickPocket;
+    private DetectAndRemoveTrap detectAndRemoveTrap;
+    private Creep creep;
+    private RangedWeapon rangedWeapon;
+
+    public Sneak(){
+        super();
+        pickPocket = new PickPocket();
+        detectAndRemoveTrap = new DetectAndRemoveTrap();
+        creep = new Creep();
+        rangedWeapon = new RangedWeapon();
+        setMaxMana(50);
+    }
+
+    public Sneak (BindWounds bindWounds, Bargain bargain, Observation observation, PickPocket pickPocket, DetectAndRemoveTrap detectAndRemoveTrap, Creep creep, RangedWeapon rangedWeapon){
+        super(bindWounds, bargain, observation);
+        this.pickPocket = pickPocket;
+        this.detectAndRemoveTrap = detectAndRemoveTrap;
+        this.creep = creep;
+        this.rangedWeapon = rangedWeapon;
+        setMaxMana(50);
+    }
+
+
 
     public int getPickPocket() {
         return pickPocket.getPoints();
@@ -59,6 +76,8 @@ public class Sneak extends Role {
         creep.use(this.entity);
     }
 
+    public void removeTrap() {detectAndRemoveTrap.use(this.entity);}
+
     @Override
     public void activateTrait(Location location){
 
@@ -67,9 +86,11 @@ public class Sneak extends Role {
 
         for (Direction dir : Direction.values()){
             Location adjLocation = location.getAdjacentAt(dir);
-            AreaEffect areaEffect = adjLocation.getAreaEffect();
-            if (areaEffect.getAreaEffectType() ==  AreaEffectType.TRAP){
-                ((TrapAreaEffect) areaEffect).setVisible(detectChance);
+            if(adjLocation != null) {
+                AreaEffect areaEffect = adjLocation.getAreaEffect();
+                if (areaEffect != null && areaEffect.getAreaEffectType() == AreaEffectType.TRAP) {
+                    ((TrapAreaEffect) areaEffect).setVisible(detectChance);
+                }
             }
         }
 

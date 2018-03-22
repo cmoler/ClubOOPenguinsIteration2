@@ -16,15 +16,15 @@ public class Equipment {
     private List<Viewport> observers;
 
     private Player entity;
-    private Inventory inventory;
     private UsableItems hotbar;
     private WearableItems armor;
 
     private int equipmentSize = 5;
 
+    private int selected = 0;
+
     public Equipment(Player entity) {
         this.entity = entity;
-        this.inventory = entity.getInventory();
         hotbar = new UsableItems(equipmentSize);
         armor = new WearableItems();
         observers = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Equipment {
     public boolean equip(TakeableItem item){
         if (item.canEquip(this.entity)) {
             if (hotbar.add(item)) {
-                inventory.removeItem(item);
+                this.entity.getInventory().removeItem(item);
                 notifyView();
                 return true;
             }
@@ -41,47 +41,54 @@ public class Equipment {
                 return false;
         } else if(item.canWear()){
             if(armor.equip((WearableItem)item)){
-                inventory.removeItem(item);
+                this.entity.getInventory().removeItem(item);
                 notifyView();
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean unEquip(){
+        if (selected < equipmentSize){
+            TakeableItem item = hotbar.getItem(selected);
+            hotbar.remove(item);
+            this.entity.takeItem(item);
+            return true;
+        }
+        else if(selected == 5){
+            WearableItem item = armor.getArmor("head");
+            armor.unequip(item);
+            this.entity.takeItem(item);
+            return true;
+        }
+        else if(selected == 6){
+            WearableItem item = armor.getArmor("body");
+            armor.unequip(item);
+            this.entity.takeItem(item);
+            return true;
+        }
+        else if(selected == 7){
+            WearableItem item = armor.getArmor("legs");
+            armor.unequip(item);
+            this.entity.takeItem(item);
+            return true;
+        }
+        else if(selected == 8){
+            WearableItem item = armor.getArmor("ring");
+            armor.unequip(item);
+            this.entity.takeItem(item);
+            return true;
         }
         return false;
     }
 
     public boolean unEquip(TakeableItem item){
-        if(hotbar.remove(item)) {
-            notifyView();
-            return true;
-        }
-        return false;
+        return hotbar.remove(item);
     }
 
     public TakeableItem getSlot(int index) {
         return hotbar.getItem(index);
-    }
-
-    public boolean unEquipUsableItem(int index){
-        TakeableItem item = hotbar.getItem(index);
-        if(hotbar.remove(item)) {
-            inventory.addItem(item);
-            notifyView();
-            return true;
-        }
-        return false;
-    }
-
-    public boolean unEquipWearableItem(String armorType){
-        if(armor.getArmor(armorType) != null) {
-            WearableItem item = armor.getArmor(armorType);
-            if(armor.unequip(item)) {
-                inventory.addItem(item);
-                notifyView();
-                return true;
-            }
-        }
-
-        return false;
     }
 
     public TakeableItem getEquipped(int index) {
@@ -93,7 +100,8 @@ public class Equipment {
     }
 
     public void useItem(int index){
-        if (hotbar.getItem(index) != null){
+        if (hotbar.getItem(index) != null) {
+            System.out.println("item used");
             TakeableItem item = hotbar.getItem(index);
             ((UseableItem) item).use(this.entity, this.entity.getLocation());
         }
@@ -133,30 +141,22 @@ public class Equipment {
         return armor.ring;
     }
 
-    public void scrollArmorX(int i){
-        if(i > 0) {
-            armor.selectedX++;
-            if(armor.selectedX > 1) armor.selectedX = 0;
+    public void scrollRight(){
+        if(selected < equipmentSize + 3){
+            selected++;
         }
-        if(i < 0) {
-            armor.selectedX--;
-            if(armor.selectedX < 0) armor.selectedX = 1;
-        }
+        notifyView();
     }
 
-    public void scrollArmorY(int i){
-        if(i > 0) {
-            armor.selectedY++;
-            if(armor.selectedY > 2) armor.selectedY = 0;
+    public void scrollLeft(){
+        if(selected > 0){
+            selected--;
         }
-        if(i < 0) {
-            armor.selectedY--;
-            if(armor.selectedY < 0) armor.selectedY = 2;
-        }
+        notifyView();
     }
 
-    public Pair<Integer, Integer> getSelectedArmor(){
-        return new Pair<Integer, Integer>(armor.selectedX, armor.selectedY);
+    public int getSelected(){
+        return selected;
     }
 
     private class WearableItems{
@@ -164,9 +164,6 @@ public class Equipment {
         private WearableItem legs = null;
         private WearableItem body = null;
         private WearableItem ring = null;
-
-        private int selectedX = 0;
-        private int selectedY = 0;
 
         public boolean equip(WearableItem wearableItem){
             switch (wearableItem.getSlot()){
@@ -237,10 +234,6 @@ public class Equipment {
             }
             return null;
         }
-
-        public List<TakeableItem> getHotbarItems(){
-            return hotbar.getItems();
-        }
     }
 
     private class UsableItems{
@@ -275,7 +268,7 @@ public class Equipment {
                 return null;
         }
 
-        public List<TakeableItem> getItems(){
+        public List<TakeableItem> getItems() {
             return items;
         }
     }

@@ -9,15 +9,20 @@ public class MemorySlots {
     List<Slot> slots = new ArrayList<>();
     GameBuilder gameBuilder;
     int selectedSlot;
-
+    final static int SMASHER = Commons.MAX_SAVE_SLOTS ;
+    final static int SUMMONER = Commons.MAX_SAVE_SLOTS + 1;
+    final static int SNEAK= Commons.MAX_SAVE_SLOTS + 2;
     public MemorySlots(GameBuilder gameBuilder) {
         selectedSlot = 0;
         this.gameBuilder = gameBuilder;
 
         //createslots
         for (int i = 0; i < Commons.MAX_SAVE_SLOTS; i++) {
-            slots.add(new Slot(Commons.SAVE_FOLDER + Commons.SAVE_NAME + i + ".json"));
+            slots.add(new Slot(Commons.SAVE_FOLDER + i + ".json"));
         }
+        slots.add(new Slot(Commons.SAVE_FOLDER + "smasher.json")); //5
+        slots.add(new Slot(Commons.SAVE_FOLDER + "summoner.json")); //6
+        slots.add(new Slot(Commons.SAVE_FOLDER + "sneak.json")); //7
     }
 
     public void selectPrevious(){
@@ -38,6 +43,12 @@ public class MemorySlots {
     public void loadOnSelected(){
         slots.get(selectedSlot).loadTo(gameBuilder);
     }
+
+    public void loadDefaultGameSmasher() {slots.get(SMASHER).loadTo(gameBuilder);}
+
+    public void loadDefaultGameSummoner() {slots.get(SUMMONER).loadTo(gameBuilder);}
+
+    public void loadDefaultGameSneak() {slots.get(SNEAK).loadTo(gameBuilder);}
 
     public void saveOnSelected(){
         slots.get(selectedSlot).saveFrom(gameBuilder);

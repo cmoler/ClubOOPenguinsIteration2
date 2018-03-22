@@ -38,7 +38,7 @@ public class EquipmentState implements ControllerState {
 
     @Override
     public void loadKeyBindings() {
-        File entityKeyBindings = new File("resources/KeyBindings/equipment");
+        File entityKeyBindings = new File("resources/KeyBindings/equipment.xml");
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
@@ -80,10 +80,10 @@ public class EquipmentState implements ControllerState {
                                     getTextContent()), () -> openSkills());
                             break;
                         case "unEquipItem":
-//                            keyBinding.put(Integer.parseInt(eElement.
-//                                    getElementsByTagName("key").
-//                                    item(0).
-//                                    getTextContent()), () -> unEquipItem());
+                            keyBinding.put(Integer.parseInt(eElement.
+                                    getElementsByTagName("key").
+                                    item(0).
+                                    getTextContent()), () -> unEquip());
                             break;
                         case "scrollLeft":
                             keyBinding.put(Integer.parseInt(eElement.
@@ -136,24 +136,16 @@ public class EquipmentState implements ControllerState {
         controllerMediator.changeToSkillsState();
     }
 
-    private void unEquipUsableItem() {
-        // TODO
-//        equipmentController.unEquipUsableItem(); // needs index
-    }
-
-    private void upEquipWearableItem(){
-        // TODO
-//        equipmentController.unEquipWearableItem(); // needs index
-    }
-
     private void scrollLeft() {
-        // TODO
+        equipmentController.scrollLeft();
     }
 
     private void scrollRight() {
-        // TODO
+        equipmentController.scrollRight();
     }
 
-
+    private void unEquip(){
+        equipmentController.unEquip();
+    }
 
 }

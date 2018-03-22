@@ -5,7 +5,7 @@ import Model.Item.Item;
 import Model.Item.TakeableItem.TakeableItem;
 import Model.Map.Direction;
 import Model.Map.Location;
-import Model.Visitor.Visitor;
+import Model.Map.World;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -18,21 +18,20 @@ public abstract class Entity {
     private List<Viewport> observers = new ArrayList<Viewport>();
 
 
+    protected String name;
     private EntityType entityType;
     private int maxHealth = 100;
     private int health = maxHealth;
-    private Direction directionFacing;
+    private Direction directionFacing = Direction.N;
     private int experience = 0;
     private int level = 1; // default level
     private double defense = 0;
-    private Inventory inventory = new Inventory(this);
+    private Inventory inventory = new Inventory();
     private Location location;
     private boolean intentToMove = false;
-    private int visibleRange = 5;
+    private int visibleRange = 3;
     // map is in World
 
-
-    //TODO Add Role interact on move
 
     public EntityType getEntityType(){
         return entityType;
@@ -46,8 +45,10 @@ public abstract class Entity {
         if(defense > 0)
             damage = (int)(((double)damage) * defense/100);
         health -= damage;
-        if (health < 0)
+        if (health < 0){
             health = 0;
+            World.getWorld().getCurrentMap().removeEntityLocation(this.getLocation());
+        }
         notifyView();
     }
 
@@ -72,8 +73,20 @@ public abstract class Entity {
         }
     }
 
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public void setHealth(int health){
+        this.health = health;
+    }
+
+    public void setInventory(Inventory inventory){
+        this.inventory = inventory;
+    }
+
     public void modifyDefense(double defense){
-        this.defense = defense;
+        this.defense += defense;
     }
 
     private boolean canLevelUp(){
@@ -94,8 +107,8 @@ public abstract class Entity {
         }
         else {
             directionFacing = direction;
-
         }
+        notifyView();
     }
 
     public boolean getIntentToMove(){
@@ -140,6 +153,10 @@ public abstract class Entity {
         else return -1;
     }
 
+    public String getName(){
+        return name;
+    }
+
     public int getExperienceForCurrentLevel(){
         return ExperienceForLevel.get(level);
     }
@@ -168,14 +185,11 @@ public abstract class Entity {
 
     public void setLocation(Location location){
         this.location = location;
+        notifyView();
     }
 
     public void setEntityType(EntityType entityType) {
         this.entityType = entityType;
-    }
-
-    public void accept(Visitor v){
-        v.visitEntity(this);
     }
 
     public void attach(Viewport viewport){

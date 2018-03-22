@@ -4,22 +4,46 @@ import Controller.SavingLoading.GameBuilder;
 import Model.Entity.Equipment;
 import Model.Entity.Inventory;
 import Model.Item.TakeableItem.TakeableItem;
+import View.AreaView.AreaViewPort;
+import View.Viewport;
 
 public class InventoryController implements Controller{
 
-    public InventoryController(GameBuilder gameBuilder){
+    private Inventory inventory;
+    private Equipment equipment;
+    private Viewport areaViewPort;
 
-        inventory = gameBuilder.getInventory();
-        equipment = gameBuilder.getEquipment();
+    public InventoryController(GameBuilder gameBuilder){
+        this.areaViewPort = gameBuilder.getViewport();
+        this.inventory = gameBuilder.getInventory();
+        this.equipment = gameBuilder.getEquipment();
     }
 
     @Override
     public void setActive() {
-
+        areaViewPort.setVisible(true);
+        areaViewPort.requestFocus();
     }
 
-    public void equipItem(int indexOfItemInInventory){
-        TakeableItem item = inventory.getItem(indexOfItemInInventory);
-        equipment.equip(item);
+    public void equipItem() {
+        TakeableItem item = inventory.getItem(inventory.getSelectedIndex());
+        if(equipment.equip(item))
+            inventory.removeItem(item);
+    }
+
+    public void scrollLeft() {
+        inventory.scrollHorizontal(-1);
+    }
+
+    public void scrollRight() {
+        inventory.scrollHorizontal(1);
+    }
+
+    public void scrollUp() {
+        inventory.scrollVeritical(-1);
+    }
+
+    public void scrollDown() {
+        inventory.scrollVeritical(1);
     }
 }
