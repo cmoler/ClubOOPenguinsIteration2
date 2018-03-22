@@ -39,14 +39,14 @@ class BrassKnucklesTest {
 
         TakeableItem item = new BrassKnuckles();
 
-        Equipment equipment = player.getEquipment();
+        Equipment equipment.xml = player.getEquipment();
 
-        equipment.equip(item);
+        equipment.xml.equip(item);
 
-        equipment.useItem(0);
+        equipment.xml.useItem(0);
         double t = Time.currentInSeconds();
         while(Time.currentInSeconds() < t + 5) {
-            equipment.useItem(0);
+            equipment.xml.useItem(0);
         }
         assertEquals(65, npc1.getHealth(), "NPC got smacked with BrassKnuckles a bunch of times");
 

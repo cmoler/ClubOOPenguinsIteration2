@@ -26,7 +26,7 @@ public interface ImagesInfo {
     public static final String PROJECTILE_LINEARICEATTACKFILELOCATION = "resources/images/magic/linearIceAttack.png";
     public static final String PROJECTILE_ANGULARICEATTACKFILELOCATION = "resources/images/magic/angularIceAttack.png";
     public static final String PROJECTILE_RADIALICEATTACKFILELOCATION = "resources/images/magic/radialIceAttack.png";
-    public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment/pizza.png";
+    public static final String PROJECTILE_PIZZAFILELOCATION = "resources/images/equipment.xml/pizza.png";
 
     public static final String EXP_POTION_FILELOCATION = "resources/images/clubPenguinItems/expPotion.png";
     public static final String HEALTH_POTION_FILELOCATION = "resources/images/clubPenguinItems/healthPotion.png";

@@ -35,7 +35,7 @@ public class MainMenuController extends MenuController{
     }
 
     public void exitSubMenu(){
-        System.out.println("Exit menu");
+        System.out.println("Exit menu.xml");
         mainMenuView.returnToMenu();
         this.activeSubMenu = null;
     }

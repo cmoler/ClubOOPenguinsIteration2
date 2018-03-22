@@ -42,11 +42,11 @@ public class EntityLocation{
             if (currentEntity.getIntentToMove()) {
                 Location nextLocation = currentLocation.getAdjacentAt(currentEntity.getDirectionFacing());
                 if (nextLocation != null){
-                    //Move entity if there is no other entity on nextLocation
+                    //Move entity.xml if there is no other entity.xml on nextLocation
                     if (!entityLocations.containsKey(nextLocation)) {
                         moveEntity(currentLocation, nextLocation, currentEntity);
                     }
-                    //If there is an entity on nextLocation, interact
+                    //If there is an entity.xml on nextLocation, interact
                     else {
                        currentEntity.interactEntity(entityLocations.get(nextLocation));
                     }

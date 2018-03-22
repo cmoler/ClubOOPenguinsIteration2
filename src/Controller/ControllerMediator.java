@@ -49,6 +49,8 @@ public class ControllerMediator {
         gameBuilder = new GameBuilder();
         getViewsFromBuilder();
         loadStates();
+        menuState = new MenuState(gameBuilder,this);
+        activeState = menuState;
         attachInputToViews();
         changeToMenuState();
         startTimer();
@@ -64,8 +66,6 @@ public class ControllerMediator {
 
     private void loadStates(){
         keyBindingState = new KeyBindingState(this);
-        menuState = new MenuState(gameBuilder,this);
-        activeState = menuState;
         entityState = new PlayerState(gameBuilder, this);
         inventoryState = new InventoryState(gameBuilder, this);
         equipmentState = new EquipmentState(gameBuilder, this);

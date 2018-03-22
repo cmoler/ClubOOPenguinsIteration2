@@ -90,7 +90,7 @@ public class Map implements Updateable {
         entityLocationList.setEntityLocation(location, entity);
     }
 
-    //Update entity location if they are flagged to move
+    //Update entity.xml location if they are flagged to move
     public void updateEntityLocations(){
         entityLocationList.updateEntityLocations();
     }

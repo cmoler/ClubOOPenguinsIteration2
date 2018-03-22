@@ -826,7 +826,7 @@
       "NPCState": "friendly",
       "Name": "NPC"
      },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": [
       "key",
@@ -849,7 +849,7 @@
       },
       "Name": "ShopKeepNPC"
      },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": []}
     }
@@ -1674,6 +1674,45 @@
    "Entities": [
     {
      "EntityType": "ICE",
+     "LocationY": 4,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 100,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 4,
+     "LocationX": 9,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 100,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 0,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 100,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
      "LocationY": 2,
      "LocationX": 0,
      "EntityClass": {
@@ -1681,20 +1720,7 @@
       "NPCState": "enemy",
       "Name": "NPC"
      },
-     "MaxHP": 200,
-     "HP": 100,
-     "Inventory": {"Items": []}
-    },
-    {
-     "EntityType": "ICE",
-     "LocationY": 2,
-     "LocationX": 9,
-     "EntityClass": {
-      "Color": "red",
-      "NPCState": "enemy",
-      "Name": "NPC"
-     },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": []}
     },
@@ -1707,46 +1733,7 @@
       "NPCState": "enemy",
       "Name": "NPC"
      },
-     "MaxHP": 200,
-     "HP": 100,
-     "Inventory": {"Items": []}
-    },
-    {
-     "EntityType": "ICE",
-     "LocationY": 0,
-     "LocationX": 0,
-     "EntityClass": {
-      "Color": "red",
-      "NPCState": "enemy",
-      "Name": "NPC"
-     },
-     "MaxHP": 200,
-     "HP": 100,
-     "Inventory": {"Items": []}
-    },
-    {
-     "EntityType": "ICE",
-     "LocationY": 4,
-     "LocationX": 0,
-     "EntityClass": {
-      "Color": "red",
-      "NPCState": "enemy",
-      "Name": "NPC"
-     },
-     "MaxHP": 200,
-     "HP": 100,
-     "Inventory": {"Items": []}
-    },
-    {
-     "EntityType": "ICE",
-     "LocationY": 0,
-     "LocationX": 6,
-     "EntityClass": {
-      "Color": "red",
-      "NPCState": "enemy",
-      "Name": "NPC"
-     },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": []}
     },
@@ -1759,7 +1746,33 @@
       "NPCState": "enemy",
       "Name": "NPC"
      },
-     "MaxHP": 200,
+     "MaxHP": 100,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 2,
+     "LocationX": 9,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 100,
+     "HP": 100,
+     "Inventory": {"Items": []}
+    },
+    {
+     "EntityType": "ICE",
+     "LocationY": 0,
+     "LocationX": 6,
+     "EntityClass": {
+      "Color": "red",
+      "NPCState": "enemy",
+      "Name": "NPC"
+     },
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": []}
     },
@@ -1772,20 +1785,7 @@
       "NPCState": "enemy",
       "Name": "NPC"
      },
-     "MaxHP": 200,
-     "HP": 100,
-     "Inventory": {"Items": []}
-    },
-    {
-     "EntityType": "ICE",
-     "LocationY": 4,
-     "LocationX": 9,
-     "EntityClass": {
-      "Color": "red",
-      "NPCState": "enemy",
-      "Name": "NPC"
-     },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": []}
     }
@@ -1880,7 +1880,12 @@
      "Terrain": "ICE",
      "X": 0,
      "Y": 1,
-     "Items": []
+     "Items": [
+      "head",
+      "body",
+      "legs",
+      "ring"
+     ]
     },
     {
      "Obstacle": 0,
@@ -2237,7 +2242,7 @@
      "Terrain": "ICE",
      "X": 4,
      "Y": 5,
-     "Items": []
+     "Items": ["linearIceAttack"]
     },
     {
      "Obstacle": 0,
@@ -2317,7 +2322,7 @@
      "Terrain": "ICE",
      "X": 4,
      "Y": 6,
-     "Items": ["linearIceAttack"]
+     "Items": ["angularIceAttack"]
     },
     {
      "Obstacle": 0,
@@ -2333,7 +2338,7 @@
      "Terrain": "ICE",
      "X": 6,
      "Y": 6,
-     "Items": []
+     "Items": ["pizza"]
     },
     {
      "Obstacle": 0,
@@ -2413,7 +2418,7 @@
      "Terrain": "ICE",
      "X": 6,
      "Y": 7,
-     "Items": []
+     "Items": ["snowLauncher"]
     },
     {
      "Obstacle": 0,
@@ -2605,8 +2610,8 @@
    "Entities": [
     {
      "EntityType": "ICE",
-     "LocationY": 7,
-     "LocationX": 6,
+     "LocationY": 4,
+     "LocationX": 5,
      "EntityClass": {
       "Role": {
        "Role": {
@@ -2632,12 +2637,9 @@
       "SkillPoints": 5,
       "Name": "Player"
      },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
-     "Inventory": {"Items": [
-      "pizza",
-      "snowLauncher"
-     ]}
+     "Inventory": {"Items": []}
     },
     {
      "EntityType": "ICE",
@@ -2645,10 +2647,10 @@
      "LocationX": 0,
      "EntityClass": {
       "Color": "yellow",
-      "NPCState": "friendly",
+      "NPCState": "enemy",
       "Name": "NPC"
      },
-     "MaxHP": 200,
+     "MaxHP": 100,
      "HP": 100,
      "Inventory": {"Items": [
       "key",

@@ -32,7 +32,7 @@ public class SpriteParser {
     private BufferedImage[] chestSprites;
 
     public Image getItemFromName(String name){
-        ImageIcon imageIcon = new ImageIcon("resources/images/equipment/"+name+".png");
+        ImageIcon imageIcon = new ImageIcon("resources/images/equipment.xml/"+name+".png");
         return imageIcon.getImage();
     }
 
